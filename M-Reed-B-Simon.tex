@@ -1,0 +1,1125 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage[MeX]{polski}
+\usepackage{microtype}
+\let\lll\undefined
+\usepackage[intlimits]{amsmath}
+\usepackage{amsfonts, amssymb, amscd, amsthm}
+\usepackage{upgreek} %Lepsze greckie czcionki. Przyklad skladni: pi = \uppi
+% \usepackage{txfonts}%Inne ulepszenie greckich liter. Przyklad skladni:
+% pi = \piup.
+% \usepackage{latexsym}% Więcej symboli.
+% \usepackage{textcomp}% Pakiet z dziwnymi symbolami.
+\usepackage{indentfirst}
+\usepackage{slashed}% Pozwala pisać slash Feynmana.
+\usepackage{graphicx}% Pozwala wstawiać grafikę.
+\usepackage{titlesec}
+%\usepackage{url}% Pozwala pisać ładnie znak ~.
+\usepackage{xcolor}
+% \usepackage{calrsfs}
+\usepackage{vmargin}
+%----------------------------------------------------------------------
+% MARGINS
+%----------------------------------------------------------------------
+\setmarginsrb
+{ 0.7in}  % left margin
+{ 0.6in}  % top margin
+{ 0.7in}  % right margin
+{ 0.8in}  % bottom margin
+{  20pt}  % head height
+{0.25in}  % head sep
+{   9pt}  % foot height
+{ 0.3in}  % foot sep
+\usepackage{hyperref}
+% \usepackage{cleveref}
+
+
+% #####################################################################
+% Dodatkowe ustawienia pod języka polski
+\titlelabel{\thetitle.\quad}
+
+
+% #####################################################################
+
+\newcommand{\spaceOne}{2em}
+\newcommand{\spaceTwo}{1em}
+\newcommand{\spaceThree}{0.5em}
+
+% Ładniejszy zbiór pusty
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+
+% ####################
+% Uproszczenia w pisaniu tekstu
+\newcommand{\ld}{\ldots}
+
+% Slashe w tekście
+\newcommand{\tbs}{\textbackslash}
+
+% Podstawowe oznaczenia matematyczne
+\newcommand{\fr}{\frac}
+\newcommand{\tfr}{\tfrac}
+\newcommand{\tr}{\textrm}
+
+% Oznaczenia ,,nad i pod''. Wymyśl lepszą nazwę
+\newcommand{\til}{\tilde}
+\newcommand{\ul}{\underline}
+\newcommand{\ol}{\overline}
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+
+% Trzcionki matematyczne
+\newcommand{\mr}{\mathrm}
+\newcommand{\mb}{\mathbb}
+\newcommand{\mc}{\mathcal}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mbf}{\mathbf}
+
+% Strzałki
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}{\xrightarrow}
+
+\newcommand{\wtw}{wtedy i~tylko wtedy}
+
+
+% ####################
+% Litery greckie
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\del}{\delta}
+\newcommand{\Del}{\Delta}
+\newcommand{\la}{\uplambda}
+\newcommand{\eps}{\epsilon}
+\newcommand{\veps}{\varepsilon}
+\newcommand{\vp}{\varphi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\tet}{\theta}
+
+% Standardowe oznaczenia literowe
+\newcommand{\N}{\mb{N}}
+\newcommand{\R}{\mb{R}}
+\newcommand{\C}{\mb{C}}
+\newcommand{\D}{\mc{D}}
+\let\H\undefined
+\newcommand{\H}{\mc{H}}
+\let\L\undefined
+\newcommand{\L}{\mc{L}}
+\newcommand{\Rn}{\R^{ n }}
+\newcommand{\Rc}{\mc{R}}
+\newcommand{\Cc}{\mc{C}}
+
+% Mniej używane oznaczenia literowe
+\newcommand{\B}{\mc{B}}
+\newcommand{\Oc}{\mc{O}}
+\newcommand{\Rp}{\R_{ + }}
+
+% ####################
+% Standardowe matematyczne symbole literowe
+% Mathbb
+% \newcommand{\C}{\mb{C}}
+% \newcommand{\N}{\mb{N}}
+% \newcommand{\R}{\mb{R}}
+% \newcommand{\Rn}{\R^{ n }}
+% \newcommand{\Rp}{\R_{ + }}
+
+% % Mathcal
+% \newcommand{\B}{\mc{B}}
+% \newcommand{\D}{\mc{D}}
+% \newcommand{\Fc}{\mc{F}}
+% \let\H\undefined
+% \newcommand{\H}{\mc{H}}
+% \let\L\undefined
+% \newcommand{\L}{\mc{L}}
+% \newcommand{\M}{\mc{M}}
+% \newcommand{\Rc}{\mc{R}}
+% \newcommand{\Cc}{\mc{C}}
+% \newcommand{\Oc}{\mc{O}}
+% \newcommand{\T}{\mc{T}}
+
+
+% ####################
+% Teoria mnogości
+\newcommand{\es}{\emptyset}
+\newcommand{\sset}{\subset}
+\newcommand{\setm}{\setminus}
+\newcommand{\ti}{\times}
+
+
+% ####################
+% Algebra
+\newcommand{\Real}{\mf{Re}}
+\newcommand{\Imag}{\mf{Im}}
+\newcommand{\ot}{\otimes}
+\newcommand{\Tr}{\mr{Tr}}
+
+
+% ####################
+% Analiza matematyczna
+
+% Granice
+\newcommand{\Lim}{\lim\limits}
+\newcommand{\Liminf}{\ul{\lim}}
+\newcommand{\Limsup}{\ol{\lim}}
+
+% Sumy
+\newcommand{\Sum}{\sum\limits}
+
+% Różniczkowanie i pochodne
+\newcommand{\pr}{\partial}
+\newcommand{\de}{\mr{d}}
+\newcommand{\dd}[3]{\fr{ \de^{ #1 } { #2 } }{ \de { #3 }^{ #1 } }}
+\newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
+
+% Powszechnie używane symbole 
+\newcommand{\Cinfty}{\Cc^{ \infty }}
+
+% Całki i całkowanie
+\newcommand{\dx}{\de x}
+\newcommand{\Int}{\int\limits}
+\newcommand{\IntL}[3]{ \Int_{ { #1 } }^{ { #2 } } \de#3 \; }
+\newcommand{\IntCa}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
+\newcommand{\IntFi}[2]{ \Int \de#1 \, #2 } % Bardziej Fizyczna notacja;)
+\newcommand{\IntWie}[3]{ \Int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa
+\newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
+
+% ####################
+% Całki w określonych granicach
+\newcommand{\IntA}[1]{\Int_{ -\infty }^{ +\infty } \de #1 \;}
+\newcommand{\IntB}[1]{\int_{ \R } \de #1 \;}
+\newcommand{\IntC}[2]{\int_{ \R } #1 \, \de #2}
+\newcommand{\IntD}[1]{\Int_{ 0 }^{ +\infty } \de #1 \;}
+
+
+% ####################
+% Analiza funkcjonalna
+\newcommand{\da}{\dagger}
+
+% Brakety
+% W analizie funkcjonalnej też często się je stosuje
+\newcommand{\lket}{\langle}
+\newcommand{\rket}{\rangle}
+
+% Przestrzenie L^{ p }
+\newcommand{\Lj}{L^{ 1 }}
+\newcommand{\Ld}{L^{ 2 }}
+\newcommand{\Lp}{L^{ p }}
+\newcommand{\LIj}{\L^{ 1 }}
+\newcommand{\LIp}{\L^{ p }}
+\newcommand{\LdJ}{\Ld( \R, \de \mu )}
+\newcommand{\LdT}{\Ld( \R^{ 3 }, \de \mu )}
+
+
+% ####################
+% Wartość bezwzględna i normy
+\providecommand{\absj}[1]{\lvert #1 \rvert}
+\providecommand{\absd}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left|\left| #1 \right|\right|}
+
+
+% ####################
+% Edycja tekstu
+\newcommand{\tb}{\textbf}
+\newcommand{\noi}{\noindent}
+\newcommand{\start}{\noi \tb{--} {}}
+\newcommand{\Str}[1]{\tb{Str. #1.}}
+\newcommand{\StrWg}[2]{\tb{Str. #1, wiersz #2.}}
+\newcommand{\StrWd}[2]{\tb{Str. #1, wiersz #2 (od dołu).}}
+\newcommand{\Dow}{\tb{Dowód}}
+\newcommand{\Center}[1]{\begin{center} #1 \end{center}}
+\newcommand{\CenterTB}[1]{\Center{\tb{#1}}}
+\newcommand{\Jest}{\tb{Jest: }}
+\newcommand{\Pow}{\tb{Powinno być: }}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\Prze}{{\color{red} Przemyśl.}}
+\newcommand{\Pop}{{\color{red} Popraw.}}
+\newcommand{\Prob}{{\color{red} Problem.}}
+\newcommand{\Dok}{{\color{red} Dokończ.}}
+\newcommand{\Pyt}{{\color{red} Pytanie.}}
+\newcommand{\Main}[1]{ \begin{center} {\LARGE \tb{#1} } \end{center} }
+\newcommand{\Field}[1]{ \begin{center} {\Large \tb{#1} } \end{center} }
+\newcommand{\Work}[1]{ \begin{center} {\large \tb{#1}} \end{center} }
+
+
+
+
+
+% % Sumy
+% \newcommand{\Sum}{\sum\limits}
+
+% % Różniczkowanie i pochodne
+% \newcommand{\pr}{\partial}
+% \newcommand{\de}{\mr{d}}
+% \newcommand{\dd}[3]{\fr{ \de^{ #1 } { #2 } }{ \de { #3 }^{ #1 } }}
+% \newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
+
+% % Całki
+% \newcommand{\Int}{\int\limits}
+% \newcommand{\IntA}[1]{\Int_{ -\infty }^{ +\infty } \de #1 \;}
+% \newcommand{\IntB}[1]{\int_{ \R } \de #1 \;}
+% \newcommand{\IntC}[1]{\Int_{ 0 }^{ +\infty } \de #1 \;}
+% \newcommand{\IntCa}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
+% \newcommand{\IntFi}[2]{ \Int \de#1 \, #2 } % Bardziej Fizyczna notacja;)
+% \newcommand{\IntWie}[3]{ \int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa.
+% \newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
+% \newcommand{\IntL}[3]{ \int\limits_{ { #1 } }^{ { #2 } } \d#3 \; }
+
+
+
+% #####################################################################
+% #####################################################################
+% #####################################################################
+\begin{document}
+% #####################################################################
+% #####################################################################
+% #####################################################################
+
+
+
+\Work{
+  M. Reed, B. Simon \\
+  ,,Methods of Modern Mathematical Physics~I: Functional Analysis'',
+  \cite{RS80}.}
+
+
+\CenterTB{Uwagi}
+
+
+\noi \tb{Rozdział I.}
+
+\vspace{\spaceThree}
+
+\start Nigdzie nie została podana definicja $\sup$ i~$\inf$ ani
+w~przypadku ogólnych relacji porządkujących, ani w~przypadku liczb
+rzeczywistych.
+
+% \start Nie~zdefiniowano zbiorów zwartych, ani~nie~wskazano, że~zbiór
+% domknięty i~ograniczony w $\mathbb{R}^{ n }$ jest zwarty.
+
+\start Nie podana została definicja sumy miar borelowskich,
+ani~nie~zostało udowodnione, że funkcja całkowalna osobno względem
+miar $\mu_{ 1 }$ i~$\mu_{ 2 }$ jest całkowalna względem ich sumy.
+Uzupełnienie wykładu w~tym miejscu nie jest trudne i~przedstawiamy je
+poniżej.
+
+Dla dowolnych dwóch miar dodatnich $\mu_{ 1 }$ i~$\mu_{ 2 }$,
+niekoniecznie borelowskich, określonym na wspólnej $\s$\dywiz
+pierścieniu $\Rc$, określamy \tb{sumę miar} jako:
+\begin{equation}
+  \label{eq:RSI1}
+  \begin{split}
+    (\mu_{ 1 } + \mu_{ 2 })( A ) &= \mu_{ 1 }( A ) + \mu_{ 2 }( A ),
+    \quad \forall A \in \mc{R}, \\
+    (\mu_{ 1 } + \mu_{ 2 })( A ) &= +\infty, \quad \tr{jeśli } \mu_{ 1
+    }( A ) = +\infty, \tr{ lub } \mu_{ 2 }( A ) = +\infty.
+  \end{split}
+\end{equation}
+Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
+że~jest to w~istocie miara.
+
+% ##############################
+\begin{twr}
+  Suma skończonej liczby miar dodatnich $\mu_{ i }$, $i = 1, \ld, n$,
+  określonych na wspólnym pierścieniu $\Rc$, jest miarą dodatnią
+  określoną na tym samym pierścieniu.
+
+  Jeżeli funkcja $f$ jest całkowalna względem względem wszystkich miar
+  $\mu_{ i }$, to jest też całkowalna względem ich sumy i~zachodzi:
+  \begin{equation}
+    \label{eq:1}
+    \Int{ f }{ ( \Sum_{ i = 1 }^{ n } \mu_{ i } ) }
+    = \Sum_{ i = 1 }^{ n } \Int{ f }{ \mu_{ i } }.
+  \end{equation}
+\end{twr}
+% ##############################
+
+\begin{proof}
+  Suma miar jest określona na~wspólnych ich pierścieniu $\Rc$, poza
+  zaś warunkiem na~przeliczalną addytywność miary rozłącznych zbiorów
+  $A_{ i }$, pozostałe własności miary dodatniej wychodzą od razu.
+
+  Załóżmy teraz, że~miary wszystkich tych zbiorów względem $\mu_{ 1 }$
+  i~$\mu_{ 2 }$ są skończone. Na podstawie podstawowych twierdzeń
+  o~sumowaniu szeregów dodatnich, mamy \Dok
+  \begin{equation*}
+    \begin{split}
+      (\mu_{ 1 } + \mu_{ 2 })\left( \bigcup_{ i = 1 }^{ \infty } A_{ i
+        } \right) &= \mu_{ 1 }\left( \bigcup_{ i = 1 }^{ \infty } A_{
+          i } \right) + \mu_{ 2 }\left( \bigcup_{ i = 1 }^{ \infty }
+        A_{ i } \right) = \sum_{ i = 1 }^{ \infty } \mu_{ 1 }( A_{ i }
+      )
+      + \sum_{ i = 1 }^{ \infty } \mu_{ 2 }( A_{ i } ) \\
+      &= \sum_{ i = 1 }^{ \infty } ( \mu_{ 1 }( A_{ i } ) + \mu_{ 2 }(
+      A_{ i } ) ) = \sum_{ i = 1 }^{ \infty } ( \mu_{ 1 } + \mu_{ 2 }
+      )( A_{ i } ).
+    \end{split}
+  \end{equation*}
+  Jeśli chodź dla jednego zbioru mamy
+  $\mu_{ n }( A_{ i } ) = +\infty$, to obie strony są równe $+\infty$.
+  Problem, czy można dodać dwie miary, które nie są dodatnie wymaga
+  osobnych rozważań. \Dok
+
+  Rozpatrzmy teraz problem całkowania względem sumy miar $\mu_{ n }$
+  funkcji $f$, która jest całkowalnej względem każdej miar z~osobna,
+  ograniczymy~się przy tym dla przypadku funkcji określonej na~$\R$.
+  Jeżeli $f \geq 0$, wówczas zachodzi równość:
+  \begin{equation}
+    \label{eq:RSI2}
+    \begin{split}
+      \sum_{ n }( f )_{ \mu_{ 1 } + \mu_{ 2 } } =& \Sum_{ m = 0 }^{
+        \infty } \fr{ m }{ n } ( \mu_{ 1 } + \mu_{ 2 } )\left( f^{ -1
+        }\left[ \left[ \fr{ m }{ n }, \fr{ m + 1 }{ n } \right)
+        \right] \right) = \Sum_{ m = 0 }^{ \infty } \left\{ \fr{ m }{
+          n } \mu_{ 1 }\left( f^{ -1 }\left[ \left[ \fr{ m }{ n },
+              \fr{ m + 1 }{ n } \right) \right] \right) \right. \\
+      &+ \left. \fr{ m }{ n } \mu_{ 2 }\left( f^{ -1 }\left[ \left[
+              \fr{ m }{ n }, \fr{ m + 1 }{ n } \right) \right] \right)
+      \right\} = \Sum_{ n }( f )_{ \mu_{ 1 } } + \Sum_{ n }( f )_{
+        \mu_{ 2 } }.
+    \end{split}
+  \end{equation}
+  Znowu wszystkie wyrazy szeregów są dodatnie, więc powyższe
+  przekształcenia są uzasadnione.
+
+  Ponieważ w podejściu prezentowanym przez Reeda i~Simona, całkowanie
+  funkcji zespolonych sprowadza~się do całkowania funkcji dodatnich,
+  widzimy więc, że~funkcja całkowalna względem każdej z~miar
+  $\mu_{ n }$, tzn.
+  \begin{align*}
+    \Int{ f }{ \mu_{ 1 } } < +\infty \;\tr{  oraz  } \Int{ f }{ \mu_{ 2 } }
+    < +\infty,
+  \end{align*}
+  jest też całkowalna względem ich sumy i~na podstawie wzoru
+  \eqref{eq:RSI2}, zachodzi równość:
+  \begin{equation}
+    \label{eq:RSI3}
+    \Int{ f }{ ( \mu_{ 1 } + \mu_{ 2 } ) } = \Int{ f }{ \mu_{ 1 } }
+    + \Int{ f }{ \mu_{ 2 } }.
+  \end{equation}
+  
+\end{proof}
+
+
+\tb{Uwaga.} Należy tą sytuację odróżnić od~przypadku, gdy mamy dwie
+funkcje $f_{ 1 }$ i~$f_{ 2 }$, całkowalne odpowiednio względem miar
+$\mu_{ 1 }$ i~$\mu_{ 2 }$, i~chcemy powiedzieć coś o~całkowalności ich
+sumy. Wtedy bowiem może okazać się, że~funkcja np.~$f_{ 1 }$ jest
+całkowalna względem $\mu_{ 1 }$ bo~miara zbioru na którym przyjmuje
+duże wartości jest mała względem $\mu_{ 1 }$. Jeżeli miara tego zbioru
+względem $\mu_{ 2 }$ jest jednak duża, funkcja $f_{ 1 }$ może być
+niecałkowalna względem tej miary.
+
+\tb{Przykład.} Weźmy funkcję na prostej rzeczywistej
+\begin{equation*}
+  f( x ) = 
+  \begin{cases}
+    \quad \;0, \quad x \neq 0, \\
+    +\infty, \quad x = 0. \\
+  \end{cases}
+\end{equation*}
+$f \equiv 0$, jest ona całkowalna względem miary Lebesgue'a $dx$ i~jej
+całka wynosi 0. Możemy zmienić jej wartość w~0 na $-\infty$, bez
+żadnych konsekwencji dla wartości całki po~$dx$. Jeżeli teraz dodamy
+do miary Lebesgue'a miarę Diraca skupioną w~0, oznaczmy ją
+$d\del_{ 0 }$, to $f$ jest niecałkowalna względem miary
+$dx + d\del_{ 0 }$.
+
+\vspace{\spaceTwo}
+
+
+
+\noi \tb{Rozdział~II.}
+
+\vspace{\spaceThree}
+
+\start \tb{Ciągłość ciągowa funkcji na~przestrzeniach metrycznych.}
+W~tym rozdziale natykamy kilkakrotnie problem, że~mamy funkcje ciągłą
+$f( x )$ oraz~ciąg $x_{ n_{ 1 }, \ld, n_{ m } }$ i~wchodzimy wejść
+z~granicą ciągu pod funkcję, innymi słowy chcemy, aby
+zachodziło\footnote{Rozpatrujemy tu tylko przypadek skończonej liczby
+  indeksów liczby naturalnych, bo~na~razie nie znalazłem potrzeby
+  rozpatrywać ciągi o~nieskończonej ilości indeksów lub~takich które
+  nie są indeksowane liczbami naturalnymi.}
+\begin{equation*}
+  \Lim_{ \sstack{ n_{ 1 } \ra +\infty \\ \cdots \\  n_{ m } \ra +\infty } }
+  f( x_{ n_{ 1 }, \ld, n_{ m } } )
+  = f( \Lim_{ \sstack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra +\infty } }
+  x_{ n_{ 1 }, \ld, n_{ m } } ).
+\end{equation*}
+Jeżeli funkcja jest \emph{ciągła topologicznie}, czyli przeciwobraz
+każdego zbioru otwartego jest otwarty, to poniżej udowodnimy, że~tak
+równość zachodzi. Pytanie czy jeśli funkcja jest \emph{ciągowo
+  ciągła}, czyli
+\begin{equation*}
+  \Lim_{ n \ra +\infty } f( x_{ n } ) = f( \Lim_{ n \ra +\infty } x_{ n } ),
+\end{equation*}
+to czy twierdzenie to również zachodzi? W~przypadku ogólnym nie wiem,
+czy tak jest, bowiem gdy przestrzeń topologiczna nie~ma przeliczalnej
+bazy otoczeń, to~ciągi postaci $x_{ n }$ nie zawierają pełnej wiedzy
+o~topologii. Udowodnimy jednak, że~tak jest dla przestrzeni
+metrycznych.
+
+Na początku będzie nam potrzebna definicja granicy ciągu
+wieloindeksowego. Najprostsza definicja granicy jest
+następująca\footnote{Granica ciągu wieloindeksowego powinna być
+  szczególnym przypadkiem granic indeksowanych zbiorami skierowany
+  które~są omawiane u~Marina \cite{Mau74}.}. Niech $X$ będzie
+przestrzenią metryczną, $x_{ n_{ 1 }, \ld, n_{ m } }, x_{ 0 } \in X$,
+$x_{ 0 }$ jest granicą ciągu $x_{ n_{ 1 }, \ld, n_{ m } }$ \wtw, gdy
+\begin{displaymath}
+  ( \forall \, \veps > 0) ( \exists \, N )
+  ( \forall \, n_{ 1 } > N, \ld, n_{ m } > N ) \;\,
+  d( x_{ n_{ 1 }, \ld, n_{ m } }, \, x_{ 0 } ) < \veps.
+\end{displaymath}
+
+\begin{twr}
+  Niech $X$ i~$Y$ będą przestrzeniami metrycznymi,
+  $x_{ n_{ 1 }, \ld, n_{ m } }$ ciągiem elementów przestrzeni $X$.
+  Jeśli funkcja $f: X \ra Y$ jest ciągła topologicznie i~istnieje
+  granica ciągu
+  $\Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra
+      +\infty } } x_{ n_{ 1 }, \ld, n_{ m } } = x_{ 0 }$, to
+  \begin{equation}
+    \Lim_{ \sstack{ n_{ 1 } \ra +\infty \\ \cdots \\  n_{ m } \ra +\infty } }
+    f( x_{ n_{ 1 }, \ld, n_{ m } } )
+    = f( \Lim_{ \sstack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra
+        +\infty } } x_{ n_{ 1 }, \ld, n_{ m } } ).
+  \end{equation}
+\end{twr}
+
+\begin{proof}
+  Dla uproszczenia notacji będziemy rozpatrywać ciąg dwuindeksowy
+  $x_{ n, m }$. Ustalmy $\veps > 0$, szukamy teraz takiego $N$,
+  by~$d( f( x_{ n, m } ),\, f( x_{ 0 } ) ) < \veps$. Ponieważ $f$ jest
+  ciągła istnieje taka $\del > 0$, \linebreak
+  że~$d_{ 2 }( f( x ),\, f( x_{ 0 } ) ) < \veps$
+  dla~$d_{ 1 }( x,\, x_{ 0 } ) < \del$. Wystarczy więc dobrać tak $N$,
+  żeby dla $n > N$, $m > N$, $x_{ n,m }$ znajdował~się w~odległości
+  mniejszej niż~$\del$ od~$x_{ 0 }$. Takie liczby $N$ i~$M$ istnieją
+  na~mocy definicji granicy ciągu dwuindeksowego.
+\end{proof}
+
+\begin{wni}
+  Niech $X$ i~$Y$ będą przestrzeniami metrycznymi. Jeżeli $f: X \ra Y$
+  jest ciągowo ciągła, to z~granicą ciągu wieloindeksowego można wejść
+  pod funkcje.
+\end{wni}
+
+\begin{proof}
+  W~przestrzeni metrycznej funkcja jest ciągowo ciągła \wtw, gdy jest
+  ciągła topologicznie, wystarczy więc zastosować poprzednie
+  twierdzenie.
+\end{proof}
+
+\start \tb{Odwzorowania wieloliniowe ciągłe i~szeregi.} W~tym
+rozdziela potrzebujemy kilka razy pokazać równość następującego typu.
+Jeżeli $f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
+$g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$, to
+\begin{equation*}
+  \Lim_{ K,\, M \ra +\infty } \Sum_{ l < L } \Sum_{ k < K } c_{ l }
+  d_{ k } \, \vp_{ l } \cdot \psi_{ k } = f \cdot g,
+\end{equation*}
+przy czym symbol $K, M \ra +\infty$ rozumiem jak przy podanej
+wcześniej definicji granicy ciągu wieloindeksowego. Aby~nadać tym
+symbolom sens, musimy najpierw zdefiniować odwzorowania wieloliniowe
+ograniczone.
+
+Niech $X_{ 1 }, \ld, X_{ n }, Y$ będą przestrzeniami unormowanymi nad
+ciałem $\R$ albo~$\C$, zaś
+\begin{equation*}
+  B: X_{ 1 } \ti \ld \ti X_{ n } \ra Y
+\end{equation*}
+odwzorowaniem wieloliniowym. Odwzorowanie takie jest ograniczone jeśli
+istnieje taka stała $C \in \R$, że~dla wszystkich
+$x_{ 1 } \in X_{ 1 }, \ld, x_{ n } \in X_{ n }$ zachodzi
+\begin{equation}
+  \norm{ B( x_{ 1 }, \ld, x_{ n } ) }_{ Y } \leq C
+  \norm{ x_{ 1 } }_{ X_{ 1 } } \ld \norm{ x_{ n } }_{ X_{ n } }.
+\end{equation}
+Podstawowe ich własności bada Schwartz w~swoim ,,Kursie analizy
+matematycznej'', str. 102 \cite{Sch79}. W~szczególności odwzorowanie
+wieloliniowe jest ciągłe \wtw{}, gdy jest ograniczone, analogicznie
+również definiuje~się normę $\norm{ B }$ odwzorowania
+wieloliniowego~$B$. Dysponując już tymi pojęciami możemy sformułować
+potrzebne nam twierdzenie.
+
+\begin{twr}
+  Jeśli $B: X_{ 1 } \ti \ld \ti X_{ n } \ra Y$ jest odwzorowanie
+  wieloliniowym ograniczonym przestrzeni unormowanych
+  $X_{ 1 }, \ld, X_{ n }, Y$, zaś szeregi
+  $\sum_{ l } c_{ 1, \, l } \, \vp_{ 1, \, l }, \ld, \sum_{ l } c_{ n,
+    \, l } \, \vp_{ n, \, l }$, $\vp_{ i, \, l } \in X_{ i }$,
+  $l_{ i } \in \N$, są~warunkowo zbieżne do~elementów $\eta_{ i }$, to
+  zachodzi równość
+  \begin{equation*}
+    \Sum_{ l_{ 1 }, \ld, l_{ n } } c_{ 1, \, l_{ 1 } } \cdot \ld \cdot
+    c_{ n, \, l_{ n } } B( \vp_{ 1, \, l_{ 1 } }, \ld,
+    \vp_{ n, \, l_{ n } } ) = B( \eta_{ 1 }, \ld, \eta_{ n } ),
+  \end{equation*}
+  przy czym sumę tą należy rozumieć jako
+  \begin{equation*}
+    \Sum_{ l_{ 1 }, \ld, l_{ n } } c_{ 1, \, l_{ 1 } } \cdot \ld \cdot
+    c_{ n, \, l_{ n } } \, B( \vp_{ 1, \, l_{ 1 } }, \ld,
+    \vp_{ n, \, l_{ n } } ) = \Lim_{ N \ra +\infty }
+    \Sum_{ \sstack{ l_{ 1 } < N \\ \cdots \\ l_{ n } < N } }x
+    c_{ 1, \, l_{ 1 } } \cdot \ld \cdot c_{ n, \, l_{ n } } \,
+    B( \vp_{ 1, \, l_{ 1 } }, \ld, \vp_{ n, \, l_{ n } } ).
+  \end{equation*}
+\end{twr}
+
+\begin{proof}
+  Aby~nie ugrząźć w~indeksach dowód przeprowadzimy dla przypadku
+  $n = 2$, oznaczmy przy tym $\vp_{ 1,\, l } = \vp_{ l }$,
+  $\vp_{ 2, \, l } = \psi_{ l }$, $c_{ 1, \, l } = c_{ l }$,
+  $c_{ 1, \, l } = d_{ l }$, $\eta_{ 1 } = \vp$
+  oraz~$\eta_{ 2 } = \psi$. Ponieważ
+  $\vp = \sum_{ l } c_{ l } \, \vp_{ l }$, więc istniej takie $L$,
+  że~$\vp = \sum_{ k < K } c_{ k } \, \vp_{ k } + \vp_{ R }$, gdzie
+  $\norm{ \vp_{ R } }_{ X_{ 1 } } \leq \veps$. Analogicznie
+  $\psi = \sum_{ l < L } d_{ l } \psi_{ l } + \psi_{ R }$,
+  $\norm{ \psi_{ R } }_{ X_{ 2 } } \leq \veps$. Ponieważ ciąg
+  $\sum_{ k < K } c_{ k } \vp_{ k }$ jest zbieżna do~$\vp$, wynika,
+  że~ ciąg
+  $\norm{ \sum_{ k < K } c_{ k } \vp_{ k } }_{ X_{ 1 } } \ra \norm{
+    \vp }_{ X_{ 1 } }$, jest więc ograniczony. Dobierz $M$ tak~by było
+  wspólnym ograniczeniem ciągów
+  $\norm{ \sum_{ k < K } c_{ k } \vp_{ k } }_{ X_{ 1 } }$
+  i~$\norm{ \sum_{ l < L } d_{ l } \psi_{ l } }_{ X_{ 2 }
+  }$\footnote{To ograniczenie to~wszystko czego potrzebujemy
+    w~dowodzie, a~aby je otrzymać wystarczy warunkowa zbieżność
+    omawianych szeregów.}. Niech teraz $N = \max( L, K )$. Rozpatrzmy
+  wyrażenie
+  \begin{equation*}
+    \begin{split}
+      & \norm{ B( \vp, \psi ) - \Sum_{ k, \, l < N } c_{ k } d_{ l }
+        B( \vp_{ k }, \psi_{ l } ) }_{ Y } = \norm{ B( \Sum_{ k < K }
+        \vp_{ k } + \vp_{ R }, \Sum_{ l < L } d_{ l } \psi_{ l } +
+        \psi_{ R }) - \Sum_{ k < K }\Sum_{ l < L } c_{ k } d_{ l } B(
+        \vp_{ k },
+        \psi_{ l } ) }_{ Y } \\
+      &= \norm{ B( \Sum_{ l < L } \vp_{ l }, \psi_{ R } ) + B( \vp_{ R
+        }, \Sum_{ k < K } \psi_{ k } ) + B( \vp_{ R }, \psi_{ R } )
+      }_{ Y } \leq \norm{ B( \Sum_{ l < L } \vp_{ l }, \psi_{ R } )
+      }_{ Y }
+      + \norm{ B( \vp_{ R }, \Sum_{ k < K } \psi_{ k } ) }_{ Y } \\
+      &+ \norm{ B( \vp_{ R }, \psi_{ R } ) }_{ Y } \leq 2 \norm{ B } M
+      \veps + \norm{ B } \veps^{ 2 }.
+    \end{split}
+  \end{equation*}
+  Dobierając odpowiednio duże $N$ możemy uczynić tą różnicę dowolnie
+  małą co kończy dowód.
+\end{proof}
+\Dok
+
+
+\vspace{\spaceTwo}
+
+\noi \tb{Konkretne strony.}
+
+\vspace{\spaceThree}
+
+% \start \Str{7} Warto w~tym miejscu zauważyć, że~każdy domknięty
+% podzbiór przestrzeni zupełnej jest zupełny. Zbyt dużo materiały w
+% książce brakuje, aby móc z czysty sumieniem wstawić powyższy
+% komentarz. Aby wiedzieć, co to znaczy, że podzbiór przestrzeni
+% metrycznej jest zupełny, należy wprowadzić topologię indukowaną.
+
+\start \Str{9} Nie wykazano, jedynie stwierdzono jednym słowem
+,,thus'', że~podane dwie definicje normy operatora ograniczonego~są
+równoważne. W~istocie, jak powszechnie wiadomo z~pracy dotyczących
+analizy funkcjonalnej:
+\begin{displaymath}
+  \norm{ T } = \sup_{ \norm{ x }_{ 1 } \leq 1 } \fr{ \norm{ T x }_{ 2 } }
+  { \norm{ x }_{ 1 } }
+  = \sup_{ \norm{ x }_{ 1 } = 1 } \fr{ \norm{ T x }_{ 2 } }
+  { \norm{ x }_{ 1 } } = \inf \{ \, C \, | \, \forall x,
+  \norm{ T x }_{ 2 } \leq C \norm{ x }_{ 1 } \}.
+\end{displaymath}
+Elegancki dowód tego faktu, można znaleźć np. w~\cite{Chm04}.
+
+\start \Str{10} W~dowodzie twierdzenia B.L.T. skorzystanie z~$\Limsup$
+jest zupełnie niepotrzebne, poza tym utrudnia dowód,
+że~$\norm{ \tilde{ T } } = \norm{ T }$. Z~twierdzenia o~zachowaniu
+nierówności przy~przechodzeniu do~granicy wynika, że
+\begin{displaymath}
+  \Lim_{ n \ra \infty } \norm{ T x_{ n } }_{ 2 }
+  \leq \Lim_{ n \ra \infty } \norm{ T } \norm{ x_{ n } }_{ 1 }
+  = \norm{ T } \norm{ x }_{ 1 },
+\end{displaymath}
+co jest potrzebną nam nierównością, ponadto wynika z~tego od~razu,
+że~$\norm{ \wt{ T } } \leq \norm{ T }$. Ponieważ zaś~na~zbiorze
+$V_{ 1 }$, zachodzi
+$\norm{ \wt{ T } x }_{ 2 } = \norm{ T x }_{ 2 } \leq \norm{ T } \norm{
+  x }_{ 1 }$, przy czym $\norm{ T }$ jest minimalną stałą dla~której
+jest to~prawdą, więc ze~względy na~fakt,
+iż~$V_{ 1 } \subset \wt{ V }_{ 1 }$, mamy nierówność
+$\norm{ T } \leq \norm{ \wt{ T } }$. Te dwie nierówności implikują,
+że~$\norm{ \wt{ T } } = \norm{ T }$.
+
+\start \Str{12} Ponieważ nie została podana definicja podciągu, nie
+można było użyć następującej eleganckiej definicji. $b$ jest punktem
+skupienia ciągu $\{ a_{ n } \}$, jeśli $\{ a_{ n } \}$ zawiera podciąg
+zbieżny do $b$.
+
+\start \Str{12} Zaproponowana na tej stronie alternatywna definicja
+$\Limsup$ ma sens tylko dla zbiorów ograniczonych. Tak jak poprzednio
+należy ją rozszerzyć na przypadki zbiorów nieograniczonych.
+
+\start \Str{13} Przelicz jawnie, że~funkcje trapezoidalne tworzą ciąg
+Cauchy'ego. \Dok
+
+\start \Str{16}
+
+\start \Str{16} Choć jest to rozdział typu ,,Wiadomości wstępne''
+(``Preliminaries''), to dyskusja całkowania funkcji niedodatnich jest
+przeprowadzona zbyt szybko, by~dawała satysfakcję. Najpierw należałoby
+by~zauważyć, że~jeżeli mamy dwie funkcje $0 \leq g \leq f$, to z~tego,
+że~$\Int{ f }{ x } < \infty$, wynika że~$\Int{ g }{ x } < \infty$, co
+przy przyjętej tu definicji całki z~funkcji dodatniej nie jest od razu
+oczywiste. Istotnie, jak zauważyli Reed i~Simon, przy definicje zwykle
+spotykanej w~pracach dla matematyków, tego typu dowody~są prostsze.
+Wiedząc już jednak o~tym, widać od~razu, że~jeżeli
+$\Int{ \abs{ f } }{ x } < \infty$ to całkowalne~są również $f_{ + }$
+i~$f_{ - }$, więc definicja całki z~funkcji niedodatniej ma sens. Idąc
+dalej~tą drogą można sformułować całkiem satysfakcjonującą teorię
+całki.
+
+\start \Str{17} W~twierdzeniu o~zbieżności monotonicznej jest
+powiedziane, że~$\int | f( p ) - f_{ n }( p ) | \dc p \ra 0$, co
+wymaga pewnego komentarza. Ponieważ $f( p ) \geq f_{ n }( p )$ więc
+$f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
+\begin{displaymath}
+  \Int{ | f( p ) - f_{ n }( p ) | }{ p } = \Int{ ( f( p )
+    - f_{ n }( p ) ) }{ p } = \Int{ f( p ) }{ p }
+  - \Int{ f_{ n }( p ) }{ p }
+\end{displaymath}
+Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
+$f \in \LIj$ i~$\Int{ f_{ n } }{ p } \ra \Int{ f }{ p }$ można znaleźć
+w~każdej książce do~teorii całki.
+
+\start \Str{17} W~twierdzeniu o~zbieżności majoryzowanej należy dodać,
+że~funkcje $f_{ n }$ muszą być mierzalne.
+
+\start \Str{21} W~podanej charakterystyce liczbowej zbioru Cantora
+jest pewna nieścisłość. Do tego zbioru należy liczba
+$\fr{ 1 }{ 3 } = 0.1_{ 3 } = 0.02222\ld_{ 3 }$, nie jest więc jasne,
+jak należy zastosować tu warunek, że~liczba należy do~zbioru Cantora,
+jeśli nie zawiera w~swym rozwinięciu trójkowym cyfry~1. Paweł Duch
+zauważył, że~właściwy warunek jest następujący: rozwinięcie trójkowe
+tej liczby można zapisać w~taki sposób by~nie zawierało cyfry~1.
+
+\start \Str{22} Nie rozumiem dlaczego z~faktu, że~miara każdego zbioru
+zwartego jest skończona, wynika iż~jest tylko przeliczalnie wiele
+punktów o~niezerowej mierze. \Dok
+
+\start \Str{25} Ponieważ obie miary w~twierdzeniu Radona\dywiz
+Nikodyma obie miary~są dodatnie, można więc zagwarantować,
+że~$f \geq 0$, całka z~tezy ma więc zawsze sens i~wynik może być
+nieskończony. W~tym kontekście warto mieć w~pamięci rozróżnienie jakie
+podał Schwartz między całką górną, która jest zdefiniowana dla
+wszystkich funkcji nieujemnych i~zawsze ma sens, a~całką w~sensie
+właściwym która wymaga by~$\Int{ | f( x ) | }{ x }$ była skończona
+\cite{Sch79}\footnote{Schwartz rozwijał teorię całki w~innym
+  kontekście niż~rozważany tutaj np. całkował od razu funkcji
+  o~wartościach w~przestrzeni Banacha. To co tu zostało napisane, jest
+  więc pewną wariacją podanej przez niego teorii.}.
+
+\start \Str{25} Jakoś nie mogę siebie przekonać, że~funkcja mierzalna
+względem dwóch zmiennych, jest też mierzalna względem każdej
+ze~zmiennych z~osobna. Dla miar Radona, dla~których który zbiory
+borelowskie~są mierzalne, tak zapewne jest, jednak dla ogólnych
+$\s$\dywiz algebr wydaje mi~się dziwnie mocny twierdzeniem. Zapewne
+zachodzi twierdzenie, że~funkcja jest prawie wszędzie mierzalna. \Dok
+
+\start \Str{37} Można podać inne sformułowanie twierdzenia Pitagorasa,
+które w~pewnych sytuacjach jest bardziej naturalne. Jeśli $x_{ i }$,
+$i = 1, \ld, N$ tworzą układ ortogonalny i~$x = \Sum x_{ i }$, to
+\begin{displaymath}
+  \norm{ x }^{ 2 } = \Sum_{ i = 1 }^{ N } \norm{ x_{ i } }^{ 2 }.
+\end{displaymath}
+
+\start \Str{39} Przy okazji definicji izomorfizmu dwóch przestrzeni
+Hilberta, warto zauważyć, że~operator unitarny jest bijekcją.
+Surjektyweność zachodzi na mocy definicji, żeby zaś wykazać
+inijektywność wystarczy skorzystać, z~jednego z~podstawowych twierdzeń
+algebry: odwzorowanie liniowe jest injektywne \wtw gdy~jego jądro jest
+trywialne. Jeżeli więc $Ux = 0$, wtedy:
+\begin{displaymath}
+  0 = ( Ux, Ux )_{ \H_{ 2 } } = ( x, x )_{ \H_{ 1 } } \iff x = 0.
+\end{displaymath}
+
+\start \Str{44} W~tym miejscu warto dowieść twierdzenia, że~układ
+ortogonalny niezerowych wektorów $S$ jest zupełny \wtw gdy jedynym
+wektorem ortogonalnym do~niego jest wektor zerowy.
+
+Przez kontrapozycję. Jeżeli istnieje wektor $g \neq 0$, który jest
+ortogonalny do~układu $S$, to~$S \cup \set{ g }$ jest układem
+ortogonalnym, który zawiera w~sobie $S$, $S$ nie jest więc układem
+zupełny.
+
+Przez kontrapozycję. Załóżmy teraz, że~$S$ nie jest zupełny. W~takim
+razie istnieje taki układ ortogonalny niezerowych wektorów,
+iż~$S \sset S'$ oraz $S' \setm S \neq \es$. Teraz $y \in S' \setm S$
+jest niezerowym wektorem ortogonalny do $S$.
+
+\start \Str{45} Nie rozumiem dlaczego z~nierówności
+$\sum_{ i = 1 }^{ N } \abs{ ( x_{ \al_{ i } }, y ) } \leq \norm{ y }^{
+  2 }$ wynika, że~tylko dla przeliczalnej ilości indeksów $\al$
+zachodzi $( x_{ \al }, y ) \neq 0$.
+
+\start \Str{45} W~dowodzie twierdzenia II.6 nie zaznaczono dlaczego
+granica tego szeregu nie zależy od~kolejności wyrazów, można to jednak
+łatwo uzupełnić. Niech $A'$ będzie przeliczalnym zbiorem indeksów dla
+których $( x_{ \al }, y ) \neq 0$ i~niech $\al_{ i } \in A'$ będzie
+jakimś jego uporządkowaniem. Wówczas przeprowadzone w~dowodzie
+rozumowanie pokazuje, że
+\begin{equation}
+  y = \Sum_{ j = 1 }^{ \infty } ( x_{ \al_{ i } }, y ) x_{ \al_{ i } }.
+\end{equation}
+Jeżeli teraz weźmiemy jakieś inne jego uporządkowanie $x_{ j }$,
+to~możemy powtórzyć całe rozumowanie i~otrzymać, że~suma nowego
+szeregu znów wynosi $y$, tym samym jest niezależna od porządku.
+
+Pomimo tego, że~szereg ten jest zbieżny niezależnie od~kolejności
+wyrazów, nie oznacza to, że~jest on absolutnie zbieżny. Rozpatrzmy
+bowiem element przestrzeni $\lc_{ 2 }$
+\begin{align*}
+  y &= ( 1, \tfr{ 1 }{ 2 }, \tfr{ 1 }{ 3 },\ld ), \\
+  \norm{ y }^{ 2 } &= \Sum_{ i = 1 }^{ \infty } \fr{ 1 }{ n^{ 2 } }
+                     = \fr{ \pi^{ 2 } }{ 6 } < +\infty.
+\end{align*}
+Jeśli~bazę ortonormalną przyjmiemy:
+\begin{equation*}
+  e^{ k } = ( 0, \ld, 0, \overbrace{ 1 }^{ k }, 0, \ld, 0),
+\end{equation*}
+to od razu otrzymujemy
+\begin{align*}
+  &y = \Sum_{ k = 1 }^{ \infty } \tfr{ 1 }{ k } e^{ k }, \\
+  \Sum_{ k = 1 }^{ \infty } &\norm{ \tfr{ 1 }{ k } e^{ k } }
+                              = \Sum_{ k = 1 }^{ \infty } \tfr{ 1 }{ k }
+                              = +\infty.
+\end{align*}
+
+Paweł Duch znalazł dobre wyjaśnienie dlaczego suma tego konkretnego
+typu szeregów nie zależy od~kolejności. Szereg zbieżny warunkowo jest
+zbieżny bowiem jego wyrazy odpowiednio~się kompensują, dlatego też
+jeśli zmienimy ich kolejność to~mogą one~się nie skompensowań tak jak
+poprzednio i~otrzymamy inną sumę. Jednak tutaj każdy wyraz jest
+w~kierunku prostopadły, do~wszystkich innych, żadne da nie mogą~się
+więc kompensować. Szereg ten jest więc zbieżny niezależnie
+od~kolejności bądź rozbieżny.
+
+Schwartz bada w~swoje książce szeregi w~przestrzeniach Banacha, które
+nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
+sumowania (str.~110 \cite{Sch79}). Trajdos przetłumaczył ich nazwę
+jako szeregi \emph{zbieżne przestawialnie}.
+
+\start \Str{45} Wzorując~się na Grabowskim i~Ingardenie \cite{GI87},
+warto w~kontekście twierdzenia II.6 udowodnić jeszcze jedną piękną
+równość:
+\begin{displaymath}
+  ( y, y' ) = \Sum_{ \al \in A } ( y, x_{ \al } )( x_{ \al }, y' ),
+\end{displaymath}
+gdzie $S = \{ x_{ \al } \}_{ \al \in A }$ jest bazą ortonormalną,
+niekoniecznie przeliczalną. Istniej przeliczalny zbiór
+$x_{ \al_{ j } }$ taki,
+że~$y' = \Sum_{ j = 1 }^{ \infty } ( x_{ \al_{ j } }, y' ) x_{ \al_{ j
+  } }$. Wtedy
+\begin{equation*}
+  \begin{split}
+    ( y, y' ) &= ( y, \Lim_{ n \ra \infty } \Sum_{ j = i }^{ n } ( x_{
+      \al_{ j } }, y' ) x_{ \al_{ j } } ) = \Lim_{ n \ra \infty
+    } ( y, \Sum_{ j = 1 }^{ n } ( x_{ \al_{ j } }, y' ) x_{ \al_{ j } } ) \\
+    &= \Lim_{ n \ra \infty } \Sum_{ j = 1 }^{ n } ( y, x_{ \al_{ j } }
+    ) ( x_{ \al_{ j } }, y' ) % = \sum_{ j = 1 }^{ \infty }
+    % ( y, x_{ \alpha } ) ( x_{ \alpha }, y' )
+    = \Sum_{ \al \in A } ( y, x_{ \al } )( x_{ \al }, y' ).
+  \end{split}
+\end{equation*}
+Zastąpienie w~ostatniej równości sumy po zbiorze
+$\alpha_{ j }, j \in \N$ sumą po~$A$ jest możliwe na mocy tego,
+że~jeżeli $\alpha \neq \alpha_{ j }$ dla każdego $j$, to wyrażenie pod
+sumą jest równe zeru. Zauważmy też, że~skoro zbieżność szeregu
+$\sum_{ \al \in A } ( x_{ \al }, y ) x_{ \al }$ nie zależy
+od~kolejności, to~na~mocy przeprowadzone rozumowania również suma
+szeregu $\sum_{ \al \in A } ( y, x_{ \al } )( x_{ \al }, y' )$, nie
+zależy od~kolejności wyrazów.
+
+Ta tożsamość pozwala nam wykazać, w~sposób bardziej elegancki niż
+zrobili to Reed i~Simon, równanie (II.2), mianowicie podstawiając
+$y' = y$, mamy
+\begin{equation*}
+  \norm{ y }^{ 2 } = ( y, y ) = \Sum_{ \al \in A } ( y, x_{ \al } )
+  ( x_{ \al }, y ) = \Sum_{ \al \in A } \abs{ ( x_{ \al }, y ) }^{ 2 }.
+\end{equation*}
+
+\start \Str{45} Dysponując twierdzeniem II.6, można teraz podać ogólną
+postać nierówności Bessela.
+
+\begin{twr}[Ogólna postać nierówności Bessela]
+  Niech $S = \{ x_{ \al } \}_{ \al \in A }$ będzie układem
+  ortonormalny i~niech $B \sset A$. Wówczas:
+  \begin{equation*}
+    \Sum_{ \be \in B } \abs{ ( x_{ \be }, x ) }^{ 2 } \leq \norm{ x }^{ 2 }.
+  \end{equation*}  
+\end{twr}
+\begin{proof}
+  Prawie nie ma czego dowodzić, mamy bowiem
+  \begin{equation*}
+    \norm{ x }^{ 2 } = \Sum_{ \al \in A } \abs{ ( x_{ \al }, x ) }^{ 2 }
+    \geq \Sum_{ \be \in B } \abs{ ( x_{ \be }, x ) }^{ 2 }.
+  \end{equation*}  
+\end{proof}
+
+
+\start \Str{49} Konstrukcja iloczynu tensorowego jest przeprowadzona
+bardzo szkicowo, przez co~sens tego co~robimy jest często ukryty,
+tutaj postaram~się uzupełnić brakujące kroki.
+
+Jednym z~przyczyn zamieszania jest używanie tego samego symbolu na
+iloczyn skalarny w~$\H_{ 1 }$, $\H_{ 2 }$ i~$\mc{E}$, tu będę je
+oznaczał odpowiednio jako $( \cdot, \cdot )_{ \H_{ 1 } }$,
+$( \cdot, \cdot )_{ \H_{ 2 } }$, $( \cdot, \cdot )_{ \mc{ E } }$.
+Działanie formy $\vp_{ 1 } \ot \vp_{ 2 }$ można więc zapisać jako
+\begin{displaymath}
+  ( \vp_{ 1 } \ot \vp_{ 2 } )\lket \psi_{ 1 }, \psi_{ 2 } \rket
+  = ( \psi_{ 1 }, \vp_{ 1 } )_{ \H_{ 1 } } ( \psi_{ 2 },
+  \vp_{ 2 } )_{ \H_{ 2 } }.
+\end{displaymath}
+Iloczyn skalarny na~$\mc{E}$ ma więc postać:
+\begin{displaymath}
+  ( \vp \ot \psi, \eta \ot \mu )_{ \mc{E} } = ( \vp, \eta )_{ \H_{ 1 } }
+  ( \psi, \mu )_{ \H_{ 2 } }.
+\end{displaymath}
+Formę postaci $\vp \ot \psi$ będziemy nazywać prostą.
+
+W~dalszym ciągu potrzebny będzie nam następująca obserwacja: jeżeli
+$\mu \in \mc{E}$, to zachodzi równość:
+\begin{displaymath}
+  ( \vp \ot \psi, \mu )_{ \mc{E} } = \mu\lket \vp, \psi \rket.
+\end{displaymath}
+Jeżeli $\mu = \eta \ot \chi$ to powyższa równość wynika z~definicji
+wszystkich działań. Jeśli zaś
+$\mu = \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \psi_{ i } )$,
+wówczas
+\begin{displaymath}
+  \begin{split}
+    ( \vp \ot \psi, \mu )_{ \mc{E} } &= \left( \vp \ot \psi, \Sum_{ i
+        = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \chi_{ i } ) \right)_{
+      \mc{E} } = \Sum_{ i = 1 }^{ N } c_{ i } ( \vp \ot \psi,
+    \eta_{ i } \ot \chi_{ i } )_{ \mc{E} } \\
+    &= \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \chi_{ i } )
+    \lket \vp, \psi \rket = \mu\lket \vp, \psi \rket.
+  \end{split}
+\end{displaymath}
+% Dla zupełności przedstawimy uogólnienie tej obserwacji. Niech
+% $\eta = \Sum_{ i = 1 }^{ N } d_{ i } ( \vp_{ i } \ot \psi_{ i } )$,
+% korzystając z~półtoraliniowości mamy
+% \begin{displaymath}
+%   \begin{split}
+%     ( \eta , \mu )_{ \mc{E} } &= \Sum_{ i = 1 }^{ N } \bar{ d }_{ i
+%   } ( ( \vp_{ i } \ot \psi_{ i } ), \mu )_{ \mc{E} } = \Sum_{ i = 1
+%   }^{ N } \bar{ d }_{ i } ( \vp \ot \psi,
+%     \eta_{ i } \ot \chi_{ i } )_{ \mc{E} } \\
+%     &= \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \chi_{ i } )
+%     \lket \vp, \psi \rket = \mu\lket \vp, \psi \rket.
+%   \end{split}
+% \end{displaymath}
+
+Teraz możemy przejść do~dyskusje, czy~wzór na iloczyn skalarny nie
+zależy od~przedstawienia jako sumy form prostych. Zauważmy, że~dwie
+formy $\mu$, $\eta$~są równe gdy
+\begin{displaymath}
+  \mu\lket \vp, \psi \rket = \eta\lket \vp, \psi \rket,
+  \quad \forall \vp \in \H_{ 1 }, \psi \in \H_{ 2 }.
+\end{displaymath}
+Jak łatwo jednak zauważy, formy
+$\mu_{ 1 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } )$
+oraz~$\mu_{ 2 } = \vp \ot \psi_{ 1 } + \vp \ot \psi_{ 2 }$
+przedstawiają tę samą formę, choć~są sumą innych form prostych. Z~tego
+względu należałoby napisać, że~$\mc{E}$ jest zbiorem klas abstrakcji
+względem relacji poddanej wyżej, niż~po~prostu zbiorem sum
+odpowiednich form prostych, z~jakiegoś jednak względu Reed i~Simon
+uznali, że~nie warto zagłębiać~się w~tę kwestię.
+
+Zauważmy, że~powyższy przykład uogólnia~się do~dobrze znanego
+z~algebry liniowej faktu, iż~iloczyn tensorowy jest wieloliniowy.
+Z~samej definicji wynika, że~zachodzi następująca równość form
+\begin{displaymath}
+  \vp \ot \ld \ot ( \al \psi_{ 1 } + \beta \psi_{ 2 } ) \ot \ld \ot \eta
+  = \al \, \vp \ot \ld \ot \psi_{ 1 } \ot \ld \ot \eta
+  + \beta \, \vp \ot \ld \ot \psi_{ 2 } \ot \ld \ot \eta.
+\end{displaymath}
+
+Musimy teraz pokazać, że~iloczyn skalarnych dwóch form z~$\mc{E}$,
+nie~zależy od ich przedstawienia w~postaci sumy form prostych.
+Zauważmy, że~dwie różne postaci tej samej formy różnią się o~formę
+zerową. Jeżeli weźmiemy dwie formy określone wyżej $\mu_{ 1 }$
+i~$\mu_{ 2 }$, to ich różnica:
+\begin{displaymath}
+  \mu_{ 1 } - \mu_{ 2 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } )
+  - \vp \ot \psi_{ 1 } - \vp \ot \psi_{ 2 }
+\end{displaymath}
+jest formą zerową. Zwróćmy uwagę, że~rozkład formy zerowej na formy
+proste również nie jest jednoznaczny, np.~każda forma postaci
+$\vp \ot 0$ jest formą zerową. Jeżeli teraz uda~się pokazać, że~forma
+zerowa niezależnie od~swojej postaci, jest ortogonalna do~każdej formy
+w~$\mc{E}$, to~można będzie pokazać, iż~tak rzeczywiście jest.
+
+To~co pokazano powyżej, wraz z~tym co~napisali Reed i~Simon jest
+wystarczające by~wykazać żądaną ortogonalność formy zerowej. Teraz
+wykażemy, że~rozważany iloczyn skalarny jest niezależny od użytego
+rozkładu. Niech $\psi \sim \psi'$ i~$\vp' \sim \vp$, a~$\mu$ będzie
+formą zerową. W~takiej sytuacji $\psi' = \psi + \mu$
+i~$\vp' = \vp + \mu$, przy czym konkretna postać $\mu$ może być w~obu
+przypadkach różna. Teraz możemy, na~poziomie konkretnych
+reprezentantów, czyli sum form prostych, przeprowadzić następujący
+rachunek, kończący dowód
+\begin{displaymath}
+  ( \vp', \psi' ) = ( \vp + \mu, \psi' ) = ( \vp, \psi' ) + ( \mu, \psi' )
+  = ( \vp, \psi' ) = ( \vp, \psi + \mu ) = ( \vp, \psi ).
+\end{displaymath}
+
+\start \Str{50} Jako konkluzję konstrukcji iloczynu tensorowego
+przestrzeni Hilberta warto podać następującą piękną równość, która
+wynika wprost z~wprowadzonych definicji.
+\begin{displaymath}
+  \norm{ \vp \ot \psi }_{ \H_{ 1 } \ot \H_{ 2 } }
+  = \norm{ \vp }_{ \H_{ 1 } } \norm{ \psi }_{ \H_{ 2 } }.
+\end{displaymath}
+Za jej pomocą można łatwo pokazać, że~iloczyn tensorowy jest ciągły,
+dowód jest taki sam jak w~przypadku iloczynu skalarnego.
+
+\start \Str{50} Również tu~część dowodu, że~układ
+$\vp_{ l } \ot \psi_{ k }$ stanowi bazę ortonormalną, jest bardzo
+szkicowa\footnote{Pewne idee tu przedstawione pochodzą od~Pawła
+  Ducha.}. Aby~ją uzupełnić zauważmy najpierw, że~jeśli rozważane
+przestrzeń są metryczne, to~odwzorowanie jest topologiczne ciągła \wtw
+gdy jest ciągowo ciągła\footnote{Nie wiem czy tak jest w~ogólności,
+  może bowiem powstać problem gdy nie istnieje przeliczalna baza
+  otoczeń.} (tzn.
+$\lim_{ n \ra +\infty } f( x_{ n } ) = f( \lim_{ n \ra +\infty } x_{ n
+} )$). Ponieważ możemy udowodnić, że~również z~wieleindeksowymi
+ciągami liczb naturalnych\footnote{Zapewne nie tylko, ale~większa
+  ogólność nie jest nam tu potrzeba.} można wejść do~funkcji
+topologiczne ciągłej, aby~uzasadnić tą operację w~przypadku
+przestrzeni metrycznych, wystarczy pokazać, że~funkcja jest ciągowo
+ciągła. Nie wiem jak jest w~ogólniejszych sytuacjach, lecz na razie ta
+wiedza nie jest potrzebna.
+
+Ponieważ norma jest funkcją ciągłą, zachodzi więc równość
+\begin{displaymath}
+  \Lim_{ \sstack{ K \ra \infty \\ L \ra \infty } } \norm{ \vp \ot \psi
+    - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } }
+  = \norm{ \vp \ot \psi -
+    \Lim_{ \sstack{ K \ra \infty \\ L \ra \infty } } \Sum_{ k < K }
+    \Sum_{ l < L } \vp_{ k } \ot \psi_{ l } }.
+\end{displaymath}
+Aby zakończyć dowód o~bazie ortonarmalnej trzeba teraz wykonać
+,,bezpośredni rachunek'' i~pokazać, że~pierwsza z~tych granic jest
+równa~0. $\vp = \sum_{ l } \vp_{ l }$ możemy więc dobrać $L$ tak~by
+$\vp = \sum_{ l < L } \vp_{ l } + \vp_{ R }$, gdzie
+$\norm{ \vp_{ R } } < \veps$, analogicznie
+$\psi = \sum_{ k < K } \psi_{ k } + \psi_{ R }$,
+$\norm{ \psi_{ R } } < \veps$.
+
+Potrzebujemy jeszcze zauważyć, że~z~faktu, iż~suma
+$\sum_{ l < L } \vp_{ l }$ jest zbieżna do~$\vp$, wynika,
+że~$\norm{ \sum_{ l < L } \vp_{ l } } \ra \norm{ \psi }$, tworzy więc
+ona ciąg Cauchy'ego i~tym samym jest ograniczony. Dobierz $M$ tak~by
+było wspólnym ograniczeniem ciągów $\sum_{ l < L } \vp_{ l }$
+i~$\sum_{ k < K } \psi_{ k }$. Tym samym
+\begin{displaymath}
+  \begin{split}
+    & \norm{ \vp \ot \psi - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot
+      \psi_{ l } } = \norm{ ( \Sum_{ l < L } \vp_{ l } + \vp_{ R } )
+      \ot ( \Sum_{ k < K } \psi_{ k } + \psi_{ R } )
+      - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } } \\
+    &= \norm{ ( \Sum_{ l < L } \vp_{ l } ) \ot \psi_{ R } + \vp_{ R }
+      \ot ( \Sum_{ k < K } \psi_{ k } ) + \vp_{ R } \ot \psi_{ R } }
+    \leq \norm{ ( \Sum_{ l < L } \vp_{ l } ) \ot \psi_{ R } }
+    + \norm{ \vp_{ R } \ot ( \Sum_{ k < K } \psi_{ k } ) } \\
+    &+ \norm{ \vp_{ R } \ot \psi_{ R } } \leq 2 M \veps + \veps^{ 2 }.
+  \end{split}
+\end{displaymath}
+Odpowiednio dobierając $L$ i~$K$ możemy uczynić tą różnicę dowolnie
+małą co kończy dowód.
+
+\start \StrWg{106}{5} Nie rozumiem dlaczego w~tym miejscu dodatkowo
+zaznacza~się, że~miarę dowolnego zbioru mierzalnego, można
+aproksymować od~wewnątrz przez zbiory zwarte \emph{i~borelowskie}.
+Skoro rozważamy tylko zwarte przestrzenie Hausdorffa, wszystkie zbiory
+zwarte~są domknięte i~tym samym borelowskie.
+
+\newpage
+
+
+
+\CenterTB{Błędy}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & \multicolumn{2}{c|}{} & & \\
+    Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu &  &  \\ \hline
+    2 & 8 & & \tb{surjective} & surjective \\
+    2 & 9 & & surjective & \tb{surjective} \\
+    14 & 10 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
+    14 & 14 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
+    17 & 3 & & $\int \;\: f_{ n } \;\: dp$ & $\Int{ f_{ n } }{ p }$ \\
+    44 & & 7 & $\fr{ T( y ) }{ T( x ) }$ & $\fr{ ( y, x ) }{ ( x, x ) }$ \\
+    45 & & 2 & some & all \\
+    46 & & 9 & $(v_{ 1 }, u_{ 1 } ) v_{ k }$ & $(v_{ 1 }, u_{ 2 } )
+                                               v_{ 1 }$ \\
+    49 & & 7 & linear & bilinear \\
+    53 & & 12 & $\vp_{ k_{ \s( 1 ) } } \ot \vp_{ k_{ \s( 2 ) } } \cdots
+                \ot \vp_{ k_{ n( p ) } }$
+           & $\vp_{ k_{ \s( 1 ) } } \ot \vp_{ k_{ \s( 2 ) } } \ot \cdots
+             \ot \vp_{ k_{ \s( p ) } }$ \\
+    73 & & 2 & $\Sum_{ k = 1 }^{ \infty } \abs{ \la_{ k } } < \infty$
+           & $\Sum_{ k = 1 }^{ \infty } \abs{ \la_{ k } } \leq
+             \norm{ \la_{ 0 } }_{ c_{ 0 }^{ * } } < \infty$ \\
+    79 & 6 & & $\norm{ [x] }$ & $\norm{ [x] }_{ 1 }$ \\
+    82 & & 15 & since$T[ B_{ r }^{ X } ]$ & since $T[ B_{ r }^{ X } ]$ \\
+    104 & 5 & & $[ 0, 1 ]$ & $[ -1, 1 ]$ \\
+    104 & 6 & & $||P_{ n }( f )$ & $|| \, P_{ n }( f )$ \\
+    106 & 11 & & $\mu( \, Y \setm \wt{ Y } )$
+           & $\mu( Y \setm \wt{ Y } )$ \\
+    106 & 5 & & $C \sset O$ & $C \sset Y$ \\
+    107 & 4 & & $\Real[ e^{ -i \vp } f ]$ & $e^{ -i \vp } f$ \\
+    107 & 4 & & $\Real( e^{ -i \vp } f )$ & $e^{ -i \vp } f$ \\
+    107 & 10 & & $\int\! fd\mu$ & $\Int{ f }{ \mu }$ \\
+    107 & & 10 & functions & functionals \\
+    109 & 4 & & $\norm{ l }\!\sup$ & $\norm{ l } \sup$ \\
+    112 & & 8 & $X$ & $F$ \\
+    128 & 2 & & $| \rho_{ \al_{ 1 } }( x ) |$ & $\rho_{ \al_{ 1 } }( x )$ \\
+    128 & 2 & & $| \rho_{ \al_{ n } }( x ) |$ & $\rho_{ \al_{ n } }( x )$ \\
+    & & & & \\
+    & & & & \\
+    & & & & \\
+    & & & & \\
+    & & & & \\ \hline
+  \end{tabular}
+\end{center}
+\noi
+\tb{Grzbiet} \\
+\Jest REVSED \\
+\Pow REVISED \\
+
+
+
+% #####################################################################
+% #####################################################################
+\bibliographystyle{alpha} \bibliography{Bibliography}{}
+
+
+
+\end{document}
