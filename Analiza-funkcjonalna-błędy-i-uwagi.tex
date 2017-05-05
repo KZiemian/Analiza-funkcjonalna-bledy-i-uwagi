@@ -1,0 +1,622 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+% Autor: Kamil Ziemian
+% Korekta: Wojciech Dyba
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc} % Pozwala pisać polskie znaki bezpośrednio.
+\usepackage[polish]{babel} % Tłumaczy na polski teksty automatyczne LaTeXa
+% i pomaga z typografią.
+\usepackage[MeX]{polski} % Polska notacja we wzorach matematycznych.
+% Ładne polskie
+\usepackage{microtype}
+\let\lll\undefined
+\usepackage[intlimits]{amsmath}
+\usepackage{amsfonts, amssymb, amscd, amsthm}
+\usepackage{latexsym} % Więcej symboli.
+\usepackage{upgreek} %Lepsze greckie czcionki. Przyklad skladni: pi = \uppi
+\usepackage{textcomp} % Pakiet z dziwnymi symbolami.
+% \usepackage{slashed} % Pozwala pisać slash Feynmana.
+\usepackage{tensor} % Pozwala prosto używać notacji tensorowej.
+% Albo nawet pięknej notacji tensorowej:).
+\usepackage{graphicx} % Pozwala wstawiać grafikę.
+\usepackage{xcolor}
+\usepackage{calrsfs} % Lepsze kaligrafowane litery.
+% \DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\usepackage{vmargin}
+%---------------------------------------------------------------------
+% MARGINS
+%---------------------------------------------------------------------
+\setmarginsrb
+{ 0.7in} % left margin
+{ 0.6in} % top margin
+{ 0.7in} % right margin
+{ 0.8in} % bottom margin
+{  20pt} % head height
+{0.25in} % head sep
+{   9pt} % foot height
+{ 0.3in} % foot sep
+\usepackage{hyperref}
+% #####################################################################
+
+
+\newtheorem{twr}{Twierdzenie}
+\newtheorem{defin}{Definicja}
+\newtheorem{wni}{Wniosek}
+
+
+% #####################################################################
+
+\newcommand{\spaceOne}{2em}
+\newcommand{\spaceTwo}{1em}
+\newcommand{\spaceThree}{0.5em}
+
+% Ładniejszy zbiór pusty
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+
+% ####################
+% Uproszczenia w pisaniu tekstu
+\newcommand{\ld}{\ldots}
+
+% Slashe w tekście
+\newcommand{\tbs}{\textbackslash}
+
+% Podstawowe oznaczenia matematyczne
+\newcommand{\fr}{\frac}
+\newcommand{\tfr}{\tfrac}
+\newcommand{\tr}{\textrm}
+
+% Oznaczenia ,,nad i pod''. Wymyśl lepszą nazwę
+\newcommand{\til}{\tilde}
+\newcommand{\ul}{\underline}
+\newcommand{\ol}{\overline}
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+
+% Trzcionki matematyczne
+\newcommand{\mr}{\mathrm}
+\newcommand{\mb}{\mathbb}
+\newcommand{\mc}{\mathcal}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\bsym}{\boldsymbol}
+
+% Strzałki
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\xra}{\xrightarrow}
+
+\newcommand{\wtw}{wtedy i~tylko wtedy}
+
+
+% ####################
+% Litery greckie
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\del}{\delta}
+\newcommand{\Del}{\Delta}
+\newcommand{\la}{\uplambda}
+\newcommand{\eps}{\epsilon}
+\newcommand{\veps}{\varepsilon}
+\newcommand{\vp}{\varphi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\tet}{\theta}
+
+% Standardowe oznaczenia literowe
+\newcommand{\N}{\mb{N}}
+\newcommand{\R}{\mb{R}}
+\newcommand{\C}{\mb{C}}
+\newcommand{\D}{\mc{D}}
+\let\H\undefined
+\newcommand{\H}{\mc{H}}
+\let\L\undefined
+\newcommand{\L}{\mc{L}}
+\newcommand{\Rn}{\R^{ n }}
+\newcommand{\Rc}{\mc{R}}
+\newcommand{\Cc}{\mc{C}}
+
+% Mniej używane oznaczenia literowe
+\newcommand{\B}{\mc{B}}
+\newcommand{\Oc}{\mc{O}}
+\newcommand{\Rp}{\R_{ + }}
+
+% ####################
+% Standardowe matematyczne symbole literowe
+% Mathbb
+% \newcommand{\C}{\mb{C}}
+% \newcommand{\N}{\mb{N}}
+% \newcommand{\R}{\mb{R}}
+% \newcommand{\Rn}{\R^{ n }}
+% \newcommand{\Rp}{\R_{ + }}
+
+% % Mathcal
+% \newcommand{\B}{\mc{B}}
+% \newcommand{\D}{\mc{D}}
+% \newcommand{\Fc}{\mc{F}}
+% \let\H\undefined
+% \newcommand{\H}{\mc{H}}
+% \let\L\undefined
+% \newcommand{\L}{\mc{L}}
+% \newcommand{\M}{\mc{M}}
+% \newcommand{\Rc}{\mc{R}}
+% \newcommand{\Cc}{\mc{C}}
+% \newcommand{\Oc}{\mc{O}}
+% \newcommand{\T}{\mc{T}}
+
+
+% ####################
+% Teoria mnogości
+\newcommand{\es}{\emptyset}
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\subs}{\subset}
+\newcommand{\setm}{\setminus}
+\newcommand{\com}{\complement}
+\newcommand{\ti}{\times}
+
+
+% ####################
+% Algebra
+\newcommand{\Real}{\mf{Re}}
+\newcommand{\Imag}{\mf{Im}}
+\newcommand{\ot}{\otimes}
+\newcommand{\Tr}{\mr{Tr}}
+
+
+% ####################
+% Analiza matematyczna
+
+% Granice
+\newcommand{\Lim}{\lim\limits}
+\newcommand{\Liminf}{\ul{\lim}}
+\newcommand{\Limsup}{\ol{\lim}}
+
+% Sumy
+\newcommand{\Sum}{\sum\limits}
+
+% Różniczkowanie i pochodne
+\newcommand{\pr}{\partial}
+\newcommand{\de}{\mr{d}}
+\newcommand{\dd}[3]{\fr{ \de^{ #1 } { #2 } }{ \de { #3 }^{ #1 } }}
+\newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
+
+% Powszechnie używane symbole 
+\newcommand{\Cinfty}{\Cc^{ \infty }}
+
+% Całki i całkowanie
+\newcommand{\dx}{\de x}
+\newcommand{\Int}{\int\limits}
+\newcommand{\IntL}[3]{ \Int_{ { #1 } }^{ { #2 } } \de#3 \; }
+\newcommand{\IntCa}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
+\newcommand{\IntFi}[2]{ \Int \de#1 \, #2 } % Bardziej Fizyczna notacja;)
+\newcommand{\IntWie}[3]{ \Int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa
+\newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
+
+% ####################
+% Całki w określonych granicach
+\newcommand{\IntA}[1]{\Int_{ -\infty }^{ +\infty } \de #1 \;}
+\newcommand{\IntB}[1]{\int_{ \R } \de #1 \;}
+\newcommand{\IntC}[2]{\int_{ \R } #1 \, \de #2}
+\newcommand{\IntD}[1]{\Int_{ 0 }^{ +\infty } \de #1 \;}
+
+
+% ####################
+% Analiza funkcjonalna
+\newcommand{\da}{\dagger}
+
+% Brakety
+% W analizie funkcjonalnej też często się je stosuje
+\newcommand{\lket}{\langle}
+\newcommand{\rket}{\rangle}
+
+% Przestrzenie L^{ p }
+\newcommand{\Lj}{L^{ 1 }}
+\newcommand{\Ld}{L^{ 2 }}
+\newcommand{\Lp}{L^{ p }}
+\newcommand{\LIj}{\L^{ 1 }}
+\newcommand{\LIp}{\L^{ p }}
+\newcommand{\LdJ}{\Ld( \R, \de \mu )}
+\newcommand{\LdT}{\Ld( \R^{ 3 }, \de \mu )}
+\newcommand{\Ldlim}{L^{ 2 }-\Lim}
+
+
+% ####################
+% Wartość bezwzględna i normy
+\providecommand{\absj}[1]{\lvert #1 \rvert}
+\providecommand{\absd}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left|\left| #1 \right|\right|}
+
+
+% ####################
+% Edycja tekstu
+\newcommand{\tb}{\textbf}
+\newcommand{\noi}{\noindent}
+\newcommand{\start}{\noi \tb{--} {}}
+\newcommand{\Str}[1]{\tb{Str. #1.}}
+\newcommand{\StrWg}[2]{\tb{Str. #1, wiersz #2.}}
+\newcommand{\StrWd}[2]{\tb{Str. #1, wiersz #2 (od dołu).}}
+\newcommand{\Dow}{\tb{Dowód}}
+\newcommand{\Center}[1]{\begin{center} #1 \end{center}}
+\newcommand{\CenterTB}[1]{\Center{\tb{#1}}}
+\newcommand{\Jest}{\tb{Jest: }}
+\newcommand{\Pow}{\tb{Powinno być: }}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\Prze}{{\color{red} Przemyśl.}}
+\newcommand{\Pop}{{\color{red} Popraw.}}
+\newcommand{\Prob}{{\color{red} Problem.}}
+\newcommand{\Dok}{{\color{red} Dokończ.}}
+\newcommand{\Pyt}{{\color{red} Pytanie.}}
+\newcommand{\Main}[1]{ \begin{center} {\LARGE \tb{#1} } \end{center} }
+\newcommand{\Field}[1]{ \begin{center} {\Large \tb{#1} } \end{center} }
+\newcommand{\Work}[1]{ \begin{center} {\large \tb{#1}} \end{center} }
+
+
+
+
+
+% % Sumy
+% \newcommand{\Sum}{\sum\limits}
+
+% % Różniczkowanie i pochodne
+% \newcommand{\pr}{\partial}
+% \newcommand{\de}{\mr{d}}
+% \newcommand{\dd}[3]{\fr{ \de^{ #1 } { #2 } }{ \de { #3 }^{ #1 } }}
+% \newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
+
+% % Całki
+% \newcommand{\Int}{\int\limits}
+% \newcommand{\IntA}[1]{\Int_{ -\infty }^{ +\infty } \de #1 \;}
+% \newcommand{\IntB}[1]{\int_{ \R } \de #1 \;}
+% \newcommand{\IntC}[1]{\Int_{ 0 }^{ +\infty } \de #1 \;}
+% \newcommand{\IntCa}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
+% \newcommand{\IntFi}[2]{ \Int \de#1 \, #2 } % Bardziej Fizyczna notacja;)
+% \newcommand{\IntWie}[3]{ \int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa.
+% \newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
+% \newcommand{\IntL}[3]{ \int\limits_{ { #1 } }^{ { #2 } } \d#3 \; }
+
+
+
+\renewcommand{\arraystretch}{1.2}
+
+% Oznaczenia z książki Zemaniana
+\newcommand{\Pf}{\mr{Pf}\,}
+\newcommand{\Fp}{\mr{Fp}}
+\newcommand{\Rnc}{\Rc^{ n }}
+\newcommand{\Hevp}{\mbf{1}_{ + }} % Oznaczenie tenty Heaviside'a
+\newcommand{\Hevm}{\mbf{1}_{ - }}
+
+\newcommand{\vpsequ}{\set{ \vp_{ \nu }( t ) }}
+
+
+
+
+\begin{document}
+
+
+
+% ####################################################################
+% ####################################################################
+\Field{Analiza funkcjonalna, błędy i~uwagi.}
+
+\vspace{\spaceTwo}
+% ####################################################################
+% ####################################################################
+
+
+
+% ####################################################################
+\Work{
+  A. V. Balakrishnan \\
+  ,,Analiza funkcjonalna stosowana'', \cite{Bal92}.}
+
+% Uwagi:
+% \begin{itemize}
+% \item[--]
+% \end{itemize}
+
+\CenterTB{Błędy}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & \multicolumn{2}{c|}{} & & \\
+    Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu &  &  \\ \hline
+    13 & & 10 & $\int^{ 1 }_{ -1 }$ & $2 \int^{ 1 }_{ -1 }$ \\
+    14 & 15 & & $<$ & $\leq$ \\
+    15 & 18 & & otrzymywaliśmy & otrzymalibyśmy \\
+    & & & & \\ \hline
+  \end{tabular}
+\end{center}
+
+\vspace{\spaceOne}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Work{
+  I. M. Gelfand, G. E. Shilov \\
+  ,,Generalized Functions: Volume~I, Properties and~Operations'',
+  \cite{GS64}. }
+
+% Uwagi:
+% \begin{itemize}
+% \item[--]
+% \end{itemize}
+
+\CenterTB{Błędy}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & \multicolumn{2}{c|}{} & & \\
+    Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu &  &  \\ \hline
+    12 & 4 & & $f_{ 0 } = 0$ & $x_{ 0 } = 0$ \\
+    28 & 16 & & $r \leq a$ & $r \geq a$ \\
+    & & & & \\ \hline
+  \end{tabular}
+\end{center}
+
+\vspace{\spaceOne}
+
+
+
+% #####################################################################
+\newpage
+
+\Work{
+  Armen H.~Zemanian \\
+  ,,Teoria dystrybucji i analiza transformat'', \cite{Zem69}.}
+
+
+\CenterTB{Uwagi}
+
+
+\noi \tb{Konkretne strony}
+
+\vspace{\spaceThree}
+
+\start \Str{16} Rozważania o~zamkniętości ze~względu na zbieżność
+przestrzeni funkcji próbnych $\D$~są w~mojej ocenie trochę chaotyczne,
+spróbuję więc je jakoś rozjaśnić. W~istocie chodzi o~to,
+że~definiujemy zbieżność ciągu funkcji próbnych
+$\set{ \vp_{ \nu }( t ) }$, żądając od~niego dwóch własności: 1)~Dla
+każdego $k$, ciąg $\set{ \vp_{ \nu }^{ ( k ) }( t ) }$ jest zbieżny
+jednostajnie do jakiejś funkcji
+$f_{ k }( t ), \; k = 0, 1, \ld$ \\
+2)~Nośniki wszystkich funkcji $\set{ \vp_{ \nu }( t ) }$ zawarte są
+w~wspólnym zbiorze zwartym. \\
+Zwróćmy uwagę, że~na~razie nie możemy mówić, iż~ciąg
+$\set{ \vp_{ \nu }( t ) }$ jest zbieżny do funkcji
+$f( t ) = f_{ 0 }( t )$, bo~nie wiemy, czy znajomość funkcji $f( t )$
+pozwala nam odtworzyć funkcje $f_{ 1 }( t ), f_{ 2 }( t ), \ld$ W~tym
+momencie właściwsze byłoby powiedzenie, że~ciąg
+$\set{ \vp_{ \nu }( t ) }$ jest zbieżny do~rodziny funkcji
+$f_{ k }( t )$.
+
+Jednak na mocy twierdzeń z~analizy matematycznej, które można znaleźć
+np.~w~książce Schwartza, str.~649--652,~\cite{Sch79}, przy tych
+warunkach funkcja $f( t )$ jest klasy $\Cinfty$ i~zachodzi
+$f^{ ( k ) }( t ) = f_{ k }( t )$. Tym samy pokazaliśmy, że~zbieżność
+zdefiniowana wyżej, jest rzeczywiście zbieżnością do~jakiejś funkcji.
+Z~drugiego warunku zbieżności ciągu funkcji próbnych wynika,
+że~funkcja $f( t )$ również ma~zwarty nośnik i~tym samym należy
+do~$\D$.
+
+Tym samym możemy stwierdzić, że~jeśli istnieje funkcja zespolona,
+do~której ciąg funkcji próbnych jest zbieżny w~podanym wyżej sensie,
+to~funkcja graniczna również jest funkcją próbną.
+
+\start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy $\Cinfty$
+został, chyba przyjęty w~domyśle. Należy jednak~się nad nim zatrzymać
+i~dowieść tego faktu. \Dok
+
+\start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
+bardzo słusznie jest stale przypominany w~kontekście teorii
+dystrybucji: nie czegoś takiego jak wartość dystrybucji w~punkcie.
+Dystrybucja $f$ z~przestrzeni $\D'( \Rnc )$ jest określona
+na~funkcjach z~$\D( \Rnc )$, a~nie na $\Rnc$ i~nawet dla dystrybucji
+regularnej wartość $f( t )$ w~konkretnym punkcie nie ma zwykle sensu.
+Punkt ma bowiem miarę Lebesgue'a równą~0, więc wartość funkcji która
+reprezentuje tę~dystrybucję można w~nim dowolnie zmienić.
+
+Jedynie jeśli w~klasie abstrakcji funkcji reprezentujących daną
+dystrybucję istnieje jedna funkcja wyróżniona, to~wartość tej funkcji
+jest też wartością dystrybucji w~konkretnym punkcie. Jest tak
+np.~jeśli jedna z~tych funkcji jest ciągła.
+
+\start \Str{29} Użycie we wzorze (3) symbolu
+\begin{equation}
+  \label{eq:Zem-s01-01}
+  \Lim_{ \veps \ra 0^{ + } } \Int_{ \veps }^{ b } t^{ -3/2 } \vp( t ) \, dt,
+\end{equation}
+jest trochę mylące. Zdaje~się bowiem sugerować, że~całka
+$\int_{ 0 }^{ b } t^{ -3/2 } \vp( t ) \, dt$ istniej i~jest równa tej
+granicy, jednak całka ta jest rozbieżna jeśli $\vp( 0 ) \neq 0$.
+Poprawniejsze byłoby następujące
+rozumowanie. %Może się nie znam ale czy tu też nie powinno być :
+
+Najpierw rozpatrzmy całkę
+\begin{equation}
+  \label{eq:Zem-s01-02}
+  \Int_{ \veps }^{ b } t^{ -3/2 } \vp( t ) \, dt
+  = \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } - \fr{ 2 \vp( 0 ) }{ \sqrt{ b } }
+  + \Int_{ \veps }^{ b } \fr{ \psi( t ) }{ \sqrt{ t } } \, dt.
+\end{equation}
+Całka ta jest skończona dla każdego $\veps$ i~powyższy wzór pozwala
+nam zidentyfikować źródło rozbieżności w~granicy $\veps \ra 0^{ + }$.
+Dysponując tą wiedzą, możemy zdefiniować dystrybucję
+$\Pf \, t^{ -3/2 } \Hevp( t )$ wzorem
+\begin{equation}
+  \label{eq:Zem-s01-03}
+  \lket \Pf \, t^{ -3/2 } \Hevp( t ), \vp( t ) \rket = \Lim_{ \veps \ra 0^{ + } }
+  \left[ \Int_{ \veps }^{ +\infty } t^{ -3/2 } \vp( t ) \, dt
+    - \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } \right].
+\end{equation}
+
+\start \Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
+bardziej naturalne, wprowadzić pseudofunkcję
+$\Pf \fr{ \Hevp( -t )}{ t }$.
+
+\start \Str{33--34} Przyjmijmy najpierw, że~jeżeli dana jest krzywa
+$A$, to przez $A( t )$ będziemy oznaczać taką funkcję, że~krzywa
+ta~ma~przedstawienie $( t, A( t ) )$. Teraz należy dokonać takiej
+zmienny w~linii 2~(od~dołu) na~stronie~34. \\
+\Jest Dlatego przesunięta cześć krzywej $B$ \\
+\Pow Dlatego pole pod~krzywą $\vp( t ) B( t )$ na~przedziale
+$\tau \leq t \leq \veps$
+
+\start \Str{36} W~tym miejscu po raz pierwszy chyba w~książce
+pojawia~się termin ,,obszar''. Z~kontekstu wynika, że~należy przez
+niego rozumieć dowolny podzbiór $\Rnc$.
+
+\start \Str{41} Obok nazwy \emph{zbiór zer dystrybucji}, proponowałbym
+również \emph{zbiór zerowy dystrybucji}.
+
+\start \Str{42} Logiczniej byłoby zaraz po~paragrafie \S 1.6 umieścić
+paragraf \S 1.8. Pojęcie zbioru zerowego i~nośnika dystrybucji nie ma
+wielkiego sensu 1.8.1 i~wynikających z~niego konsekwencji. Paragraf \S
+1.7 \emph{Kilka operacji na~dystrybucjach} najlepiej byłby umieścić
+jako \S 1.6.
+
+\start \Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
+jest niezmiernie ważne, zawiera wiele luk, które postaram~się
+w~dalszych podpunktach uzupełnić, tu zaś zbiorę potrzebne do~tego
+informacje.
+
+Zacznijmy od~tego, że~aby nie obciążać Czytelnika nowymi pojęciami,
+nie używa pojęcia zbioru zwartego, zamiast tego mówi o~zbiorach
+domkniętych i~ograniczonych w~$\Rn$\footnote{Jak wiadomo z~twierdzenia
+  Heinego\dywiz Borela, zbiór w~$\Rn$ jest zwarty \wtw, gdy jest
+  domknięty i~ograniczony.}, ponieważ jednak jest to niewygodne, będę
+mówił o~zbiorach zwartych. Będziemy jeszcze potrzebowali dwóch
+twierdzeń odnośnie tych zbiorów.
+
+\begin{twr}[Walter Rudin, twr. 2.7, str.~45,~\cite{Rud98}]
+  \label{twr:Zem-s01-01}
+  Niech $X$ będzie lokalnie zwartą przestrzenią Hausdorffa,
+  $K$~zbiorem zwartym, $U$~zbiorem otwartym i~$K \subs U$. Istnieje
+  zbiór otwarty o~zwartym domknięciu taki,~że
+  \begin{equation}
+    \label{eq:Zem-s01-04}
+    K \subs V \subs \ol{ V } \subs U.
+  \end{equation}
+\end{twr}
+Sens tego twierdzenia jest następujący. Jeśli $K \notin \{ \es, X \}$
+i~przestrzeń $X$ jest spójna, to wewnątrz zbioru otwartego $U$, można
+powiększyć zbiór zwarty $K$ do~zbioru zwartego $\ol{ V }$, przy czym
+$K \neq \ol{ V }$. Jest tak dlatego, że~$V$ jest otwarty,
+a~w~przestrzeni Hausdorffa zbiór zwarty jest domknięty. Jeśli więc
+przestrzeń jest spójna to nie może zajść równość $K = V$, chyba,
+że~$K = \es$ lub~$K = X$.
+
+Jeśli przestrzeń nie jest spójna, to~może~się zdarzyć, że~$K$ jest
+maksymalną składową spójną i tym samym jest otwarto-domkniętym
+zbiorem. Wtedy jak najbardziej może~się zdarzyć, iż~$K = V$.
+
+\begin{twr}[Laurent Schwartz, str??\cite{Sch79}]
+  \label{twr:Zem-s01-02}
+  Niech $( X, d )$ będzie przestrzenią metryczną, w~której każdy zbiór
+  domknięty i~ograniczony jest zwarty. Jeśli $K$ jest zbiorem zwartym,
+  $D$ zbiorem domkniętym i~$K \cup D = \es$, to odległość zbiorów $K$
+  i~$D$
+  \begin{equation}
+    \label{eq:Zem-s01-05}
+    d( K, D ) > 0,
+  \end{equation}
+  do~tego odległość ta przyjmuje w~pewnym punkcie minimum.
+\end{twr}
+\noi Schwartz formułuje równoważne założenie twierdzenia, że~każda
+kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
+
+\start \Str{48--49} \tb{Lemat 1, uzupełnienie.} Na~podstawie twierdzenia
+\ref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych własnościach.
+Teraz na~mocy twierdzenia \ref{twr:Zem-s01-02}
+$d( \Theta, \com \Psi ) = d_{ 1 } > 0$, jeśli więc
+$\al_{ 1 } < d_{ 1 }$, to~nośnik funkcji
+$\ga_{ \al_{ 1 } }( t - \tau )$ zawiera~się $\Psi$ dla~każdego
+$t$~z~$\Theta$, tym samym $\vp( t ) = 1$. Gwarantuje to~też, iż~funkcja podcałkowa jest klasy $\Cinfty$. Dowiedliśmy więc, że~$\vp( t ) = 1$ na~$\Theta$.
+
+
+\newpage
+\CenterTB{Błędy}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & \multicolumn{2}{c|}{} & & \\
+    Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu &  &  \\ \hline
+    12 & & 6 & wartości & tylko rzeczywiste \\
+    14 & 6 & & całka & całka przedstawiająca $\vp_{ \al }'( t )$ \\
+    16 & & 6 & ciągi & funkcje \\
+    17 & & 4 & z przestrzeni & na przestrzeni \\
+    17 & & 3 & która ma & które mają \\
+    17 & & 2 & \emph{przestrzeni} & \emph{funkcjonału} \\
+    18 & 6 & & $\{ \vp_{ \nu } \}\nu \ra \infty$ & $\{ \vp_{ \nu } \}$,
+                                                   przy $\nu \ra \infty$ \\
+    18 & & 10 & dystrybuantę & dystrybucję \\
+    21 & 9 & & $\D$ & $\D'$ \\
+    25 & & 1 & dąży & dąży punktowo \\
+    26 & 5 & & pochodnym od & pochodną \\
+    27 & 7 & & $\del^{ ( 1 ) }\bsym{ ( t } )$ & $\del^{ ( 1 ) }( t )$ \\
+    27 & & 3 & $\vp^{ ( k \bsym{ ) } }\bsym{ ( t ) } $
+           & $\vp^{ ( k ) }( t )$ \\
+    28 & & 17 & dążą & jednocześnie dążą \\
+    28 & & 4 & $\del^{ ( 2 ) }( 0 )$ & $\vp^{ ( 2 ) }( 0 )$ \\
+    29 & & 8 & $t = 0$ & $t \neq 0$ \\
+    31 & 6 & & $\vp( )$ & $\vp( t )$ \\
+    31 & 8 & & $\Pf \, | t |^{ \be } \; 1_{ + }( t )$
+           & $\Pf \, | t |^{ \be } \; 1_{ + }( -t )$ \\
+    33 & & 1 & skończoną & nieskończoną \\
+    34 & & 1 & $\vp( 0 ) \log\veps$ & $\vp( 0 ) \log\veps.$ \\
+    35 & 1 & & tj.~$\lket B, \vp \rket$. Wartość & Wartość \\
+    36 & & 7 & $\pr t_{ 2 }^{ \: k_{ 2 } } \ld \pr t_{ n }^{ \: k_{ n } }$
+           & $\pr t_{ 2 }^{ k_{ 2 } } \ld \pr t_{ n }^{ k_{ n } }$ \\
+    37 & & 16 & \emph{mamy $\vp_{ \al }( t )$ równe}
+           & \emph{$\vp_{ \al }( t )$ jest równa} \\
+    37 & & 1 & wyboru układu & układu \\
+    38 & 4 & & $\{ 0, 0, \ld, 0 ) \}$ & $\{ 0, 0, \ld, 0 \}$) \\
+    41 & & 2 & dystrybucji & dystrybucji regularnej \\
+    45 & & 10 & $\bsym{f}$ & $f$ \\
+    50 & & 3 & $C$ & $\mf{C}$ \\
+    50 & 13 & & \emph{jedną} & \emph{jedną z~nich} \\
+    55 & 9 & & zbieżny w $\D'$ & zbieżny \\
+    71 & & 5 & $M$ i $k$ stałych & $M$ rzeczywistego i $k$ naturalnego \\
+    71 & & 4 & gdzie $p$ & gdzie $p = k - 1$, a $g( t )$\\
+    71 & & 1 & $\leq M | \nu |^{ -2 }$ & $\leq M | \nu |^{ -1 }$\\
+    & & & & \\ \hline
+  \end{tabular}
+\end{center}
+\noi
+\StrWd{21}{10} \\
+\Jest opisem niewykończonego \\
+\Pow niepełnym opisem pewnego \\
+\StrWg{34}{2} \\
+\Jest Odpowiednie nachylenie wskazuje \\
+\Pow Odpowiednią funkcje przedstawia \\
+\StrWd{38}{4} \\
+\Jest choć może nie być sprecyzowana jego wartość \\
+\Pow choć jego wartość może nie być podana jawnie \\
+\StrWd{40}{6} \\
+\Jest wartości liczbowych \\
+\Pow wartości liczbowej w~punkcie \\
+
+
+
+
+
+
+
+
+
+
+% #####################################################################
+% #####################################################################
+\bibliographystyle{alpha} \bibliography{Bibliography}{}
+
+
+
+\end{document}
