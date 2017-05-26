@@ -306,11 +306,11 @@
 
 
 
-% ####################################################################
+% ########################################
 \Main{Analiza funkcjonalna, błędy i~uwagi.}
 
 \vspace{\spaceTwo}
-% ####################################################################
+% ########################################
 
 
 
@@ -552,11 +552,44 @@ iż~funkcja podcałkowa jest klasy $\Cinfty$. Dowiedliśmy więc,
 
 Jeśli teraz oznaczymy odległość $d( \Psi, \com \Om) = d_{ 2 } > 0$
 i~przyjmiemy $\al_{ 2 } < d_{ 2 }$, to dla każdego $t \in \com \Om$
-mamy $\supp \vp \cap \Psi = \es$, więc $\vpt = 0$.
+nośnik funkcji $\ga_{ \al_{ 1 } }( t - \tau )$ nie przecina~się
+z~$\Psi$, więc $\vpt = 0$.
 
-\start \Str{49} W~języku polskim znaczniej lepiej od~nazwy \emph{lokalnie skończonego pokrycia} brzmi określenie \emph{pokrycie lokalnie skończone}. Jego też będę dalej używał.
+\start \Str{49} W~języku polskim znaczniej lepiej od~nazwy
+\emph{lokalnie skończonego pokrycia} brzmi określenie \emph{pokrycie
+  lokalnie skończone}. Jego też będę dalej używał.
 
-\start \Str{49} \tb{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy założeń, każdy domknięty podzbiór $\Om_{ k }$ jest zwarty, więc istnienie zbiorów $\La_{ k }$ o~zadanych własnościach wynika ponownie z~twierdzenia \eqref{twr:Zem-s01-01}.
+\start \Str{49} \tb{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy
+założeń, każdy domknięty podzbiór $\Om_{ k }$ jest zwarty, więc
+istnienie zbiorów $\La_{ k }$ o~zadanych własnościach wynika ponownie
+z~twierdzenia \eqref{twr:Zem-s01-01}.
+
+\start \Str{50} \tb{Lemat 4, uzupełnienie.} Niech $A$ będzie zbiorem
+ograniczonym w~$\Rn$, czyli zawiera~się on w~kuli $K( 0, r )$. Trzeba
+teraz pokazać, że~tylko skończona ilość zbiorów $\O_{ \al }$ z~nowego
+pokrycia może przecinać~się $K( 0, r )$. Oznaczymy majorantę
+na~średnicę zbiorów przez $\mr{Diam}$, a~przez $M$ minimalną odległość
+punktu prostopadłościanu reprezentowanego układem liczb
+$\{ m_{ 1 }, \ld, m_{ n } \}$, czyli
+$M = \left( \Sum_{ i = 0 }^{ n } m_{ i } \right)^{ \fr{ 1 }{ 2 } }$.
+Zbiór $\Oc_{ \al }$ może przeciąć zadaną kulę, tylko jeśli
+$M - \mr{Diam} < r$, czyli mówiąc obrazowa, gdy~prostopadłościan jest
+za~daleko, to zbiór $\Oc_{ \al }$ nie dosięgnie kuli. Ponieważ
+istnieje tylko skończona ilość układów liczb
+$\{ m_{ 1 }, \ld, m_{ n } \}$ spełniających tę nierówność, więc tylko
+skończoną ilość razy będziemy wybierali skończoną ilość zbiorów
+$\Oc_{ \al }$ takich, że~może zajść
+$K( 0, r ) \cap \Oc_{ \al } \neq \O$.
+
+\start \Str{51} Cel przedstawionej tu konstrukcji pokrycia jest
+następujący. Potrzebujemy pokrycia lokalnie skończonego~$\Om_{ \nu }$,
+którego elementy albo nie przecinają~się z~$\Xi$, albo
+$\Om_{ \nu } \subs \Theta$, gdy $\Om_{ \nu } \cap \Xi \neq \O$.
+Rozkład jedności dla tego pokrycia pozwoli pokazać,
+że~funkcję~$\psi$ można rozłożyć na~funkcje o~nośnikach w~zbiorach
+otwartych na~których dystrybucja $f$~jest równa $0$.
+
+Wydaje mi~się, że~do tej konstrukcji zbiór $\Xi_{ 1 }$ jest niepotrzebny.
 
 \newpage
 \CenterTB{Błędy}
@@ -598,9 +631,8 @@ mamy $\supp \vp \cap \Psi = \es$, więc $\vpt = 0$.
     38 & 4 & & $\{ 0, 0, \ld, 0 ) \}$ & $\{ 0, 0, \ld, 0 \}$) \\
     41 & & 2 & dystrybucji & dystrybucji regularnej \\
     45 & & 10 & $\bsym{f}$ & $f$ \\
-    50 & & & \emph{jedną} & \emph{stałą} \\
+    50 & 13 & & \emph{jedną} & \emph{stałą} \\
     50 & & 3 & $C$ & $\mf{C}$ \\
-    50 & 13 & & \emph{jedną} & \emph{jedną z~nich} \\
     55 & 9 & & zbieżny w $\D'$ & zbieżny \\
     71 & & 5 & $M$ i $k$ stałych & $M$ rzeczywistego i $k$ naturalnego \\
     71 & & 4 & gdzie $p$ & gdzie $p = k - 1$, a $g( t )$\\
@@ -621,7 +653,10 @@ mamy $\supp \vp \cap \Psi = \es$, więc $\vpt = 0$.
 \StrWd{40}{6} \\
 \Jest wartości liczbowych \\
 \Pow wartości liczbowej w~punkcie \\
-
+\StrWg{50}{14} \\
+\Jest \emph{pokrycie $\Rn$.} \\
+\Pow \emph{pokrycie $\Rn$, przy czym średnice wszystkich jego zbiorów,
+  są~ograniczone przez tą samą stałą, co~dla rodziny $\mf{C}_{ T }$.} \\
 
 
 
