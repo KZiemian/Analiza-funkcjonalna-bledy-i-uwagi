@@ -35,7 +35,12 @@
 {   9pt}  % foot height
 { 0.3in}  % foot sep
 \usepackage{hyperref}
-% \usepackage{cleveref}
+% #####################################################################
+
+
+\newtheorem{twr}{Twierdzenie}
+\newtheorem{defin}{Definicja}
+\newtheorem{wni}{Wniosek}% \usepackage{cleveref}
 
 
 % #####################################################################
@@ -151,7 +156,7 @@
 % ####################
 % Teoria mnogości
 \newcommand{\es}{\emptyset}
-\newcommand{\sset}{\subset}
+\newcommand{\subs}{\subset}
 \newcommand{\setm}{\setminus}
 \newcommand{\ti}{\times}
 
@@ -277,19 +282,14 @@
 
 
 % #####################################################################
-% #####################################################################
-% #####################################################################
 \begin{document}
 % #####################################################################
-% #####################################################################
-% #####################################################################
 
 
-
-\Work{
+\Field{
   M. Reed, B. Simon \\
-  ,,Methods of Modern Mathematical Physics~I: Functional Analysis'',
-  \cite{RS80}.}
+  ,,Methods~of Modern Mathematical Physics~I: Functional Analysis'',
+  \cite{RS80} }
 
 
 \CenterTB{Uwagi}
@@ -313,9 +313,8 @@ Uzupełnienie wykładu w~tym miejscu nie jest trudne i~przedstawiamy je
 poniżej.
 
 Dla dowolnych dwóch miar dodatnich $\mu_{ 1 }$ i~$\mu_{ 2 }$,
-niekoniecznie borelowskich, określonym na wspólnej% wspólnym..... pierścieniu <<<<
- $\s$\dywiz
-pierścieniu $\Rc$, określamy \tb{sumę miar} jako:
+niekoniecznie borelowskich, określonym na wspólnym $\si$\dywiz
+pierścieniu $\Rc$, definiujemy \tb{sumę miar} jako:
 \begin{equation}
   \label{eq:RSI1}
   \begin{split}
@@ -345,14 +344,15 @@ Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
 % ##############################
 
 \begin{proof}
-  Suma miar jest określona na~wspólnych %wspólnym <<<<<<<<<<<
-   ich pierścieniu $\Rc$, poza
-  zaś warunkiem na~przeliczalną addytywność miary rozłącznych zbiorów
-  $A_{ i }$, pozostałe własności miary dodatniej wychodzą od razu.
+  Jeśli pokażemy to twierdzenie dla $n = 2$, przypadku ogólnego można
+  bez problemu dowieść przez indukcje. Suma miar jest określona
+  na~wspólnym pierścieniu $\Rc$, zaś poza warunkiem na~przeliczalną
+  addytywność miary rozłącznych zbiorów $A_{ i }$, pozostałe własności
+  miary dodatniej wychodzą od razu.
 
   Załóżmy teraz, że~miary wszystkich tych zbiorów względem $\mu_{ 1 }$
   i~$\mu_{ 2 }$ są skończone. Na podstawie podstawowych twierdzeń
-  o~sumowaniu szeregów dodatnich, mamy \Dok
+  o~sumowaniu szeregów dodatnich, mamy
   \begin{equation*}
     \begin{split}
       (\mu_{ 1 } + \mu_{ 2 })\left( \bigcup_{ i = 1 }^{ \infty } A_{ i
@@ -366,12 +366,12 @@ Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
       )( A_{ i } ).
     \end{split}
   \end{equation*}
-  Jeśli chodź dla jednego zbioru mamy
-  $\mu_{ n }( A_{ i } ) = +\infty$, to obie strony są równe $+\infty$.
-  Problem, czy można dodać dwie miary, które nie są dodatnie wymaga
-  osobnych rozważań. \Dok
+  Jeśli chodź dla jednego zbioru zachodzi
+  $\mu_{ n }( A_{ i } ) = +\infty$, to wówczas obie strony są równe
+  $+\infty$. Problem, czy można dodać dwie miary, które nie są
+  dodatnie wymaga osobnych rozważań. \Dok
 
-  Rozpatrzmy teraz problem całkowania względem sumy miar $\mu_{ n }$
+  Rozpatrzmy teraz problem całkowania względem sumy miar $\mu_{ i }$
   funkcji $f$, która jest całkowalnej względem każdej miar z~osobna,
   ograniczymy~się przy tym dla przypadku funkcji określonej na~$\R$.
   Jeżeli $f \geq 0$, wówczas zachodzi równość:
@@ -390,10 +390,10 @@ Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
         \mu_{ 2 } }.
     \end{split}
   \end{equation}
-  Znowu wszystkie wyrazy szeregów są dodatnie, więc powyższe
-  przekształcenia są uzasadnione.
+  Znowu ponieważ wszystkie wyrazy szeregów są dodatnie, więc powyższe
+  przekształcenia są dozwolone.
 
-  Ponieważ w podejściu prezentowanym przez Reeda i~Simona, całkowanie
+  Jako, że~w~podejściu prezentowanym przez Reeda i~Simona, całkowanie
   funkcji zespolonych sprowadza~się do całkowania funkcji dodatnich,
   widzimy więc, że~funkcja całkowalna względem każdej z~miar
   $\mu_{ n }$, tzn.
@@ -417,9 +417,9 @@ funkcje $f_{ 1 }$ i~$f_{ 2 }$, całkowalne odpowiednio względem miar
 $\mu_{ 1 }$ i~$\mu_{ 2 }$, i~chcemy powiedzieć coś o~całkowalności ich
 sumy. Wtedy bowiem może okazać się, że~funkcja np.~$f_{ 1 }$ jest
 całkowalna względem $\mu_{ 1 }$ bo~miara zbioru na którym przyjmuje
-duże wartości jest mała względem $\mu_{ 1 }$. Jeżeli miara tego zbioru
-względem $\mu_{ 2 }$ jest jednak duża, funkcja $f_{ 1 }$ może być
-niecałkowalna względem tej miary.
+duże wartości jest mała względem $\mu_{ 1 }$. Jeżeli jednak miara tego
+zbioru względem $\mu_{ 2 }$ jest duża, funkcja $f_{ 1 }$ może być
+niecałkowalna względem $\mu_{ 2 }$.
 
 \tb{Przykład.} Weźmy funkcję na prostej rzeczywistej
 \begin{equation*}
@@ -429,11 +429,12 @@ niecałkowalna względem tej miary.
     +\infty, \quad x = 0. \\
   \end{cases}
 \end{equation*}
-$f \equiv 0$, jest ona całkowalna względem miary Lebesgue'a $dx$ i~jej
-całka wynosi 0. Możemy zmienić jej wartość w~0 na $-\infty$, bez
-żadnych konsekwencji dla wartości całki po~$dx$. Jeżeli teraz dodamy
-do miary Lebesgue'a miarę Diraca skupioną w~0, oznaczmy ją
-$d\del_{ 0 }$, to $f$ jest niecałkowalna względem miary
+Jako, że~$f \equiv 0$, jest ona całkowalna względem miary Lebesgue'a
+$dx$ i~jej całka
+wynosi~0.% Możemy zmienić jej wartość w~0 na $-\infty$, bez
+% żadnych konsekwencji dla wartości całki po~$dx$.
+Jeżeli teraz dodamy do miary Lebesgue'a miarę Diraca skupioną w~0,
+oznaczmy ją $d\del_{ 0 }$, to $f$ będzie niecałkowalna względem miary
 $dx + d\del_{ 0 }$.
 
 \vspace{\spaceTwo}
@@ -445,18 +446,17 @@ $dx + d\del_{ 0 }$.
 \vspace{\spaceThree}
 
 \start \tb{Ciągłość ciągowa funkcji na~przestrzeniach metrycznych.}
-W~tym rozdziale natykamy kilkakrotnie problem, że~mamy funkcje ciągłą
-$f( x )$ oraz~ciąg $x_{ n_{ 1 }, \ld, n_{ m } }$ i~wchodzimy wejść % nie rozumiem co ma tu znaczyć zwrot >>wchodzimy wejść <<<, sensowne wydaje się tu  >>>> próbujemy wejść <<<<
-z~granicą ciągu pod funkcję, innymi słowy chcemy, aby
-zachodziło\footnote{Rozpatrujemy tu tylko przypadek skończonej liczby
-  indeksów liczby naturalnych, bo~na~razie nie znalazłem potrzeby
-  rozpatrywać ciągi% czy nie powinno być >>>ciągów<<<?
-   o~nieskończonej ilości indeksów lub~takich które
-  nie są indeksowane liczbami naturalnymi.}
+W~tym rozdziale napotykamy kilkakrotnie następującą sytuacje. Mamy
+funkcje ciągłą $f( x )$ oraz~ciąg $x_{ n_{ 1 }, \ld, n_{ m } }$
+i~próbujemy wejść z~granicą ciągu pod funkcję, innymi słowy chcemy,
+aby zachodziło\footnote{Rozpatrujemy tu tylko przypadek skończonej
+  liczby indeksów liczby naturalnych, bo~na~razie nie znalazłem
+  potrzeby rozpatrywać ciągów o~nieskończonej ilości indeksów
+  lub~takich które nie są indeksowane liczbami naturalnymi.}
 \begin{equation*}
-  \Lim_{ \sstack{ n_{ 1 } \ra +\infty \\ \cdots \\  n_{ m } \ra +\infty } }
+  \Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\  n_{ m } \ra +\infty } }
   f( x_{ n_{ 1 }, \ld, n_{ m } } )
-  = f( \Lim_{ \sstack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra +\infty } }
+  = f( \Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra +\infty } }
   x_{ n_{ 1 }, \ld, n_{ m } } ).
 \end{equation*}
 Jeżeli funkcja jest \emph{ciągła topologicznie}, czyli przeciwobraz
@@ -466,25 +466,27 @@ równość zachodzi. Pytanie czy jeśli funkcja jest \emph{ciągowo
 \begin{equation*}
   \Lim_{ n \ra +\infty } f( x_{ n } ) = f( \Lim_{ n \ra +\infty } x_{ n } ),
 \end{equation*}
-to czy twierdzenie to również zachodzi? W~przypadku ogólnym nie wiem,
-czy tak jest, bowiem gdy przestrzeń topologiczna nie~ma przeliczalnej
-bazy otoczeń, to~ciągi postaci $x_{ n }$ nie zawierają pełnej wiedzy
-o~topologii. Udowodnimy jednak, że~tak jest dla przestrzeni
-metrycznych.
+dla każdego zbieżnego ciągu $x_{ n }$, to~czy twierdzenie będzie
+zachodzić również w~tej sytuacji? W~przypadku ogólnym nie wiem, czy
+tak jest, bowiem gdy przestrzeń topologiczna nie~ma przeliczalnej bazy
+otoczeń, to~ciągi postaci $x_{ n }$ nie zawierają pełnej wiedzy
+o~topologii. Udowodnimy jednak, że~w~przypadku przestrzeni metrycznych
+żądana własność zachodzi.
 
 Na początku będzie nam potrzebna definicja granicy ciągu
-wieloindeksowego. Najprostsza definicja granicy jest
+wieloindeksowego. Najprostsza definicja tej granicy jest
 następująca\footnote{Granica ciągu wieloindeksowego powinna być
-  szczególnym przypadkiem granic indeksowanych zbiorami skierowany % sierowanymi <<<<?
-  które~są omawiane u~Marina \cite{Mau74}.}. Niech $X$ będzie
-przestrzenią metryczną, $x_{ n_{ 1 }, \ld, n_{ m } }, x_{ 0 } \in X$,
-$x_{ 0 }$ jest granicą ciągu $x_{ n_{ 1 }, \ld, n_{ m } }$ \wtw, gdy
+  szczególnym przypadkiem granic indeksowanych zbiorami skierowanymi
+  które~są omawiane w~książce Maurina \cite{Maurin74}.}. Niech $X$
+będzie przestrzenią metryczną, a~$x_{ n_{ 1 }, \ld, n_{ m } }, x_{ 0 }$ ciągiem wieloindeksowym w~$X$. $x_{ 0 }$ jest granicą
+ciągu $x_{ n_{ 1 }, \ld, n_{ m } }$ \wtw, gdy
 \begin{displaymath}
   ( \forall \, \veps > 0) ( \exists \, N )
   ( \forall \, n_{ 1 } > N, \ld, n_{ m } > N ) \;\,
   d( x_{ n_{ 1 }, \ld, n_{ m } }, \, x_{ 0 } ) < \veps.
 \end{displaymath}
-
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tu skończyłem.
 \begin{twr}
   Niech $X$ i~$Y$ będą przestrzeniami metrycznymi,
   $x_{ n_{ 1 }, \ld, n_{ m } }$ ciągiem elementów przestrzeni $X$.
@@ -493,9 +495,9 @@ $x_{ 0 }$ jest granicą ciągu $x_{ n_{ 1 }, \ld, n_{ m } }$ \wtw, gdy
   $\Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra
       +\infty } } x_{ n_{ 1 }, \ld, n_{ m } } = x_{ 0 }$, to
   \begin{equation}
-    \Lim_{ \sstack{ n_{ 1 } \ra +\infty \\ \cdots \\  n_{ m } \ra +\infty } }
+    \Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\  n_{ m } \ra +\infty } }
     f( x_{ n_{ 1 }, \ld, n_{ m } } )
-    = f( \Lim_{ \sstack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra
+    = f( \Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra
         +\infty } } x_{ n_{ 1 }, \ld, n_{ m } } ).
   \end{equation}
 \end{twr}
@@ -526,8 +528,8 @@ $x_{ 0 }$ jest granicą ciągu $x_{ n_{ 1 }, \ld, n_{ m } }$ \wtw, gdy
 
 \start \tb{Odwzorowania wieloliniowe ciągłe i~szeregi.} W~tym
 rozdziela % chyba powino być >>>W tym rozdziale <<<
- potrzebujemy kilka razy pokazać równość następującego typu.
-Jeżeli $f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
+potrzebujemy kilka razy pokazać równość następującego typu. Jeżeli
+$f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
 $g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$, to
 \begin{equation*}
   \Lim_{ K,\, M \ra +\infty } \Sum_{ l < L } \Sum_{ k < K } c_{ l }
@@ -575,7 +577,7 @@ potrzebne nam twierdzenie.
     \Sum_{ l_{ 1 }, \ld, l_{ n } } c_{ 1, \, l_{ 1 } } \cdot \ld \cdot
     c_{ n, \, l_{ n } } \, B( \vp_{ 1, \, l_{ 1 } }, \ld,
     \vp_{ n, \, l_{ n } } ) = \Lim_{ N \ra +\infty }
-    \Sum_{ \sstack{ l_{ 1 } < N \\ \cdots \\ l_{ n } < N } }x
+    \Sum_{ \substack{ l_{ 1 } < N \\ \cdots \\ l_{ n } < N } }x
     c_{ 1, \, l_{ 1 } } \cdot \ld \cdot c_{ n, \, l_{ n } } \,
     B( \vp_{ 1, \, l_{ 1 } }, \ld, \vp_{ n, \, l_{ n } } ).
   \end{equation*}
@@ -592,13 +594,13 @@ potrzebne nam twierdzenie.
   $\norm{ \vp_{ R } }_{ X_{ 1 } } \leq \veps$. Analogicznie
   $\psi = \sum_{ l < L } d_{ l } \psi_{ l } + \psi_{ R }$,
   $\norm{ \psi_{ R } }_{ X_{ 2 } } \leq \veps$. Ponieważ ciąg
-  $\sum_{ k < K } c_{ k } \vp_{ k }$ jest zbieżna %czy >>zbieżny<< - chodzi tu o ciąg czy sumę?
-   do~$\vp$, wynika,
-  że~ ciąg
+  $\sum_{ k < K } c_{ k } \vp_{ k }$ jest
+  zbieżna %czy >>zbieżny<< - chodzi tu o ciąg czy sumę?
+  do~$\vp$, wynika, że~ ciąg
   $\norm{ \sum_{ k < K } c_{ k } \vp_{ k } }_{ X_{ 1 } } \ra \norm{
-    \vp }_{ X_{ 1 } }$, jest więc ograniczony. Dobierz% Dobierzmy -<<<by było w zgodnośc z resztą....
-     $M$ tak~by było
-  wspólnym ograniczeniem ciągów
+    \vp }_{ X_{ 1 } }$, jest więc ograniczony.
+  Dobierz% Dobierzmy -<<<by było w zgodnośc z resztą....
+  $M$ tak~by było wspólnym ograniczeniem ciągów
   $\norm{ \sum_{ k < K } c_{ k } \vp_{ k } }_{ X_{ 1 } }$
   i~$\norm{ \sum_{ l < L } d_{ l } \psi_{ l } }_{ X_{ 2 }
   }$\footnote{To ograniczenie to~wszystko czego potrzebujemy
@@ -641,7 +643,8 @@ potrzebne nam twierdzenie.
 % metrycznej jest zupełny, należy wprowadzić topologię indukowaną.
 
 \start \Str{9} Nie wykazano, jedynie stwierdzono jednym słowem
-,,thus'', że~podane dwie definicje normy operatora ograniczonego~są %propozycja >>>że obie podane definicie<<<<
+,,thus'', że~podane dwie definicje normy operatora
+ograniczonego~są %propozycja >>>że obie podane definicie<<<<
 równoważne. W~istocie, jak powszechnie wiadomo z~pracy dotyczących
 analizy funkcjonalnej:
 \begin{displaymath}
@@ -668,8 +671,7 @@ $V_{ 1 }$, zachodzi
 $\norm{ \wt{ T } x }_{ 2 } = \norm{ T x }_{ 2 } \leq \norm{ T } \norm{
   x }_{ 1 }$, przy czym $\norm{ T }$ jest minimalną stałą dla~której
 jest to~prawdą, więc ze~względy % ze~względu<<<<
- na~fakt,
-iż~$V_{ 1 } \subset \wt{ V }_{ 1 }$, mamy nierówność
+na~fakt, iż~$V_{ 1 } \subset \wt{ V }_{ 1 }$, mamy nierówność
 $\norm{ T } \leq \norm{ \wt{ T } }$. Te dwie nierówności implikują,
 że~$\norm{ \wt{ T } } = \norm{ T }$.
 
@@ -689,15 +691,16 @@ Cauchy'ego. \Dok
 
 \start \Str{16} Choć jest to rozdział typu ,,Wiadomości wstępne''
 (``Preliminaries''), to dyskusja całkowania funkcji niedodatnich jest
-przeprowadzona zbyt szybko, by~dawała satysfakcję. Najpierw należałoby% nie wiem co ma znaczyc konstrukcja  >>należałoby by<< niewystarczy samo >> należałoby<<
+przeprowadzona zbyt szybko, by~dawała satysfakcję. Najpierw
+należałoby% nie wiem co ma znaczyc konstrukcja >>należałoby by<< niewystarczy samo >> należałoby<<
 by~zauważyć, że~jeżeli mamy dwie funkcje $0 \leq g \leq f$, to z~tego,
 że~$\Int{ f }{ x } < \infty$, wynika że~$\Int{ g }{ x } < \infty$, co
 przy przyjętej tu definicji całki z~funkcji dodatniej nie jest od razu
-oczywiste. Istotnie, jak zauważyli Reed i~Simon, przy definicje %definicji <<<
- zwykle
-spotykanej w~pracach dla matematyków, tego typu dowody~są prostsze.
-Wiedząc już jednak o~tym, widać od~razu, że~jeżeli
-$\Int{ \abs{ f } }{ x } < \infty$ to całkowalne~są również $f_{ + }$
+oczywiste. Istotnie, jak zauważyli Reed i~Simon, przy
+definicje %definicji <<<
+zwykle spotykanej w~pracach dla matematyków, tego typu dowody~są
+prostsze. Wiedząc już jednak o~tym, widać od~razu, że~jeżeli
+$\Int{ \absj{ f } }{ x } < \infty$ to całkowalne~są również $f_{ + }$
 i~$f_{ - }$, więc definicja całki z~funkcji niedodatniej ma sens. Idąc
 dalej~tą drogą można sformułować całkiem satysfakcjonującą teorię
 całki.
@@ -731,14 +734,15 @@ zwartego jest skończona, wynika iż~jest tylko przeliczalnie wiele
 punktów o~niezerowej mierze. \Dok
 
 \start \Str{25} Ponieważ obie miary w~twierdzeniu Radona\dywiz
-Nikodyma obie miary~są %powtórzenie >>obie  miary <<< zdecyduj które lepiej wyrzucic , przed czy po?
- dodatnie, można więc zagwarantować,
-że~$f \geq 0$,% ja w tym miejscu zaczął bym nowe zdanie
- całka z~tezy ma więc zawsze sens i~wynik może być
-nieskończony. W~tym kontekście warto mieć w~pamięci rozróżnienie jakie
-podał Schwartz między całką górną, która jest zdefiniowana dla
-wszystkich funkcji nieujemnych i~zawsze ma sens, a~całką w~sensie
-właściwym która wymaga by~$\Int{ | f( x ) | }{ x }$ była skończona
+Nikodyma obie
+miary~są %powtórzenie >>obie miary <<< zdecyduj które lepiej wyrzucic , przed czy po?
+dodatnie, można więc zagwarantować, że~$f \geq
+0$,% ja w tym miejscu zaczął bym nowe zdanie
+całka z~tezy ma więc zawsze sens i~wynik może być nieskończony. W~tym
+kontekście warto mieć w~pamięci rozróżnienie jakie podał Schwartz
+między całką górną, która jest zdefiniowana dla wszystkich funkcji
+nieujemnych i~zawsze ma sens, a~całką w~sensie właściwym która wymaga
+by~$\Int{ | f( x ) | }{ x }$ była skończona
 \cite{Sch79}\footnote{Schwartz rozwijał teorię całki w~innym
   kontekście niż~rozważany tutaj np. całkował od razu funkcji
   o~wartościach w~przestrzeni Banacha. To co tu zostało napisane, jest
@@ -746,11 +750,13 @@ właściwym która wymaga by~$\Int{ | f( x ) | }{ x }$ była skończona
 
 \start \Str{25} Jakoś nie mogę siebie przekonać, że~funkcja mierzalna
 względem dwóch zmiennych, jest też mierzalna względem każdej
-ze~zmiennych z~osobna. Dla miar Radona, dla~których który zbiory %powtórzenie który ???? <<<<<<<<<<<<
+ze~zmiennych z~osobna. Dla miar Radona, dla~których który
+zbiory %powtórzenie który ???? <<<<<<<<<<<<
 borelowskie~są mierzalne, tak zapewne jest, jednak dla ogólnych
-$\s$\dywiz algebr wydaje mi~się dziwnie mocny twierdzeniem %propozycja>>wydaje mi się to dziwnie mocnym twierdzeniem <<<
-. Zapewne
-zachodzi twierdzenie, że~funkcja jest prawie wszędzie mierzalna. \Dok
+$\s$\dywiz algebr wydaje mi~się dziwnie mocny
+twierdzeniem %propozycja>>wydaje mi się to dziwnie mocnym twierdzeniem <<<
+. Zapewne zachodzi twierdzenie, że~funkcja jest prawie wszędzie
+mierzalna. \Dok
 
 \start \Str{37} Można podać inne sformułowanie twierdzenia Pitagorasa,
 które w~pewnych sytuacjach jest bardziej naturalne. Jeśli $x_{ i }$,
@@ -763,17 +769,19 @@ $i = 1, \ld, N$ tworzą układ ortogonalny i~$x = \Sum x_{ i }$, to
 Hilberta, warto zauważyć, że~operator unitarny jest bijekcją.
 Surjektyweność zachodzi na mocy definicji, żeby zaś wykazać
 inijektywność wystarczy skorzystać, z~jednego z~podstawowych twierdzeń
-algebry: odwzorowanie liniowe jest injektywne \wtw gdy~jego jądro jest % tu chyba brakuje odstępu pomiedzy \wtw i gdy, nie wiem czy nie będziesz musiał zmienić komendy \wtw by to naprawić <<<<<<<<<<
+algebry: odwzorowanie liniowe jest injektywne \wtw gdy~jego jądro
+jest % tu chyba brakuje odstępu pomiedzy \wtw i gdy, nie wiem czy nie będziesz musiał zmienić komendy \wtw by to naprawić <<<<<<<<<<
 trywialne. Jeżeli więc $Ux = 0$, wtedy:
 \begin{displaymath}
   0 = ( Ux, Ux )_{ \H_{ 2 } } = ( x, x )_{ \H_{ 1 } } \iff x = 0.
 \end{displaymath}
 
 \start \Str{44} W~tym miejscu warto dowieść twierdzenia, że~układ
-ortogonalny niezerowych wektorów $S$ jest zupełny \wtw gdy jedynym %jw <<<<<
+ortogonalny niezerowych wektorów $S$ jest zupełny \wtw gdy
+jedynym %jw <<<<<
 wektorem ortogonalnym do~niego jest wektor zerowy.
 
-%Poniższy fragment jest niezrozumiały
+% Poniższy fragment jest niezrozumiały
 Przez kontrapozycję. Jeżeli istnieje wektor $g \neq 0$, który jest
 ortogonalny do~układu $S$, to~$S \cup \set{ g }$ jest układem
 ortogonalnym, który zawiera w~sobie $S$, $S$ nie jest więc układem
@@ -783,7 +791,7 @@ Przez kontrapozycję. Załóżmy teraz, że~$S$ nie jest zupełny. W~takim
 razie istnieje taki układ ortogonalny niezerowych wektorów,
 iż~$S \sset S'$ oraz $S' \setm S \neq \es$. Teraz $y \in S' \setm S$
 jest niezerowym wektorem ortogonalny %<< ortogonalnym >>>
- do $S$.
+do $S$.
 % koniec niezrozumiałego fragmentu
 
 \start \Str{45} Nie rozumiem dlaczego z~nierówności
@@ -830,10 +838,9 @@ zbieżny bowiem jego wyrazy odpowiednio~się kompensują, dlatego też
 jeśli zmienimy ich kolejność to~mogą one~się nie skompensowań tak jak
 poprzednio i~otrzymamy inną sumę. Jednak tutaj każdy wyraz jest
 w~kierunku prostopadły, %prostopadłym<<<<
- do~wszystkich innych, żadne da %dwa?<<<<<<<
-  nie mogą~się
-więc kompensować. Szereg ten jest więc zbieżny niezależnie
-od~kolejności bądź rozbieżny.
+do~wszystkich innych, żadne da %dwa?<<<<<<<
+nie mogą~się więc kompensować. Szereg ten jest więc zbieżny
+niezależnie od~kolejności bądź rozbieżny.
 
 Schwartz bada w~swoje książce szeregi w~przestrzeniach Banacha, które
 nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
@@ -920,8 +927,8 @@ Iloczyn skalarny na~$\mc{E}$ ma więc postać:
 Formę postaci $\vp \ot \psi$ będziemy nazywać prostą.
 
 W~dalszym ciągu potrzebny %potrzebna<<<<<<<<<<
- będzie nam następująca obserwacja: jeżeli
-$\mu \in \mc{E}$, to zachodzi równość:
+będzie nam następująca obserwacja: jeżeli $\mu \in \mc{E}$, to
+zachodzi równość:
 \begin{displaymath}
   ( \vp \ot \psi, \mu )_{ \mc{E} } = \mu\lket \vp, \psi \rket.
 \end{displaymath}
@@ -953,18 +960,16 @@ wówczas
 %   \end{split}
 % \end{displaymath}
 
-% wtym fragmencie  wielokrotnie powtarza się "zauważyć" <<<<<<<<<<<<
+% wtym fragmencie wielokrotnie powtarza się "zauważyć" <<<<<<<<<<<<
 Teraz możemy przejść do~dyskusje, %do dyskusji<<<<<<<
- czy~wzór na iloczyn skalarny nie
-zależy od~przedstawienia jako sumy form prostych. Zauważmy, że~dwie
-formy $\mu$, $\eta$~są równe gdy
+czy~wzór na iloczyn skalarny nie zależy od~przedstawienia jako sumy
+form prostych. Zauważmy, że~dwie formy $\mu$, $\eta$~są równe gdy
 \begin{displaymath}
   \mu\lket \vp, \psi \rket = \eta\lket \vp, \psi \rket,
   \quad \forall \vp \in \H_{ 1 }, \psi \in \H_{ 2 }.
 \end{displaymath}
 Jak łatwo jednak zauważy % zauważyć <<<<<<<<<<<<
-, formy
-$\mu_{ 1 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } )$
+, formy $\mu_{ 1 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } )$
 oraz~$\mu_{ 2 } = \vp \ot \psi_{ 1 } + \vp \ot \psi_{ 2 }$
 przedstawiają tę samą formę, choć~są sumą innych form prostych. Z~tego
 względu należałoby napisać, że~$\mc{E}$ jest zbiorem klas abstrakcji
@@ -1025,8 +1030,9 @@ dowód jest taki sam jak w~przypadku iloczynu skalarnego.
 $\vp_{ l } \ot \psi_{ k }$ stanowi bazę ortonormalną, jest bardzo
 szkicowa\footnote{Pewne idee tu przedstawione pochodzą od~Pawła
   Ducha.}. Aby~ją uzupełnić zauważmy najpierw, że~jeśli rozważane
-przestrzeń są metryczne, to~odwzorowanie jest topologiczne ciągła % ciągłe?<<<<<<
- \wtw%jw<<<<
+przestrzeń są metryczne, to~odwzorowanie jest topologiczne
+ciągła % ciągłe?<<<<<<
+\wtw%jw<<<<
 gdy jest ciągowo ciągła\footnote{Nie wiem czy tak jest w~ogólności,
   może bowiem powstać problem gdy nie istnieje przeliczalna baza
   otoczeń.} (tzn.
@@ -1058,10 +1064,10 @@ $\norm{ \psi_{ R } } < \veps$.
 Potrzebujemy jeszcze zauważyć, że~z~faktu, iż~suma
 $\sum_{ l < L } \vp_{ l }$ jest zbieżna do~$\vp$, wynika,
 że~$\norm{ \sum_{ l < L } \vp_{ l } } \ra \norm{ \psi }$, tworzy więc
-ona ciąg Cauchy'ego i~tym samym jest ograniczony. Dobierz % znów proponuje zmianę na >>Dobierzmy<<<
- $M$ tak~by
-było wspólnym ograniczeniem ciągów $\sum_{ l < L } \vp_{ l }$
-i~$\sum_{ k < K } \psi_{ k }$. Tym samym
+ona ciąg Cauchy'ego i~tym samym jest ograniczony.
+Dobierz % znów proponuje zmianę na >>Dobierzmy<<<
+$M$ tak~by było wspólnym ograniczeniem ciągów
+$\sum_{ l < L } \vp_{ l }$ i~$\sum_{ k < K } \psi_{ k }$. Tym samym
 \begin{displaymath}
   \begin{split}
     & \norm{ \vp \ot \psi - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot
