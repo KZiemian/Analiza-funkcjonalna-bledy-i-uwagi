@@ -123,6 +123,7 @@
 \newcommand{\Rn}{\R^{ n }}
 \newcommand{\Rc}{\mc{R}}
 \newcommand{\Cc}{\mc{C}}
+\newcommand{\lc}{\mc{l}}
 
 % Mniej używane oznaczenia literowe
 \newcommand{\B}{\mc{B}}
@@ -155,6 +156,7 @@
 
 % ####################
 % Teoria mnogości
+\newcommand{\set}[1]{\{ #1 \}}
 \newcommand{\es}{\emptyset}
 \newcommand{\subs}{\subset}
 \newcommand{\setm}{\setminus}
@@ -194,7 +196,9 @@
 \newcommand{\dx}{\de x}
 \newcommand{\Int}{\int\limits}
 \newcommand{\IntL}[3]{ \Int_{ { #1 } }^{ { #2 } } \de#3 \; }
-\newcommand{\IntCa}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
+\newcommand{\IntCaJ}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
+% Całka Jeden
+\newcommand{\IntCaD}[2] { \Int #1 \, d#2 } % Całka dwa
 \newcommand{\IntFi}[2]{ \Int \de#1 \, #2 } % Bardziej Fizyczna notacja;)
 \newcommand{\IntWie}[3]{ \Int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa
 \newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
@@ -257,7 +261,8 @@
 \newcommand{\Work}[1]{ \begin{center} {\large \tb{#1}} \end{center} }
 
 
-
+% ##############################
+% Oznaczenia dla
 
 
 % % Sumy
@@ -323,7 +328,7 @@ pierścieniu $\Rc$, definiujemy \tb{sumę miar} jako:
     (\mu_{ 1 } + \mu_{ 2 })( A ) &= \mu_{ 1 }( A ) + \mu_{ 2 }( A ),
     \quad \forall A \in \mc{R}, \\
     (\mu_{ 1 } + \mu_{ 2 })( A ) &= +\infty, \quad \tr{jeśli } \mu_{ 1
-    }( A ) = +\infty, \tr{ lub } \mu_{ 2 }( A ) = +\infty.
+    }( A ) = +\infty \tr{ lub } \mu_{ 2 }( A ) = +\infty.
   \end{split}
 \end{equation}
 Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
@@ -339,15 +344,15 @@ Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
   $\mu_{ i }$, to jest też całkowalna względem ich sumy i~zachodzi:
   \begin{equation}
     \label{eq:1}
-    \Int{ f }{ ( \Sum_{ i = 1 }^{ n } \mu_{ i } ) }
-    = \Sum_{ i = 1 }^{ n } \Int{ f }{ \mu_{ i } }.
+    \int f( x ) \, \left( \Sum_{ i = 1 }^{ n } d\mu_{ i }( x ) \right)
+    = \Sum_{ i = 1 }^{ n } \IntCaD{ f( x ) }{ \mu_{ i }( x ) }.
   \end{equation}
 \end{twr}
 % ##############################
 
 \begin{proof}
   Jeśli pokażemy to twierdzenie dla $n = 2$, przypadku ogólnego można
-  bez problemu dowieść przez indukcje. Suma miar jest określona
+  będzie można dowieść przez prostą indukcję. Suma miar jest określona
   na~wspólnym pierścieniu $\Rc$, zaś poza warunkiem na~przeliczalną
   addytywność miary rozłącznych zbiorów $A_{ i }$, pozostałe własności
   miary dodatniej wychodzą od razu.
@@ -393,22 +398,22 @@ Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
     \end{split}
   \end{equation}
   Znowu ponieważ wszystkie wyrazy szeregów są dodatnie, więc powyższe
-  przekształcenia są dozwolone.
+  przekształcenia są poprawne.
 
   Jako, że~w~podejściu prezentowanym przez Reeda i~Simona, całkowanie
   funkcji zespolonych sprowadza~się do całkowania funkcji dodatnich,
   widzimy więc, że~funkcja całkowalna względem każdej z~miar
-  $\mu_{ n }$, tzn.
+  $\mu_{ i }$, $i = 1, \ld, n$~tzn.
   \begin{align*}
-    \Int{ f }{ \mu_{ 1 } } < +\infty \;\tr{  oraz  } \Int{ f }{ \mu_{ 2 } }
+    \IntCaD{ f }{ \mu_{ 1 } } < +\infty \;\tr{  oraz  } \IntCaD{ f }{ \mu_{ 2 } }
     < +\infty,
   \end{align*}
   jest też całkowalna względem ich sumy i~na podstawie wzoru
   \eqref{eq:RSI2}, zachodzi równość:
   \begin{equation}
     \label{eq:RSI3}
-    \Int{ f }{ ( \mu_{ 1 } + \mu_{ 2 } ) } = \Int{ f }{ \mu_{ 1 } }
-    + \Int{ f }{ \mu_{ 2 } }.
+    \IntCaD{ f }{ ( \mu_{ 1 } + \mu_{ 2 } ) } = \IntCaD{ f }{ \mu_{ 1 } }
+    + \IntCaD{ f }{ \mu_{ 2 } }.
   \end{equation}
 
 \end{proof}
@@ -419,9 +424,9 @@ funkcje $f_{ 1 }$ i~$f_{ 2 }$, całkowalne odpowiednio względem miar
 $\mu_{ 1 }$ i~$\mu_{ 2 }$, i~chcemy powiedzieć coś o~całkowalności ich
 sumy. Wtedy bowiem może okazać się, że~funkcja np.~$f_{ 1 }$ jest
 całkowalna względem $\mu_{ 1 }$ bo~miara zbioru na którym przyjmuje
-duże wartości jest mała względem $\mu_{ 1 }$. Jeżeli jednak miara tego
-zbioru względem $\mu_{ 2 }$ jest duża, funkcja $f_{ 1 }$ może być
-niecałkowalna względem $\mu_{ 2 }$.
+duże wartości jest mała względem $\mu_{ 1 }$. Jeżeli jednak miara
+$\mu_{ 2 }$ tego zbioru jest duża, funkcja $f_{ 1 }$ może być względem
+niej niecałkowalna.
 
 \tb{Przykład.} Weźmy funkcję na prostej rzeczywistej
 \begin{equation*}
@@ -450,11 +455,11 @@ $dx + d\del_{ 0 }$.
 \start \tb{Ciągłość ciągowa funkcji na~przestrzeniach metrycznych.}
 W~tym rozdziale napotykamy kilkakrotnie następującą sytuacje. Mamy
 funkcje ciągłą $f( x )$ oraz~ciąg $x_{ n_{ 1 }, \ld, n_{ m } }$
-i~próbujemy wejść z~granicą ciągu pod funkcję, innymi słowy chcemy,
-aby zachodziło\footnote{Rozpatrujemy tu tylko przypadek skończonej
-  liczby indeksów liczby naturalnych, bo~na~razie nie znalazłem
-  potrzeby rozpatrywać ciągów o~nieskończonej ilości indeksów
-  lub~takich które nie są indeksowane liczbami naturalnymi.}
+i~próbujemy wejść z~granicą pod funkcję, innymi słowy chcemy, aby
+zachodziło\footnote{Rozpatrujemy tu tylko przypadek skończonej liczby
+  indeksów liczby naturalnych, bo~na~razie nie znalazłem potrzeby
+  rozpatrywać ciągów o~nieskończonej ilości indeksów lub~takich które
+  nie są indeksowane liczbami naturalnymi.}
 \begin{equation*}
   \Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\  n_{ m } \ra +\infty } }
   f( x_{ n_{ 1 }, \ld, n_{ m } } )
@@ -480,39 +485,39 @@ wieloindeksowego. Najprostsza definicja tej granicy jest
 następująca\footnote{Granica ciągu wieloindeksowego powinna być
   szczególnym przypadkiem granic indeksowanych zbiorami skierowanymi
   które~są omawiane w~książce Maurina \cite{Maurin74}.}. Niech $X$
-będzie przestrzenią metryczną, a~$x_{ n_{ 1 }, \ld, n_{ m } }, x_{ 0 }$ ciągiem wieloindeksowym w~$X$. $x_{ 0 }$ jest granicą
-ciągu $x_{ n_{ 1 }, \ld, n_{ m } }$ \wtw, gdy
+będzie przestrzenią metryczną, a~$x_{ n_{ 1 }, \ld, \, n_{ m } }$
+ciągiem wieloindeksowym w~$X$. $x_{ 0 }$ jest granicą ciągu
+$x_{ n_{ 1 }, \ld, \, n_{ m } }$ \wtw, gdy
 \begin{displaymath}
   ( \forall \, \veps > 0) ( \exists \, N )
-  ( \forall \, n_{ 1 } > N, \ld, n_{ m } > N ) \;\,
-  d( x_{ n_{ 1 }, \ld, n_{ m } }, \, x_{ 0 } ) < \veps.
+  ( \forall \, n_{ 1 } > N, \ld, \, n_{ m } > N ) \;\,
+  d( x_{ n_{ 1 }, \ld, \, n_{ m } }, \, x_{ 0 } ) < \veps.
 \end{displaymath}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Tu skończyłem.
+
 \begin{twr}
   Niech $X$ i~$Y$ będą przestrzeniami metrycznymi,
   $x_{ n_{ 1 }, \ld, n_{ m } }$ ciągiem elementów przestrzeni $X$.
   Jeśli funkcja $f: X \ra Y$ jest ciągła topologicznie i~istnieje
   granica ciągu
   $\Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra
-      +\infty } } x_{ n_{ 1 }, \ld, n_{ m } } = x_{ 0 }$, to
+      +\infty } } x_{ n_{ 1 }, \ld, \, n_{ m } } = x_{ 0 }$, to
   \begin{equation}
     \Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\  n_{ m } \ra +\infty } }
-    f( x_{ n_{ 1 }, \ld, n_{ m } } )
+    f( x_{ n_{ 1 }, \ld, \, n_{ m } } )
     = f( \Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\ n_{ m } \ra
-        +\infty } } x_{ n_{ 1 }, \ld, n_{ m } } ).
+        +\infty } } x_{ n_{ 1 }, \ld, \, n_{ m } } ).
   \end{equation}
 \end{twr}
 
 \begin{proof}
   Dla uproszczenia notacji będziemy rozpatrywać ciąg dwuindeksowy
-  $x_{ n, m }$. Ustalmy $\veps > 0$, szukamy teraz takiego $N$,
-  by~$d( f( x_{ n, m } ),\, f( x_{ 0 } ) ) < \veps$. Ponieważ $f$ jest
-  ciągła istnieje taka $\del > 0$, \linebreak
-  że~$d_{ 2 }( f( x ),\, f( x_{ 0 } ) ) < \veps$
-  dla~$d_{ 1 }( x,\, x_{ 0 } ) < \del$. Wystarczy więc dobrać tak $N$,
-  żeby dla $n > N$, $m > N$, $x_{ n,m }$ znajdował~się w~odległości
-  mniejszej niż~$\del$ od~$x_{ 0 }$. Takie liczby $N$ i~$M$ istnieją
+  $x_{ n, \, m }$. Ustalmy $\veps > 0$, szukamy teraz takiego $N$,
+  by~$d( f( x_{ n, \, m } ),\, f( x_{ 0 } ) ) < \veps$. Ponieważ $f$
+  jest ciągła istnieje taka $\del > 0$, \linebreak
+  że~$d_{ Y }( f( x ),\, f( x_{ 0 } ) ) < \veps$
+  dla~$d_{ X }( x,\, x_{ 0 } ) < \del$. Wystarczy więc dobrać tak $N$,
+  żeby dla $n > N$, $m > N$, $x_{ n, \, m }$ znajdował~się
+  w~odległości mniejszej niż~$\del$ od~$x_{ 0 }$. Takie $N$ istnieją
   na~mocy definicji granicy ciągu dwuindeksowego.
 \end{proof}
 
@@ -534,13 +539,13 @@ potrzebujemy kilka razy pokazać równość następującego typu. Jeżeli
 $f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
 $g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$, to
 \begin{equation*}
-  \Lim_{ K,\, M \ra +\infty } \Sum_{ l < L } \Sum_{ k < K } c_{ l }
-  d_{ k } \, \vp_{ l } \cdot \psi_{ k } = f \cdot g,
+  \Lim_{ K,\, M \ra +\infty } \Sum_{ \substack{ l < L \\ k < K } }
+  c_{ l } d_{ k } \, (\vp_{ l } \cdot \psi_{ k } ) = f \cdot g,
 \end{equation*}
-przy czym symbol $K, M \ra +\infty$ rozumiem jak przy podanej
-wcześniej definicji granicy ciągu wieloindeksowego. Aby~nadać tym
-symbolom sens, musimy najpierw zdefiniować odwzorowania wieloliniowe
-ograniczone.
+gdzie $\cdot$ jest jakiegoś rodzaju iloczynem, a~symbol
+$K, M \ra +\infty$ rozumiem jak przy podanej wcześniej definicji
+granicy ciągu wieloindeksowego. Aby~nadać tym operacjom sens, musimy
+najpierw zdefiniować odwzorowania wieloliniowe ograniczone.
 
 Niech $X_{ 1 }, \ld, X_{ n }, Y$ będą przestrzeniami unormowanymi nad
 ciałem $\R$ albo~$\C$, zaś
@@ -548,18 +553,18 @@ ciałem $\R$ albo~$\C$, zaś
   B: X_{ 1 } \ti \ld \ti X_{ n } \ra Y
 \end{equation*}
 odwzorowaniem wieloliniowym. Odwzorowanie takie jest ograniczone jeśli
-istnieje taka stała $C \in \R$, że~dla wszystkich
+istnieje taka stała $C \in \Rp$, że~dla wszystkich
 $x_{ 1 } \in X_{ 1 }, \ld, x_{ n } \in X_{ n }$ zachodzi
 \begin{equation}
   \norm{ B( x_{ 1 }, \ld, x_{ n } ) }_{ Y } \leq C
-  \norm{ x_{ 1 } }_{ X_{ 1 } } \ld \norm{ x_{ n } }_{ X_{ n } }.
+  \norm{ x_{ 1 } }_{ X_{ 1 } } \cdot \ld \cdot \norm{ x_{ n } }_{ X_{ n } }.
 \end{equation}
-Podstawowe ich własności bada Schwartz w~swoim ,,Kursie analizy
-matematycznej'', str. 102 \cite{Sch79}. W~szczególności odwzorowanie
-wieloliniowe jest ciągłe \wtw{}, gdy jest ograniczone, analogicznie
-również definiuje~się normę $\norm{ B }$ odwzorowania
-wieloliniowego~$B$. Dysponując już tymi pojęciami możemy sformułować
-potrzebne nam twierdzenie.
+Podstawowe ich własności przedstawił Schwartz w~swoim ,,Kursie analizy
+matematycznej'', str.~102, \cite{Sch79}. W~szczególności tak jak dla
+odwzorowania liniowego odwzorowanie wieloliniowe jest ciągłe \wtw, gdy
+jest ograniczone, analogicznie również definiuje~się normę
+$\norm{ B }$ odwzorowania wieloliniowego~$B$. Dysponując już tymi
+pojęciami możemy sformułować potrzebne nam twierdzenie.
 
 \begin{twr}
   Jeśli $B: X_{ 1 } \ti \ld \ti X_{ n } \ra Y$ jest odwzorowanie
@@ -567,7 +572,7 @@ potrzebne nam twierdzenie.
   $X_{ 1 }, \ld, X_{ n }, Y$, zaś szeregi
   $\sum_{ l } c_{ 1, \, l } \, \vp_{ 1, \, l }, \ld, \sum_{ l } c_{ n,
     \, l } \, \vp_{ n, \, l }$, $\vp_{ i, \, l } \in X_{ i }$,
-  $l_{ i } \in \N$, są~warunkowo zbieżne do~elementów $\eta_{ i }$, to
+  $l \in \N$, są~warunkowo zbieżne do~elementów $\eta_{ i }$, to
   zachodzi równość
   \begin{equation*}
     \Sum_{ l_{ 1 }, \ld, l_{ n } } c_{ 1, \, l_{ 1 } } \cdot \ld \cdot
@@ -708,7 +713,7 @@ dalej~tą drogą można sformułować całkiem satysfakcjonującą teorię
 całki.
 
 \start \Str{17} W~twierdzeniu o~zbieżności monotonicznej jest
-powiedziane, że~$\int | f( p ) - f_{ n }( p ) | \dc p \ra 0$, co
+powiedziane, że~$\int | f( p ) - f_{ n }( p ) | \dk p \ra 0$, co
 wymaga pewnego komentarza. Ponieważ $f( p ) \geq f_{ n }( p )$ więc
 $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
 \begin{displaymath}
@@ -755,7 +760,7 @@ względem dwóch zmiennych, jest też mierzalna względem każdej
 ze~zmiennych z~osobna. Dla miar Radona, dla~których który
 zbiory %powtórzenie który ???? <<<<<<<<<<<<
 borelowskie~są mierzalne, tak zapewne jest, jednak dla ogólnych
-$\s$\dywiz algebr wydaje mi~się dziwnie mocny
+$\si$\dywiz algebr wydaje mi~się dziwnie mocny
 twierdzeniem %propozycja>>wydaje mi się to dziwnie mocnym twierdzeniem <<<
 . Zapewne zachodzi twierdzenie, że~funkcja jest prawie wszędzie
 mierzalna. \Dok
@@ -791,14 +796,14 @@ zupełny.
 
 Przez kontrapozycję. Załóżmy teraz, że~$S$ nie jest zupełny. W~takim
 razie istnieje taki układ ortogonalny niezerowych wektorów,
-iż~$S \sset S'$ oraz $S' \setm S \neq \es$. Teraz $y \in S' \setm S$
+iż~$S \subs S'$ oraz $S' \setm S \neq \es$. Teraz $y \in S' \setm S$
 jest niezerowym wektorem ortogonalny %<< ortogonalnym >>>
 do $S$.
 % koniec niezrozumiałego fragmentu
 
 \start \Str{45} Nie rozumiem dlaczego z~nierówności
-$\sum_{ i = 1 }^{ N } \abs{ ( x_{ \al_{ i } }, y ) } \leq \norm{ y }^{
-  2 }$ wynika, że~tylko dla przeliczalnej ilości indeksów $\al$
+$\sum_{ i = 1 }^{ N } \absj{ ( x_{ \al_{ i } }, y ) } \leq \norm{ y
+}^{ 2 }$ wynika, że~tylko dla przeliczalnej ilości indeksów $\al$
 zachodzi $( x_{ \al }, y ) \neq 0$.
 
 \start \Str{45} W~dowodzie twierdzenia II.6 nie zaznaczono dlaczego
@@ -849,9 +854,9 @@ nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
 sumowania (str.~110 \cite{Sch79}). Trajdos przetłumaczył ich nazwę
 jako szeregi \emph{zbieżne przestawialnie}.
 
-\start \Str{45} Wzorując~się na Grabowskim i~Ingardenie \cite{GI87},
-warto w~kontekście twierdzenia II.6 udowodnić jeszcze jedną piękną
-równość:
+\start \Str{45} Wzorując~się na Grabowskim i~Ingardenie
+\cite{GrabowskiIngarden87}, warto w~kontekście twierdzenia II.6
+udowodnić jeszcze jedną piękną równość:
 \begin{displaymath}
   ( y, y' ) = \Sum_{ \al \in A } ( y, x_{ \al } )( x_{ \al }, y' ),
 \end{displaymath}
@@ -885,7 +890,7 @@ zrobili to Reed i~Simon, równanie (II.2), mianowicie podstawiając
 $y' = y$, mamy
 \begin{equation*}
   \norm{ y }^{ 2 } = ( y, y ) = \Sum_{ \al \in A } ( y, x_{ \al } )
-  ( x_{ \al }, y ) = \Sum_{ \al \in A } \abs{ ( x_{ \al }, y ) }^{ 2 }.
+  ( x_{ \al }, y ) = \Sum_{ \al \in A } \absj{ ( x_{ \al }, y ) }^{ 2 }.
 \end{equation*}
 
 \start \Str{45} Dysponując twierdzeniem II.6, można teraz podać ogólną
@@ -893,16 +898,16 @@ postać nierówności Bessela.
 
 \begin{twr}[Ogólna postać nierówności Bessela]
   Niech $S = \{ x_{ \al } \}_{ \al \in A }$ będzie układem
-  ortonormalny i~niech $B \sset A$. Wówczas:
+  ortonormalny i~niech $B \subs A$. Wówczas:
   \begin{equation*}
-    \Sum_{ \be \in B } \abs{ ( x_{ \be }, x ) }^{ 2 } \leq \norm{ x }^{ 2 }.
+    \Sum_{ \be \in B } \absj{ ( x_{ \be }, x ) }^{ 2 } \leq \norm{ x }^{ 2 }.
   \end{equation*}
 \end{twr}
 \begin{proof}
   Prawie nie ma czego dowodzić, mamy bowiem
   \begin{equation*}
-    \norm{ x }^{ 2 } = \Sum_{ \al \in A } \abs{ ( x_{ \al }, x ) }^{ 2 }
-    \geq \Sum_{ \be \in B } \abs{ ( x_{ \be }, x ) }^{ 2 }.
+    \norm{ x }^{ 2 } = \Sum_{ \al \in A } \absj{ ( x_{ \al }, x ) }^{ 2 }
+    \geq \Sum_{ \be \in B } \absj{ ( x_{ \be }, x ) }^{ 2 }.
   \end{equation*}
 \end{proof}
 
@@ -1049,10 +1054,10 @@ wiedza nie jest potrzebna.
 
 Ponieważ norma jest funkcją ciągłą, zachodzi więc równość
 \begin{displaymath}
-  \Lim_{ \sstack{ K \ra \infty \\ L \ra \infty } } \norm{ \vp \ot \psi
+  \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } \norm{ \vp \ot \psi
     - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } }
   = \norm{ \vp \ot \psi -
-    \Lim_{ \sstack{ K \ra \infty \\ L \ra \infty } } \Sum_{ k < K }
+    \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } \Sum_{ k < K }
     \Sum_{ l < L } \vp_{ k } \ot \psi_{ l } }.
 \end{displaymath}
 Aby zakończyć dowód o~bazie ortonarmalnej trzeba teraz wykonać
@@ -1113,12 +1118,12 @@ zwarte~są domknięte i~tym samym borelowskie.
     46 & & 9 & $(v_{ 1 }, u_{ 1 } ) v_{ k }$ & $(v_{ 1 }, u_{ 2 } )
                                                v_{ 1 }$ \\
     49 & & 7 & linear & bilinear \\
-    53 & & 12 & $\vp_{ k_{ \s( 1 ) } } \ot \vp_{ k_{ \s( 2 ) } } \cdots
+    53 & & 12 & $\vp_{ k_{ \si( 1 ) } } \ot \vp_{ k_{ \si( 2 ) } } \cdots
                 \ot \vp_{ k_{ n( p ) } }$
-           & $\vp_{ k_{ \s( 1 ) } } \ot \vp_{ k_{ \s( 2 ) } } \ot \cdots
-             \ot \vp_{ k_{ \s( p ) } }$ \\
-    73 & & 2 & $\Sum_{ k = 1 }^{ \infty } \abs{ \la_{ k } } < \infty$
-           & $\Sum_{ k = 1 }^{ \infty } \abs{ \la_{ k } } \leq
+           & $\vp_{ k_{ \si( 1 ) } } \ot \vp_{ k_{ \si( 2 ) } } \ot \cdots
+             \ot \vp_{ k_{ \si( p ) } }$ \\
+    73 & & 2 & $\Sum_{ k = 1 }^{ \infty } \absj{ \la_{ k } } < \infty$
+           & $\Sum_{ k = 1 }^{ \infty } \absj{ \la_{ k } } \leq
              \norm{ \la_{ 0 } }_{ c_{ 0 }^{ * } } < \infty$ \\
     79 & 6 & & $\norm{ [x] }$ & $\norm{ [x] }_{ 1 }$ \\
     82 & & 15 & since$T[ B_{ r }^{ X } ]$ & since $T[ B_{ r }^{ X } ]$ \\
@@ -1126,7 +1131,7 @@ zwarte~są domknięte i~tym samym borelowskie.
     104 & 6 & & $||P_{ n }( f )$ & $|| \, P_{ n }( f )$ \\
     106 & 11 & & $\mu( \, Y \setm \wt{ Y } )$
            & $\mu( Y \setm \wt{ Y } )$ \\
-    106 & 5 & & $C \sset O$ & $C \sset Y$ \\
+    106 & 5 & & $C \subs O$ & $C \subs Y$ \\
     107 & 4 & & $\Real[ e^{ -i \vp } f ]$ & $e^{ -i \vp } f$ \\
     107 & 4 & & $\Real( e^{ -i \vp } f )$ & $e^{ -i \vp } f$ \\
     107 & 10 & & $\int\! fd\mu$ & $\Int{ f }{ \mu }$ \\
