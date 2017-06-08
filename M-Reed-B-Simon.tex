@@ -262,7 +262,9 @@
 
 
 % ##############################
-% Oznaczenia dla
+% Oznaczenia dla Reeda, Simona
+
+\newcommand{\ci}{\circ}
 
 
 % % Sumy
@@ -540,9 +542,9 @@ $f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
 $g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$, to
 \begin{equation*}
   \Lim_{ K,\, M \ra +\infty } \Sum_{ \substack{ l < L \\ k < K } }
-  c_{ l } d_{ k } \, (\vp_{ l } \cdot \psi_{ k } ) = f \cdot g,
+  c_{ l } d_{ k } \, (\vp_{ l } \ci \psi_{ k } ) = f \ci g,
 \end{equation*}
-gdzie $\cdot$ jest jakiegoś rodzaju iloczynem, a~symbol
+gdzie $\ci$ jest jakiegoś rodzaju iloczynem, a~symbol
 $K, M \ra +\infty$ rozumiem jak przy podanej wcześniej definicji
 granicy ciągu wieloindeksowego. Aby~nadać tym operacjom sens, musimy
 najpierw zdefiniować odwzorowania wieloliniowe ograniczone.
@@ -572,8 +574,8 @@ pojęciami możemy sformułować potrzebne nam twierdzenie.
   $X_{ 1 }, \ld, X_{ n }, Y$, zaś szeregi
   $\sum_{ l } c_{ 1, \, l } \, \vp_{ 1, \, l }, \ld, \sum_{ l } c_{ n,
     \, l } \, \vp_{ n, \, l }$, $\vp_{ i, \, l } \in X_{ i }$,
-  $l \in \N$, są~warunkowo zbieżne do~elementów $\eta_{ i }$, to
-  zachodzi równość
+  $l \in \N$, są~warunkowo zbieżne do~elementów
+  $\eta_{ 1 }, \ld, \eta_{ n }$, to zachodzi równość
   \begin{equation*}
     \Sum_{ l_{ 1 }, \ld, l_{ n } } c_{ 1, \, l_{ 1 } } \cdot \ld \cdot
     c_{ n, \, l_{ n } } B( \vp_{ 1, \, l_{ 1 } }, \ld,
@@ -584,35 +586,33 @@ pojęciami możemy sformułować potrzebne nam twierdzenie.
     \Sum_{ l_{ 1 }, \ld, l_{ n } } c_{ 1, \, l_{ 1 } } \cdot \ld \cdot
     c_{ n, \, l_{ n } } \, B( \vp_{ 1, \, l_{ 1 } }, \ld,
     \vp_{ n, \, l_{ n } } ) = \Lim_{ N \ra +\infty }
-    \Sum_{ \substack{ l_{ 1 } < N \\ \cdots \\ l_{ n } < N } }x
+    \Sum_{ \substack{ l_{ 1 } < N \\ \cdots \\ l_{ n } < N } }
     c_{ 1, \, l_{ 1 } } \cdot \ld \cdot c_{ n, \, l_{ n } } \,
     B( \vp_{ 1, \, l_{ 1 } }, \ld, \vp_{ n, \, l_{ n } } ).
   \end{equation*}
 \end{twr}
 
 \begin{proof}
-  Aby~nie ugrząźć w~indeksach dowód przeprowadzimy dla przypadku
-  $n = 2$, oznaczmy przy tym $\vp_{ 1,\, l } = \vp_{ l }$,
-  $\vp_{ 2, \, l } = \psi_{ l }$, $c_{ 1, \, l } = c_{ l }$,
-  $c_{ 1, \, l } = d_{ l }$, $\eta_{ 1 } = \vp$
-  oraz~$\eta_{ 2 } = \psi$. Ponieważ
+  Aby~nie ugrząźć w~,,nieskończonych'' ciągach indeksów dowód
+  przeprowadzimy dla przypadku $n = 2$, oznaczmy przy tym
+  $\vp_{ 1,\, l } = \vp_{ l }$, $\vp_{ 2, \, l } = \psi_{ l }$,
+  $c_{ 1, \, l } = c_{ l }$, $c_{ 1, \, l } = d_{ l }$,
+  $\eta_{ 1 } = \vp$ oraz~$\eta_{ 2 } = \psi$. Ponieważ
   $\vp = \sum_{ l } c_{ l } \, \vp_{ l }$, więc istniej takie $L$,
   że~$\vp = \sum_{ k < K } c_{ k } \, \vp_{ k } + \vp_{ R }$, gdzie
   $\norm{ \vp_{ R } }_{ X_{ 1 } } \leq \veps$. Analogicznie
   $\psi = \sum_{ l < L } d_{ l } \psi_{ l } + \psi_{ R }$,
-  $\norm{ \psi_{ R } }_{ X_{ 2 } } \leq \veps$. Ponieważ ciąg
-  $\sum_{ k < K } c_{ k } \vp_{ k }$ jest
-  zbieżna %czy >>zbieżny<< - chodzi tu o ciąg czy sumę?
-  do~$\vp$, wynika, że~ ciąg
+  $\norm{ \psi_{ R } }_{ X_{ 2 } } \leq \veps$. Ponieważ suma
+  $\sum_{ k < K } c_{ k } \vp_{ k }$ jest zbieżna do~$\vp$, wynika,
+  że~ ciąg
   $\norm{ \sum_{ k < K } c_{ k } \vp_{ k } }_{ X_{ 1 } } \ra \norm{
-    \vp }_{ X_{ 1 } }$, jest więc ograniczony.
-  Dobierz% Dobierzmy -<<<by było w zgodnośc z resztą....
-  $M$ tak~by było wspólnym ograniczeniem ciągów
+    \vp }_{ X_{ 1 } }$, jest więc ograniczony. Dobierzmy $M$ tak~by
+  było wspólnym ograniczeniem ciągów
   $\norm{ \sum_{ k < K } c_{ k } \vp_{ k } }_{ X_{ 1 } }$
   i~$\norm{ \sum_{ l < L } d_{ l } \psi_{ l } }_{ X_{ 2 }
   }$\footnote{To ograniczenie to~wszystko czego potrzebujemy
     w~dowodzie, a~aby je otrzymać wystarczy warunkowa zbieżność
-    omawianych szeregów.}. Niech teraz $N = \max( L, K )$. Rozpatrzmy
+    omawianych szeregów.}, niech teraz $N = \max( L, K )$. Rozpatrzmy
   wyrażenie
   \begin{equation*}
     \begin{split}
@@ -650,10 +650,8 @@ pojęciami możemy sformułować potrzebne nam twierdzenie.
 % metrycznej jest zupełny, należy wprowadzić topologię indukowaną.
 
 \start \Str{9} Nie wykazano, jedynie stwierdzono jednym słowem
-,,thus'', że~podane dwie definicje normy operatora
-ograniczonego~są %propozycja >>>że obie podane definicie<<<<
-równoważne. W~istocie, jak powszechnie wiadomo z~pracy dotyczących
-analizy funkcjonalnej:
+,,thus'', że~obie podane definicje~są równoważne. W~istocie, jak
+powszechnie wiadomo z~pracy dotyczących analizy funkcjonalnej:
 \begin{displaymath}
   \norm{ T } = \sup_{ \norm{ x }_{ 1 } \leq 1 } \fr{ \norm{ T x }_{ 2 } }
   { \norm{ x }_{ 1 } }
@@ -661,72 +659,73 @@ analizy funkcjonalnej:
   { \norm{ x }_{ 1 } } = \inf \{ \, C \, | \, \forall x,
   \norm{ T x }_{ 2 } \leq C \norm{ x }_{ 1 } \}.
 \end{displaymath}
-Elegancki dowód tego faktu, można znaleźć np. w~\cite{Chm04}.
+Elegancki dowód tego faktu, można znaleźć np. w~\cite{Chm04},
+str.~115--116.
 
 \start \Str{10} W~dowodzie twierdzenia B.L.T. skorzystanie z~$\Limsup$
 jest zupełnie niepotrzebne, poza tym utrudnia dowód,
-że~$\norm{ \tilde{ T } } = \norm{ T }$. Z~twierdzenia o~zachowaniu
-nierówności przy~przechodzeniu do~granicy wynika, że
+że~$|| \tilde{ T } || = \norm{ T }$. Wystarczy bowiem skorzystać
+z~twierdzenia o~zachowaniu nierówności przy~przechodzeniu do~granicy,
+by otrzymać pożądaną nierówność
 \begin{displaymath}
   \Lim_{ n \ra \infty } \norm{ T x_{ n } }_{ 2 }
   \leq \Lim_{ n \ra \infty } \norm{ T } \norm{ x_{ n } }_{ 1 }
   = \norm{ T } \norm{ x }_{ 1 },
 \end{displaymath}
-co jest potrzebną nam nierównością, ponadto wynika z~tego od~razu,
-że~$\norm{ \wt{ T } } \leq \norm{ T }$. Ponieważ zaś~na~zbiorze
-$V_{ 1 }$, zachodzi
-$\norm{ \wt{ T } x }_{ 2 } = \norm{ T x }_{ 2 } \leq \norm{ T } \norm{
-  x }_{ 1 }$, przy czym $\norm{ T }$ jest minimalną stałą dla~której
-jest to~prawdą, więc ze~względy % ze~względu<<<<
-na~fakt, iż~$V_{ 1 } \subset \wt{ V }_{ 1 }$, mamy nierówność
-$\norm{ T } \leq \norm{ \wt{ T } }$. Te dwie nierówności implikują,
-że~$\norm{ \wt{ T } } = \norm{ T }$.
+Wynika stąd od razu że~$|| \wt{ T } || \leq \norm{ T }$. Ponieważ
+zaś~na~zbiorze $V_{ 1 }$, zachodzi
+$|| \wt{ T } x ||_{ 2 } = \norm{ T x }_{ 2 } \leq \norm{ T } \norm{ x
+}_{ 1 }$, przy czym $\norm{ T }$ jest minimalną stałą dla~której jest
+to~prawdą, więc ze~względu na~to, iż~$V_{ 1 } \subset \wt{ V }_{ 1 }$,
+mamy nierówność $\norm{ T } \leq || \wt{ T } ||$, tym samym
+$|| \wt{ T } || = \norm{ T }$.
 
 \start \Str{12} Ponieważ nie została podana definicja podciągu, nie
-można było użyć następującej eleganckiej definicji. $b$ jest punktem
-skupienia ciągu $\{ a_{ n } \}$, jeśli $\{ a_{ n } \}$ zawiera podciąg
-zbieżny do $b$.
+można było użyć następującej eleganckiej definicji. Liczba $b$ jest
+punktem skupienia ciągu $\{ a_{ n } \}$, jeśli $\{ a_{ n } \}$ zawiera
+podciąg zbieżny do $b$.
 
 \start \Str{12} Zaproponowana na tej stronie alternatywna definicja
-$\Limsup$ ma sens tylko dla zbiorów ograniczonych. Tak jak poprzednio
-należy ją rozszerzyć na przypadki zbiorów nieograniczonych.
+$\Limsup$ ma sens tylko dla zbiorów ograniczonych. W~analogiczny
+sposób jak definicję pierwotną \Dok należy ją rozszerzyć na przypadek
+zbiorów nieograniczonych.
 
 \start \Str{13} Przelicz jawnie, że~funkcje trapezoidalne tworzą ciąg
 Cauchy'ego. \Dok
 
 \start \Str{16}
 
-\start \Str{16} Choć jest to rozdział typu ,,Wiadomości wstępne''
+\start \Str{16} Choć jest to rozdział ,,Wiadomości wstępne''
 (``Preliminaries''), to dyskusja całkowania funkcji niedodatnich jest
-przeprowadzona zbyt szybko, by~dawała satysfakcję. Najpierw
-należałoby% nie wiem co ma znaczyc konstrukcja >>należałoby by<< niewystarczy samo >> należałoby<<
-by~zauważyć, że~jeżeli mamy dwie funkcje $0 \leq g \leq f$, to z~tego,
-że~$\Int{ f }{ x } < \infty$, wynika że~$\Int{ g }{ x } < \infty$, co
-przy przyjętej tu definicji całki z~funkcji dodatniej nie jest od razu
-oczywiste. Istotnie, jak zauważyli Reed i~Simon, przy
-definicje %definicji <<<
-zwykle spotykanej w~pracach dla matematyków, tego typu dowody~są
-prostsze. Wiedząc już jednak o~tym, widać od~razu, że~jeżeli
-$\Int{ \absj{ f } }{ x } < \infty$ to całkowalne~są również $f_{ + }$
-i~$f_{ - }$, więc definicja całki z~funkcji niedodatniej ma sens. Idąc
-dalej~tą drogą można sformułować całkiem satysfakcjonującą teorię
-całki.
+przeprowadzona zbyt szybko i~pobieżnie, by~uznać ją za~satysfakcję.
+
+Po~pierwsze należałoby zauważyć, że~jeżeli mamy dwie funkcje
+$0 \leq g \leq f$, to z~tego, że~$\IntCaD{ f }{ x } < \infty$, wynika
+że~$\IntCaD{ g }{ x } < \infty$, co przy przyjętej tu definicji całki
+z~funkcji dodatniej nie jest od razu oczywiste. Istotnie, jak
+zauważyli Reed i~Simon, przy definicji zwykle spotykanej w~pracach dla
+matematyków, tego typu dowody~są prostsze. Wiedząc już jednak o~tym,
+widać od~razu, że~jeżeli $\IntCaD{ \absj{ f } }{ x } < \infty$ to
+całkowalne~są również $f_{ + }$ i~$f_{ - }$, więc definicja całki
+z~funkcji niedodatniej ma sens. Idąc dalej~tą drogą można sformułować
+całkiem satysfakcjonującą teorię całki.
 
 \start \Str{17} W~twierdzeniu o~zbieżności monotonicznej jest
-powiedziane, że~$\int | f( p ) - f_{ n }( p ) | \dk p \ra 0$, co
-wymaga pewnego komentarza. Ponieważ $f( p ) \geq f_{ n }( p )$ więc
+powiedziane, że~dla funkcji rozpatrywanych w~tym twierdzeniu zachodzi
+$\int | f( p ) - f_{ n }( p ) | \dk p \ra 0$, co~wymaga pewnego
+komentarza. Ponieważ $f( p ) \geq f_{ n }( p )$ stąd
 $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
 \begin{displaymath}
-  \Int{ | f( p ) - f_{ n }( p ) | }{ p } = \Int{ ( f( p )
-    - f_{ n }( p ) ) }{ p } = \Int{ f( p ) }{ p }
-  - \Int{ f_{ n }( p ) }{ p }
+  \IntCaD{ | f( p ) - f_{ n }( p ) | }{ p } = \IntCaD{ ( f( p )
+    - f_{ n }( p ) ) }{ p } = \IntCaD{ f( p ) }{ p }
+  - \IntCaD{ f_{ n }( p ) }{ p }
 \end{displaymath}
 Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
-$f \in \LIj$ i~$\Int{ f_{ n } }{ p } \ra \Int{ f }{ p }$ można znaleźć
-w~każdej książce do~teorii całki.
+$f \in \LIj$ i~$\IntCaD{ f_{ n } }{ p } \ra \IntCaD{ f }{ p }$ można znaleźć
+w~każdej książce do~teorii całki, np.~\cite{Rudin98}.
 
-\start \Str{17} W~twierdzeniu o~zbieżności majoryzowanej należy dodać,
-że~funkcje $f_{ n }$ muszą być mierzalne.
+\start \Str{17} W~twierdzeniu o~zbieżności majoryzowanej należy założyć,
+że~funkcje $f_{ n }$~są mierzalne.
 
 \start \Str{21} W~podanej charakterystyce liczbowej zbioru Cantora
 jest pewna nieścisłość. Do tego zbioru należy liczba
@@ -1108,11 +1107,12 @@ zwarte~są domknięte i~tym samym borelowskie.
     & \multicolumn{2}{c|}{} & & \\
     Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu &  &  \\ \hline
+    % Sprawdź
     2 & 8 & & \tb{surjective} & surjective \\
     2 & 9 & & surjective & \tb{surjective} \\
     14 & 10 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
     14 & 14 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
-    17 & 3 & & $\int \;\: f_{ n } \;\: dp$ & $\Int{ f_{ n } }{ p }$ \\
+    17 & 3 & & $\int \;\: f_{ n } \;\: dp$ & $\IntCaD{ f_{ n } }{ p }$ \\
     44 & & 7 & $\fr{ T( y ) }{ T( x ) }$ & $\fr{ ( y, x ) }{ ( x, x ) }$ \\
     45 & & 2 & some & all \\
     46 & & 9 & $(v_{ 1 }, u_{ 1 } ) v_{ k }$ & $(v_{ 1 }, u_{ 2 } )
@@ -1134,7 +1134,7 @@ zwarte~są domknięte i~tym samym borelowskie.
     106 & 5 & & $C \subs O$ & $C \subs Y$ \\
     107 & 4 & & $\Real[ e^{ -i \vp } f ]$ & $e^{ -i \vp } f$ \\
     107 & 4 & & $\Real( e^{ -i \vp } f )$ & $e^{ -i \vp } f$ \\
-    107 & 10 & & $\int\! fd\mu$ & $\Int{ f }{ \mu }$ \\
+    107 & 10 & & $\int\! fd\mu$ & $\IntCaD{ f }{ \mu }$ \\
     107 & & 10 & functions & functionals \\
     109 & 4 & & $\norm{ l }\!\sup$ & $\norm{ l } \sup$ \\
     112 & & 8 & $X$ & $F$ \\
