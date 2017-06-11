@@ -20,7 +20,7 @@
 \usepackage{titlesec}
 %\usepackage{url}% Pozwala pisać ładnie znak ~.
 \usepackage{xcolor}
-% \usepackage{calrsfs}
+\usepackage{calrsfs}
 \usepackage{vmargin}
 %----------------------------------------------------------------------
 % MARGINS
@@ -117,9 +117,9 @@
 \newcommand{\C}{\mb{C}}
 \newcommand{\D}{\mc{D}}
 \let\H\undefined
-\newcommand{\H}{\mc{H}}
+\newcommand{\Hc}{\mc{H}}
 \let\L\undefined
-\newcommand{\L}{\mc{L}}
+\newcommand{\Lc}{\mc{L}}
 \newcommand{\Rn}{\R^{ n }}
 \newcommand{\Rc}{\mc{R}}
 \newcommand{\Cc}{\mc{C}}
@@ -145,8 +145,8 @@
 % \newcommand{\Fc}{\mc{F}}
 % \let\H\undefined
 % \newcommand{\H}{\mc{H}}
-% \let\L\undefined
-% \newcommand{\L}{\mc{L}}
+% \let\Lc\undefined
+% \newcommand{\Lc}{\mc{L}}
 % \newcommand{\M}{\mc{M}}
 % \newcommand{\Rc}{\mc{R}}
 % \newcommand{\Cc}{\mc{C}}
@@ -221,13 +221,13 @@
 \newcommand{\rket}{\rangle}
 
 % Przestrzenie L^{ p }
-\newcommand{\Lj}{L^{ 1 }}
-\newcommand{\Ld}{L^{ 2 }}
-\newcommand{\Lp}{L^{ p }}
-\newcommand{\LIj}{\L^{ 1 }}
-\newcommand{\LIp}{\L^{ p }}
-\newcommand{\LdJ}{\Ld( \R, \de \mu )}
-\newcommand{\LdT}{\Ld( \R^{ 3 }, \de \mu )}
+\newcommand{\Lcj}{L^{ 1 }}
+\newcommand{\Lcd}{L^{ 2 }}
+\newcommand{\Lcp}{L^{ p }}
+\newcommand{\LcIj}{\Lc^{ 1 }}
+\newcommand{\LcIp}{\Lc^{ p }}
+\newcommand{\LcdJ}{\Lcd( \R, \de \mu )}
+\newcommand{\LcdT}{\Lcd( \R^{ 3 }, \de \mu )}
 
 
 % ####################
@@ -256,7 +256,7 @@
 \newcommand{\Prob}{{\color{red} Problem.}}
 \newcommand{\Dok}{{\color{red} Dokończ.}}
 \newcommand{\Pyt}{{\color{red} Pytanie.}}
-\newcommand{\Main}[1]{ \begin{center} {\LARGE \tb{#1} } \end{center} }
+\newcommand{\Main}[1]{ \begin{center} {\LcARGE \tb{#1} } \end{center} }
 \newcommand{\Field}[1]{ \begin{center} {\Large \tb{#1} } \end{center} }
 \newcommand{\Work}[1]{ \begin{center} {\large \tb{#1}} \end{center} }
 
@@ -294,6 +294,7 @@
 % #####################################################################
 
 
+
 % ########################################
 \Field{
   M. Reed, B. Simon \\
@@ -302,7 +303,6 @@
 
 
 \CenterTB{Uwagi}
-
 
 \noi \tb{Rozdział I.}
 
@@ -439,12 +439,9 @@ niej niecałkowalna.
   \end{cases}
 \end{equation*}
 Jako, że~$f \equiv 0$, jest ona całkowalna względem miary Lebesgue'a
-$dx$ i~jej całka
-wynosi~0.% Możemy zmienić jej wartość w~0 na $-\infty$, bez
-% żadnych konsekwencji dla wartości całki po~$dx$.
-Jeżeli teraz dodamy do miary Lebesgue'a miarę Diraca skupioną w~0,
-oznaczmy ją $d\del_{ 0 }$, to $f$ będzie niecałkowalna względem miary
-$dx + d\del_{ 0 }$.
+$dx$ i~jej całka wynosi~0. Jeżeli teraz dodamy do miary Lebesgue'a
+miarę Diraca skupioną w~0, oznaczmy ją $d\del_{ 0 }$, to $f$ będzie
+niecałkowalna względem miary $dx + d\del_{ 0 }$.
 
 \vspace{\spaceTwo}
 
@@ -685,6 +682,8 @@ można było użyć następującej eleganckiej definicji. Liczba $b$ jest
 punktem skupienia ciągu $\{ a_{ n } \}$, jeśli $\{ a_{ n } \}$ zawiera
 podciąg zbieżny do $b$.
 
+% ######################################################################
+% Tu skończyłem
 \start \Str{12} Zaproponowana na tej stronie alternatywna definicja
 $\Limsup$ ma sens tylko dla zbiorów ograniczonych. W~analogiczny
 sposób jak definicję pierwotną \Dok należy ją rozszerzyć na przypadek
@@ -721,11 +720,11 @@ $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
   - \IntCaD{ f_{ n }( p ) }{ p }
 \end{displaymath}
 Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
-$f \in \LIj$ i~$\IntCaD{ f_{ n } }{ p } \ra \IntCaD{ f }{ p }$ można znaleźć
-w~każdej książce do~teorii całki, np.~\cite{Rudin98}.
+$f \in \LcIj$ i~$\IntCaD{ f_{ n } }{ p } \ra \IntCaD{ f }{ p }$ można
+znaleźć w~każdej książce do~teorii całki, np.~\cite{Rudin98}.
 
-\start \Str{17} W~twierdzeniu o~zbieżności majoryzowanej należy założyć,
-że~funkcje $f_{ n }$~są mierzalne.
+\start \Str{17} W~twierdzeniu o~zbieżności majoryzowanej należy
+założyć, że~funkcje $f_{ n }$~są mierzalne.
 
 \start \Str{21} W~podanej charakterystyce liczbowej zbioru Cantora
 jest pewna nieścisłość. Do tego zbioru należy liczba
@@ -779,7 +778,7 @@ algebry: odwzorowanie liniowe jest injektywne \wtw gdy~jego jądro
 jest % tu chyba brakuje odstępu pomiedzy \wtw i gdy, nie wiem czy nie będziesz musiał zmienić komendy \wtw by to naprawić <<<<<<<<<<
 trywialne. Jeżeli więc $Ux = 0$, wtedy:
 \begin{displaymath}
-  0 = ( Ux, Ux )_{ \H_{ 2 } } = ( x, x )_{ \H_{ 1 } } \iff x = 0.
+  0 = ( Ux, Ux )_{ \Hc_{ 2 } } = ( x, x )_{ \Hc_{ 1 } } \iff x = 0.
 \end{displaymath}
 
 \start \Str{44} W~tym miejscu warto dowieść twierdzenia, że~układ
@@ -916,19 +915,19 @@ bardzo szkicowo, przez co~sens tego co~robimy jest często ukryty,
 tutaj postaram~się uzupełnić brakujące kroki.
 
 Jednym z~przyczyn zamieszania jest używanie tego samego symbolu na
-iloczyn skalarny w~$\H_{ 1 }$, $\H_{ 2 }$ i~$\mc{E}$, tu będę je
-oznaczał odpowiednio jako $( \cdot, \cdot )_{ \H_{ 1 } }$,
-$( \cdot, \cdot )_{ \H_{ 2 } }$, $( \cdot, \cdot )_{ \mc{ E } }$.
+iloczyn skalarny w~$\Hc_{ 1 }$, $\Hc_{ 2 }$ i~$\mc{E}$, tu będę je
+oznaczał odpowiednio jako $( \cdot, \cdot )_{ \Hc_{ 1 } }$,
+$( \cdot, \cdot )_{ \Hc_{ 2 } }$, $( \cdot, \cdot )_{ \mc{ E } }$.
 Działanie formy $\vp_{ 1 } \ot \vp_{ 2 }$ można więc zapisać jako
 \begin{displaymath}
   ( \vp_{ 1 } \ot \vp_{ 2 } )\lket \psi_{ 1 }, \psi_{ 2 } \rket
-  = ( \psi_{ 1 }, \vp_{ 1 } )_{ \H_{ 1 } } ( \psi_{ 2 },
-  \vp_{ 2 } )_{ \H_{ 2 } }.
+  = ( \psi_{ 1 }, \vp_{ 1 } )_{ \Hc_{ 1 } } ( \psi_{ 2 },
+  \vp_{ 2 } )_{ \Hc_{ 2 } }.
 \end{displaymath}
 Iloczyn skalarny na~$\mc{E}$ ma więc postać:
 \begin{displaymath}
-  ( \vp \ot \psi, \eta \ot \mu )_{ \mc{E} } = ( \vp, \eta )_{ \H_{ 1 } }
-  ( \psi, \mu )_{ \H_{ 2 } }.
+  ( \vp \ot \psi, \eta \ot \mu )_{ \mc{E} } = ( \vp, \eta )_{ \Hc_{ 1 } }
+  ( \psi, \mu )_{ \Hc_{ 2 } }.
 \end{displaymath}
 Formę postaci $\vp \ot \psi$ będziemy nazywać prostą.
 
@@ -972,7 +971,7 @@ czy~wzór na iloczyn skalarny nie zależy od~przedstawienia jako sumy
 form prostych. Zauważmy, że~dwie formy $\mu$, $\eta$~są równe gdy
 \begin{displaymath}
   \mu\lket \vp, \psi \rket = \eta\lket \vp, \psi \rket,
-  \quad \forall \vp \in \H_{ 1 }, \psi \in \H_{ 2 }.
+  \quad \forall \vp \in \Hc_{ 1 }, \psi \in \Hc_{ 2 }.
 \end{displaymath}
 Jak łatwo jednak zauważy % zauważyć <<<<<<<<<<<<
 , formy $\mu_{ 1 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } )$
@@ -1026,8 +1025,8 @@ rachunek, kończący dowód
 przestrzeni Hilberta warto podać następującą piękną równość, która
 wynika wprost z~wprowadzonych definicji.
 \begin{displaymath}
-  \norm{ \vp \ot \psi }_{ \H_{ 1 } \ot \H_{ 2 } }
-  = \norm{ \vp }_{ \H_{ 1 } } \norm{ \psi }_{ \H_{ 2 } }.
+  \norm{ \vp \ot \psi }_{ \Hc_{ 1 } \ot \Hc_{ 2 } }
+  = \norm{ \vp }_{ \Hc_{ 1 } } \norm{ \psi }_{ \Hc_{ 2 } }.
 \end{displaymath}
 Za jej pomocą można łatwo pokazać, że~iloczyn tensorowy jest ciągły,
 dowód jest taki sam jak w~przypadku iloczynu skalarnego.
@@ -1059,7 +1058,7 @@ Ponieważ norma jest funkcją ciągłą, zachodzi więc równość
     \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } \Sum_{ k < K }
     \Sum_{ l < L } \vp_{ k } \ot \psi_{ l } }.
 \end{displaymath}
-Aby zakończyć dowód o~bazie ortonarmalnej trzeba teraz wykonać
+Aby zakończyć dowód o~bazie ortonormalnej trzeba teraz wykonać
 ,,bezpośredni rachunek'' i~pokazać, że~pierwsza z~tych granic jest
 równa~0. $\vp = \sum_{ l } \vp_{ l }$ możemy więc dobrać $L$ tak~by
 $\vp = \sum_{ l < L } \vp_{ l } + \vp_{ R }$, gdzie
@@ -1108,8 +1107,8 @@ zwarte~są domknięte i~tym samym borelowskie.
     Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu &  &  \\ \hline
     % Sprawdź
-    2 & 8 & & \tb{surjective} & surjective \\
-    2 & 9 & & surjective & \tb{surjective} \\
+    2 & 8 & & surjective & \tb{surjective} \\
+    2 & 9 & & \tb{surjective} & surjective \\
     14 & 10 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
     14 & 14 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
     17 & 3 & & $\int \;\: f_{ n } \;\: dp$ & $\IntCaD{ f_{ n } }{ p }$ \\
@@ -1140,10 +1139,10 @@ zwarte~są domknięte i~tym samym borelowskie.
     112 & & 8 & $X$ & $F$ \\
     128 & 2 & & $| \rho_{ \al_{ 1 } }( x ) |$ & $\rho_{ \al_{ 1 } }( x )$ \\
     128 & 2 & & $| \rho_{ \al_{ n } }( x ) |$ & $\rho_{ \al_{ n } }( x )$ \\
-    & & & & \\
-    & & & & \\
-    & & & & \\
-    & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
     & & & & \\ \hline
   \end{tabular}
 \end{center}
@@ -1151,6 +1150,17 @@ zwarte~są domknięte i~tym samym borelowskie.
 \tb{Grzbiet} \\
 \Jest REVSED \\
 \Pow REVISED \\
+\StrWg{43}{3} \\
+\Jest
+\begin{equation*}
+  \sup_{ \substack{ \norm{ x }_{ \Hc } = 1 } } \;\;\; \norm{ T x }_{ \Hc' }
+\end{equation*}
+\Pow
+\begin{equation*}
+  \sup_{ \substack{ \norm{ x }_{ \Hc } = 1 } } \norm{ T x }_{ \Hc' }
+\end{equation*}
+
+
 
 
 
