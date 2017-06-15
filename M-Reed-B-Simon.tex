@@ -530,7 +530,7 @@ $x_{ n_{ 1 }, \ld, \, n_{ m } }$ \wtw, gdy
 \end{proof}
 
 \start \tb{Odwzorowania wieloliniowe ciągłe i~szeregi.} W~tym
-rozdziela % chyba powino być >>>W tym rozdziale <<<
+rozdziale
 potrzebujemy kilka razy pokazać równość następującego typu. Jeżeli
 $f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
 $g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$, to
@@ -1152,6 +1152,8 @@ zwarte~są domknięte i~tym samym borelowskie.
                 \ot \vp_{ k_{ n( p ) } }$
            & $\vp_{ k_{ \si( 1 ) } } \ot \vp_{ k_{ \si( 2 ) } } \ot \cdots
              \ot \vp_{ k_{ \si( p ) } }$ \\
+    70 & 8 & & $\Lim_{ n \ra +\infty }$ & $\Lim_{ m \ra +\infty }$ \\ % Sprawdź czy
+    % dobrze.
     73 & & 2 & $\Sum_{ k = 1 }^{ \infty } \absj{ \la_{ k } } < \infty$
            & $\Sum_{ k = 1 }^{ \infty } \absj{ \la_{ k } } \leq
              \norm{ \la_{ 0 } }_{ c_{ 0 }^{ * } } < \infty$ \\
@@ -1190,8 +1192,17 @@ zwarte~są domknięte i~tym samym borelowskie.
 \begin{equation*}
   \sup_{ \substack{ \norm{ x }_{ \Hc } = 1 } } \norm{ T x }_{ \Hc' }
 \end{equation*}
-
-
+\StrWd{51}{13} \\
+\Jest
+\begin{equation*}
+  \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } } \ol{ f( x, y ) } \vp_{ k }( x ) \,
+  d\mu_{ 1 }( x ) \bigg) \quad \psi_{ l }( y ) \, d\mu_{ 2 }( y )
+\end{equation*}
+\Pow
+\begin{equation*}
+  \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } } \ol{ f( x, y ) } \vp_{ k }( x ) \,
+  d\mu_{ 1 }( x ) \bigg) \psi_{ l }( y ) \, d\mu_{ 2 }( y )
+\end{equation*}
 
 
 
