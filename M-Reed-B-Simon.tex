@@ -643,9 +643,9 @@ da~się przedstawić jako
   = ( \Sum_{ k < K } a_{ k } ) ( \Sum_{ l < L } b_{ l } ).
 \end{equation*}
 Zbieżność tego typu sum do~$( \Sum a_{ l } ) ( \Sum b_{ k } )$ jest
-oczywista. Dopiero przy bardziej skomplikowanym wyborze sposobu sumowania, przykłady
-ponownie można znaleźć u~Fichtenholza, kolejność sumowania ma
-znaczenie. % Spradzone
+oczywista. Dopiero przy bardziej skomplikowanym wyborze sposobu
+sumowania, przykłady ponownie można znaleźć u~Fichtenholza, kolejność
+sumowania ma znaczenie. % Spradzone
 
 \vspace{\spaceTwo}
 
@@ -697,15 +697,19 @@ można było użyć następującej eleganckiej definicji. Liczba $b$~jest
 punktem skupienia ciągu $\{ a_{ n } \}$, jeśli $\{ a_{ n } \}$ zawiera
 podciąg zbieżny do~$b$. % Sprawdzone.
 
+
 \start \Str{12} Zaproponowana na tej stronie alternatywna definicja
 $\Limsup$ ma sens tylko dla zbiorów ograniczonych. W~analogiczny
 sposób jak pierwotną definicję należy ją rozszerzyć na przypadek
 zbiorów nieograniczonych. % Sprawdzone.
 
+
 \start \Str{13} Przelicz jawnie, że~funkcje trapezoidalne tworzą ciąg
 Cauchy'ego. \Dok
 
+
 \start \Str{16} Zbiory mierzalne \Dok
+
 
 \start \Str{16} Choć jest to rozdział ,,Wiadomości wstępne''
 (``Preliminaries''), to dyskusja całkowania funkcji niedodatnich jest
@@ -738,6 +742,7 @@ funkcji.
 % o~wartościach w~przestrzeni Banacha. To co tu zostało napisane, jest
 % więc pewną wariacją podanej przez niego teorii.}.
 
+
 \start \Str{17} W~twierdzeniu o~zbieżności monotonicznej jest
 powiedziane, że~dla funkcji rozpatrywanych w~tym twierdzeniu zachodzi
 $\int | f( p ) - f_{ n }( p ) | \dk p \ra 0$, co~wymaga pewnego
@@ -750,10 +755,12 @@ $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
 \end{displaymath}
 Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
 $f \in \LIj$ i~$\IntCaD{ f_{ n } }{ p } \ra \IntCaD{ f }{ p }$ można
-znaleźć w~każdej książce do~teorii całki, np.~\cite{Rudin98}.
+znaleźć w~każdej książce do~teorii całki, np.~\cite{Rudin98}. % Sprawdzone.
+
 
 \start \Str{17} W~twierdzeniu o~zbieżności majoryzowanej należy
-założyć, że~funkcje $f_{ n }$~są mierzalne.
+założyć, że~funkcje $f_{ n }$~są mierzalne. % Sprawdzone.
+
 
 \start \Str{21} W~podanej charakterystyce liczbowej zbioru Cantora
 jest pewna nieścisłość. Do tego zbioru należy liczba
@@ -762,11 +769,13 @@ jak należy zastosować tu warunek, że~liczba należy do~zbioru Cantora,
 jeśli nie zawiera w~swym rozwinięciu trójkowym cyfry~1. Właściwy
 warunek\footnote{Wskazał mi go Paweł Duch.} jest następujący:
 rozwinięcie trójkowe tej liczby można zapisać w~taki sposób by~nie
-zawierało cyfry~1.
+zawierało cyfry~1. % Sprawdzone.
+
 
 \start \Str{22} Nie rozumiem dlaczego z~faktu, że~miara każdego zbioru
 zwartego jest skończona, wynika iż~jest tylko przeliczalnie wiele
 punktów o~niezerowej mierze. \Dok
+
 
 \start \Str{25} Należy zrobić dodatkowy komentarz na~temat równości
 z~twierdzenia Radona\dywiz Nikodyma
@@ -777,7 +786,8 @@ z~twierdzenia Radona\dywiz Nikodyma
 \Dok Czy funkcja ta nie jest tylko lokalnie całkowalna? Ponieważ obie
 miary w~tym twierdzeniu~są dodatnie, można więc zagwarantować,
 że~$f \geq 0$. Całka z~tezy ma więc zawsze sens, jednak wynik może być
-nieskończony. Nie jest to jednak problem
+nieskończony. Nie jest to jednak problem \Dok
+
 
 \start \Str{25} Jakoś nie mogę siebie przekonać, że~funkcja mierzalna
 względem dwóch zmiennych, jest też mierzalna względem każdej
@@ -787,12 +797,14 @@ $\si$\dywiz algebr wydaje mi~się to dziwnie mocny twierdzeniem.
 Zapewne funkcja jest prawie wszędzie mierzalna, ale nic silniejszego.
 \Dok
 
+
 \start \Str{37} Można podać inne sformułowanie twierdzenia Pitagorasa,
 które w~pewnych sytuacjach jest bardziej naturalne. Jeśli $x_{ i }$,
 $i = 1, \ld, N$ tworzą układ ortogonalny i~$x = \Sum x_{ i }$, to
 \begin{displaymath}
   \norm{ x }^{ 2 } = \Sum_{ i = 1 }^{ N } \norm{ x_{ i } }^{ 2 }.
 \end{displaymath}
+
 
 \start \Str{39} Przy okazji definicji izomorfizmu dwóch przestrzeni
 Hilberta, warto zauważyć, że~operator unitarny jest bijekcją.
@@ -803,6 +815,11 @@ jest trywialne. Jeżeli więc $Ux = 0$, wtedy:
 \begin{displaymath}
   0 = ( Ux, Ux )_{ \Hc_{ 2 } } = ( x, x )_{ \Hc_{ 1 } } \iff x = 0.
 \end{displaymath}
+% Sprawdzone.
+
+
+\start \Str{40} W~przykładzie~6 przestrzeń Hilberta~$\Hc'$ musi być ośrodkowa, ale~pojęcie przestrzeni ośrodkowej jest wprowadzone dopiero na~stronie~47.
+
 
 \start \Str{44} W~tym miejscu warto dowieść twierdzenia następującego
 twierdzenia.
@@ -824,15 +841,14 @@ $S$ nie jest układem zupełny.
 Przez kontrapozycję $2) \Ra 1)$. Załóżmy teraz, że~$S$ nie jest
 zupełny. W~takim razie istnieje taki układ ortogonalny niezerowych
 wektorów, iż~$S \subs S'$ oraz $S' \setm S \neq \es$. Teraz
-$y \in S' \setm S$ jest niezerowym wektorem
-ortogonalny %<< ortogonalnym >>>
-do~$S$.
+$y \in S' \setm S$ jest niezerowym wektorem ortogonalnym do~$S$.
 % koniec niezrozumiałego fragmentu
 
 \start \Str{45} Nie rozumiem dlaczego z~nierówności
 $\sum_{ i = 1 }^{ N } \absj{ ( x_{ \al_{ i } }, y ) } \leq \norm{ y
 }^{ 2 }$ wynika, że~tylko dla przeliczalnej ilości indeksów $\al$
 zachodzi $( x_{ \al }, y ) \neq 0$. \Dok
+
 
 \start \Str{45} W~dowodzie twierdzenia II.6 nie wykazano dlaczego
 granica tego szeregu nie zależy od~kolejności wyrazów, można to jednak
@@ -1012,7 +1028,6 @@ względem relacji poddanej wyżej, niż~po~prostu zbiorem sum
 odpowiednich form prostych, z~jakiegoś jednak względu Reed i~Simon
 uznali, że~nie warto zagłębiać~się w~tę kwestię.
 
-
 Zauważmy, że~powyższy przykład uogólnia~się do~dobrze znanego
 z~algebry liniowej faktu, iż~iloczyn tensorowy jest wieloliniowy.
 Z~samej definicji wynika, że~zachodzi następująca równość form
@@ -1051,6 +1066,7 @@ rachunek, kończący dowód
   = ( \vp, \psi' ) = ( \vp, \psi + \mu ) = ( \vp, \psi ).
 \end{displaymath}
 
+
 \start \Str{50} Jako konkluzję konstrukcji iloczynu tensorowego
 przestrzeni Hilberta warto podać następującą piękną równość, która
 wynika wprost z~wprowadzonych definicji.
@@ -1060,6 +1076,7 @@ wynika wprost z~wprowadzonych definicji.
 \end{displaymath}
 Za jej pomocą można łatwo pokazać, że~iloczyn tensorowy jest ciągły,
 dowód jest taki sam jak w~przypadku iloczynu skalarnego.
+
 
 \start \Str{50} Również tu~część dowodu, że~układ
 $\vp_{ l } \ot \psi_{ k }$ stanowi bazę ortonormalną, jest bardzo
