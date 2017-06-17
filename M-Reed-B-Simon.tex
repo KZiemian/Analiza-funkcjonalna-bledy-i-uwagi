@@ -7,7 +7,7 @@
 \usepackage[MeX]{polski}
 \usepackage{microtype}
 \let\lll\undefined
-\usepackage[intlimits]{amsmath}
+\usepackage{amsmath}
 \usepackage{amsfonts, amssymb, amscd, amsthm}
 \usepackage{upgreek} % Lepsze greckie czcionki. Przyklad skladni: pi = \uppi
 % \usepackage{txfonts} % Inne ulepszenie greckich liter. Przyklad skladni:
@@ -307,7 +307,7 @@
 
 \start Nigdzie nie została podana definicja $\sup$ i~$\inf$ ani
 w~przypadku ogólnych relacji porządkujących, ani w~przypadku liczb
-rzeczywistych.
+rzeczywistych. % Sprawdzone.
 
 % \start Nie~zdefiniowano zbiorów zwartych, ani~nie~wskazano, że~zbiór
 % domknięty i~ograniczony w $\mathbb{R}^{ n }$ jest zwarty.
@@ -438,7 +438,7 @@ niej niecałkowalna.
 Jako, że~$f \equiv 0$, jest ona całkowalna względem miary Lebesgue'a
 $dx$ i~jej całka wynosi~0. Jeżeli teraz dodamy do miary Lebesgue'a
 miarę Diraca skupioną w~0, oznaczmy ją $d\del_{ 0 }$, to $f$ będzie
-niecałkowalna względem miary $dx + d\del_{ 0 }$.
+niecałkowalna względem miary $dx + d\del_{ 0 }$. % Sprawdzone
 
 \vspace{\spaceTwo}
 
@@ -480,8 +480,8 @@ Na początku będzie nam potrzebna definicja granicy ciągu
 wieloindeksowego. Najprostsza definicja tej granicy jest
 następująca\footnote{Granica ciągu wieloindeksowego powinna być
   szczególnym przypadkiem granic indeksowanych zbiorami skierowanymi
-  które~są omawiane w~książce Maurina \cite{Maurin74}.}. Niech $X$
-będzie przestrzenią metryczną, a~$x_{ n_{ 1 }, \ld, \, n_{ m } }$
+  które~są omawiane w~książce Maurina \cite{Maurin74}.}. Niech
+$X$~będzie przestrzenią metryczną, a~$x_{ n_{ 1 }, \ld, \, n_{ m } }$
 ciągiem wieloindeksowym w~$X$. $x_{ 0 }$ jest granicą ciągu
 $x_{ n_{ 1 }, \ld, \, n_{ m } }$ \wtw, gdy
 \begin{displaymath}
@@ -530,9 +530,8 @@ $x_{ n_{ 1 }, \ld, \, n_{ m } }$ \wtw, gdy
 \end{proof}
 
 \start \tb{Odwzorowania wieloliniowe ciągłe i~szeregi.} W~tym
-rozdziale
-potrzebujemy kilka razy pokazać równość następującego typu. Jeżeli
-$f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
+rozdziale potrzebujemy kilka razy pokazać równość następującego typu.
+Jeżeli $f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
 $g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$, to
 \begin{equation*}
   \Lim_{ K,\, M \ra +\infty } \Sum_{ \substack{ l < L \\ k < K } }
@@ -635,19 +634,18 @@ wyrazów\footnote{Co jest prawdą pod warunkiem, że~iloczyn szeregów
   warunkowo zbieżnych nie może być bezwzględnie zbieżny. \Dok}.
 
 Problem jest jednak pozorny, bowiem twierdzenie powyższe dotyczy tylko
-szczególnego sposobu sumowania, które w~zapisie tablicowym (przykłady
-tej notacji można znaleźć w~książce Fichtenholza str.~???
-\cite{Fichtenholz04}) odpowiada ,,sumowaniu po~coraz większych
-prostokątach''. Inaczej mówiąc sum, które zawsze da~się przedstawić
-jako
+szczególnego sposobu sumowania, które w~zapisie tablicowym jakie używa
+Fichtenholza str.~??? \cite{Fichtenholz04}) odpowiada ,,sumowaniu
+po~coraz większych prostokątach''. Inaczej mówiąc, sum które zawsze
+da~się przedstawić jako
 \begin{equation*}
   \Sum_{ \substack{ k < K \\ l < L \\ } } a_{ k } b_{ l }
   = ( \Sum_{ k < K } a_{ k } ) ( \Sum_{ l < L } b_{ l } ).
 \end{equation*}
 Zbieżność tego typu sum do~$( \Sum a_{ l } ) ( \Sum b_{ k } )$ jest
-jasna. Dopiero przy bardziej skomplikowanym wyborze sum, przykłady
+oczywista. Dopiero przy bardziej skomplikowanym wyborze sposobu sumowania, przykłady
 ponownie można znaleźć u~Fichtenholza, kolejność sumowania ma
-znaczenie.
+znaczenie. % Spradzone
 
 \vspace{\spaceTwo}
 
@@ -674,7 +672,7 @@ powszechnie wiadomo z~pracy dotyczących analizy funkcjonalnej:
   \norm{ T x }_{ 2 } \leq C \norm{ x }_{ 1 } \}.
 \end{displaymath}
 Elegancki dowód tego faktu, można znaleźć np. w~\cite{Chmielinski04},
-str.~115--116.
+str.~115--116. % Sprawdzone.
 
 \start \Str{10} W~dowodzie twierdzenia B.L.T. skorzystanie z~$\Limsup$
 jest zupełnie niepotrzebne, poza tym utrudnia dowód,
@@ -692,22 +690,22 @@ $|| \wt{ T } x ||_{ 2 } = \norm{ T x }_{ 2 } \leq \norm{ T } \norm{ x
 }_{ 1 }$, przy czym $\norm{ T }$ jest minimalną stałą dla~której jest
 to~prawdą, więc ze~względu na~to, iż~$V_{ 1 } \subset \wt{ V }_{ 1 }$,
 mamy nierówność $\norm{ T } \leq || \wt{ T } ||$, tym samym
-$|| \wt{ T } || = \norm{ T }$.
+$|| \wt{ T } || = \norm{ T }$. % Sprawdzone.
 
 \start \Str{12} Ponieważ nie została podana definicja podciągu, nie
-można było użyć następującej eleganckiej definicji. Liczba $b$ jest
+można było użyć następującej eleganckiej definicji. Liczba $b$~jest
 punktem skupienia ciągu $\{ a_{ n } \}$, jeśli $\{ a_{ n } \}$ zawiera
-podciąg zbieżny do $b$.
+podciąg zbieżny do~$b$. % Sprawdzone.
 
 \start \Str{12} Zaproponowana na tej stronie alternatywna definicja
 $\Limsup$ ma sens tylko dla zbiorów ograniczonych. W~analogiczny
-sposób jak definicję pierwotną \Dok należy ją rozszerzyć na przypadek
-zbiorów nieograniczonych.
+sposób jak pierwotną definicję należy ją rozszerzyć na przypadek
+zbiorów nieograniczonych. % Sprawdzone.
 
 \start \Str{13} Przelicz jawnie, że~funkcje trapezoidalne tworzą ciąg
 Cauchy'ego. \Dok
 
-\start \Str{16}
+\start \Str{16} Zbiory mierzalne \Dok
 
 \start \Str{16} Choć jest to rozdział ,,Wiadomości wstępne''
 (``Preliminaries''), to dyskusja całkowania funkcji niedodatnich jest
@@ -816,17 +814,18 @@ twierdzenia.
 \end{twr}
 
 % Poniższy fragment jest niezrozumiały
-Przez kontrapozycję $1) \Ra 2)$. Załóżmy, że~istnieje wektor $g \neq 0$
-ortogonalny do~$S$. Wówczas $S' = S \cup \set{ g }$ jest układem
-ortogonalnym, który zawiera w~sobie $S$ i~$S' \neq S$. Czyli $S$ nie
-jest układem zupełny.
+Przez kontrapozycję $1) \Ra 2)$. Załóżmy, że~istnieje wektor
+$g \neq 0$ ortogonalny do~$S$. Wówczas $S' = S \cup \set{ g }$ jest
+układem ortogonalnym, który zawiera w~sobie $S$ i~$S' \neq S$. Czyli
+$S$ nie jest układem zupełny.
 
 % ######################################################################
 % Tu skończyłem
-Przez kontrapozycję $2) \Ra 1)$. Załóżmy teraz, że~$S$ nie jest zupełny.
-W~takim razie istnieje taki układ ortogonalny niezerowych wektorów,
-iż~$S \subs S'$ oraz $S' \setm S \neq \es$. Teraz $y \in S' \setm S$
-jest niezerowym wektorem ortogonalny %<< ortogonalnym >>>
+Przez kontrapozycję $2) \Ra 1)$. Załóżmy teraz, że~$S$ nie jest
+zupełny. W~takim razie istnieje taki układ ortogonalny niezerowych
+wektorów, iż~$S \subs S'$ oraz $S' \setm S \neq \es$. Teraz
+$y \in S' \setm S$ jest niezerowym wektorem
+ortogonalny %<< ortogonalnym >>>
 do~$S$.
 % koniec niezrozumiałego fragmentu
 
@@ -1083,11 +1082,10 @@ wiedza nie jest potrzebna.
 
 Ponieważ norma jest funkcją ciągłą, zachodzi więc równość
 \begin{displaymath}
-  \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } \norm{ \vp \ot \psi
-    - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } }
-  = \norm{ \vp \ot \psi -
-    \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } \Sum_{ k < K }
-    \Sum_{ l < L } \vp_{ k } \ot \psi_{ l } }.
+  \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } || \vp \ot \psi
+  - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } ||
+  = || \vp \ot \psi - \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } \Sum_{ k < K }
+  \Sum_{ l < L } \vp_{ k } \ot \psi_{ l } ||.
 \end{displaymath}
 Aby zakończyć dowód o~bazie ortonormalnej trzeba teraz wykonać
 ,,bezpośredni rachunek'' i~pokazać, że~pierwsza z~tych granic jest
@@ -1106,15 +1104,15 @@ $M$ tak~by było wspólnym ograniczeniem ciągów
 $\sum_{ l < L } \vp_{ l }$ i~$\sum_{ k < K } \psi_{ k }$. Tym samym
 \begin{displaymath}
   \begin{split}
-    & \norm{ \vp \ot \psi - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot
-      \psi_{ l } } = \norm{ ( \Sum_{ l < L } \vp_{ l } + \vp_{ R } )
-      \ot ( \Sum_{ k < K } \psi_{ k } + \psi_{ R } )
-      - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } } \\
-    &= \norm{ ( \Sum_{ l < L } \vp_{ l } ) \ot \psi_{ R } + \vp_{ R }
-      \ot ( \Sum_{ k < K } \psi_{ k } ) + \vp_{ R } \ot \psi_{ R } }
-    \leq \norm{ ( \Sum_{ l < L } \vp_{ l } ) \ot \psi_{ R } }
-    + \norm{ \vp_{ R } \ot ( \Sum_{ k < K } \psi_{ k } ) } \\
-    &+ \norm{ \vp_{ R } \ot \psi_{ R } } \leq 2 M \veps + \veps^{ 2 }.
+    & || \vp \ot \psi - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot
+    \psi_{ l } || = || ( \Sum_{ l < L } \vp_{ l } + \vp_{ R } ) \ot (
+    \Sum_{ k < K } \psi_{ k } + \psi_{ R } )
+    - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } || \\
+    &= || ( \Sum_{ l < L } \vp_{ l } ) \ot \psi_{ R } + \vp_{ R } \ot
+    ( \Sum_{ k < K } \psi_{ k } ) + \vp_{ R } \ot \psi_{ R } || \leq
+    || ( \Sum_{ l < L } \vp_{ l } ) \ot \psi_{ R } ||
+    + || \vp_{ R } \ot ( \Sum_{ k < K } \psi_{ k } ) || \\
+    &+ || \vp_{ R } \ot \psi_{ R } || \leq 2 M \veps + \veps^{ 2 }.
   \end{split}
 \end{displaymath}
 Odpowiednio dobierając $L$ i~$K$ możemy uczynić tą różnicę dowolnie
@@ -1137,16 +1135,16 @@ zwarte~są domknięte i~tym samym borelowskie.
     & \multicolumn{2}{c|}{} & & \\
     Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu &  &  \\ \hline
-    % Sprawdź
     2 & 8 & & surjective & \tb{surjective} \\
     2 & 9 & & \tb{surjective} & surjective \\
     14 & 10 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
     14 & 14 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
     17 & 3 & & $\int \;\: f_{ n } \;\: dp$ & $\IntCaD{ f_{ n } }{ p }$ \\
-    44 & & 7 & $\fr{ T( y ) }{ T( x ) }$ & $\fr{ ( y, x ) }{ ( x, x ) }$ \\
+    40 & & 3 & a~Hilbert & a~separable Hilbert \\
+    44 & & 7 & $\fr{ T( y ) }{ T( x_{ 0 } ) }$
+           & $\fr{ ( x_{ 0 }, y ) }{ ( x_{ 0 }, x_{ 0 } ) }$ \\
     45 & & 2 & some & all \\
-    46 & & 9 & $(v_{ 1 }, u_{ 1 } ) v_{ k }$ & $(v_{ 1 }, u_{ 2 } )
-                                               v_{ 1 }$ \\
+    46 & & 9 & $(v_{ 1 }, u_{ 1 } ) v_{ k }$ & $(v_{ 1 }, u_{ 2 } ) v_{ 1 }$ \\
     49 & & 7 & linear & bilinear \\
     53 & & 12 & $\vp_{ k_{ \si( 1 ) } } \ot \vp_{ k_{ \si( 2 ) } } \cdots
                 \ot \vp_{ k_{ n( p ) } }$
