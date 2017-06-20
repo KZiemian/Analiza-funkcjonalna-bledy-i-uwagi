@@ -38,6 +38,14 @@
 % ########################################
 
 
+
+% ####################
+\renewcommand{\arraystretch}{1.2}
+
+
+
+% ########################################
+
 \newtheorem{twr}{Twierdzenie}
 \newtheorem{defin}{Definicja}
 \newtheorem{wni}{Wniosek}% \usepackage{cleveref}
@@ -230,6 +238,7 @@
 % Wartość bezwzględna i normy
 \providecommand{\absj}[1]{\lvert #1 \rvert}
 \providecommand{\absd}[1]{\left| #1 \right|}
+\providecommand{\absd}[1]{\left| \, #1 \, \right|}
 \newcommand{\norm}[1]{\left|\left| #1 \right|\right|}
 
 
@@ -262,6 +271,10 @@
 
 \newcommand{\ci}{\circ}
 
+% Przestrzenie Hilberta
+\newcommand{\lcd}{\ell_{ 2 }} % l Caligraphy Dwa
+\newcommand{\SP}[2]{( #1, \, #2 )} % Scalar product.
+\newcommand{\dket}[2]{\lket #1, \, #2 \rket} % Dirac ket
 
 % % Sumy
 % \newcommand{\Sum}{\sum\limits}
@@ -311,6 +324,7 @@ rzeczywistych. % Sprawdzone.
 
 % \start Nie~zdefiniowano zbiorów zwartych, ani~nie~wskazano, że~zbiór
 % domknięty i~ograniczony w $\mathbb{R}^{ n }$ jest zwarty.
+
 
 \start Nie podana została definicja sumy miar borelowskich,
 ani~nie~zostało udowodnione, że funkcja całkowalna osobno względem
@@ -438,7 +452,7 @@ niej niecałkowalna.
 Jako, że~$f \equiv 0$, jest ona całkowalna względem miary Lebesgue'a
 $dx$ i~jej całka wynosi~0. Jeżeli teraz dodamy do miary Lebesgue'a
 miarę Diraca skupioną w~0, oznaczmy ją $d\del_{ 0 }$, to $f$ będzie
-niecałkowalna względem miary $dx + d\del_{ 0 }$. % Sprawdzone
+niecałkowalna względem miary $dx + d\del_{ 0 }$. % Sprawdzone.
 
 \vspace{\spaceTwo}
 
@@ -645,7 +659,7 @@ da~się przedstawić jako
 Zbieżność tego typu sum do~$( \Sum a_{ l } ) ( \Sum b_{ k } )$ jest
 oczywista. Dopiero przy bardziej skomplikowanym wyborze sposobu
 sumowania, przykłady ponownie można znaleźć u~Fichtenholza, kolejność
-sumowania ma znaczenie. % Spradzone
+sumowania ma znaczenie. % Sprawdzone.
 
 \vspace{\spaceTwo}
 
@@ -661,6 +675,7 @@ sumowania ma znaczenie. % Spradzone
 % komentarz. Aby wiedzieć, co to znaczy, że podzbiór przestrzeni
 % metrycznej jest zupełny, należy wprowadzić topologię indukowaną.
 
+
 \start \Str{9} Nie wykazano, jedynie stwierdzono jednym słowem
 ,,thus'', że~obie podane definicje~są równoważne. W~istocie, jak
 powszechnie wiadomo z~pracy dotyczących analizy funkcjonalnej:
@@ -673,6 +688,7 @@ powszechnie wiadomo z~pracy dotyczących analizy funkcjonalnej:
 \end{displaymath}
 Elegancki dowód tego faktu, można znaleźć np. w~\cite{Chmielinski04},
 str.~115--116. % Sprawdzone.
+
 
 \start \Str{10} W~dowodzie twierdzenia B.L.T. skorzystanie z~$\Limsup$
 jest zupełnie niepotrzebne, poza tym utrudnia dowód,
@@ -708,7 +724,21 @@ zbiorów nieograniczonych. % Sprawdzone.
 Cauchy'ego. \Dok
 
 
-\start \Str{16} Zbiory mierzalne \Dok
+\start \Str{16} Można podać równoważną, prostszą charakteryzację
+zbiorów mierzalnych. Zbiór $M$ jest mierzalny \wtw, gdy
+$M \cup B' = B$, gdzie $B, B'$ są pewnymi zbiorami borelowskimi
+i~$\mu( B' ) = 0$.
+
+Jeśli $M$ ma taką własność, to oczywiście spełniona jest definicja
+pierwotna przy $A_{ 1 } = B_{ 1 } = B'$, $A_{ 2 } = B_{ 2 } = \O$.
+Jeśli zaś $M \cup A_{ 1 } = B \cup A_{ 2 }$, to możemy do obu stron
+dodać $B_{ 1 } \cup B_{ 2 }$ i~dostajemy,
+że~$M \cup B_{ 1 } \cup B_{ 2 } = B \cup B_{ 1 } \cup B_{ 2 }$. Zbiory
+$B \cup B_{ 1 } \cup B_{ 2 }$ i~$B_{ 1 } \cup B_{ 2 }$ to zbiory
+borelowskie, przy czym $\mu( B_{ 1 } \cup B_{ 2 } ) = 0$.
+
+Inaczej mówiąc, zbiór mierzalny różni~się o~zbiór miary~0 od pewnego
+zbioru borelowskiego. % Sprawdzone.
 
 
 \start \Str{16} Choć jest to rozdział ,,Wiadomości wstępne''
@@ -730,8 +760,8 @@ Idąc drogą wskazaną przez Schwartza, zobacz \cite{Schwartz79}, będę
 zawsze przyjmował, że~mierzalna funkcja dodatnia jest zawsze
 całkowalna, choć jej całka możne wynosić $+\infty$. W~podejściu
 Schwartza wystarczy tylko dodatniość funkcji, dlatego wprowadza
-on~dodatkowe pojęcia całki górnej, która istniej dla każdej takiej
-funkcji.
+on~dodatkowe pojęcia całki górnej, która istniej dla każdej funkcji
+$f \geq 0$. % Sprawdzone.
 
 % W~tym kontekście warto mieć w~pamięci rozróżnienie jakie podał
 % Schwartz między całką górną, która jest zdefiniowana dla wszystkich
@@ -755,7 +785,8 @@ $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
 \end{displaymath}
 Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
 $f \in \LIj$ i~$\IntCaD{ f_{ n } }{ p } \ra \IntCaD{ f }{ p }$ można
-znaleźć w~każdej książce do~teorii całki, np.~\cite{Rudin98}. % Sprawdzone.
+znaleźć w~każdej książce do~teorii całki,
+np.~\cite{Rudin98}. % Sprawdzone.
 
 
 \start \Str{17} W~twierdzeniu o~zbieżności majoryzowanej należy
@@ -813,12 +844,14 @@ inijektywność wystarczy skorzystać z~jednego z~podstawowych twierdzeń
 algebry: odwzorowanie liniowe jest injektywne \wtw, gdy~jego jądro
 jest trywialne. Jeżeli więc $Ux = 0$, wtedy:
 \begin{displaymath}
-  0 = ( Ux, Ux )_{ \Hc_{ 2 } } = ( x, x )_{ \Hc_{ 1 } } \iff x = 0.
+  0 = \SP{ Ux }{ Ux }_{ \Hc_{ 2 } } = \SP{ x }{ x }_{ \Hc_{ 1 } } \iff x = 0.
 \end{displaymath}
 % Sprawdzone.
 
 
-\start \Str{40} W~przykładzie~6 przestrzeń Hilberta~$\Hc'$ musi być ośrodkowa, ale~pojęcie przestrzeni ośrodkowej jest wprowadzone dopiero na~stronie~47.
+\start \Str{40} W~przykładzie~6 przestrzeń Hilberta~$\Hc'$ musi być
+ośrodkowa, ale~pojęcie przestrzeni ośrodkowej jest wprowadzone dopiero
+na~stronie~47.
 
 
 \start \Str{44} W~tym miejscu warto dowieść twierdzenia następującego
@@ -844,10 +877,11 @@ wektorów, iż~$S \subs S'$ oraz $S' \setm S \neq \es$. Teraz
 $y \in S' \setm S$ jest niezerowym wektorem ortogonalnym do~$S$.
 % koniec niezrozumiałego fragmentu
 
+
 \start \Str{45} Nie rozumiem dlaczego z~nierówności
-$\sum_{ i = 1 }^{ N } \absj{ ( x_{ \al_{ i } }, y ) } \leq \norm{ y
-}^{ 2 }$ wynika, że~tylko dla przeliczalnej ilości indeksów $\al$
-zachodzi $( x_{ \al }, y ) \neq 0$. \Dok
+$\sum_{ i = 1 }^{ N } \absj{ \SP{ x_{ \al_{ i } } }{ y } } \leq \norm{
+  y }^{ 2 }$ wynika, że~tylko dla przeliczalnej ilości indeksów $\al$
+zachodzi $\SP{ x_{ \al } }{ y } \neq 0$. \Dok
 
 
 \start \Str{45} W~dowodzie twierdzenia II.6 nie wykazano dlaczego
@@ -857,7 +891,7 @@ których $( x_{ \al }, y ) \neq 0$ i~niech $\al_{ i } \in A'$ będzie
 jakimś jego uporządkowaniem. Wówczas przeprowadzone w~dowodzie
 rozumowanie pokazuje, że
 \begin{equation}
-  y = \Sum_{ j = 1 }^{ \infty } ( x_{ \al_{ i } }, y ) x_{ \al_{ i } }.
+  y = \Sum_{ j = 1 }^{ \infty } \SP{ x_{ \al_{ i } } }{ y } x_{ \al_{ i } }.
 \end{equation}
 Jeżeli teraz weźmiemy jakieś inne jego uporządkowanie $x_{ j }$,
 to~możemy powtórzyć całe rozumowanie i~otrzymać, że~suma nowego
@@ -865,7 +899,7 @@ szeregu znów wynosi $y$, tym samym jest niezależna od porządku.
 
 Pomimo tego, że~szereg ten jest zbieżny niezależnie od~kolejności
 wyrazów, nie oznacza to, że~jest on absolutnie zbieżny. Rozpatrzmy
-bowiem element przestrzeni $\lc_{ 2 }$
+bowiem element przestrzeni $\lcd$
 \begin{align*}
   y &= ( 1, \tfr{ 1 }{ 2 }, \tfr{ 1 }{ 3 },\ld ), \\
   \norm{ y }^{ 2 } &= \Sum_{ i = 1 }^{ \infty } \fr{ 1 }{ n^{ 2 } }
@@ -898,44 +932,51 @@ nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
 sumowania (str.~110 \cite{Sch79}). Trajdos przetłumaczył ich nazwę
 jako szeregi \emph{zbieżne przestawialnie}.
 
+
 \start \Str{45} Wzorując~się na Grabowskim i~Ingardenie
 \cite{GrabowskiIngarden87}, warto w~kontekście twierdzenia II.6
 udowodnić jeszcze jedną piękną równość:
 \begin{displaymath}
-  ( y, y' ) = \Sum_{ \al \in A } ( y, x_{ \al } )( x_{ \al }, y' ),
+  \SP{ y }{ y' } = \Sum_{ \al \in A } \SP{ y }{ x_{ \al } }
+  \SP{ x_{ \al } }{ y' },
 \end{displaymath}
 gdzie $S = \{ x_{ \al } \}_{ \al \in A }$ jest bazą ortonormalną,
 niekoniecznie przeliczalną. Istniej przeliczalny zbiór
 $x_{ \al_{ j } }$ taki,
-że~$y' = \Sum_{ j = 1 }^{ \infty } ( x_{ \al_{ j } }, y' ) x_{ \al_{ j
-  } }$. Wtedy
+że~$y' = \Sum_{ j = 1 }^{ \infty } \SP{ x_{ \al_{ j } } }{ y' } x_{
+  \al_{ j } }$. Wtedy
 \begin{equation*}
   \begin{split}
-    ( y, y' ) &= ( y, \Lim_{ n \ra \infty } \Sum_{ j = i }^{ n } ( x_{
-      \al_{ j } }, y' ) x_{ \al_{ j } } ) = \Lim_{ n \ra \infty
-    } ( y, \Sum_{ j = 1 }^{ n } ( x_{ \al_{ j } }, y' ) x_{ \al_{ j } } ) \\
-    &= \Lim_{ n \ra \infty } \Sum_{ j = 1 }^{ n } ( y, x_{ \al_{ j } }
-    ) ( x_{ \al_{ j } }, y' ) % = \sum_{ j = 1 }^{ \infty }
+    \SP{ y }{ y' } &= \SP{ y }{ \Lim_{ n \ra \infty } \Sum_{ j = i }^{
+        n } \SP{ x_{ \al_{ j } } }{ y' } x_{ \al_{ j } } } = \Lim_{ n
+      \ra \infty } \SP{ y }{ \Sum_{ j = 1 }^{ n } \SP{ x_{ \al_{ j } }
+      }
+      { y' } x_{ \al_{ j } } } \\
+    &= \Lim_{ n \ra \infty } \Sum_{ j = 1 }^{ n } \SP{ y }{ \SP{ x_{
+          \al_{ j } } }{ y' } x_{ \al_{ j } } }
+    % = \sum_{ j = 1 }^{ \infty }
     % ( y, x_{ \alpha } ) ( x_{ \alpha }, y' )
-    = \Sum_{ \al \in A } ( y, x_{ \al } )( x_{ \al }, y' ).
+    = \Sum_{ \al \in A } \SP{ y }{ x_{ \al } } \SP{ x_{ \al } }{ y' }.
   \end{split}
 \end{equation*}
 Zastąpienie w~ostatniej równości sumy po zbiorze
 $\alpha_{ j }, j \in \N$ sumą po~$A$ jest możliwe na mocy tego,
 że~jeżeli $\alpha \neq \alpha_{ j }$ dla każdego $j$, to wyrażenie pod
 sumą jest równe zeru. Zauważmy też, że~skoro zbieżność szeregu
-$\sum_{ \al \in A } ( x_{ \al }, y ) x_{ \al }$ nie zależy
+$\sum_{ \al \in A } \SP{ x_{ \al } }{ y } x_{ \al }$ nie zależy
 od~kolejności, to~na~mocy przeprowadzone rozumowania również suma
-szeregu $\sum_{ \al \in A } ( y, x_{ \al } )( x_{ \al }, y' )$, nie
+szeregu
+$\sum_{ \al \in A } \SP{ y }{ x_{ \al } } \SP{ x_{ \al } }{ y' }$, nie
 zależy od~kolejności wyrazów.
 
 Ta tożsamość pozwala nam wykazać, w~sposób bardziej elegancki niż
 zrobili to Reed i~Simon, równanie (II.2), mianowicie podstawiając
 $y' = y$, mamy
 \begin{equation*}
-  \norm{ y }^{ 2 } = ( y, y ) = \Sum_{ \al \in A } ( y, x_{ \al } )
-  ( x_{ \al }, y ) = \Sum_{ \al \in A } \absj{ ( x_{ \al }, y ) }^{ 2 }.
+  \norm{ y }^{ 2 } = \SP{ y }{ y } = \Sum_{ \al \in A } \SP{ y }{ x_{ \al } }
+  \SP{ x_{ \al } }{ y } = \Sum_{ \al \in A } \absj{ \SP{ x_{ \al } }{ y } }^{ 2 }.
 \end{equation*}
+
 
 \start \Str{45} Dysponując twierdzeniem II.6, można teraz podać ogólną
 postać nierówności Bessela.
@@ -944,14 +985,14 @@ postać nierówności Bessela.
   Niech $S = \{ x_{ \al } \}_{ \al \in A }$ będzie układem
   ortonormalny i~niech $B \subs A$. Wówczas:
   \begin{equation*}
-    \Sum_{ \be \in B } \absj{ ( x_{ \be }, x ) }^{ 2 } \leq \norm{ x }^{ 2 }.
+    \Sum_{ \be \in B } \absd{ \SP{ x_{ \be }}{ x } }^{ 2 } \leq \norm{ x }^{ 2 }.
   \end{equation*}
 \end{twr}
 \begin{proof}
   Prawie nie ma czego dowodzić, mamy bowiem
   \begin{equation*}
-    \norm{ x }^{ 2 } = \Sum_{ \al \in A } \absj{ ( x_{ \al }, x ) }^{ 2 }
-    \geq \Sum_{ \be \in B } \absj{ ( x_{ \be }, x ) }^{ 2 }.
+    \norm{ x }^{ 2 } = \Sum_{ \al \in A } \absd{ \SP{ x_{ \al } }{ x } }^{ 2 }
+    \geq \Sum_{ \be \in B } \absj{ \SP{ x_{ \be }}{ x } }^{ 2 }.
   \end{equation*}
 \end{proof}
 
@@ -966,22 +1007,21 @@ oznaczał odpowiednio jako $( \cdot, \cdot )_{ \Hc_{ 1 } }$,
 $( \cdot, \cdot )_{ \Hc_{ 2 } }$, $( \cdot, \cdot )_{ \mc{ E } }$.
 Działanie formy $\vp_{ 1 } \ot \vp_{ 2 }$ można więc zapisać jako
 \begin{displaymath}
-  ( \vp_{ 1 } \ot \vp_{ 2 } )\lket \psi_{ 1 }, \psi_{ 2 } \rket
-  = ( \psi_{ 1 }, \vp_{ 1 } )_{ \Hc_{ 1 } } ( \psi_{ 2 },
-  \vp_{ 2 } )_{ \Hc_{ 2 } }.
+  ( \vp_{ 1 } \ot \vp_{ 2 } )\dket{ \psi_{ 1 }}{ \psi_{ 2 } }
+  = \SP{ \psi_{ 1 } }{ \vp_{ 1 } }_{ \Hc_{ 1 } } \SP{ \psi_{ 2 } }
+  { \vp_{ 2 } }_{ \Hc_{ 2 } }.
 \end{displaymath}
 Iloczyn skalarny na~$\mc{E}$ ma więc postać:
 \begin{displaymath}
-  ( \vp \ot \psi, \eta \ot \mu )_{ \mc{E} } = ( \vp, \eta )_{ \Hc_{ 1 } }
-  ( \psi, \mu )_{ \Hc_{ 2 } }.
+  \SP{ \vp \ot \psi }{ \eta \ot \mu }_{ \mc{E} }
+  = \SP{ \vp }{ \eta }_{ \Hc_{ 1 } } \SP{ \psi }{ \mu }_{ \Hc_{ 2 } }.
 \end{displaymath}
 Formę postaci $\vp \ot \psi$ będziemy nazywać prostą.
 
-W~dalszym ciągu potrzebny %potrzebna<<<<<<<<<<
-będzie nam następująca obserwacja: jeżeli $\mu \in \mc{E}$, to
-zachodzi równość:
+W~dalszym ciągu potrzebna będzie nam następująca obserwacja: jeżeli
+$\mu \in \mc{E}$, to zachodzi równość:
 \begin{displaymath}
-  ( \vp \ot \psi, \mu )_{ \mc{E} } = \mu\lket \vp, \psi \rket.
+  \SP{ \vp \ot \psi }{ \mu }_{ \mc{E} } = \mu\dket{ \vp }{ \psi }.
 \end{displaymath}
 Jeżeli $\mu = \eta \ot \chi$ to powyższa równość wynika z~definicji
 wszystkich działań. Jeśli zaś
@@ -989,12 +1029,13 @@ $\mu = \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \psi_{ i } )$,
 wówczas
 \begin{displaymath}
   \begin{split}
-    ( \vp \ot \psi, \mu )_{ \mc{E} } &= \left( \vp \ot \psi, \Sum_{ i
-        = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \chi_{ i } ) \right)_{
-      \mc{E} } = \Sum_{ i = 1 }^{ N } c_{ i } ( \vp \ot \psi,
-    \eta_{ i } \ot \chi_{ i } )_{ \mc{E} } \\
+    \SP{ \vp \ot \psi }{ \mu }_{ \mc{E} } &= \left( \vp \ot \psi, \,
+      \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \chi_{ i } )
+    \right)_{ \mc{E} } = \Sum_{ i = 1 }^{ N } c_{ i } \SP{ \vp \ot
+      \psi }
+    { \eta_{ i } \ot \chi_{ i } }_{ \mc{E} } \\
     &= \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \chi_{ i } )
-    \lket \vp, \psi \rket = \mu\lket \vp, \psi \rket.
+    \dket{ \vp }{ \psi } = \mu\dket{ \vp }{ \psi }.
   \end{split}
 \end{displaymath}
 % Dla zupełności przedstawimy uogólnienie tej obserwacji. Niech
@@ -1016,7 +1057,7 @@ Teraz możemy przejść do~dyskusje, %do dyskusji<<<<<<<
 czy~wzór na iloczyn skalarny nie zależy od~przedstawienia jako sumy
 form prostych. Zauważmy, że~dwie formy $\mu$, $\eta$~są równe gdy
 \begin{displaymath}
-  \mu\lket \vp, \psi \rket = \eta\lket \vp, \psi \rket,
+  \mu\dket{ \vp }{ \psi } = \eta\dket{ \vp }{ \psi },
   \quad \forall \vp \in \Hc_{ 1 }, \psi \in \Hc_{ 2 }.
 \end{displaymath}
 Jak łatwo jednak zauważy % zauważyć <<<<<<<<<<<<
@@ -1062,8 +1103,9 @@ przypadkach różna. Teraz możemy, na~poziomie konkretnych
 reprezentantów, czyli sum form prostych, przeprowadzić następujący
 rachunek, kończący dowód
 \begin{displaymath}
-  ( \vp', \psi' ) = ( \vp + \mu, \psi' ) = ( \vp, \psi' ) + ( \mu, \psi' )
-  = ( \vp, \psi' ) = ( \vp, \psi + \mu ) = ( \vp, \psi ).
+  \SP{ \vp' }{ \psi' } = \SP{ \vp + \mu }{ \psi' }
+  = \SP{ \vp }{ \psi' } + \SP{ \mu }{ \psi' } = \SP{ vp }{ \psi' }
+  = \SP{ \vp }{ \psi + \mu } = \SP{ \vp }{ \psi }.
 \end{displaymath}
 
 
@@ -1135,6 +1177,7 @@ $\sum_{ l < L } \vp_{ l }$ i~$\sum_{ k < K } \psi_{ k }$. Tym samym
 Odpowiednio dobierając $L$ i~$K$ możemy uczynić tą różnicę dowolnie
 małą co kończy dowód.
 
+
 \start \StrWg{106}{5} Nie rozumiem dlaczego w~tym miejscu dodatkowo
 zaznacza~się, że~miarę dowolnego zbioru mierzalnego, można
 aproksymować od~wewnątrz przez zbiory zwarte \emph{i~borelowskie}.
@@ -1159,9 +1202,10 @@ zwarte~są domknięte i~tym samym borelowskie.
     17 & 3 & & $\int \;\: f_{ n } \;\: dp$ & $\IntCaD{ f_{ n } }{ p }$ \\
     40 & & 3 & a~Hilbert & a~separable Hilbert \\
     44 & & 7 & $\fr{ T( y ) }{ T( x_{ 0 } ) }$
-           & $\fr{ ( x_{ 0 }, y ) }{ ( x_{ 0 }, x_{ 0 } ) }$ \\
+           & $\fr{ \SP{ x_{ 0 } }{ y } }{ \SP{ x_{ 0 } }{ x_{ 0 } } }$ \\
     45 & & 2 & some & all \\
-    46 & & 9 & $(v_{ 1 }, u_{ 1 } ) v_{ k }$ & $(v_{ 1 }, u_{ 2 } ) v_{ 1 }$ \\
+    46 & & 9 & $\SP{ v_{ 1 } }{ u_{ 1 } } v_{ k }$
+           & $\SP{ v_{ 1 } }{ u_{ 2 } } v_{ 1 }$ \\
     49 & & 7 & linear & bilinear \\
     53 & & 12 & $\vp_{ k_{ \si( 1 ) } } \ot \vp_{ k_{ \si( 2 ) } } \cdots
                 \ot \vp_{ k_{ n( p ) } }$
@@ -1169,7 +1213,7 @@ zwarte~są domknięte i~tym samym borelowskie.
              \ot \vp_{ k_{ \si( p ) } }$ \\
     70 & 8 & & $\Lim_{ n \ra +\infty }$ & $\Lim_{ m \ra +\infty }$ \\ % Sprawdź czy
     % dobrze.
-    73 & & 2 & $\Sum_{ k = 1 }^{ \infty } \absj{ \la_{ k } } < \infty$
+    73 & & 2 & $\Sum_{ k = 1 }^{ \infty } \absd{ \la_{ k } } < \infty$
            & $\Sum_{ k = 1 }^{ \infty } \absj{ \la_{ k } } \leq
              \norm{ \la_{ 0 } }_{ c_{ 0 }^{ * } } < \infty$ \\
     79 & 6 & & $\norm{ [x] }$ & $\norm{ [x] }_{ 1 }$ \\
