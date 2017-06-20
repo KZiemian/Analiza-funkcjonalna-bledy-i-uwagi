@@ -113,10 +113,8 @@
 \newcommand{\R}{\mb{R}}
 \newcommand{\C}{\mb{C}}
 \newcommand{\D}{\mc{D}}
-\let\H\undefined
-\newcommand{\H}{\mc{H}}
-\let\L\undefined
-\newcommand{\L}{\mc{L}}
+\newcommand{\Hc}{\mc{H}}
+\newcommand{\Lc}{\mc{L}}
 \newcommand{\Rn}{\R^{ n }}
 \newcommand{\Rc}{\mc{R}}
 \newcommand{\Cc}{\mc{C}}
@@ -139,10 +137,6 @@
 % \newcommand{\B}{\mc{B}}
 % \newcommand{\D}{\mc{D}}
 % \newcommand{\Fc}{\mc{F}}
-% \let\H\undefined
-% \newcommand{\H}{\mc{H}}
-% \let\L\undefined
-% \newcommand{\L}{\mc{L}}
 % \newcommand{\M}{\mc{M}}
 % \newcommand{\Rc}{\mc{R}}
 % \newcommand{\Cc}{\mc{C}}
@@ -416,9 +410,16 @@ Tym samym możemy stwierdzić, że~jeśli istnieje funkcja zespolona,
 do~której ciąg funkcji próbnych jest zbieżny w~podanym wyżej sensie,
 to~funkcja graniczna również jest funkcją próbną.
 
+
 \start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy $\Cinfty$
 został, chyba przyjęty w~domyśle. Należy jednak~się nad nim zatrzymać
 i~dowieść tego faktu. \Dok
+
+
+\start \Str{20} Aby wywód był pełny należy jeszcze dowieść,
+że~$[ \vp( t ) ]^{ \fr{ 1 }{ n } } = \sqrt[ n ]{ \vp( t ) }$ jest
+klasy $\Cinfty$.
+
 
 \start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
 bardzo słusznie jest stale przypominany w~kontekście teorii
@@ -433,6 +434,7 @@ Jedynie jeśli w~klasie abstrakcji funkcji reprezentujących daną
 dystrybucję istnieje jedna funkcja wyróżniona, to~wartość tej funkcji
 jest też wartością dystrybucji w~konkretnym punkcie. Jest tak
 np.~jeśli jedna z~tych funkcji jest ciągła.
+
 
 \start \Str{29} Użycie we wzorze (3) symbolu
 \begin{equation}
@@ -463,9 +465,11 @@ $\Pf \, t^{ -3/2 } \Hevp( t )$ wzorem
     - \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } \right].
 \end{equation}
 
+
 \start \Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
 bardziej naturalne, wprowadzić pseudofunkcję
 $\Pf \fr{ \Hevp( -t )}{ t }$.
+
 
 \start \Str{33--34} Przyjmijmy najpierw, że~jeżeli dana jest krzywa
 $A$, to przez $A( t )$ będziemy oznaczać taką funkcję, że~krzywa
@@ -475,18 +479,22 @@ zmienny w~linii 2~(od~dołu) na~stronie~34. \\
 \Pow Dlatego pole pod~krzywą $\vp( t ) B( t )$ na~przedziale
 $\tau \leq t \leq \veps$
 
+
 \start \Str{36} W~tym miejscu po raz pierwszy chyba w~książce
 pojawia~się termin ,,obszar''. Z~kontekstu wynika, że~należy przez
 niego rozumieć dowolny podzbiór $\Rnc$.
 
+
 \start \Str{41} Obok nazwy \emph{zbiór zer dystrybucji}, proponowałbym
 również \emph{zbiór zerowy dystrybucji}.
+
 
 \start \Str{42} Logiczniej byłoby zaraz po~paragrafie \S 1.6 umieścić
 paragraf \S 1.8. Pojęcie zbioru zerowego i~nośnika dystrybucji nie ma
 wielkiego sensu 1.8.1 i~wynikających z~niego konsekwencji. Paragraf \S
 1.7 \emph{Kilka operacji na~dystrybucjach} najlepiej byłby umieścić
 jako \S 1.6.
+
 
 \start \Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
 jest niezmiernie ważne, zawiera wiele luk, które postaram~się
@@ -541,6 +549,7 @@ kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
 Będę również używał oznaczenia $\supp \vp$ na~oznaczenie nośnika
 funkcji $\vpt$ (z~ang.~support).
 
+
 \start \Str{48--49} \tb{Lemat 1, uzupełnienie.} Na~podstawie
 twierdzenia \ref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych
 własnościach. Teraz na~mocy twierdzenia \eqref{twr:Zem-s01-02} mamy
@@ -556,14 +565,17 @@ i~przyjmiemy $\al_{ 2 } < d_{ 2 }$, to dla każdego $t \in \com \Om$
 nośnik funkcji $\ga_{ \al_{ 1 } }( t - \tau )$ nie przecina~się
 z~$\Psi$, więc $\vpt = 0$.
 
+
 \start \Str{49} W~języku polskim znaczniej lepiej od~nazwy
 \emph{lokalnie skończonego pokrycia} brzmi określenie \emph{pokrycie
   lokalnie skończone}. Jego też będę dalej używał.
+
 
 \start \Str{49} \tb{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy
 założeń, każdy domknięty podzbiór $\Om_{ k }$ jest zwarty, więc
 istnienie zbiorów $\La_{ k }$ o~zadanych własnościach wynika ponownie
 z~twierdzenia \eqref{twr:Zem-s01-01}.
+
 
 \start \Str{50} \tb{Lemat 4, uzupełnienie.} Niech $A$ będzie zbiorem
 ograniczonym w~$\Rn$, czyli zawiera~się on w~kuli $K( 0, r )$. Trzeba
@@ -584,9 +596,10 @@ nierówność, więc tylko skończoną ilość razy będziemy wybierali
 skończoną rodzinę zbiorów $\Oc_{ \al }$ takich, że~jest możliwe
 by~$K( 0, r ) \cap \Oc_{ \al } \neq \O$.
 
-\start \Str{51} Cel przedstawionej tu konstrukcji jest
-następujący. Potrzebujemy pokrycia lokalnie skończonego~$\Om_{ \nu }$,
-którego elementy albo nie przecinają~się z~$\Xi$, albo
+
+\start \Str{51} Cel przedstawionej tu konstrukcji jest następujący.
+Potrzebujemy pokrycia lokalnie skończonego~$\Om_{ \nu }$, którego
+elementy albo nie przecinają~się z~$\Xi$, albo
 $\Om_{ \nu } \subs \Theta$, gdy $\Om_{ \nu } \cap \Xi \neq \O$.
 Rozkład jedności dla tego pokrycia pozwoli pokazać, że~funkcję~$\psi$
 można rozłożyć na~funkcje o~nośnikach w~zbiorach otwartych na~których
