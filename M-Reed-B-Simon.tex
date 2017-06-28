@@ -160,7 +160,7 @@
 % Teoria mnogości
 \newcommand{\set}[1]{\{ #1 \}}
 \newcommand{\es}{\emptyset}
-\newcommand{\subs}{\subset}
+\newcommand{\sset}{\subset}
 \newcommand{\setm}{\setminus}
 \newcommand{\ti}{\times}
 
@@ -307,8 +307,8 @@
 % ########################################
 \Field{
   M. Reed, B. Simon \\
-  ,,Methods~of Modern Mathematical Physics~I: Functional Analysis'',
-  \cite{RS80} }
+  ,,Methods~of Modern Mathematical Physics~I:\\
+  Functional Analysis'', \cite{ReedSimon80} }
 % ########################################
 
 
@@ -498,11 +498,11 @@ następująca\footnote{Granica ciągu wieloindeksowego powinna być
 $X$~będzie przestrzenią metryczną, a~$x_{ n_{ 1 }, \ld, \, n_{ m } }$
 ciągiem wieloindeksowym w~$X$. $x_{ 0 }$ jest granicą ciągu
 $x_{ n_{ 1 }, \ld, \, n_{ m } }$ \wtw, gdy
-\begin{displaymath}
+\begin{equation*}
   ( \forall \, \veps > 0) ( \exists \, N )
   ( \forall \, n_{ 1 } > N, \ld, \, n_{ m } > N ) \;\,
   d( x_{ n_{ 1 }, \ld, \, n_{ m } }, \, x_{ 0 } ) < \veps.
-\end{displaymath}
+\end{equation*}
 
 \begin{twr}
   Niech $X$ i~$Y$ będą przestrzeniami metrycznymi,
@@ -661,7 +661,7 @@ oczywista. Dopiero przy bardziej skomplikowanym wyborze sposobu
 sumowania, przykłady ponownie można znaleźć u~Fichtenholza, kolejność
 sumowania ma znaczenie. % Sprawdzone.
 
-\vspace{\spaceTwo}
+\vspace{\spaceOne}
 
 
 
@@ -679,15 +679,17 @@ sumowania ma znaczenie. % Sprawdzone.
 \start \Str{9} Nie wykazano, jedynie stwierdzono jednym słowem
 ,,thus'', że~obie podane definicje~są równoważne. W~istocie, jak
 powszechnie wiadomo z~pracy dotyczących analizy funkcjonalnej:
-\begin{displaymath}
+\begin{equation*}
   \norm{ T } = \sup_{ \norm{ x }_{ 1 } \leq 1 } \fr{ \norm{ T x }_{ 2 } }
   { \norm{ x }_{ 1 } }
   = \sup_{ \norm{ x }_{ 1 } = 1 } \fr{ \norm{ T x }_{ 2 } }
   { \norm{ x }_{ 1 } } = \inf \{ \, C \, | \, \forall x,
   \norm{ T x }_{ 2 } \leq C \norm{ x }_{ 1 } \}.
-\end{displaymath}
+\end{equation*}
 Elegancki dowód tego faktu, można znaleźć np. w~\cite{Chmielinski04},
 str.~115--116. % Sprawdzone.
+
+\vspace{\spaceThree}
 
 
 \start \Str{10} W~dowodzie twierdzenia B.L.T. skorzystanie z~$\Limsup$
@@ -695,11 +697,11 @@ jest zupełnie niepotrzebne, poza tym utrudnia dowód,
 że~$|| \tilde{ T } || = \norm{ T }$. Wystarczy bowiem skorzystać
 z~twierdzenia o~zachowaniu nierówności przy~przechodzeniu do~granicy,
 by otrzymać pożądaną nierówność
-\begin{displaymath}
+\begin{equation*}
   \Lim_{ n \ra \infty } \norm{ T x_{ n } }_{ 2 }
   \leq \Lim_{ n \ra \infty } \norm{ T } \norm{ x_{ n } }_{ 1 }
   = \norm{ T } \norm{ x }_{ 1 },
-\end{displaymath}
+\end{equation*}
 Wynika stąd od razu że~$|| \wt{ T } || \leq \norm{ T }$. Ponieważ
 zaś~na~zbiorze $V_{ 1 }$, zachodzi
 $|| \wt{ T } x ||_{ 2 } = \norm{ T x }_{ 2 } \leq \norm{ T } \norm{ x
@@ -708,10 +710,15 @@ to~prawdą, więc ze~względu na~to, iż~$V_{ 1 } \subset \wt{ V }_{ 1 }$,
 mamy nierówność $\norm{ T } \leq || \wt{ T } ||$, tym samym
 $|| \wt{ T } || = \norm{ T }$. % Sprawdzone.
 
+\vspace{\spaceThree}
+
+
 \start \Str{12} Ponieważ nie została podana definicja podciągu, nie
 można było użyć następującej eleganckiej definicji. Liczba $b$~jest
 punktem skupienia ciągu $\{ a_{ n } \}$, jeśli $\{ a_{ n } \}$ zawiera
 podciąg zbieżny do~$b$. % Sprawdzone.
+
+\vspace{\spaceThree}
 
 
 \start \Str{12} Zaproponowana na tej stronie alternatywna definicja
@@ -719,9 +726,13 @@ $\Limsup$ ma sens tylko dla zbiorów ograniczonych. W~analogiczny
 sposób jak pierwotną definicję należy ją rozszerzyć na przypadek
 zbiorów nieograniczonych. % Sprawdzone.
 
+\vspace{\spaceThree}
+
 
 \start \Str{13} Przelicz jawnie, że~funkcje trapezoidalne tworzą ciąg
 Cauchy'ego. \Dok
+
+\vspace{\spaceThree}
 
 
 \start \Str{16} Można podać równoważną, prostszą charakteryzację
@@ -739,6 +750,8 @@ borelowskie, przy czym $\mu( B_{ 1 } \cup B_{ 2 } ) = 0$.
 
 Inaczej mówiąc, zbiór mierzalny różni~się o~zbiór miary~0 od pewnego
 zbioru borelowskiego. % Sprawdzone.
+
+\vspace{\spaceThree}
 
 
 \start \Str{16} Choć jest to rozdział ,,Wiadomości wstępne''
@@ -772,21 +785,25 @@ $f \geq 0$. % Sprawdzone.
 % o~wartościach w~przestrzeni Banacha. To co tu zostało napisane, jest
 % więc pewną wariacją podanej przez niego teorii.}.
 
+\vspace{\spaceThree}
+
 
 \start \Str{17} W~twierdzeniu o~zbieżności monotonicznej jest
 powiedziane, że~dla funkcji rozpatrywanych w~tym twierdzeniu zachodzi
 $\int | f( p ) - f_{ n }( p ) | \dk p \ra 0$, co~wymaga pewnego
 komentarza. Ponieważ $f( p ) \geq f_{ n }( p )$ stąd
 $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
-\begin{displaymath}
+\begin{equation*}
   \IntCaD{ | f( p ) - f_{ n }( p ) | }{ p } = \IntCaD{ ( f( p )
     - f_{ n }( p ) ) }{ p } = \IntCaD{ f( p ) }{ p }
   - \IntCaD{ f_{ n }( p ) }{ p }
-\end{displaymath}
+\end{equation*}
 Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
 $f \in \LIj$ i~$\IntCaD{ f_{ n } }{ p } \ra \IntCaD{ f }{ p }$ można
 znaleźć w~każdej książce do~teorii całki,
 np.~\cite{Rudin98}. % Sprawdzone.
+
+\vspace{\spaceThree}
 
 
 \start \Str{17} W~twierdzeniu o~zbieżności majoryzowanej należy
@@ -802,10 +819,14 @@ warunek\footnote{Wskazał mi go Paweł Duch.} jest następujący:
 rozwinięcie trójkowe tej liczby można zapisać w~taki sposób by~nie
 zawierało cyfry~1. % Sprawdzone.
 
+\vspace{\spaceTwo}
+
 
 \start \Str{22} Nie rozumiem dlaczego z~faktu, że~miara każdego zbioru
 zwartego jest skończona, wynika iż~jest tylko przeliczalnie wiele
 punktów o~niezerowej mierze. \Dok
+
+\vspace{\spaceTwo}
 
 
 \start \Str{25} Należy zrobić dodatkowy komentarz na~temat równości
@@ -829,12 +850,25 @@ Zapewne funkcja jest prawie wszędzie mierzalna, ale nic silniejszego.
 \Dok
 
 
+\start \Str{30} \tb{Dowód twierdzenia I.27} Zauważmy, że~na mocy
+dowodu twierdzenie I.25, jeśli
+$\absj{ f_{ n }( x ) - f_{ n }( y ) } < \veps$ zachodzi dla
+każdego~$n$, to również $\absj{ f( x ) - f( y ) }$.
+
+
+\start \Str{30} W~twierdzeniach I.27 i~I.28, należałby dodać, że~dowód
+dotyczy funkcji o~wartościach zespolonych. Jednak twierdzenie I.27
+łatwo uogólnić na przypadek funkcji o~wartościach w~dowolnej
+przestrzeni metrycznej, a~I.28 o~wartościach w~przestrzeni Banacha.
+
+
 \start \Str{37} Można podać inne sformułowanie twierdzenia Pitagorasa,
 które w~pewnych sytuacjach jest bardziej naturalne. Jeśli $x_{ i }$,
 $i = 1, \ld, N$ tworzą układ ortogonalny i~$x = \Sum x_{ i }$, to
-\begin{displaymath}
+\begin{equation*}
   \norm{ x }^{ 2 } = \Sum_{ i = 1 }^{ N } \norm{ x_{ i } }^{ 2 }.
-\end{displaymath}
+\end{equation*}
+% Sprawdzone.
 
 
 \start \Str{39} Przy okazji definicji izomorfizmu dwóch przestrzeni
@@ -843,15 +877,15 @@ Surjektyweność zachodzi na mocy definicji, żeby zaś wykazać
 inijektywność wystarczy skorzystać z~jednego z~podstawowych twierdzeń
 algebry: odwzorowanie liniowe jest injektywne \wtw, gdy~jego jądro
 jest trywialne. Jeżeli więc $Ux = 0$, wtedy:
-\begin{displaymath}
+\begin{equation*}
   0 = \SP{ Ux }{ Ux }_{ \Hc_{ 2 } } = \SP{ x }{ x }_{ \Hc_{ 1 } } \iff x = 0.
-\end{displaymath}
+\end{equation*}
 % Sprawdzone.
 
 
 \start \Str{40} W~przykładzie~6 przestrzeń Hilberta~$\Hc'$ musi być
 ośrodkowa, ale~pojęcie przestrzeni ośrodkowej jest wprowadzone dopiero
-na~stronie~47.
+na~stronie~47. % Sprawdzone.
 
 
 \start \Str{44} W~tym miejscu warto dowieść twierdzenia następującego
@@ -873,7 +907,7 @@ $S$ nie jest układem zupełny.
 % Tu skończyłem
 Przez kontrapozycję $2) \Ra 1)$. Załóżmy teraz, że~$S$ nie jest
 zupełny. W~takim razie istnieje taki układ ortogonalny niezerowych
-wektorów, iż~$S \subs S'$ oraz $S' \setm S \neq \es$. Teraz
+wektorów, iż~$S \sset S'$ oraz $S' \setm S \neq \es$. Teraz
 $y \in S' \setm S$ jest niezerowym wektorem ortogonalnym do~$S$.
 % koniec niezrozumiałego fragmentu
 
@@ -884,62 +918,65 @@ $\sum_{ i = 1 }^{ N } \absj{ \SP{ x_{ \al_{ i } } }{ y } } \leq \norm{
 zachodzi $\SP{ x_{ \al } }{ y } \neq 0$. \Dok
 
 
-\start \Str{45} W~dowodzie twierdzenia II.6 nie wykazano dlaczego
-granica tego szeregu nie zależy od~kolejności wyrazów, można to jednak
-łatwo uzupełnić. Niech $A'$ będzie przeliczalnym zbiorem indeksów dla
-których $( x_{ \al }, y ) \neq 0$ i~niech $\al_{ i } \in A'$ będzie
-jakimś jego uporządkowaniem. Wówczas przeprowadzone w~dowodzie
+\start \Str{45} \tb{Dowód twierdzenia II.6.} Fakt, że~granica
+rozważanego szeregu nie zależy od~kolejności wyrazów, można udowodnić
+w~następujący sposób. Niech $A'$ będzie przeliczalnym zbiorem indeksów
+dla których $( x_{ \al }, y ) \neq 0$ i~niech $\al_{ i } \in A'$
+będzie jakimś jego uporządkowaniem. Wówczas przeprowadzone w~dowodzie
 rozumowanie pokazuje, że
 \begin{equation}
   y = \Sum_{ j = 1 }^{ \infty } \SP{ x_{ \al_{ i } } }{ y } x_{ \al_{ i } }.
 \end{equation}
 Jeżeli teraz weźmiemy jakieś inne jego uporządkowanie $x_{ j }$,
 to~możemy powtórzyć całe rozumowanie i~otrzymać, że~suma nowego
-szeregu znów wynosi $y$, tym samym jest niezależna od porządku.
+szeregu znów wynosi $y$, tym samym jest niezależna od~kolejności
+sumowania.
 
-Pomimo tego, że~szereg ten jest zbieżny niezależnie od~kolejności
-wyrazów, nie oznacza to, że~jest on absolutnie zbieżny. Rozpatrzmy
-bowiem element przestrzeni $\lcd$
-\begin{align*}
-  y &= ( 1, \tfr{ 1 }{ 2 }, \tfr{ 1 }{ 3 },\ld ), \\
-  \norm{ y }^{ 2 } &= \Sum_{ i = 1 }^{ \infty } \fr{ 1 }{ n^{ 2 } }
-                     = \fr{ \pi^{ 2 } }{ 6 } < +\infty.
-\end{align*}
+Pomimo tego, że~jego suma nie zależy od porządku wyrazów, nie oznacza
+to, że~szereg ten musi być absolutnie zbieżny. Rozpatrzmy bowiem
+element przestrzeni $\lcd$
+\begin{equation*}
+  y = ( 1, \tfr{ 1 }{ 2 }, \tfr{ 1 }{ 3 },\ld ), \quad
+  \norm{ y }^{ 2 } = \Sum_{ i = 1 }^{ \infty } \fr{ 1 }{ n^{ 2 } }
+  = \fr{ \pi^{ 2 } }{ 6 } < +\infty.
+\end{equation*}
 Jeśli~bazę ortonormalną przyjmiemy:
 \begin{equation*}
   e^{ k } = ( 0, \ld, 0, \overbrace{ 1 }^{ k }, 0, \ld, 0),
 \end{equation*}
-to od razu otrzymujemy
-\begin{align*}
-  &y = \Sum_{ k = 1 }^{ \infty } \tfr{ 1 }{ k } e^{ k }, \\
-  \Sum_{ k = 1 }^{ \infty } &\norm{ \tfr{ 1 }{ k } e^{ k } }
-                              = \Sum_{ k = 1 }^{ \infty } \tfr{ 1 }{ k }
-                              = +\infty.
-\end{align*}
+to samym od~razu otrzymujemy
+\begin{equation*}
+  y = \Sum_{ k = 1 }^{ \infty } \tfr{ 1 }{ k } e^{ k }, \quad
+  \Sum_{ k = 1 }^{ \infty } \norm{ \tfr{ 1 }{ k } e^{ k } }
+  = \Sum_{ k = 1 }^{ \infty } \tfr{ 1 }{ k } = +\infty.
+\end{equation*}
 
 Paweł Duch znalazł dobre wyjaśnienie dlaczego suma tego konkretnego
 typu szeregów nie zależy od~kolejności. Szereg zbieżny warunkowo jest
-zbieżny bowiem jego wyrazy odpowiednio~się kompensują, dlatego też
-jeśli zmienimy ich kolejność to~mogą one~się nie skompensowań tak jak
-poprzednio i~otrzymamy inną sumę. Jednak tutaj każdy wyraz jest
-w~kierunku prostopadły, %prostopadłym<<<<
-do~wszystkich innych, żadne da %dwa?<<<<<<<
-nie mogą~się więc kompensować. Szereg ten jest więc zbieżny
-niezależnie od~kolejności bądź rozbieżny.
+zbieżny bowiem jego wyrazy odpowiednio~się kompensują, wyrazy ujemne
+kasują poprzedzające jej wyrazy dodatnie. Dlatego też jeśli zmienimy
+ich kolejność to~mogą one~się nie skompensowań tak jak poprzednio
+i~otrzymamy inną sumę.
+
+Jednak tutaj każdy wyraz jest w~kierunku prostopadłym, do~wszystkich
+innych, więc żadne dwa z~nich nie mogą~się wzajemnie skompensować.
+Jeżeli więc taki szereg jest zbieżny, to zmiana kolejności nie wpływa
+na sumę.
 
 Schwartz bada w~swoje książce szeregi w~przestrzeniach Banacha, które
 nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
-sumowania (str.~110 \cite{Sch79}). Trajdos przetłumaczył ich nazwę
-jako szeregi \emph{zbieżne przestawialnie}.
+sumowania (str.~110 i~dalsze \cite{Schwartz79}). Trajdos przetłumaczył
+ich nazwę jako szeregi \emph{zbieżne
+  przestawialnie}. % Do przejrzenia.
 
 
 \start \Str{45} Wzorując~się na Grabowskim i~Ingardenie
 \cite{GrabowskiIngarden87}, warto w~kontekście twierdzenia II.6
 udowodnić jeszcze jedną piękną równość:
-\begin{displaymath}
+\begin{equation*}
   \SP{ y }{ y' } = \Sum_{ \al \in A } \SP{ y }{ x_{ \al } }
   \SP{ x_{ \al } }{ y' },
-\end{displaymath}
+\end{equation*}
 gdzie $S = \{ x_{ \al } \}_{ \al \in A }$ jest bazą ortonormalną,
 niekoniecznie przeliczalną. Istniej przeliczalny zbiór
 $x_{ \al_{ j } }$ taki,
@@ -983,7 +1020,7 @@ postać nierówności Bessela.
 
 \begin{twr}[Ogólna postać nierówności Bessela]
   Niech $S = \{ x_{ \al } \}_{ \al \in A }$ będzie układem
-  ortonormalny i~niech $B \subs A$. Wówczas:
+  ortonormalny i~niech $B \sset A$. Wówczas:
   \begin{equation*}
     \Sum_{ \be \in B } \absd{ \SP{ x_{ \be }}{ x } }^{ 2 } \leq \norm{ x }^{ 2 }.
   \end{equation*}
@@ -1006,28 +1043,28 @@ iloczyn skalarny w~$\Hc_{ 1 }$, $\Hc_{ 2 }$ i~$\mc{E}$, tu będę je
 oznaczał odpowiednio jako $( \cdot, \cdot )_{ \Hc_{ 1 } }$,
 $( \cdot, \cdot )_{ \Hc_{ 2 } }$, $( \cdot, \cdot )_{ \mc{ E } }$.
 Działanie formy $\vp_{ 1 } \ot \vp_{ 2 }$ można więc zapisać jako
-\begin{displaymath}
+\begin{equation*}
   ( \vp_{ 1 } \ot \vp_{ 2 } )\dket{ \psi_{ 1 }}{ \psi_{ 2 } }
   = \SP{ \psi_{ 1 } }{ \vp_{ 1 } }_{ \Hc_{ 1 } } \SP{ \psi_{ 2 } }
   { \vp_{ 2 } }_{ \Hc_{ 2 } }.
-\end{displaymath}
+\end{equation*}
 Iloczyn skalarny na~$\mc{E}$ ma więc postać:
-\begin{displaymath}
+\begin{equation*}
   \SP{ \vp \ot \psi }{ \eta \ot \mu }_{ \mc{E} }
   = \SP{ \vp }{ \eta }_{ \Hc_{ 1 } } \SP{ \psi }{ \mu }_{ \Hc_{ 2 } }.
-\end{displaymath}
+\end{equation*}
 Formę postaci $\vp \ot \psi$ będziemy nazywać prostą.
 
 W~dalszym ciągu potrzebna będzie nam następująca obserwacja: jeżeli
 $\mu \in \mc{E}$, to zachodzi równość:
-\begin{displaymath}
+\begin{equation*}
   \SP{ \vp \ot \psi }{ \mu }_{ \mc{E} } = \mu\dket{ \vp }{ \psi }.
-\end{displaymath}
+\end{equation*}
 Jeżeli $\mu = \eta \ot \chi$ to powyższa równość wynika z~definicji
 wszystkich działań. Jeśli zaś
 $\mu = \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \psi_{ i } )$,
 wówczas
-\begin{displaymath}
+\begin{equation*}
   \begin{split}
     \SP{ \vp \ot \psi }{ \mu }_{ \mc{E} } &= \left( \vp \ot \psi, \,
       \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \chi_{ i } )
@@ -1037,11 +1074,11 @@ wówczas
     &= \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \chi_{ i } )
     \dket{ \vp }{ \psi } = \mu\dket{ \vp }{ \psi }.
   \end{split}
-\end{displaymath}
+\end{equation*}
 % Dla zupełności przedstawimy uogólnienie tej obserwacji. Niech
 % $\eta = \Sum_{ i = 1 }^{ N } d_{ i } ( \vp_{ i } \ot \psi_{ i } )$,
 % korzystając z~półtoraliniowości mamy
-% \begin{displaymath}
+% \begin{equation*}
 %   \begin{split}
 %     ( \eta , \mu )_{ \mc{E} } &= \Sum_{ i = 1 }^{ N } \bar{ d }_{ i
 %   } ( ( \vp_{ i } \ot \psi_{ i } ), \mu )_{ \mc{E} } = \Sum_{ i = 1
@@ -1050,16 +1087,16 @@ wówczas
 %     &= \Sum_{ i = 1 }^{ N } c_{ i } ( \eta_{ i } \ot \chi_{ i } )
 %     \lket \vp, \psi \rket = \mu\lket \vp, \psi \rket.
 %   \end{split}
-% \end{displaymath}
+% \end{equation*}
 
 % wtym fragmencie wielokrotnie powtarza się "zauważyć" <<<<<<<<<<<<
 Teraz możemy przejść do~dyskusje, %do dyskusji<<<<<<<
 czy~wzór na iloczyn skalarny nie zależy od~przedstawienia jako sumy
 form prostych. Zauważmy, że~dwie formy $\mu$, $\eta$~są równe gdy
-\begin{displaymath}
+\begin{equation*}
   \mu\dket{ \vp }{ \psi } = \eta\dket{ \vp }{ \psi },
   \quad \forall \vp \in \Hc_{ 1 }, \psi \in \Hc_{ 2 }.
-\end{displaymath}
+\end{equation*}
 Jak łatwo jednak zauważy % zauważyć <<<<<<<<<<<<
 , formy $\mu_{ 1 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } )$
 oraz~$\mu_{ 2 } = \vp \ot \psi_{ 1 } + \vp \ot \psi_{ 2 }$
@@ -1072,21 +1109,21 @@ uznali, że~nie warto zagłębiać~się w~tę kwestię.
 Zauważmy, że~powyższy przykład uogólnia~się do~dobrze znanego
 z~algebry liniowej faktu, iż~iloczyn tensorowy jest wieloliniowy.
 Z~samej definicji wynika, że~zachodzi następująca równość form
-\begin{displaymath}
+\begin{equation*}
   \vp \ot \ld \ot ( \al \psi_{ 1 } + \beta \psi_{ 2 } ) \ot \ld \ot \eta
   = \al \, \vp \ot \ld \ot \psi_{ 1 } \ot \ld \ot \eta
   + \beta \, \vp \ot \ld \ot \psi_{ 2 } \ot \ld \ot \eta.
-\end{displaymath}
+\end{equation*}
 
 Musimy teraz pokazać, że~iloczyn skalarnych dwóch form z~$\mc{E}$,
 nie~zależy od ich przedstawienia w~postaci sumy form prostych.
 Zauważmy, że~dwie różne postaci tej samej formy różnią się o~formę
 zerową. Jeżeli weźmiemy dwie formy określone wyżej $\mu_{ 1 }$
 i~$\mu_{ 2 }$, to ich różnica:
-\begin{displaymath}
+\begin{equation*}
   \mu_{ 1 } - \mu_{ 2 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } )
   - \vp \ot \psi_{ 1 } - \vp \ot \psi_{ 2 }
-\end{displaymath}
+\end{equation*}
 jest formą zerową. Zwróćmy uwagę, że~rozkład formy zerowej na formy
 proste również nie jest jednoznaczny, np.~każda forma postaci
 $\vp \ot 0$ jest formą zerową. Jeżeli teraz uda~się pokazać, że~forma
@@ -1102,20 +1139,20 @@ i~$\vp' = \vp + \mu$, przy czym konkretna postać $\mu$ może być w~obu
 przypadkach różna. Teraz możemy, na~poziomie konkretnych
 reprezentantów, czyli sum form prostych, przeprowadzić następujący
 rachunek, kończący dowód
-\begin{displaymath}
+\begin{equation*}
   \SP{ \vp' }{ \psi' } = \SP{ \vp + \mu }{ \psi' }
-  = \SP{ \vp }{ \psi' } + \SP{ \mu }{ \psi' } = \SP{ vp }{ \psi' }
+  = \SP{ \vp }{ \psi' } + \SP{ \mu }{ \psi' } = \SP{ \vp }{ \psi' }
   = \SP{ \vp }{ \psi + \mu } = \SP{ \vp }{ \psi }.
-\end{displaymath}
+\end{equation*}
 
 
 \start \Str{50} Jako konkluzję konstrukcji iloczynu tensorowego
 przestrzeni Hilberta warto podać następującą piękną równość, która
 wynika wprost z~wprowadzonych definicji.
-\begin{displaymath}
+\begin{equation*}
   \norm{ \vp \ot \psi }_{ \Hc_{ 1 } \ot \Hc_{ 2 } }
   = \norm{ \vp }_{ \Hc_{ 1 } } \norm{ \psi }_{ \Hc_{ 2 } }.
-\end{displaymath}
+\end{equation*}
 Za jej pomocą można łatwo pokazać, że~iloczyn tensorowy jest ciągły,
 dowód jest taki sam jak w~przypadku iloczynu skalarnego.
 
@@ -1140,12 +1177,12 @@ ciągła. Nie wiem jak jest w~ogólniejszych sytuacjach, lecz na razie ta
 wiedza nie jest potrzebna.
 
 Ponieważ norma jest funkcją ciągłą, zachodzi więc równość
-\begin{displaymath}
+\begin{equation*}
   \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } || \vp \ot \psi
   - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } ||
   = || \vp \ot \psi - \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } \Sum_{ k < K }
   \Sum_{ l < L } \vp_{ k } \ot \psi_{ l } ||.
-\end{displaymath}
+\end{equation*}
 Aby zakończyć dowód o~bazie ortonormalnej trzeba teraz wykonać
 ,,bezpośredni rachunek'' i~pokazać, że~pierwsza z~tych granic jest
 równa~0. $\vp = \sum_{ l } \vp_{ l }$ możemy więc dobrać $L$ tak~by
@@ -1161,7 +1198,7 @@ ona ciąg Cauchy'ego i~tym samym jest ograniczony.
 Dobierz % znów proponuje zmianę na >>Dobierzmy<<<
 $M$ tak~by było wspólnym ograniczeniem ciągów
 $\sum_{ l < L } \vp_{ l }$ i~$\sum_{ k < K } \psi_{ k }$. Tym samym
-\begin{displaymath}
+\begin{equation*}
   \begin{split}
     & || \vp \ot \psi - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot
     \psi_{ l } || = || ( \Sum_{ l < L } \vp_{ l } + \vp_{ R } ) \ot (
@@ -1173,9 +1210,53 @@ $\sum_{ l < L } \vp_{ l }$ i~$\sum_{ k < K } \psi_{ k }$. Tym samym
     + || \vp_{ R } \ot ( \Sum_{ k < K } \psi_{ k } ) || \\
     &+ || \vp_{ R } \ot \psi_{ R } || \leq 2 M \veps + \veps^{ 2 }.
   \end{split}
-\end{displaymath}
+\end{equation*}
 Odpowiednio dobierając $L$ i~$K$ możemy uczynić tą różnicę dowolnie
 małą co kończy dowód.
+
+\vspace{\spaceTwo}
+
+
+\start \Str{51} W~tym miejscu będziemy potrzebowali następującego
+twierdzenie, którego dowód znalazł Paweł Duch.
+
+\begin{twr}
+  \label{twr:miaraA}
+  Jeżeli $( X, \mu )$ i~$( Y, \nu )$ są przestrzeniami z~miarą
+  $\si$\dywiz skończoną i~$A \sset X \ti Y$ będzie zbiorem mierzalny
+  względem miary $\mu \ot \nu$. Jeśli dla $\mu$\dywiz prawie każdego
+  $x \in X$, miara $\nu$ zbioru\footnote{Standardowo w~naturalny
+    sposób utożsamiany ten zbiór z~podzbiorem $Y$.}
+  $( x \ti Y ) \cap A$ jest równa 0, wówczas $(\mu \ot \nu)( A ) = 0$.
+\end{twr}
+\begin{proof}
+  W~przypadku miary dodatniej można tak sformułować teorię całki,
+  że~dla każdego zbioru zachodzi\footnote{Zobacz uwagi o~całce górnej
+    w~ujęciu Schwartza.}
+  \begin{equation*}
+    \mu( S ) = \int_{ S } \chi_{ S }( x ) \, d\mu( x ),
+  \end{equation*}
+  niezależnie czy jego miara jest skończona, czy nie. Skoro zaś obie
+  miary~są $\si$\dywiz skończone, to zachodzi twierdzenie o~zamianie
+  całki podwójnej na iterowaną, znów niezależnie od~tego czy
+  poszczególne całki są skończone czy nie.
+
+  Dostajemy więc
+  \begin{equation*}
+    (\mu \ot \nu)( A ) = \int_{ X \ti Y } \chi( x, y )
+    \, d\mu( x ) \ot d\nu( y )
+    = \int_{ X } \left( \int_{ Y } \chi( x, y ) \, d\nu( y ) \right)
+    \, d\mu( x ) = 0,
+  \end{equation*}
+  bowiem na mocy założeń
+  $\mu( ( x \ti Y ) \cap A ) = \int_{ Y } \chi( x, y ) \, d\nu( y )$
+  jest równa zeru dla $\mu$\dywiz prawie wszystkich~$x$.
+\end{proof}
+Zauważmy, że~to twierdzenie ma prostą interpretację na płaszczyźnie
+$\R^{ 2 }$. Wówczas zbiór $x \ti Y$ jest prostą pionową przechodzącą
+przez punkt $x$ i~powyższe twierdzenie mówi, że~jeśli prawie każdy
+przekrój zbioru $A$ prostymi pionowymi ma miarę (długość)~0, to pole
+powierzchni $A$ również jest zerowe.
 
 
 \start \StrWg{106}{5} Nie rozumiem dlaczego w~tym miejscu dodatkowo
@@ -1222,7 +1303,7 @@ zwarte~są domknięte i~tym samym borelowskie.
     104 & 6 & & $||P_{ n }( f )$ & $|| \, P_{ n }( f )$ \\
     106 & 11 & & $\mu( \, Y \setm \wt{ Y } )$
            & $\mu( Y \setm \wt{ Y } )$ \\
-    106 & 5 & & $C \subs O$ & $C \subs Y$ \\
+    106 & 5 & & $C \sset O$ & $C \sset Y$ \\
     107 & 4 & & $\Real[ e^{ -i \vp } f ]$ & $e^{ -i \vp } f$ \\
     107 & 4 & & $\Real( e^{ -i \vp } f )$ & $e^{ -i \vp } f$ \\
     107 & 10 & & $\int\! fd\mu$ & $\IntCaD{ f }{ \mu }$ \\
