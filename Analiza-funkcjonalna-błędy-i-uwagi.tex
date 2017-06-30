@@ -365,14 +365,13 @@
 
 
 
-% ##############################
+% ####################
 \newpage
 
 \Work{
   Armen H.~Zemanian \\
-  ,,Teoria dystrybucji i analiza transformat'', \cite{Zem69} }
+  ,,Teoria dystrybucji i analiza transformat'', \cite{Zemanian69} }
 
-% ###############
 \CenterTB{Uwagi}
 
 \noi \tb{Konkretne strony}
@@ -398,7 +397,7 @@ $\set{ \vp_{ \nu }( t ) }$ jest zbieżny do~rodziny funkcji
 $f_{ k }( t )$.
 
 Jednak na mocy twierdzeń z~analizy matematycznej, które można znaleźć
-np.~w~książce Schwartza, str.~649--652,~\cite{Sch79}, przy tych
+np.~w~książce Schwartza, str.~649--652,~\cite{Schwartz79}, przy tych
 warunkach funkcja $f( t )$ jest klasy $\Cinfty$ i~zachodzi
 $f^{ ( k ) }( t ) = f_{ k }( t )$. Tym samy pokazaliśmy, że~zbieżność
 zdefiniowana wyżej, jest rzeczywiście zbieżnością do~jakiejś funkcji.
@@ -410,15 +409,21 @@ Tym samym możemy stwierdzić, że~jeśli istnieje funkcja zespolona,
 do~której ciąg funkcji próbnych jest zbieżny w~podanym wyżej sensie,
 to~funkcja graniczna również jest funkcją próbną.
 
+\vspace{\spaceThree}
+
 
 \start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy $\Cinfty$
 został, chyba przyjęty w~domyśle. Należy jednak~się nad nim zatrzymać
 i~dowieść tego faktu. \Dok
 
+\vspace{\spaceThree}
+
 
 \start \Str{20} Aby wywód był pełny należy jeszcze dowieść,
 że~$[ \vp( t ) ]^{ \fr{ 1 }{ n } } = \sqrt[ n ]{ \vp( t ) }$ jest
 klasy $\Cinfty$.
+
+\vspace{\spaceThree}
 
 
 \start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
@@ -435,8 +440,10 @@ dystrybucję istnieje jedna funkcja wyróżniona, to~wartość tej funkcji
 jest też wartością dystrybucji w~konkretnym punkcie. Jest tak
 np.~jeśli jedna z~tych funkcji jest ciągła.
 
+\vspace{\spaceThree}
 
-\start \Str{29} Użycie we wzorze (3) symbolu
+
+\start \Str{29} Użycie we wzorze~(3) symbolu
 \begin{equation}
   \label{eq:Zem-s01-01}
   \Lim_{ \veps \ra 0^{ + } } \Int_{ \veps }^{ b } t^{ -3/2 } \vp( t ) \, dt,
@@ -444,8 +451,7 @@ np.~jeśli jedna z~tych funkcji jest ciągła.
 jest trochę mylące. Zdaje~się bowiem sugerować, że~całka
 $\int_{ 0 }^{ b } t^{ -3/2 } \vp( t ) \, dt$ istniej i~jest równa tej
 granicy, jednak całka ta jest rozbieżna jeśli $\vp( 0 ) \neq 0$.
-Poprawniejsze byłoby następujące
-rozumowanie. %Może się nie znam ale czy tu też nie powinno być :
+Poprawniejsze byłoby następujące rozumowanie.
 
 Najpierw rozpatrzmy całkę
 \begin{equation}
@@ -465,10 +471,14 @@ $\Pf \, t^{ -3/2 } \Hevp( t )$ wzorem
     - \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } \right].
 \end{equation}
 
+\vspace{\spaceThree}
+
 
 \start \Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
 bardziej naturalne, wprowadzić pseudofunkcję
 $\Pf \fr{ \Hevp( -t )}{ t }$.
+
+\vspace{\spaceThree}
 
 
 \start \Str{33--34} Przyjmijmy najpierw, że~jeżeli dana jest krzywa
@@ -479,14 +489,20 @@ zmienny w~linii 2~(od~dołu) na~stronie~34. \\
 \Pow Dlatego pole pod~krzywą $\vp( t ) B( t )$ na~przedziale
 $\tau \leq t \leq \veps$
 
+\vspace{\spaceThree}
+
 
 \start \Str{36} W~tym miejscu po raz pierwszy chyba w~książce
 pojawia~się termin ,,obszar''. Z~kontekstu wynika, że~należy przez
 niego rozumieć dowolny podzbiór $\Rnc$.
 
+\vspace{\spaceThree}
+
 
 \start \Str{41} Obok nazwy \emph{zbiór zer dystrybucji}, proponowałbym
 również \emph{zbiór zerowy dystrybucji}.
+
+\vspace{\spaceThree}
 
 
 \start \Str{42} Logiczniej byłoby zaraz po~paragrafie \S 1.6 umieścić
@@ -494,6 +510,8 @@ paragraf \S 1.8. Pojęcie zbioru zerowego i~nośnika dystrybucji nie ma
 wielkiego sensu 1.8.1 i~wynikających z~niego konsekwencji. Paragraf \S
 1.7 \emph{Kilka operacji na~dystrybucjach} najlepiej byłby umieścić
 jako \S 1.6.
+
+\vspace{\spaceThree}
 
 
 \start \Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
@@ -509,7 +527,7 @@ domkniętych i~ograniczonych\footnote{Jak wiadomo z~twierdzenia
 niewygodne, będę mówił o~zbiorach zwartych. Będziemy jeszcze
 potrzebowali dwóch twierdzeń odnośnie tych zbiorów.
 
-\begin{twr}[Walter Rudin, twr. 2.7, str.~45,~\cite{Rud98}]
+\begin{twr}[Walter Rudin, twr. 2.7, str.~45,~\cite{Rudin98}]
   \label{twr:Zem-s01-01}
   Niech $X$ będzie lokalnie zwartą przestrzenią Hausdorffa,
   $K$~zbiorem zwartym, $U$~zbiorem otwartym i~$K \subs U$. Istnieje
@@ -531,7 +549,7 @@ Jeśli przestrzeń nie jest spójna, to~może~się zdarzyć, że~$K$ jest
 maksymalną składową spójną i tym samym jest otwarto-domkniętym
 zbiorem. Wtedy jak najbardziej może~się zdarzyć, iż~$K = V$.
 
-\begin{twr}[Laurent Schwartz, str??\cite{Sch79}]
+\begin{twr}[Laurent Schwartz, str??\cite{Schwartz79}]
   \label{twr:Zem-s01-02}
   Niech $( X, d )$ będzie przestrzenią metryczną, w~której każdy zbiór
   domknięty i~ograniczony jest zwarty. Jeśli $K$ jest zbiorem zwartym,
@@ -549,6 +567,8 @@ kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
 Będę również używał oznaczenia $\supp \vp$ na~oznaczenie nośnika
 funkcji $\vpt$ (z~ang.~support).
 
+\vspace{\spaceThree}
+
 
 \start \Str{48--49} \tb{Lemat 1, uzupełnienie.} Na~podstawie
 twierdzenia \ref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych
@@ -565,16 +585,22 @@ i~przyjmiemy $\al_{ 2 } < d_{ 2 }$, to dla każdego $t \in \com \Om$
 nośnik funkcji $\ga_{ \al_{ 1 } }( t - \tau )$ nie przecina~się
 z~$\Psi$, więc $\vpt = 0$.
 
+\vspace{\spaceThree}
+
 
 \start \Str{49} W~języku polskim znaczniej lepiej od~nazwy
 \emph{lokalnie skończonego pokrycia} brzmi określenie \emph{pokrycie
   lokalnie skończone}. Jego też będę dalej używał.
+
+\vspace{\spaceThree}
 
 
 \start \Str{49} \tb{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy
 założeń, każdy domknięty podzbiór $\Om_{ k }$ jest zwarty, więc
 istnienie zbiorów $\La_{ k }$ o~zadanych własnościach wynika ponownie
 z~twierdzenia \eqref{twr:Zem-s01-01}.
+
+\vspace{\spaceThree}
 
 
 \start \Str{50} \tb{Lemat 4, uzupełnienie.} Niech $A$ będzie zbiorem
@@ -584,9 +610,9 @@ pokrycia może przecinać~się z~tą kulą. Oznaczymy majorantę średnicy
 zbiorów przez $\mr{Diam}_{ \mf{ C } }$, a~przez $M$ minimalną
 odległość punktu prostopadłościanu reprezentowanego układem liczb
 $\{ m_{ 1 }, \ld, m_{ n } \}$ od~punktu $0$, czyli
-\begin{displaymath}
+\begin{equation*}
   M = \left( \Sum_{ i = 0 }^{ n } m_{ i } \right)^{ \fr{ 1 }{ 2 } }.
-\end{displaymath}
+\end{equation*}
 Zbiór $\Oc_{ \al }$ może przeciąć zadaną kulę, tylko jeśli
 $M - \mr{Diam}_{ \mf{C} } < r$, czyli mówiąc prościej,
 jeśli~prostopadłościan jest na tyle blisko, że~zbiór $\Oc_{ \al }$
@@ -595,6 +621,8 @@ ilość układów liczb $\{ m_{ 1 }, \ld, m_{ n } \}$ spełniających tę
 nierówność, więc tylko skończoną ilość razy będziemy wybierali
 skończoną rodzinę zbiorów $\Oc_{ \al }$ takich, że~jest możliwe
 by~$K( 0, r ) \cap \Oc_{ \al } \neq \O$.
+
+\vspace{\spaceThree}
 
 
 \start \Str{51} Cel przedstawionej tu konstrukcji jest następujący.
@@ -657,8 +685,7 @@ wprowadzony niepotrzebnie.
     & & & & \\ \hline
   \end{tabular}
 \end{center}
-\noi
-\StrWd{21}{10} \\
+\noi \StrWd{21}{10} \\
 \Jest opisem niewykończonego \\
 \Pow niepełnym opisem pewnego \\
 \StrWg{34}{2} \\
