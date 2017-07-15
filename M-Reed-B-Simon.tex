@@ -22,9 +22,9 @@
 \usepackage{xcolor}
 \usepackage{calrsfs}
 \usepackage{vmargin}
-%----------------------------------------------------------------------
+% --------------------------------------------------------------------
 % MARGINS
-%----------------------------------------------------------------------
+% --------------------------------------------------------------------
 \setmarginsrb
 { 0.7in}  % left margin
 { 0.6in}  % top margin
@@ -35,11 +35,11 @@
 {   9pt}  % foot height
 { 0.3in}  % foot sep
 \usepackage{hyperref}
-% ########################################
+% ####################################################################
 
 
 
-% ####################
+% ##################
 \renewcommand{\arraystretch}{1.2}
 
 
@@ -58,9 +58,9 @@
 
 % ##############################
 
-\newcommand{\spaceOne}{2em}
-\newcommand{\spaceTwo}{1em}
-\newcommand{\spaceThree}{0.5em}
+\newcommand{\spaceTwo}{2em}
+\newcommand{\spaceThree}{1em}
+\newcommand{\spaceFour}{0.5em}
 
 % Ładniejszy zbiór pusty
 \let\oldemptyset\emptyset
@@ -305,9 +305,9 @@
 
 
 % ########################################
-\Field{
+\Main{
   M. Reed, B. Simon \\
-  ,,Methods~of Modern Mathematical Physics~I:\\
+  ,,Methods~of Modern Mathematical Physics~I: \\
   Functional Analysis'', \cite{ReedSimon80} }
 % ########################################
 
@@ -316,7 +316,7 @@
 
 \noi \tb{Rozdział I.}
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 \start Nigdzie nie została podana definicja $\sup$ i~$\inf$ ani
 w~przypadku ogólnych relacji porządkujących, ani w~przypadku liczb
@@ -454,13 +454,14 @@ $dx$ i~jej całka wynosi~0. Jeżeli teraz dodamy do miary Lebesgue'a
 miarę Diraca skupioną w~0, oznaczmy ją $d\del_{ 0 }$, to $f$ będzie
 niecałkowalna względem miary $dx + d\del_{ 0 }$. % Sprawdzone.
 
-\vspace{\spaceTwo}
+\vspace{\spaceThree}
 
 
 
+% ####################
 \noi \tb{Rozdział~II.}
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 \start \tb{Ciągłość ciągowa funkcji na~przestrzeniach metrycznych.}
 W~tym rozdziale napotykamy kilkakrotnie następującą sytuacje. Mamy
@@ -661,13 +662,13 @@ oczywista. Dopiero przy bardziej skomplikowanym wyborze sposobu
 sumowania, przykłady ponownie można znaleźć u~Fichtenholza, kolejność
 sumowania ma znaczenie. % Sprawdzone.
 
-\vspace{\spaceOne}
+\vspace{\spaceTwo}
 
 
-
+% ####################
 \noi \tb{Konkretne strony.}
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 % \start \Str{7} Warto w~tym miejscu zauważyć, że~każdy domknięty
 % podzbiór przestrzeni zupełnej jest zupełny. Zbyt dużo materiały w
@@ -689,7 +690,7 @@ powszechnie wiadomo z~pracy dotyczących analizy funkcjonalnej:
 Elegancki dowód tego faktu, można znaleźć np. w~\cite{Chmielinski04},
 str.~115--116. % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{10} W~dowodzie twierdzenia B.L.T. skorzystanie z~$\Limsup$
@@ -710,7 +711,7 @@ to~prawdą, więc ze~względu na~to, iż~$V_{ 1 } \subset \wt{ V }_{ 1 }$,
 mamy nierówność $\norm{ T } \leq || \wt{ T } ||$, tym samym
 $|| \wt{ T } || = \norm{ T }$. % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{12} Ponieważ nie została podana definicja podciągu, nie
@@ -718,7 +719,7 @@ można było użyć następującej eleganckiej definicji. Liczba $b$~jest
 punktem skupienia ciągu $\{ a_{ n } \}$, jeśli $\{ a_{ n } \}$ zawiera
 podciąg zbieżny do~$b$. % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{12} Zaproponowana na tej stronie alternatywna definicja
@@ -726,13 +727,13 @@ $\Limsup$ ma sens tylko dla zbiorów ograniczonych. W~analogiczny
 sposób jak pierwotną definicję należy ją rozszerzyć na przypadek
 zbiorów nieograniczonych. % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{13} Przelicz jawnie, że~funkcje trapezoidalne tworzą ciąg
 Cauchy'ego. \Dok
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{16} Można podać równoważną, prostszą charakteryzację
@@ -751,7 +752,7 @@ borelowskie, przy czym $\mu( B_{ 1 } \cup B_{ 2 } ) = 0$.
 Inaczej mówiąc, zbiór mierzalny różni~się o~zbiór miary~0 od pewnego
 zbioru borelowskiego. % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{16} Choć jest to rozdział ,,Wiadomości wstępne''
@@ -785,7 +786,7 @@ $f \geq 0$. % Sprawdzone.
 % o~wartościach w~przestrzeni Banacha. To co tu zostało napisane, jest
 % więc pewną wariacją podanej przez niego teorii.}.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{17} W~twierdzeniu o~zbieżności monotonicznej jest
@@ -803,13 +804,13 @@ $f \in \LIj$ i~$\IntCaD{ f_{ n } }{ p } \ra \IntCaD{ f }{ p }$ można
 znaleźć w~każdej książce do~teorii całki,
 np.~\cite{Rudin98}. % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{17} W~twierdzeniu o~zbieżności majoryzowanej należy
 założyć, że~funkcje $f_{ n }$~są mierzalne. % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{21} W~podanej charakterystyce liczbowej zbioru Cantora
@@ -821,14 +822,14 @@ warunek\footnote{Wskazał mi go Paweł Duch.} jest następujący:
 rozwinięcie trójkowe tej liczby można zapisać w~taki sposób by~nie
 zawierało cyfry~1. % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{22} Nie rozumiem dlaczego z~faktu, że~miara każdego zbioru
 zwartego jest skończona, wynika iż~jest tylko przeliczalnie wiele
 punktów o~niezerowej mierze. \Dok
 
-\vspace{\spaceTwo}
+\vspace{\spaceThree}
 
 
 \start \Str{25} Należy zrobić dodatkowy komentarz na~temat równości
@@ -842,7 +843,7 @@ miary w~tym twierdzeniu~są dodatnie, można więc zagwarantować,
 że~$f \geq 0$. Całka z~tezy ma więc zawsze sens, jednak wynik może być
 nieskończony. Nie jest to jednak problem \Dok
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{25} Jakoś nie mogę siebie przekonać, że~funkcja mierzalna
@@ -853,7 +854,7 @@ $\si$\dywiz algebr wydaje mi~się to dziwnie mocny twierdzeniem.
 Zapewne funkcja jest prawie wszędzie mierzalna, ale nic silniejszego.
 \Dok
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{30} \tb{Dowód twierdzenia I.27} Zauważmy, że~na mocy
@@ -861,7 +862,7 @@ dowodu twierdzenie I.25, jeśli
 $\absj{ f_{ n }( x ) - f_{ n }( y ) } < \veps$ zachodzi dla
 każdego~$n$, to również $\absj{ f( x ) - f( y ) }$.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{30} W~twierdzeniach I.27 i~I.28, należałby dodać, że~dowód
@@ -869,7 +870,7 @@ dotyczy funkcji o~wartościach zespolonych. Jednak twierdzenie I.27
 łatwo uogólnić na przypadek funkcji o~wartościach w~dowolnej
 przestrzeni metrycznej, a~I.28 o~wartościach w~przestrzeni Banacha.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{37} Można podać inne sformułowanie twierdzenia Pitagorasa,
@@ -880,7 +881,7 @@ $i = 1, \ld, N$ tworzą układ ortogonalny i~$x = \Sum x_{ i }$, to
 \end{equation*}
 % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{39} Przy okazji definicji izomorfizmu dwóch przestrzeni
@@ -894,14 +895,14 @@ jest trywialne. Jeżeli więc $Ux = 0$, wtedy:
 \end{equation*}
 % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{40} W~przykładzie~6 przestrzeń Hilberta~$\Hc'$ musi być
 ośrodkowa, ale~pojęcie przestrzeni ośrodkowej jest wprowadzone dopiero
 na~stronie~47. % Sprawdzone.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{44} W~tym miejscu warto dowieść twierdzenia następującego
@@ -927,7 +928,7 @@ wektorów, iż~$S \sset S'$ oraz $S' \setm S \neq \es$. Teraz
 $y \in S' \setm S$ jest niezerowym wektorem ortogonalnym do~$S$.
 % koniec niezrozumiałego fragmentu
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{45} Nie rozumiem dlaczego z~nierówności
@@ -935,7 +936,7 @@ $\sum_{ i = 1 }^{ N } \absj{ \SP{ x_{ \al_{ i } } }{ y } } \leq \norm{
   y }^{ 2 }$ wynika, że~tylko dla przeliczalnej ilości indeksów $\al$
 zachodzi $\SP{ x_{ \al } }{ y } \neq 0$. \Dok
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{45} \tb{Dowód twierdzenia II.6.} Fakt, że~granica
@@ -989,7 +990,7 @@ sumowania (str.~110 i~dalsze \cite{Schwartz79}). Trajdos przetłumaczył
 ich nazwę jako szeregi \emph{zbieżne
   przestawialnie}. % Do przejrzenia.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{45} Wzorując~się na Grabowskim i~Ingardenie
@@ -1036,7 +1037,7 @@ $y' = y$, mamy
   \SP{ x_{ \al } }{ y } = \Sum_{ \al \in A } \absj{ \SP{ x_{ \al } }{ y } }^{ 2 }.
 \end{equation*}
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{45} Dysponując twierdzeniem II.6, można teraz podać ogólną
@@ -1057,7 +1058,7 @@ postać nierówności Bessela.
   \end{equation*}
 \end{proof}
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{49} Konstrukcja iloczynu tensorowego jest przeprowadzona
@@ -1171,7 +1172,7 @@ rachunek, kończący dowód
   = \SP{ \vp }{ \psi + \mu } = \SP{ \vp }{ \psi }.
 \end{equation*}
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{50} Jako konkluzję konstrukcji iloczynu tensorowego
@@ -1184,7 +1185,7 @@ wynika wprost z~wprowadzonych definicji.
 Za jej pomocą można łatwo pokazać, że~iloczyn tensorowy jest ciągły,
 dowód jest taki sam jak w~przypadku iloczynu skalarnego.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{50} Również tu~część dowodu, że~układ
@@ -1244,7 +1245,7 @@ $\sum_{ l < L } \vp_{ l }$ i~$\sum_{ k < K } \psi_{ k }$. Tym samym
 Odpowiednio dobierając $L$ i~$K$ możemy uczynić tą różnicę dowolnie
 małą co kończy dowód.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{51} W~tym miejscu będziemy potrzebowali następującego
@@ -1288,12 +1289,12 @@ przez punkt $x$ i~powyższe twierdzenie mówi, że~jeśli prawie każdy
 przekrój zbioru $A$ prostymi pionowymi ma miarę (długość)~0, to pole
 powierzchni $A$ również jest zerowe.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{51}
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \StrWg{106}{5} Nie rozumiem dlaczego w~tym miejscu dodatkowo
@@ -1353,7 +1354,8 @@ zwarte~są domknięte i~tym samym borelowskie.
     % & & & & \\
     % & & & & \\
     % & & & & \\
-    & & & & \\ \hline
+    % & & & & \\
+    \hline
   \end{tabular}
 \end{center}
 \noi
@@ -1380,6 +1382,8 @@ zwarte~są domknięte i~tym samym borelowskie.
   \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } } \ol{ f( x, y ) } \vp_{ k }( x ) \,
   d\mu_{ 1 }( x ) \bigg) \psi_{ l }( y ) \, d\mu_{ 2 }( y )
 \end{equation*}
+
+
 
 
 
