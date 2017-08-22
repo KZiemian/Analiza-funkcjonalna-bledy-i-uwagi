@@ -45,9 +45,10 @@
 
 % ##############################
 
-\newcommand{\spaceOne}{2em}
-\newcommand{\spaceTwo}{1em}
-\newcommand{\spaceThree}{0.5em}
+\newcommand{\spaceOne}{3em}
+\newcommand{\spaceTwo}{2em}
+\newcommand{\spaceThree}{1em}
+\newcommand{\spaceFour}{0.5em}
 
 % Ładniejszy zbiór pusty
 \let\oldemptyset\emptyset
@@ -170,6 +171,10 @@
 \newcommand{\Liminf}{\ul{\lim}}
 \newcommand{\Limsup}{\ol{\lim}}
 
+\newcommand{\DelTtoZero}{\Del t \ra 0}
+
+\newcommand{\Delt}{\Del t}
+
 % Sumy
 \newcommand{\Sum}{\sum\limits}
 
@@ -181,6 +186,8 @@
 
 % Powszechnie używane symbole
 \newcommand{\Cinfty}{\Cc^{ \infty }}
+\newcommand{\CinftyR}{\Cc^{ \infty }( \R )}
+\newcommand{\CinftyRn}{\Cc^{ \infty }( \Rn )}
 
 % Całki i całkowanie
 \newcommand{\dx}{\de x}
@@ -281,17 +288,32 @@
 
 % ##############################
 % Oznaczenia z książki Zemaniana
+
+\newcommand{\vpt}{\vp( t )}
+\newcommand{\vpsequ}{\set{ \vp_{ \nu }( t ) }}
+
+\newcommand{\vpDer}{\vp^{ ( 1 ) }( t )}
+
+\newcommand{\CinftyRc}{\Cc^{ \infty }( \Rc )}
+\newcommand{\CinftyRnc}{\Cc^{ \infty }( \Rnc )}
+
+\newcommand{\DRc}{\D( \Rc )}
+\newcommand{\DRnc}{\D( \Rnc )}
+\newcommand{\DpRc}{\D'( \Rc )}
+\newcommand{\DpRnc}{\D'( \Rnc )}
+
+\newcommand{\dyst}[2]{\lket #1,\, #2 \rket}
 \newcommand{\Pf}{\mr{Pf}\,}
 \newcommand{\Fp}{\mr{Fp}}
 \newcommand{\Rnc}{\Rc^{ n }}
 \newcommand{\Hevp}{\mbf{1}_{ + }} % Oznaczenie tenty Heaviside'a
 \newcommand{\Hevm}{\mbf{1}_{ - }}
 
-\newcommand{\vpt}{\vp( t )}
-\newcommand{\vpsequ}{\set{ \vp_{ \nu }( t ) }}
 
 % Koniec komend
 % ##############################
+
+
 
 
 
@@ -304,7 +326,7 @@
 % ########################################
 \Main{Analiza funkcjonalna, błędy i~uwagi.}
 
-\vspace{\spaceTwo}
+\vspace{\spaceThree}
 % ########################################
 
 
@@ -333,7 +355,7 @@
   \end{tabular}
 \end{center}
 
-\vspace{\spaceOne}
+\vspace{\spaceTwo}
 
 
 
@@ -361,7 +383,7 @@
   \end{tabular}
 \end{center}
 
-\vspace{\spaceOne}
+\vspace{\spaceTwo}
 
 
 
@@ -370,13 +392,16 @@
 
 \Work{
   Armen H.~Zemanian \\
-  ,,Teoria dystrybucji i analiza transformat'', \cite{Zemanian69} }
+  ,,Teoria dystrybucji i analiza transformat'',
+  \cite{ZemanianTeoriaDystrybucji69} }
+
 
 \CenterTB{Uwagi}
 
 \noi \tb{Konkretne strony}
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
+
 
 \start \Str{16} Rozważania o~zamkniętości ze~względu na zbieżność
 przestrzeni funkcji próbnych $\D$~są w~mojej ocenie trochę chaotyczne,
@@ -409,21 +434,21 @@ Tym samym możemy stwierdzić, że~jeśli istnieje funkcja zespolona,
 do~której ciąg funkcji próbnych jest zbieżny w~podanym wyżej sensie,
 to~funkcja graniczna również jest funkcją próbną.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
-\start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy $\Cinfty$
-został, chyba przyjęty w~domyśle. Należy jednak~się nad nim zatrzymać
-i~dowieść tego faktu. \Dok
+\start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy
+$\CinftyRc$ został, chyba przyjęty w~domyśle. Należy jednak~się nad
+nim zatrzymać i~dowieść tego faktu. \Dok
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{20} Aby wywód był pełny należy jeszcze dowieść,
 że~$[ \vp( t ) ]^{ \fr{ 1 }{ n } } = \sqrt[ n ]{ \vp( t ) }$ jest
-klasy $\Cinfty$.
+klasy $\CinftyRc$.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
@@ -440,7 +465,7 @@ dystrybucję istnieje jedna funkcja wyróżniona, to~wartość tej funkcji
 jest też wartością dystrybucji w~konkretnym punkcie. Jest tak
 np.~jeśli jedna z~tych funkcji jest ciągła.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{29} Użycie we wzorze~(3) symbolu
@@ -471,14 +496,14 @@ $\Pf \, t^{ -3/2 } \Hevp( t )$ wzorem
     - \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } \right].
 \end{equation}
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
 bardziej naturalne, wprowadzić pseudofunkcję
 $\Pf \fr{ \Hevp( -t )}{ t }$.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{33--34} Przyjmijmy najpierw, że~jeżeli dana jest krzywa
@@ -489,20 +514,20 @@ zmienny w~linii 2~(od~dołu) na~stronie~34. \\
 \Pow Dlatego pole pod~krzywą $\vp( t ) B( t )$ na~przedziale
 $\tau \leq t \leq \veps$
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{36} W~tym miejscu po raz pierwszy chyba w~książce
 pojawia~się termin ,,obszar''. Z~kontekstu wynika, że~należy przez
 niego rozumieć dowolny podzbiór $\Rnc$.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{41} Obok nazwy \emph{zbiór zer dystrybucji}, proponowałbym
 również \emph{zbiór zerowy dystrybucji}.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{42} Logiczniej byłoby zaraz po~paragrafie \S 1.6 umieścić
@@ -511,7 +536,7 @@ wielkiego sensu 1.8.1 i~wynikających z~niego konsekwencji. Paragraf \S
 1.7 \emph{Kilka operacji na~dystrybucjach} najlepiej byłby umieścić
 jako \S 1.6.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
@@ -567,7 +592,7 @@ kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
 Będę również używał oznaczenia $\supp \vp$ na~oznaczenie nośnika
 funkcji $\vpt$ (z~ang.~support).
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{48--49} \tb{Lemat 1, uzupełnienie.} Na~podstawie
@@ -585,14 +610,14 @@ i~przyjmiemy $\al_{ 2 } < d_{ 2 }$, to dla każdego $t \in \com \Om$
 nośnik funkcji $\ga_{ \al_{ 1 } }( t - \tau )$ nie przecina~się
 z~$\Psi$, więc $\vpt = 0$.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{49} W~języku polskim znaczniej lepiej od~nazwy
 \emph{lokalnie skończonego pokrycia} brzmi określenie \emph{pokrycie
   lokalnie skończone}. Jego też będę dalej używał.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{49} \tb{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy
@@ -600,7 +625,7 @@ założeń, każdy domknięty podzbiór $\Om_{ k }$ jest zwarty, więc
 istnienie zbiorów $\La_{ k }$ o~zadanych własnościach wynika ponownie
 z~twierdzenia \eqref{twr:Zem-s01-01}.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{50} \tb{Lemat 4, uzupełnienie.} Niech $A$ będzie zbiorem
@@ -622,7 +647,7 @@ nierówność, więc tylko skończoną ilość razy będziemy wybierali
 skończoną rodzinę zbiorów $\Oc_{ \al }$ takich, że~jest możliwe
 by~$K( 0, r ) \cap \Oc_{ \al } \neq \O$.
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
 
 
 \start \Str{51} Cel przedstawionej tu konstrukcji jest następujący.
@@ -635,6 +660,54 @@ dystrybucja $f$~jest równa $0$.
 
 Wydaje mi~się, że~do tej konstrukcji zbiór $\Xi_{ 1 }$ jest
 wprowadzony niepotrzebnie.
+
+\vspace{\spaceFour}
+
+
+\start \Str{59}
+
+\vspace{\spaceFour}
+
+
+\start \Str{62}
+
+\vspace{\spaceFour}
+
+
+\start \Str{71} Wzór
+\begin{equation}
+  \label{eq:1}
+  f( t ) = f_{ c }( t ) - \Sum_{ \nu = -1 }^{ -\infty } \Del f_{ \nu }
+  \Hevp( t_{ \nu } - t ) + \Sum_{ \nu = 0 }^{ \infty } \Del f_{ \nu }
+  \Hevp( t - t_{ \nu } ),
+\end{equation}
+zawiera pewną subtelność, którą warto wyjaśnić. \Dok
+
+\vspace{\spaceFour}
+
+
+\start \Str{74} Fakt, że~iloraz różnicowy
+\begin{equation}
+  \label{eq:Zem-s01-06}
+  \fr{ \vp( t - \Delt ) - \vp( t ) }{ \Delt }
+\end{equation}
+dąży do $-\vpDer$ przy $\DelTtoZero$ wynika od~razu z~definicji
+pochodnej i~twierdzenia o~składaniu granic\footnote{Udowodnij i~zapisz
+  gdzieś to twierdzenie.}, problem jest tylko taki, że~jest to
+zbieżność punktowa. Aby zaś skorzystać z~ciągłości dystrybucji
+potrzebujemy udowodnić zbieżność jednostajną tego ilorazy do~$-\vpDer$
+oraz jednostajną zbieżność jego $k$\dywiz pochodnej
+do~$-\vp^{ ( k + 1 ) }( t )$. Inaczej mówiąc dla $k = 0, 1, 2, \ld$
+musi zachodzić
+\begin{equation}
+  \label{eq:Zem-s01-07}
+  \Lim_{ \DelTtoZero } \fr{ \vp^{ ( k ) }( t - \Delt ) - \vp^{ ( k ) }( t ) }
+  { \Delt } = -\vp^{ ( k + 1 ) }( t ),
+\end{equation}
+gdzie zbieżność jest rozumiana jako zbieżność jednostajna.
+
+Dowód podany przez Zemaniana nie jest jedynym możliwym, ale~jest
+bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 
 \newpage
 \CenterTB{Błędy}
@@ -657,6 +730,7 @@ wprowadzony niepotrzebnie.
     25 & & 1 & dąży & dąży punktowo \\
     26 & 5 & & pochodnym od & pochodną \\
     27 & 7 & & $\del^{ ( 1 ) }\bsym{ ( t } )$ & $\del^{ ( 1 ) }( t )$ \\
+    27 & & 9 & $< f,\, \vp >$ & $\dyst{ f }{ \vp }$ \\
     27 & & 3 & $\vp^{ ( k \bsym{ ) } }\bsym{ ( t ) } $
            & $\vp^{ ( k ) }( t )$ \\
     28 & & 17 & dążą & jednocześnie dążą \\
@@ -667,7 +741,7 @@ wprowadzony niepotrzebnie.
            & $\Pf \, | t |^{ \be } \; 1_{ + }( -t )$ \\
     33 & & 1 & skończoną & nieskończoną \\
     34 & & 1 & $\vp( 0 ) \log\veps$ & $\vp( 0 ) \log\veps.$ \\
-    35 & 1 & & tj.~$\lket B, \vp \rket$. Wartość & Wartość \\
+    35 & 1 & & tj.~$\dyst{ B }{ \vp }$. Wartość & Wartość \\
     36 & & 7 & $\pr t_{ 2 }^{ \: k_{ 2 } } \ld \pr t_{ n }^{ \: k_{ n } }$
            & $\pr t_{ 2 }^{ k_{ 2 } } \ld \pr t_{ n }^{ k_{ n } }$ \\
     37 & & 16 & \emph{mamy $\vp_{ \al }( t )$ równe}
@@ -679,10 +753,19 @@ wprowadzony niepotrzebnie.
     50 & 13 & & \emph{jedną} & \emph{stałą} \\
     50 & & 3 & $C$ & $\mf{C}$ \\
     55 & 9 & & zbieżny w $\D'$ & zbieżny \\
-    71 & & 5 & $M$ i $k$ stałych & $M$ rzeczywistego i $k$ naturalnego \\
-    71 & & 4 & gdzie $p$ & gdzie $p = k - 1$, a $g( t )$\\
-    71 & & 1 & $\leq M | \nu |^{ -2 }$ & $\leq M | \nu |^{ -1 }$\\
-    & & & & \\ \hline
+    % & & & & \\
+    59 & 3 & & $\theta_{ \nu }$ & $\theta$ \\
+    64 & 6 & & $\nu f( \nu^{ n } t )$ & $\nu^{ n } f( \nu t )$ \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    \hline
   \end{tabular}
 \end{center}
 \noi \StrWd{21}{10} \\
@@ -701,6 +784,12 @@ wprowadzony niepotrzebnie.
 \Jest \emph{pokrycie $\Rn$.} \\
 \Pow \emph{pokrycie $\Rn$, przy czym średnice wszystkich jego zbiorów,
   są~ograniczone przez tą samą stałą, co~dla rodziny $\mf{C}_{ T }$.} \\
+\StrWd{71}{5} \\
+\Jest \emph{$M$ i $k$ stałych rzeczywistych} \\
+\Pow \emph{$M > 0$ i~$k$ naturalnego} \\
+\StrWd{71}{4} \\
+\Jest \emph{gdzie $p$} \\
+\Pow \emph{gdzie $p = k + 2$, a~$g( t )$} \\
 
 
 
