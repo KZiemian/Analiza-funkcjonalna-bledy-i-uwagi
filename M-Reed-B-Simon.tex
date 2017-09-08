@@ -48,7 +48,7 @@
 
 \newtheorem{twr}{Twierdzenie}
 \newtheorem{defin}{Definicja}
-\newtheorem{wni}{Wniosek}% \usepackage{cleveref}
+\newtheorem{wni}{Wniosek}
 
 
 % ##############################
@@ -58,6 +58,7 @@
 
 % ##############################
 
+\newcommand{\spaceOne}{2.5em}
 \newcommand{\spaceTwo}{2em}
 \newcommand{\spaceThree}{1em}
 \newcommand{\spaceFour}{0.5em}
@@ -298,9 +299,9 @@
 
 
 
-% #####################################################################
+% ####################################################################
 \begin{document}
-% #####################################################################
+% ####################################################################
 
 
 
@@ -308,7 +309,7 @@
 \Main{
   M. Reed, B. Simon \\
   ,,Methods~of Modern Mathematical Physics~I: \\
-  Functional Analysis'', \cite{ReedSimon80} }
+  Functional Analysis'', \cite{ReedSimonTomI80} }
 % ########################################
 
 
@@ -389,7 +390,8 @@ Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
   Jeśli chodź dla jednego zbioru zachodzi
   $\mu_{ n }( A_{ i } ) = +\infty$, to wówczas obie strony są równe
   $+\infty$. Problem, czy można dodać dwie miary, które nie są
-  dodatnie wymaga osobnych rozważań. \Dok
+  dodatnie wymaga osobnych rozważań, ten problem jednak nie powinien
+  być dla nas istotny.
 
   Rozpatrzmy teraz problem całkowania względem sumy miar $\mu_{ i }$
   funkcji $f$, która jest całkowalnej względem każdej miar z~osobna,
@@ -399,15 +401,16 @@ Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
     \label{eq:RSI2}
     \begin{split}
       \sum_{ n }( f )_{ \mu_{ 1 } + \mu_{ 2 } } =& \Sum_{ m = 0 }^{
-        \infty } \fr{ m }{ n } ( \mu_{ 1 } + \mu_{ 2 } )\left( f^{ -1
-        }\left[ \left[ \fr{ m }{ n }, \fr{ m + 1 }{ n } \right)
-        \right] \right) = \Sum_{ m = 0 }^{ \infty } \left\{ \fr{ m }{
-          n } \mu_{ 1 }\left( f^{ -1 }\left[ \left[ \fr{ m }{ n },
-              \fr{ m + 1 }{ n } \right) \right] \right) \right. \\
-      &+ \left. \fr{ m }{ n } \mu_{ 2 }\left( f^{ -1 }\left[ \left[
-              \fr{ m }{ n }, \fr{ m + 1 }{ n } \right) \right] \right)
-      \right\} = \Sum_{ n }( f )_{ \mu_{ 1 } } + \Sum_{ n }( f )_{
-        \mu_{ 2 } }.
+        \infty } \fr{ m }{ n } ( \mu_{ 1 } + \mu_{ 2 } ) \left( f^{ -1
+        }\left[ \left[ \tfr{ m }{ n }, \tfr{ m + 1 }{ n } \right)
+        \right] \right) \\
+      =& \Sum_{ m = 0 }^{ \infty } \left\{ \fr{ m }{ n } \mu_{ 1
+        }\left( f^{ -1 }\left[ \left[ \tfr{ m }{ n }, \tfr{ m + 1 }{ n
+              } \right) \right] \right) \right. + \left. \fr{ m }{ n }
+        \mu_{ 2 }\left( f^{ -1 }\left[ \left[ \tfr{ m }{ n },
+              \tfr{ m + 1 }{ n } \right) \right] \right) \right\} \\
+      =& \Sum_{ n }( f )_{ \mu_{ 1 } } + \Sum_{ n }( f )_{ \mu_{ 2 }
+      }.
     \end{split}
   \end{equation}
   Znowu ponieważ wszystkie wyrazy szeregów są dodatnie, więc powyższe
@@ -570,9 +573,9 @@ $x_{ 1 } \in X_{ 1 }, \ld, x_{ n } \in X_{ n }$ zachodzi
   \norm{ x_{ 1 } }_{ X_{ 1 } } \cdot \ld \cdot \norm{ x_{ n } }_{ X_{ n } }.
 \end{equation}
 Podstawowe ich własności przedstawił Schwartz w~swoim ,,Kursie analizy
-matematycznej'', str.~102, \cite{Sch79}. W~szczególności tak jak dla
-odwzorowania liniowego odwzorowanie wieloliniowe jest ciągłe \wtw, gdy
-jest ograniczone, analogicznie również definiuje~się normę
+matematycznej'', str.~102 i~dalsze, \cite{Sch79}. W~szczególności tak
+jak dla odwzorowania liniowego odwzorowanie wieloliniowe jest ciągłe
+\wtw, gdy jest ograniczone, analogicznie również definiuje~się normę
 $\norm{ B }$ odwzorowania wieloliniowego~$B$. Dysponując już tymi
 pojęciami możemy sformułować potrzebne nam twierdzenie.
 
@@ -739,10 +742,10 @@ Cauchy'ego. \Dok
 \start \Str{16} Można podać równoważną, prostszą charakteryzację
 zbiorów mierzalnych. Zbiór $M$ jest mierzalny \wtw, gdy
 $M \cup B' = B$, gdzie $B, B'$ są pewnymi zbiorami borelowskimi
-i~$\mu( B' ) = 0$.
+i~$\mu( B' ) = 0$. Jeśli $M$ ma taką własność, to oczywiście spełniona
+jest definicja pierwotna przy $A_{ 1 } = B_{ 1 } = B'$,
+$A_{ 2 } = B_{ 2 } = \O$.
 
-Jeśli $M$ ma taką własność, to oczywiście spełniona jest definicja
-pierwotna przy $A_{ 1 } = B_{ 1 } = B'$, $A_{ 2 } = B_{ 2 } = \O$.
 Jeśli zaś $M \cup A_{ 1 } = B \cup A_{ 2 }$, to możemy do obu stron
 dodać $B_{ 1 } \cup B_{ 2 }$ i~dostajemy,
 że~$M \cup B_{ 1 } \cup B_{ 2 } = B \cup B_{ 1 } \cup B_{ 2 }$. Zbiory
@@ -770,12 +773,13 @@ całkowalne~są również $f_{ + }$ i~$f_{ - }$, więc definicja całki
 z~funkcji niedodatniej ma sens. Idąc dalej~tą drogą można sformułować
 całkiem satysfakcjonującą teorię całki.
 
-Idąc drogą wskazaną przez Schwartza, zobacz \cite{Schwartz79}, będę
-zawsze przyjmował, że~mierzalna funkcja dodatnia jest zawsze
-całkowalna, choć jej całka możne wynosić $+\infty$. W~podejściu
-Schwartza wystarczy tylko dodatniość funkcji, dlatego wprowadza
-on~dodatkowe pojęcia całki górnej, która istniej dla każdej funkcji
-$f \geq 0$. % Sprawdzone.
+Podążając ścieżką wskazaną przez Schwartza, zobacz rozdział o~teorii
+całki w~\cite{Schwartz79}, będę zawsze przyjmował, że~mierzalna
+funkcja dodatnia jest zawsze całkowalna, choć jej całka możne wynosić
+$+\infty$. Jego podejście wskazuje, że~dla funkcji dodatniej
+mierzalność nie jest potrzebna, wprowadza więc on~dodatkowe pojęcia
+całki górnej, która istniej dla każdej funkcji $f \geq
+0$. % Sprawdzone.
 
 % W~tym kontekście warto mieć w~pamięci rozróżnienie jakie podał
 % Schwartz między całką górną, która jest zdefiniowana dla wszystkich
@@ -801,8 +805,8 @@ $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
 \end{equation*}
 Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
 $f \in \LIj$ i~$\IntCaD{ f_{ n } }{ p } \ra \IntCaD{ f }{ p }$ można
-znaleźć w~każdej książce do~teorii całki,
-np.~\cite{Rudin98}. % Sprawdzone.
+znaleźć w~każdej książce do~teorii całki, np.~str.29--30,
+\cite{Rudin98}. % Sprawdzone.
 
 \vspace{\spaceFour}
 
@@ -829,19 +833,45 @@ zawierało cyfry~1. % Sprawdzone.
 zwartego jest skończona, wynika iż~jest tylko przeliczalnie wiele
 punktów o~niezerowej mierze. \Dok
 
-\vspace{\spaceThree}
+\vspace{\spaceFour}
+
+
+\start \Str{22} Wydaje mi~się, że~pojęcie miary osobliwej względem
+miary Lebesgue'a zostało wprowadzony w~sposób, który wprowadza sporo
+zamieszania. Po pierwsze jeśli miara~$\mu$ jest osobliwa względem
+miary Lebesgue'a to znaczy to jest to równoważne stwierdzeniu,
+że~$\mu$ i~miara Lebesgue'a~są wzajemnie osobliwe w~myśl definicji
+ze~strony~24.
+
+Istotą samego pojęcia osobliwości miar jest fakt, że~miara $\nu$ jest
+niezerowana\footnote{Przyjęło~się mówić, że~miara jest \tb{skupiona},
+  ale na razie nie widziałem, by~Reed i~Simon tego pojęcia używali.
+  Zob.~str.~133, \cite{Rudin98}} tylko na zbiorze o~$\mu$\dywiz
+mierze~0. Formalnie rzecz biorąc, istnieje taki zbiór~$A$,
+że~$\mu( A ) = 0$, jednocześnie $\nu( M \setm A ) = 0$ ($M$ oznacza tu
+przestrzeń mierzalną). Oznacza to, że~$\nu$ może być różna od~zera
+tylko na~$A$, a~ten zbiór jest miary zero dla~$\mu$, jest więc dla tej
+ostatniej miary ,,niezauważalny''.
+
+Jeśli jednak przyglądniemy~się teraz definicji, to wystarczy oznaczyć
+$B = M \setm A$ i~relacje~się odwraca. $\nu( B ) = 0$
+i~$\mu( M \setm B ) = 0$, tym samym widzimy, że~relacja ta jest
+symetryczna. Obie definicje~są więc równoważne.
+
+\vspace{\spaceFour}
 
 
 \start \Str{25} Należy zrobić dodatkowy komentarz na~temat równości
 z~twierdzenia Radona\dywiz Nikodyma
 \begin{equation}
   \label{eq:2}
-  \nu( A ) = \IntSet{ A }{ f }{ \mu }
+  \nu( A ) = \IntSet{ A }{ f }{ \mu }.
 \end{equation}
-\Dok Czy funkcja ta nie jest tylko lokalnie całkowalna? Ponieważ obie
-miary w~tym twierdzeniu~są dodatnie, można więc zagwarantować,
-że~$f \geq 0$. Całka z~tezy ma więc zawsze sens, jednak wynik może być
-nieskończony. Nie jest to jednak problem \Dok
+Dowód tego twierdzenie podał Rudin w~\cite{Rudin98}, str.~134--136,
+jednie nie zamieścił w~treści twierdzenia stwierdzenia, że~$f \geq 0$,
+pomimo, że~to udowodnił. Tym samym, całka ta zawsze ma sens i~jak
+zauważył Rudin, dzięki $\si$\dywiz skończoności można pokazać, że~jest
+równa $\nu( A )$.
 
 \vspace{\spaceFour}
 
@@ -857,10 +887,11 @@ Zapewne funkcja jest prawie wszędzie mierzalna, ale nic silniejszego.
 \vspace{\spaceFour}
 
 
-\start \Str{30} \tb{Dowód twierdzenia I.27} Zauważmy, że~na mocy
-dowodu twierdzenie I.25, jeśli
+\start \Str{30} \tb{Dowód twierdzenia I.27, uzupełnienie.} Zauważmy,
+że~tak jak w~dowodzie twierdzenie I.25, jeśli
 $\absj{ f_{ n }( x ) - f_{ n }( y ) } < \veps$ zachodzi dla
-każdego~$n$, to również $\absj{ f( x ) - f( y ) }$.
+każdego~$n$, to również $\absj{ f( x ) - f( y ) }$. Będzie nam to
+potrzebne do~zastosowania argumentu~$\veps / 3$.
 
 \vspace{\spaceFour}
 
@@ -1299,14 +1330,14 @@ powierzchni $A$ również jest zerowe.
 
 \start \StrWg{106}{5} Nie rozumiem dlaczego w~tym miejscu dodatkowo
 zaznacza~się, że~miarę dowolnego zbioru mierzalnego, można
-aproksymować od~wewnątrz przez zbiory zwarte \emph{i~borelowskie}.
+aproksymować od~wewnątrz przez zbiory zwarte i~\emph{borelowskie}.
 Skoro rozważamy tylko zwarte przestrzenie Hausdorffa, wszystkie zbiory
 zwarte~są domknięte i~tym samym borelowskie.
 
+
+
+
 \newpage
-
-
-
 \CenterTB{Błędy}
 \begin{center}
   \begin{tabular}{|c|c|c|c|c|}
@@ -1319,6 +1350,7 @@ zwarte~są domknięte i~tym samym borelowskie.
     14 & 10 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
     14 & 14 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
     17 & 3 & & $\int \;\: f_{ n } \;\: dp$ & $\IntCaD{ f_{ n } }{ p }$ \\
+    25 & 2 & & $f$ & $f \geq 0$ \\
     40 & & 3 & a~Hilbert & a~separable Hilbert \\
     44 & & 7 & $\fr{ T( y ) }{ T( x_{ 0 } ) }$
            & $\fr{ \SP{ x_{ 0 } }{ y } }{ \SP{ x_{ 0 } }{ x_{ 0 } } }$ \\
@@ -1387,8 +1419,8 @@ zwarte~są domknięte i~tym samym borelowskie.
 
 
 
-% #####################################################################
-% #####################################################################
+% ####################################################################
+% ####################################################################
 \bibliographystyle{alpha} \bibliography{Bibliography}{}
 
 
