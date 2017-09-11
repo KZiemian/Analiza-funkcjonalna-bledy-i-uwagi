@@ -319,6 +319,7 @@
 
 \vspace{\spaceFour}
 
+
 \start Nigdzie nie została podana definicja $\sup$ i~$\inf$ ani
 w~przypadku ogólnych relacji porządkujących, ani w~przypadku liczb
 rzeczywistych. % Sprawdzone.
@@ -466,14 +467,15 @@ niecałkowalna względem miary $dx + d\del_{ 0 }$. % Sprawdzone.
 
 \vspace{\spaceFour}
 
+
 \start \tb{Ciągłość ciągowa funkcji na~przestrzeniach metrycznych.}
 W~tym rozdziale napotykamy kilkakrotnie następującą sytuacje. Mamy
 funkcje ciągłą $f( x )$ oraz~ciąg $x_{ n_{ 1 }, \ld, \, n_{ m } }$
-i~próbujemy wejść z~granicą pod funkcję, innymi słowy chcemy, aby
+i~chcemy wejść z~granicą pod funkcję, innymi słowy potrzebujemy, aby
 zachodziło\footnote{Rozpatrujemy tu tylko przypadek skończonej liczby
-  indeksów liczby naturalnych, bo~na~razie nie znalazłem potrzeby
-  rozpatrywać ciągów o~nieskończonej ilości indeksów lub~takich które
-  nie są indeksowane liczbami naturalnymi.}
+  indeksów będących liczbami naturalnymi, bo~na~razie nie znalazłem
+  potrzeby rozpatrywać ciągów o~nieskończonej ilości indeksów
+  lub~takich które nie są indeksowane liczbami naturalnymi.}
 \begin{equation*}
   \Lim_{ \substack{ n_{ 1 } \ra +\infty \\ \cdots \\  n_{ m } \ra +\infty } }
   f( x_{ n_{ 1 }, \ld, \, n_{ m } } )
@@ -481,23 +483,23 @@ zachodziło\footnote{Rozpatrujemy tu tylko przypadek skończonej liczby
   x_{ n_{ 1 }, \ld, \, n_{ m } } ).
 \end{equation*}
 Jeżeli funkcja jest \emph{ciągła topologicznie}, czyli przeciwobraz
-każdego zbioru otwartego jest otwarty, to poniżej udowodnimy, że~tak
+każdego zbioru otwartego jest otwarty, to poniżej udowodnimy, że~ta
 równość zachodzi. Pytanie czy jeśli funkcja jest \emph{ciągowo
   ciągła}, czyli
 \begin{equation*}
   \Lim_{ n \ra +\infty } f( x_{ n } ) = f( \Lim_{ n \ra +\infty } x_{ n } ),
 \end{equation*}
-dla każdego zbieżnego ciągu $x_{ n }$, to~czy twierdzenie będzie
-zachodzić również w~tej sytuacji? W~przypadku ogólnym nie wiem, czy
-tak jest, bowiem gdy przestrzeń topologiczna nie~ma przeliczalnej bazy
-otoczeń, to~ciągi postaci $x_{ n }$ nie zawierają pełnej wiedzy
-o~topologii. Udowodnimy jednak, że~w~przypadku przestrzeni metrycznych
-żądana własność zachodzi.
+dla każdego zbieżnego ciągu $x_{ n }$, to~czy ta własność będzie
+zachodzić również dla ciągów wieloindeksowych? W~przypadku ogólnym nie
+wiem, czy tak jest, bowiem gdy przestrzeń topologiczna nie~ma
+przeliczalnej bazy otoczeń, to~ciągi postaci $x_{ n }$ nie zawierają
+pełnej wiedzy o~topologii. Jednak w~najbardziej nas interesującym
+przypadku przestrzeni metrycznych, pożądana równość istotnie zachodzi.
 
 Na początku będzie nam potrzebna definicja granicy ciągu
 wieloindeksowego. Najprostsza definicja tej granicy jest
 następująca\footnote{Granica ciągu wieloindeksowego powinna być
-  szczególnym przypadkiem granic indeksowanych zbiorami skierowanymi
+  szczególnym przypadkiem granic indeksowanych zbiorami skierowanymi,
   które~są omawiane w~książce Maurina \cite{Maurin74}.}. Niech
 $X$~będzie przestrzenią metryczną, a~$x_{ n_{ 1 }, \ld, \, n_{ m } }$
 ciągiem wieloindeksowym w~$X$. $x_{ 0 }$ jest granicą ciągu
@@ -546,6 +548,9 @@ $x_{ n_{ 1 }, \ld, \, n_{ m } }$ \wtw, gdy
   ciągła topologicznie, wystarczy więc zastosować poprzednie
   twierdzenie.
 \end{proof}
+
+\vspace{\spaceFour}
+
 
 \start \tb{Odwzorowania wieloliniowe ciągłe i~szeregi.} W~tym
 rozdziale potrzebujemy kilka razy pokazać równość następującego typu.
@@ -663,7 +668,7 @@ da~się przedstawić jako
 Zbieżność tego typu sum do~$( \Sum a_{ l } ) ( \Sum b_{ k } )$ jest
 oczywista. Dopiero przy bardziej skomplikowanym wyborze sposobu
 sumowania, przykłady ponownie można znaleźć u~Fichtenholza, kolejność
-sumowania ma znaczenie. % Sprawdzone.
+sumowania ma znaczenie.
 
 \vspace{\spaceTwo}
 
@@ -775,12 +780,12 @@ z~funkcji niedodatniej ma sens. Idąc dalej~tą drogą można sformułować
 całkiem satysfakcjonującą teorię całki.
 
 Podążając ścieżką wskazaną przez Schwartza, zobacz rozdział o~teorii
-całki w~\cite{Schwartz79}, będę zawsze przyjmował, że~mierzalna
-funkcja dodatnia jest zawsze całkowalna, choć jej całka możne wynosić
-$+\infty$. Jego podejście wskazuje, że~dla funkcji dodatniej
-mierzalność nie jest potrzebna, wprowadza więc on~dodatkowe pojęcia
-całki górnej, która istniej dla każdej funkcji $f \geq
-0$. % Sprawdzone.
+całki w~\cite{SchwartzKursAnalizyMatematycznej79}, będę zawsze
+przyjmował, że~mierzalna funkcja dodatnia jest zawsze całkowalna, choć
+jej całka możne wynosić $+\infty$. Jego podejście wskazuje, że~dla
+funkcji dodatniej mierzalność nie jest potrzebna, wprowadza więc
+on~dodatkowe pojęcia całki górnej, która istniej dla każdej funkcji
+$f \geq 0$. % Sprawdzone.
 
 % W~tym kontekście warto mieć w~pamięci rozróżnienie jakie podał
 % Schwartz między całką górną, która jest zdefiniowana dla wszystkich
@@ -1126,14 +1131,38 @@ Iloczyn skalarny na~$\mc{E}$ ma więc postać:
   = \SP{ \vp }{ \eta }_{ \Hc_{ 1 } } \SP{ \psi }{ \mu }_{ \Hc_{ 2 } }.
 \end{equation*}
 Formę postaci $\vp \ot \psi$ będziemy nazywać \tb{formą prostą}.
+Dowolna forma jest sumą form prostych.
+
+Tu~pojawia~się drugie źródło komplikacji. Ta sama forma może być
+przedstawiona za~pomocą różnych sum form prostych. Na~przykład
+\begin{equation*}
+  \mu_{ 1 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } ) = \mu_{ 2 }
+  = \vp \ot \psi_{ 1 } + \vp \ot \psi_{ 2 }.
+\end{equation*}
+Z~tego względu należałoby zdefiniować $\mc{E}$ jako zbiór klas
+abstrakcji względem relacji równoważności, która utożsamia dwie sumy
+form prostych jeśli przedstawiają tę~samą dwuantyliniową formę.
+Następnie dowiedlibyśmy, że~iloczyn w tej przestrzeni ilorazowej nie
+zależy od~reprezentanta, co jest równoważne postępowaniu Reeda
+i~Simona, jednak z~jakiegoś powodu nie chcieli pójść tą drogą.
+
+Powyższy przykład uogólnia~się do~dobrze znanego z~algebry liniowej
+faktu, iż~iloczyn tensorowy jest wieloliniowy. Z~samej definicji
+wynika, że~zachodzi następująca równość form
+\begin{equation*}
+  \vp \ot \ld \ot ( \al \psi_{ 1 } + \beta \psi_{ 2 } ) \ot \ld \ot \eta
+  = \al \, \vp \ot \ld \ot \psi_{ 1 } \ot \ld \ot \eta
+  + \beta \, \vp \ot \ld \ot \psi_{ 2 } \ot \ld \ot \eta.
+\end{equation*}
 
 W~dalszym ciągu potrzebna będzie nam następująca obserwacja: jeżeli
 $\mu \in \mc{E}$, to zachodzi równość:
 \begin{equation*}
-  \SP{ \vp \ot \psi }{ \mu }_{ \mc{E} } = \mu\dket{ \vp }{ \psi }.
+  \SP{ \vp \ot \psi }{ \mu }_{ \mc{E} } = \mu\dket{ \vp }{ \psi },
 \end{equation*}
-Jeżeli $\mu = \eta \ot \chi$ to powyższa równość wynika z~definicji
-wszystkich działań. Jeśli zaś
+gdzie $\mu\dket{ \vp }{ \psi }$ oznacza wartość formy $\mu$ na~parze
+uporządkowanej $\dket{ \vp }{ \psi }$. Jeżeli $\mu = \eta \ot \chi$ to
+powyższa równość wynika z~definicji wszystkich działań. Jeśli zaś
 $\mu = \Sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \ot \psi_{ i } )$,
 wówczas
 \begin{equation*}
@@ -1147,28 +1176,27 @@ wówczas
     \dket{ \vp }{ \psi } = \mu\dket{ \vp }{ \psi }.
   \end{split}
 \end{equation*}
-Dla zupełności przedstawimy uogólnienie tej obserwacji. Niech
-$\eta = \Sum_{ i = 1 }^{ N } d_{ i } \: \vp_{ i } \ot \psi_{ i }$,
-$d_{ i } \in \C$, korzystając z~półtoraliniowości mamy
+Dla zupełności przedstawimy uogólnienie tej obserwacji. Jeśli nadamy
+$\Hc_{ 1 } \ti \Hc_{ 2 }$ strukturę sumy prostej
+\begin{equation}
+  \label{eq:4}
+  \Sum_{ i = 1 }^{ N } d_{ i } \, \dket{ \phi_{ i } }{ \vp_{ i } }
+  := \lket \Sum_{ i = 1 }^{ N } d_{ i } \, \phi_{ i }, \,
+  \Sum_{ i = 1 }^{ N } d_{ i } \, \vp_{ i } \rket,
+\end{equation}
+i~$\eta = \Sum_{ i = 1 }^{ N } d_{ i } \: \vp_{ i } \ot \psi_{ i }$,
+$d_{ i } \in \C$, to~korzystając z~półtoraliniowości mamy
 \begin{equation*}
   \begin{split}
-    ( \eta , \mu )_{ \mc{E} } &= \Sum_{ i = 1 }^{ N } \bar{ d }_{ i }
-    \: ( ( \vp_{ i } \ot \psi_{ i } ), \mu )_{ \mc{E} } = \Sum_{ i = 1
-    }^{ N } \bar{ d }_{ i } \:
+    ( \eta, \, \mu )_{ \mc{E} } &= \Sum_{ i = 1 }^{ N } \bar{ d }_{ i
+    } \: ( ( \vp_{ i } \ot \psi_{ i } ), \mu )_{ \mc{E} } = \Sum_{ i =
+      1 }^{ N } \bar{ d }_{ i } \:
     \SP{ \vp_{ i } \ot \psi_{ i } }{ \mu }_{ \mc{E} } \\
     &= \Sum_{ i = 1 }^{ N } \bar{ d }_{ i } \: \mu \lket \vp_{ i }, \,
     \psi_{ i } \rket = \mu( \eta ).
   \end{split}
 \end{equation*}
-$\mu( \eta )$ oznacza wartość formy $\mu$ na~$\eta$. Sumę elementów
-$\Hc_{ i } \ti \Hc_{ 2 }$ definiujemy nadając temu iloczynowi
-kartezjańskiemu strukturę sumy prostej
-\begin{equation}
-  \label{eq:4}
-  \eta = \Sum_{ i = 1 }^{ N } d_{ i } \, \lket \phi_{ i }, \, \vp_{ i } \rket
-  := \lket \Sum_{ i = 1 }^{ N } d_{ i } \, \phi_{ i }, \,
-  \Sum_{ i = 1 }^{ N } d_{ i } \, \vp_{ i } \rket.
-\end{equation}
+$\mu( \eta )$ oznacza wartość formy $\mu$ na~$\eta$.
 
 % wtym fragmencie wielokrotnie powtarza się "zauważyć" <<<<<<<<<<<<
 Teraz możemy przejść do~dyskusji, czy~wzór na iloczyn skalarny nie
@@ -1178,46 +1206,37 @@ formy $\mu$, $\eta$~są równe gdy
   \mu\dket{ \vp }{ \psi } = \eta\dket{ \vp }{ \psi },
   \quad \forall \vp \in \Hc_{ 1 }, \psi \in \Hc_{ 2 }.
 \end{equation*}
-Jak łatwo jednak sprawdzić, iż formy
-$\mu_{ 1 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } )$
-oraz~$\mu_{ 2 } = \vp \ot \psi_{ 1 } + \vp \ot \psi_{ 2 }$
-przedstawiają tę samą formę, choć~są sumą innych form prostych. Z~tego
-względu należałoby napisać, że~$\mc{E}$ jest zbiorem klas abstrakcji
-względem odpowiedniej relacji równoważności\footnote{Więcej o~tym
-  niżej.}, niż~po~prostu zbiorem sum odpowiednich form prostych,
-z~jakiegoś jednak względu Reed i~Simon uznali, że~nie warto
-zagłębiać~się w~tą kwestię.
-
-Powyższy przykład uogólnia~się do~dobrze znanego z~algebry liniowej
-faktu, iż~iloczyn tensorowy jest wieloliniowy. Z~samej definicji
-wynika, że~zachodzi następująca równość form
-\begin{equation*}
-  \vp \ot \ld \ot ( \al \psi_{ 1 } + \beta \psi_{ 2 } ) \ot \ld \ot \eta
-  = \al \, \vp \ot \ld \ot \psi_{ 1 } \ot \ld \ot \eta
-  + \beta \, \vp \ot \ld \ot \psi_{ 2 } \ot \ld \ot \eta.
-\end{equation*}
 
 Musimy teraz pokazać, że~iloczyn skalarnych dwóch form z~$\mc{E}$,
 nie~zależy od ich przedstawienia w~postaci sumy form prostych.
-Kluczowe tu jest fakt, że~dwie różne postaci tej samej formy różnią
-się o~sumę form prostych reprezentującą formę zerową. Jeżeli weźmiemy
-dwie formy określone wyżej $\mu_{ 1 }$ i~$\mu_{ 2 }$, to ich różnica:
+Kluczowe tu jest wynikający z~definicji fakt, że~dwie różne postaci
+tej samej formy różnią się o~sumę form prostych reprezentującą formę
+zerową. Dla przykładu, jeżeli weźmiemy dwie formy określone wyżej
+$\mu_{ 1 }$ i~$\mu_{ 2 }$, to ich różnica:
 \begin{equation*}
   \mu_{ 1 } - \mu_{ 2 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } )
   - \vp \ot \psi_{ 1 } - \vp \ot \psi_{ 2 }
 \end{equation*}
 jest formą zerową. Zwróćmy uwagę, że~rozkład formy zerowej na formy
 proste również nie jest jednoznaczny, np.~każda forma postaci
-$\vp \ot 0$ jest formą zerową. Jeżeli teraz uda~się pokazać, że~forma
-zerowa niezależnie od~swojej postaci, jest ortogonalna do~każdej formy
-w~$\mc{E}$, to~niezależność iloczynu skalarnego $\mc{E}$ od~konkretnej
-postaci form będzie wykazana.
+$\vp \ot 0$ reprezentuje formę zerową. Jeżeli teraz uda~się pokazać,
+że~forma zerowa niezależnie od~swojej postaci, jest ortogonalna
+do~każdej formy w~$\mc{E}$, to~będziemy mogli pokazać niezależność
+iloczynu skalarnego w~$\mc{E}$ od~konkretnej postaci form.
 
 Wyniki uzyskane wyżej, wraz z~tym co~napisali Reed i~Simon jest
-wystarczające by~wykazać żądaną ortogonalność formy zerowej. Teraz
-wykażemy, że~rozważany iloczyn skalarny jest niezależny od użytego
-rozkładu. Niech $\psi \sim \psi'$ i~$\vp' \sim \vp$, a~$\mu$ będzie
-formą zerową. W~takiej sytuacji $\psi' = \psi + \mu$
+wystarczające by~wykazać żądaną ortogonalność formy zerowej.
+Dokładniej Reed i~Simon pokazali, że~wybierając bazę odpowiedniej
+przestrzeni dostajemy dla każdego $\la \in \mc{E}$
+\begin{equation*}
+  ( \la, \, \la ) = \Sum_{ j l } \absd{ c_{ j l } }^{ 2 } \geq 0,
+\end{equation*}
+czyli iloczyn skalarny jest dodatnio określony, jeśli zaś jest
+równy~0, to $\la$ jest formą zerową.
+
+Teraz wykażemy, że~rozważany iloczyn skalarny jest niezależny od
+użytego rozkładu. Niech $\psi \sim \psi'$ i~$\vp' \sim \vp$, a~$\mu$
+będzie formą zerową. W~takiej sytuacji $\psi' = \psi + \mu$
 i~$\vp' = \vp + \mu$, przy czym konkretna postać $\mu$ może być w~obu
 przypadkach różna. Teraz możemy, na~poziomie konkretnych sum form
 prostych, przeprowadzić następujący rachunek, kończący dowód
@@ -1227,7 +1246,8 @@ prostych, przeprowadzić następujący rachunek, kończący dowód
   = \SP{ \vp }{ \psi + \mu } = \SP{ \vp }{ \psi }.
 \end{equation*}
 
-Ta relacja stanowi po~prostu, że~dwa elementy $\mu_{ 1 }, \mu_{ 2 } \in \mc{E}$ są równoważne, wtedy i~tylko wtedy
+% Ta relacja stanowi po~prostu, że~dwa elementy
+% $\mu_{ 1 }, \mu_{ 2 } \in \mc{E}$ są równoważne, wtedy i~tylko wtedy
 
 \vspace{\spaceFour}
 
@@ -1240,7 +1260,7 @@ wynika wprost z~wprowadzonych definicji.
   = \norm{ \vp }_{ \Hc_{ 1 } } \norm{ \psi }_{ \Hc_{ 2 } }.
 \end{equation*}
 Za jej pomocą można łatwo pokazać, że~iloczyn tensorowy jest ciągły,
-dowód jest taki sam jak w~przypadku iloczynu skalarnego.
+dowód jest taki sam jak w~przypadku iloczynu skalarnego. % Sprawdzone.
 
 \vspace{\spaceFour}
 
@@ -1249,12 +1269,10 @@ dowód jest taki sam jak w~przypadku iloczynu skalarnego.
 $\vp_{ l } \ot \psi_{ k }$ stanowi bazę ortonormalną, jest bardzo
 szkicowa\footnote{Pewne idee tu przedstawione pochodzą od~Pawła
   Ducha.}. Aby~ją uzupełnić zauważmy najpierw, że~jeśli rozważane
-przestrzeń są metryczne, to~odwzorowanie jest topologiczne
-ciągła % ciągłe?<<<<<<
-\wtw%jw<<<<
-gdy jest ciągowo ciągła\footnote{Nie wiem czy tak jest w~ogólności,
-  może bowiem powstać problem gdy nie istnieje przeliczalna baza
-  otoczeń.} (tzn.
+przestrzeń są metryczne, to~odwzorowanie jest topologiczne ciągłe
+\wtw, gdy jest ciągowo ciągła\footnote{Nie wiem czy tak jest
+  w~ogólności, może bowiem powstać problem gdy nie istnieje
+  przeliczalna baza otoczeń.} (tzn.
 $\lim_{ n \ra +\infty } f( x_{ n } ) = f( \lim_{ n \ra +\infty } x_{ n
 } )$). Ponieważ możemy udowodnić, że~również z~wieleindeksowymi
 ciągami liczb naturalnych\footnote{Zapewne nie tylko, ale~większa
@@ -1384,6 +1402,8 @@ zwarte~są domknięte i~tym samym borelowskie.
     46 & & 9 & $\SP{ v_{ 1 } }{ u_{ 1 } } v_{ k }$
            & $\SP{ v_{ 1 } }{ u_{ 2 } } v_{ 1 }$ \\
     49 & & 7 & linear & bilinear \\
+    50 & 16 & & $\Sum_{ j l } \absd{ c_{ j l } }^{ 2 }$
+           & $\Sum_{ j l } \absd{ c_{ j l } }^{ 2 } \geq 0$ \\
     53 & & 12 & $\vp_{ k_{ \si( 1 ) } } \ot \vp_{ k_{ \si( 2 ) } } \cdots
                 \ot \vp_{ k_{ n( p ) } }$
            & $\vp_{ k_{ \si( 1 ) } } \ot \vp_{ k_{ \si( 2 ) } } \ot \cdots
@@ -1429,6 +1449,9 @@ zwarte~są domknięte i~tym samym borelowskie.
 \begin{equation*}
   \sup_{ \substack{ \norm{ x }_{ \Hc } = 1 } } \norm{ T x }_{ \Hc' }
 \end{equation*}
+\StrWd{50}{17} \\
+\Jest is~positive defined \\
+\Pow is positive defined and well defined \\
 \StrWd{51}{13} \\
 \Jest
 \begin{equation*}
