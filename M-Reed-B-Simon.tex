@@ -124,7 +124,7 @@
 \newcommand{\N}{\mb{N}}
 \newcommand{\R}{\mb{R}}
 \newcommand{\C}{\mb{C}}
-\newcommand{\D}{\mc{D}}
+\newcommand{\Dc}{\mc{D}}
 \newcommand{\Hc}{\mc{H}}
 \newcommand{\Lc}{\mc{L}}
 \newcommand{\Rn}{\R^{ n }}
@@ -161,7 +161,7 @@
 % Teoria mnogości
 \newcommand{\set}[1]{\{ #1 \}}
 \newcommand{\es}{\emptyset}
-\newcommand{\sset}{\subset}
+\newcommand{\subs}{\subset}
 \newcommand{\setm}{\setminus}
 \newcommand{\ti}{\times}
 
@@ -181,6 +181,8 @@
 \newcommand{\Lim}{\lim\limits}
 \newcommand{\Liminf}{\ul{\lim}}
 \newcommand{\Limsup}{\ol{\lim}}
+
+\newcommand{\nToInfty}{n \ra +\infty}
 
 % Sumy
 \newcommand{\Sum}{\sum\limits}
@@ -552,10 +554,12 @@ $x_{ n_{ 1 }, \ld, \, n_{ m } }$ \wtw, gdy
 \vspace{\spaceFour}
 
 
+% ####################
 \start \tb{Odwzorowania wieloliniowe ciągłe i~szeregi.} W~tym
 rozdziale potrzebujemy kilka razy pokazać równość następującego typu.
-Jeżeli $f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
-$g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$, to
+Mamy dwa elementy $f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
+$g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$,
+$c_{ l }, d_{ k } \in \C$, to
 \begin{equation*}
   \Lim_{ K,\, M \ra +\infty } \Sum_{ \substack{ l < L \\ k < K } }
   c_{ l } d_{ k } \, (\vp_{ l } \ci \psi_{ k } ) = f \ci g,
@@ -563,10 +567,10 @@ $g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$, to
 gdzie $\ci$ jest jakiegoś rodzaju iloczynem, a~symbol
 $K, M \ra +\infty$ rozumiem jak przy podanej wcześniej definicji
 granicy ciągu wieloindeksowego. Aby~nadać tym operacjom sens, musimy
-najpierw zdefiniować odwzorowania wieloliniowe ograniczone.
+najpierw zdefiniować odwzorowanie wieloliniowe ograniczone.
 
 Niech $X_{ 1 }, \ld, X_{ n }, Y$ będą przestrzeniami unormowanymi nad
-ciałem $\R$ albo~$\C$, zaś
+ciałem $\R$ lub~$\C$, zaś
 \begin{equation*}
   B: X_{ 1 } \ti \ld \ti X_{ n } \ra Y
 \end{equation*}
@@ -578,13 +582,16 @@ $x_{ 1 } \in X_{ 1 }, \ld, x_{ n } \in X_{ n }$ zachodzi
   \norm{ x_{ 1 } }_{ X_{ 1 } } \cdot \ld \cdot \norm{ x_{ n } }_{ X_{ n } }.
 \end{equation}
 Podstawowe ich własności przedstawił Schwartz w~swoim ,,Kursie analizy
-matematycznej'', str.~102 i~dalsze, \cite{Sch79}. W~szczególności tak
-jak dla odwzorowania liniowego odwzorowanie wieloliniowe jest ciągłe
-\wtw, gdy jest ograniczone, analogicznie również definiuje~się normę
+matematycznej'', str.~102 i~dalsze,
+\cite{SchwartzKursAnalizyMatematycznej79}. W~szczególności tak jak dla
+odwzorowania liniowego odwzorowanie wieloliniowe jest ciągłe \wtw, gdy
+jest ograniczone, analogicznie również definiuje~się normę
 $\norm{ B }$ odwzorowania wieloliniowego~$B$. Dysponując już tymi
 pojęciami możemy sformułować potrzebne nam twierdzenie.
 
+% ##############################
 \begin{twr}
+  \label{twr:OdzorowanieWielolinioweCiagle}
   Jeśli $B: X_{ 1 } \ti \ld \ti X_{ n } \ra Y$ jest odwzorowanie
   wieloliniowym ograniczonym przestrzeni unormowanych
   $X_{ 1 }, \ld, X_{ n }, Y$, zaś szeregi
@@ -607,40 +614,40 @@ pojęciami możemy sformułować potrzebne nam twierdzenie.
     B( \vp_{ 1, \, l_{ 1 } }, \ld, \vp_{ n, \, l_{ n } } ).
   \end{equation*}
 \end{twr}
+% ##############################
 
 \begin{proof}
-  Aby~nie ugrząźć w~,,nieskończonych'' ciągach indeksów dowód
+  Aby~nie ugrząźć w~,,nieskończonej'' ilości indeksów dowód
   przeprowadzimy dla przypadku $n = 2$, oznaczmy przy tym
   $\vp_{ 1,\, l } = \vp_{ l }$, $\vp_{ 2, \, l } = \psi_{ l }$,
   $c_{ 1, \, l } = c_{ l }$, $c_{ 1, \, l } = d_{ l }$,
   $\eta_{ 1 } = \vp$ oraz~$\eta_{ 2 } = \psi$. Ponieważ
-  $\vp = \sum_{ l } c_{ l } \, \vp_{ l }$, więc istniej takie $L$,
+  $\vp = \sum_{ l } c_{ l } \, \vp_{ l }$, więc istniej takie $K$,
   że~$\vp = \sum_{ k < K } c_{ k } \, \vp_{ k } + \vp_{ R }$, gdzie
   $\norm{ \vp_{ R } }_{ X_{ 1 } } \leq \veps$. Analogicznie
   $\psi = \sum_{ l < L } d_{ l } \psi_{ l } + \psi_{ R }$,
   $\norm{ \psi_{ R } }_{ X_{ 2 } } \leq \veps$. Ponieważ suma
   $\sum_{ k < K } c_{ k } \vp_{ k }$ jest zbieżna do~$\vp$, wynika,
-  że~ ciąg
+  że~ciąg
   $\norm{ \sum_{ k < K } c_{ k } \vp_{ k } }_{ X_{ 1 } } \ra \norm{
-    \vp }_{ X_{ 1 } }$, jest więc ograniczony. Dobierzmy $M$ tak~by
-  było wspólnym ograniczeniem ciągów
-  $\norm{ \sum_{ k < K } c_{ k } \vp_{ k } }_{ X_{ 1 } }$
-  i~$\norm{ \sum_{ l < L } d_{ l } \psi_{ l } }_{ X_{ 2 }
-  }$\footnote{To ograniczenie to~wszystko czego potrzebujemy
-    w~dowodzie, a~aby je otrzymać wystarczy warunkowa zbieżność
-    omawianych szeregów.}, niech teraz $N = \max( L, K )$. Rozpatrzmy
-  wyrażenie
+    \vp }_{ X_{ 1 } }$, jest więc również ograniczony. Dobierzmy
+  $M \geq 0$ tak~by było wspólnym ograniczeniem\footnote{To
+    ograniczenie to~wszystko czego potrzebujemy w~dowodzie, a~aby je
+    otrzymać wystarczy warunkowa zbieżność omawianych szeregów.}
+  ciągów $\norm{ \sum_{ k < K } c_{ k } \vp_{ k } }_{ X_{ 1 } }$
+  i~$\norm{ \sum_{ l < L } d_{ l } \psi_{ l } }_{ X_{ 2 } }$, niech
+  teraz $N = \max( L, K )$. Rozpatrzmy wyrażenie
   \begin{equation*}
     \begin{split}
       & || B( \vp, \psi ) - \Sum_{ k, \, l < N } c_{ k } d_{ l } B(
-      \vp_{ k }, \psi_{ l } ) ||_{ Y } = || B( \Sum_{ k < K } \vp_{ k
-      } + \vp_{ R }, \Sum_{ l < L } d_{ l } \psi_{ l } + \psi_{ R }) -
-      \Sum_{ k < K }\Sum_{ l < L } c_{ k } d_{ l } B( \vp_{ k },
-      \psi_{ l } ) ||_{ Y } \\
-      &= || B( \Sum_{ l < L } \vp_{ l }, \psi_{ R } ) + B( \vp_{ R },
-      \Sum_{ k < K } \psi_{ k } ) + B( \vp_{ R }, \psi_{ R } ) ||_{ Y
-      } \leq || B( \Sum_{ l < L } \vp_{ l }, \psi_{ R } ) ||_{ Y }
-      + || B( \vp_{ R }, \Sum_{ k < K } \psi_{ k } ) ||_{ Y } \\
+      \vp_{ k }, \psi_{ l } ) ||_{ Y } = || B( \Sum_{ k < N } \vp_{ k
+      } + \vp_{ R }, \Sum_{ l < N } d_{ l } \psi_{ l } + \psi_{ R }) -
+      \Sum_{ k,\, l < N } c_{ k } d_{ l }
+      B( \vp_{ k }, \psi_{ l } ) ||_{ Y } \\
+      &= || B( \Sum_{ l < N } \vp_{ l }, \psi_{ R } ) + B( \vp_{ R },
+      \Sum_{ k < N } \psi_{ k } ) + B( \vp_{ R }, \psi_{ R } ) ||_{ Y
+      } \leq || B( \Sum_{ l < N } \vp_{ l }, \psi_{ R } ) ||_{ Y }
+      + || B( \vp_{ R }, \Sum_{ k < N } \psi_{ k } ) ||_{ Y } \\
       &+ || B( \vp_{ R }, \psi_{ R } ) ||_{ Y } \leq 2 \norm{ B } M
       \veps + \norm{ B } \veps^{ 2 }.
     \end{split}
@@ -649,28 +656,33 @@ pojęciami możemy sformułować potrzebne nam twierdzenie.
   małą co kończy dowód.
 \end{proof}
 
-Mogłoby~się wydawać, że~powyższe twierdzenie nie może być prawdziwe,
-bowiem wiemy, iż~jeśli szeregi liczb rzeczywistych, a~liczby
-rzeczywiste~są przestrzenią Banacha, nie są bezwzględnie zbieżne, to
-suma ich iloczynu zależy od kolejności sumowania poszczególnych
+Mogłoby~się wydawać, iż~powyższe twierdzenie nie może być prawdziwe,
+bowiem wiemy, że~jeśli szeregi liczb rzeczywistych, a~liczby
+rzeczywiste~są przestrzenią Banacha, są~warunkowo zbieżne, to suma ich
+iloczynu zależy od~kolejności sumowania poszczególnych
 wyrazów\footnote{Co jest prawdą pod warunkiem, że~iloczyn szeregów
-  warunkowo zbieżnych nie może być bezwzględnie zbieżny. \Dok}.
+  warunkowo zbieżnych nie może być przestawialnie zbieżny. \Dok.
+  Zobacz książkę Schwartza str.~110 i~dalsze,
+  \cite{SchwartzKursAnalizyMatematycznej79}.}.
 
 Problem jest jednak pozorny, bowiem twierdzenie powyższe dotyczy tylko
-szczególnego sposobu sumowania, które w~zapisie tablicowym jakie używa
-Fichtenholza str.~??? \cite{Fichtenholz04}) odpowiada ,,sumowaniu
-po~coraz większych prostokątach''. Inaczej mówiąc, sum które zawsze
-da~się przedstawić jako
+szczególnego sposobu sumowania, które w~przedstawieniu tablicowym
+jakiego używa Fichtenholza (zobacz str.~??? \cite{Fichtenholz05a})
+odpowiada ,,sumowaniu po~coraz większych prostokątach''. Inaczej
+mówiąc, sum te~zawsze da~się przedstawić jako
 \begin{equation*}
   \Sum_{ \substack{ k < K \\ l < L \\ } } a_{ k } b_{ l }
   = ( \Sum_{ k < K } a_{ k } ) ( \Sum_{ l < L } b_{ l } ).
 \end{equation*}
-Zbieżność tego typu sum do~$( \Sum a_{ l } ) ( \Sum b_{ k } )$ jest
-oczywista. Dopiero przy bardziej skomplikowanym wyborze sposobu
-sumowania, przykłady ponownie można znaleźć u~Fichtenholza, kolejność
-sumowania ma znaczenie.
+Zbieżność tego typu sum
+do~$( \sum_{ l } a_{ l } ) ( \sum_{ k } b_{ k } )$ jest oczywista.
+Dopiero przy bardziej skomplikowanym wyborze sposobu sumowania,
+przykłady ponownie można znaleźć we~wspomnianym miejscu
+u~Fichtenholza, kolejność sumowania ma znaczenie. % Sprawdzone.
 
 \vspace{\spaceTwo}
+
+
 
 
 % ####################
@@ -849,20 +861,20 @@ miary Lebesgue'a to znaczy to jest to równoważne stwierdzeniu,
 że~$\mu$ i~miara Lebesgue'a~są wzajemnie osobliwe w~myśl definicji
 ze~strony~24.
 
-Istotą samego pojęcia osobliwości miar jest fakt, że~miara $\nu$ jest
-niezerowana\footnote{Przyjęło~się mówić, że~miara jest \tb{skupiona},
-  ale na razie nie widziałem, by~Reed i~Simon tego pojęcia używali.
-  Zob.~str.~133, \cite{Rudin98}} tylko na zbiorze o~$\mu$\dywiz
-mierze~0. Formalnie rzecz biorąc, istnieje taki zbiór~$A$,
-że~$\mu( A ) = 0$, jednocześnie $\nu( M \setm A ) = 0$ ($M$ oznacza tu
-przestrzeń mierzalną). Oznacza to, że~$\nu$ może być różna od~zera
+Istotą samego pojęcia wzajemnej osobliwości miar jest fakt, że~miara
+$\nu$ jest niezerowana\footnote{Przyjęło~się mówić, że~miara jest
+  \tb{skupiona}, ale na razie nie widziałem, by~Reed i~Simon tego
+  pojęcia używali. Zob.~str.~133, \cite{Rudin98}} tylko na~zbiorze
+o~$\mu$\dywiz mierze~0. Ujmując to ściśle, istnieje taki zbiór~$A$,
+że~$\mu( A ) = 0$ i~jednocześnie $\nu( M \setm A ) = 0$ ($M$~oznacza
+tu przestrzeń mierzalną). Oznacza to, że~$\nu$ może być różna od~zera
 tylko na~$A$, a~ten zbiór jest miary zero dla~$\mu$, jest więc dla tej
 ostatniej miary ,,niezauważalny''.
 
 Jeśli jednak przyglądniemy~się teraz definicji, to wystarczy oznaczyć
 $B = M \setm A$ i~relacje~się odwraca. $\nu( B ) = 0$
 i~$\mu( M \setm B ) = 0$, tym samym widzimy, że~relacja ta jest
-symetryczna. Obie definicje~są więc równoważne.
+symetryczna. Obie przedstawione definicje~są więc równoważne.
 
 \vspace{\spaceFour}
 
@@ -875,9 +887,9 @@ z~twierdzenia Radona\dywiz Nikodyma
 \end{equation}
 Dowód tego twierdzenie podał Rudin w~\cite{Rudin98}, str.~134--136,
 jednie nie zamieścił w~treści twierdzenia stwierdzenia, że~$f \geq 0$,
-pomimo, że~to udowodnił. Tym samym, całka ta zawsze ma sens i~jak
-zauważył Rudin, dzięki $\si$\dywiz skończoności można pokazać, że~jest
-równa $\nu( A )$.
+pomimo, że~udowodnił ten fakt. Tym samym, całka ta zawsze ma sens
+i~jak zauważył Rudin, dzięki $\si$\dywiz skończoności można pokazać,
+że~jest równa $\nu( A )$. % Sprawdzone.
 
 \vspace{\spaceFour}
 
@@ -944,14 +956,15 @@ na~stronie~47. % Sprawdzone.
 \vspace{\spaceFour}
 
 
-\start \Str{44} W~tym miejscu warto dowieść twierdzenia następującego
-twierdzenia.
+\start \Str{44} W~tym miejscu warto dowieść następujących twierdzeń.
 % ##############################
 \begin{twr}
+  \label{twr:UkladZupelny}
   W~przestrzeni prehilbertowskiej układ ortogonalny niezerowych
   wektorów~$S$ jest zupełny \wtw, gdy~jedynym wektorem ortogonalnym
   do~niego jest wektor~$0$.
 \end{twr}
+% ##############################
 
 \begin{proof}
   Przez kontrapozycję $1) \Ra 2)$. Załóżmy, że~istnieje wektor
@@ -961,8 +974,46 @@ twierdzenia.
 
   Przez kontrapozycję $2) \Ra 1)$. Załóżmy teraz, że~$S$ nie jest
   zupełny. W~takim razie istnieje taki układ ortogonalny niezerowych
-  wektorów, iż~$S \sset S'$ oraz $S' \setm S \neq \es$. Teraz
+  wektorów, iż~$S \subs S'$ oraz $S' \setm S \neq \es$. Teraz
   $y \in S' \setm S$ jest niezerowym wektorem ortogonalnym do~$S$.
+\end{proof}
+
+% ##############################
+\begin{twr}
+  \label{twr:OrotgonalnoscDoZbioruGestegoIBazy}
+  Niech $\Hc$ będzie przestrzenią Hilberta.
+  \begin{enumerate}
+  \item Jeżeli wektor $g$ jest ortogonalny do~wszystkich wektorów
+    z~$\Hc$ to~$g = 0$.
+  \item Jeżeli wektor $g$ jest ortogonalny do~zbioru gęstego $\Dc$, to
+    $g = 0$.
+  \item Jeżeli wektor $g$ ortogonalny do~zbioru $F \subs \Hc$
+    i~jednocześnie pewien zbiór skończonych kombinacji liniowych
+    elementów zbioru~$A$, niekoniecznie wszystkich, jest gęsty
+    w~$\Hc$, to~$g = 0$.
+  \end{enumerate}
+\end{twr}
+% ##############################
+
+\begin{proof}
+  \begin{enumerate}
+  \item Dowód tego punktu jest powszechnie znany, ale dla porządku
+    przedstawmy go tutaj. Jeśli $g$ jest ortogonalny do~$\Hc$ to w
+    szczególności $\SP{ g }{ g } = 0$, tym samym na mocy definicji
+    przestrzeni Hilberta~$g = 0$.
+  \item Jeśli zbiór $\Dc$ jest gęsty, więc dla każdego $x \in \Hc$
+    można znaleźć ciąg $x_{ n } \in \Dc$ taki, że~$x_{ n } \ra x$. Tym
+    samym na mocy ciągłości iloczynu skalarnego
+    \begin{equation}
+      \label{eq:5}
+      \SP{ g }{ x } = \Lim_{ \nToInfty } \SP{ g }{ x_{ n } } = 0.
+    \end{equation}
+    Tym samy $g = 0$ na~mocy poprzedniego punktu.
+  \item Jeśli $g$ jest ortogonalny do~$F$ to jest też ortogonalny
+    do~skończonych kombinacji liniowych elementów tego zbioru. Jeśli
+    któryś ze zbiorów tych kombinacji liniowych jest gęsty w~$\Hc$,
+    to~$g = 0$ na mocy poprzedniego punktu.
+  \end{enumerate}
 \end{proof}
 
 \vspace{\spaceFour}
@@ -1083,7 +1134,7 @@ postać nierówności Bessela.
 
 \begin{twr}[Ogólna postać nierówności Bessela]
   Niech $S = \{ x_{ \al } \}_{ \al \in A }$ będzie układem
-  ortonormalny i~niech $B \sset A$. Wówczas:
+  ortonormalny i~niech $B \subs A$. Wówczas:
   \begin{equation*}
     \Sum_{ \be \in B } \absd{ \SP{ x_{ \be }}{ x } }^{ 2 } \leq \norm{ x }^{ 2 }.
   \end{equation*}
@@ -1329,7 +1380,7 @@ twierdzenie, którego dowód znalazł Paweł Duch.
 \begin{twr}
   \label{twr:miaraA}
   Jeżeli $( X, \mu )$ i~$( Y, \nu )$ są przestrzeniami z~miarą
-  $\si$\dywiz skończoną i~$A \sset X \ti Y$ będzie zbiorem mierzalny
+  $\si$\dywiz skończoną i~$A \subs X \ti Y$ będzie zbiorem mierzalny
   względem miary $\mu \ot \nu$. Jeśli dla $\mu$\dywiz prawie każdego
   $x \in X$, miara $\nu$ zbioru\footnote{Standardowo w~naturalny
     sposób utożsamiany ten zbiór z~podzbiorem $Y$.}
@@ -1419,7 +1470,7 @@ zwarte~są domknięte i~tym samym borelowskie.
     104 & 6 & & $||P_{ n }( f )$ & $|| \, P_{ n }( f )$ \\
     106 & 11 & & $\mu( \, Y \setm \wt{ Y } )$
            & $\mu( Y \setm \wt{ Y } )$ \\
-    106 & 5 & & $C \sset O$ & $C \sset Y$ \\
+    106 & 5 & & $C \subs O$ & $C \subs Y$ \\
     107 & 4 & & $\Real[ e^{ -i \vp } f ]$ & $e^{ -i \vp } f$ \\
     107 & 4 & & $\Real( e^{ -i \vp } f )$ & $e^{ -i \vp } f$ \\
     107 & 10 & & $\int\! fd\mu$ & $\IntCaD{ f }{ \mu }$ \\
