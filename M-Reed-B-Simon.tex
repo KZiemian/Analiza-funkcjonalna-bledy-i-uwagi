@@ -1,84 +1,142 @@
-\RequirePackage[l2tabu, orthodox]{nag}
 % Autor: Kamil Ziemian
 % Korekta: Wojciech Dyba
-\documentclass[a4paper,11pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[polish]{babel}
-\usepackage[MeX]{polski}
-\usepackage{microtype}
-\let\lll\undefined
-\usepackage{amsmath}
-\usepackage{amsfonts, amssymb, amscd, amsthm}
-\usepackage{upgreek} % Lepsze greckie czcionki. Przyklad skladni: pi = \uppi
-% \usepackage{txfonts} % Inne ulepszenie greckich liter. Przyklad skladni:
-% pi = \piup.
-% \usepackage{latexsym} % Więcej symboli.
-% \usepackage{textcomp} % Pakiet z dziwnymi symbolami.
-\usepackage{indentfirst}
-\usepackage{slashed} % Pozwala pisać slash Feynmana.
-\usepackage{graphicx} % Pozwala wstawiać grafikę.
-\usepackage{titlesec}
-%\usepackage{url} % Pozwala pisać ładnie znak ~.
-\usepackage{xcolor}
-\usepackage{calrsfs}
-\usepackage{vmargin}
+
 % --------------------------------------------------------------------
+% Paczki
+% --------------------------------------------------------------------
+\RequirePackage[l2tabu, orthodox]{nag}  % Wykrywa przestarzałe i niedobre
+% rozwiązania LaTeXa. Więcej jest w l2tabu engish version
+\documentclass[a4paper,11pt]{article}  % {rozmiar fontu}[klasa dokumentu]
+\usepackage[utf8]{inputenc}  % Włączenie kodowania UTF-8, daje polskie znaki
+\usepackage[polish]{babel}  % Nie pamiętam
+\usepackage[MeX]{polski}  % Nie pamiętam
+\usepackage{indentfirst}  % Wcięcie w pierwszym akapicie
+\usepackage{microtype}  % Twierdzi, że poprawi rozmiar odstępów w tekście
+\usepackage{vmargin}  % Pozwala na prostą kontrolę rozmiaru marginesów,
+% za pomocą komend poniżej
+% ----------------------------
 % MARGINS
-% --------------------------------------------------------------------
+% ----------------------------
 \setmarginsrb
-{ 0.7in}  % left margin
-{ 0.6in}  % top margin
-{ 0.7in}  % right margin
-{ 0.8in}  % bottom margin
-{  20pt}  % head height
-{0.25in}  % head sep
-{   9pt}  % foot height
-{ 0.3in}  % foot sep
-\usepackage{hyperref}
-% ####################################################################
+{ 0.7in} % left margin
+{ 0.6in} % top margin
+{ 0.7in} % right margin
+{ 0.8in} % bottom margin
+{  20pt} % head height
+{0.25in} % head sep
+{   9pt} % foot height
+{ 0.3in} % foot sep
+\usepackage{graphicx}  % Pozwala wstawiać do tekstu grafikę
+\usepackage{xcolor}  % Pozwala używać kolorowych czcionek (zapewne dużo
+% więcej, ale ja więcej nie potrafię zrobić)
+\usepackage{hyperref}  % Pozwala tworzyć hiperlinki i zamienia odwołania
+% do bibliografii na hiperlinki.
+
+
+
+% ------------------------------
+% Pakiety do tekstów naukowych
+% ------------------------------
+\let\lll\undefined  % Amsmath gryzie się z językiem pakietami do języka
+% polskiego, bo oba definiują komendę \lll. Aby rozwiązać ten problem
+% oddefiniowuję tę komendę, ale może tym samym pozbywam się dużego Ł.
+\usepackage[intlimits]{amsmath}  % Wsparcie od American Mathematical Society
+\usepackage{amsfonts, amssymb, amscd, amsthm}  % Dalsze wsparcie od AMS
+\usepackage{upgreek}  % Ładniejsze greckie litery
+% Przykładowa składnia: pi = \uppi
+\usepackage{slashed}  % Pozwala pisać w prosty sposób slash Feynmana
+\usepackage{calrsfs}  % Zmienia czcionkę kaligraficzną w \mathcal
+% na ładniejszą. Może w innych miejscach robi to samo, ale o tym nic
+% nie wiem
+
+\newtheorem{twr}{Twierdzenie}  % Komenda wprowadzająca środowisko (?)
+% ,,twr'' do pisania twierdzeń matematycznych
+\newtheorem{defin}{Definicja}  % Podobnie jak powyżej
+\newtheorem{wni}{Wniosek}
+
+
+
+% --------------------------------------------------------------------
+% Dodatkowe ustawienia dla języka polskiego
+% --------------------------------------------------------------------
+\renewcommand{\thesection}{\arabic{section}.}
+% Kropki po numerach rozdziału (polski zwyczaj topograficzny)
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}}
+% Brak kropki po numerach podrozdziału
 
 
 
 % ##################
-\renewcommand{\arraystretch}{1.2}
+\renewcommand{\arraystretch}{1.2}  % Ustawienie szerokości odstępów między
+% wierszami w tabelach
 
 
 
-% ########################################
-
-\newtheorem{twr}{Twierdzenie}
-\newtheorem{defin}{Definicja}
-\newtheorem{wni}{Wniosek}
 
 
-% ##############################
-% Dodatkowe ustawienia pod języka polski
-\titlelabel{\thetitle.\quad}
+% --------------------------------------------------------------------
+% Ogólne komendy zdefiniowane dla ułatwienia pracy z LaTeXem
+% --------------------------------------------------------------------
 
-
-% ##############################
-
-\newcommand{\spaceOne}{2.5em}
+% ##########
+% Definicje odstępów w tekście
+\newcommand{\spaceOne}{3em}
 \newcommand{\spaceTwo}{2em}
 \newcommand{\spaceThree}{1em}
 \newcommand{\spaceFour}{0.5em}
+
+% ##########
+% Skróty do częstych oznaczeń
+\newcommand{\ld}{\ldots}
+\newcommand{\tbs}{\textbackslash}  % Backslash w tekście
+
+% ##########
+% Edycja tekstu (może jest na to lepsze nazwa?)
+\newcommand{\tb}{\textbf}
+\newcommand{\noi}{\noindent}
+\newcommand{\start}{\noi \tb{--} {}}
+
+% Numeracja stron i rozdziałów
+\newcommand{\Str}[1]{\tb{Str. #1.}}
+\newcommand{\StrWg}[2]{\tb{Str. #1, wiersz #2.}}
+\newcommand{\StrWd}[2]{\tb{Str. #1, wiersz #2 (od dołu).}}
+
+% Do poprawiania błędów
+\newcommand{\Dow}{\tb{Dowód}}  % To niezbyt pasuje do opisu POPRAW
+\newcommand{\Jest}{\tb{Jest: }}
+\newcommand{\Pow}{\tb{Powinno być: }}
+
+% Nagłówki
+\newcommand{\Center}[1]{\begin{center} #1 \end{center}}
+\newcommand{\CenterTB}[1]{\Center{\tb{#1}}}
+
+\newcommand{\Main}[1]{ \begin{center} {\LARGE \tb{#1} } \end{center} }
+\newcommand{\Field}[1]{ \begin{center} {\Large \tb{#1} } \end{center} }
+\newcommand{\Work}[1]{ \begin{center} {\large \tb{#1}} \end{center} }
+
+
+
+
+
+% --------------------------------------
+% Komendy do trybu matematycznego
+% --------------------------------------
+
 
 % Ładniejszy zbiór pusty
 \let\oldemptyset\emptyset
 \let\emptyset\varnothing
 
 
-% ####################
-% Uproszczenia w pisaniu tekstu
-\newcommand{\ld}{\ldots}
-
-% Slashe w tekście
-\newcommand{\tbs}{\textbackslash}
-
 % Podstawowe oznaczenia matematyczne
 \newcommand{\fr}{\frac}
 \newcommand{\tfr}{\tfrac}
 \newcommand{\tr}{\textrm}
+
+% Ułamki
+\newcommand{\onehalf}{\fr{ 1 }{ 2 }}
+\newcommand{\ovOne}[1]{\fr{ 1 }{ #1 }}
+\newcommand{\ovTwo}[1]{\fr{ #1 }{ 2 }}
 
 % Oznaczenia ,,nad i pod''. Wymyśl lepszą nazwę
 \newcommand{\til}{\tilde}
@@ -99,15 +157,26 @@
 \newcommand{\Ra}{\Rightarrow}
 \newcommand{\lra}{\longrightarrow}
 \newcommand{\xra}{\xrightarrow}
+\newcommand{\ifonlyif}{\Longleftrightarrow}
 
+% Częste zwroty
 \newcommand{\wtw}{wtedy i~tylko wtedy}
 
 
-% ####################
+% Wartość bezwzględna i normy
+\providecommand{\absj}[1]{\lvert #1 \rvert}
+\providecommand{\absd}[1]{\left| #1 \right|}
+\providecommand{\absd}[1]{\left| \, #1 \, \right|}
+% Zupełnie nie wiem, czemu to jest \providecommand
+\newcommand{\norm}[1]{\left|\left| #1 \right|\right|}
+
+
+% ##########
 % Litery greckie
 \newcommand{\al}{\alpha}
 \newcommand{\be}{\beta}
 \newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
 \newcommand{\del}{\delta}
 \newcommand{\Del}{\Delta}
 \newcommand{\la}{\uplambda}
@@ -120,44 +189,37 @@
 \newcommand{\Si}{\Sigma}
 \newcommand{\tet}{\theta}
 
-% Standardowe oznaczenia literowe
-\newcommand{\N}{\mb{N}}
-\newcommand{\R}{\mb{R}}
-\newcommand{\C}{\mb{C}}
+
+% ##########
+% Standardowe używane w oznaczeniach litery o specjalnej czcionce
+% \mb = \mathbb
+\newcommand{\Cc}{\mc{C}}
 \newcommand{\Dc}{\mc{D}}
 \newcommand{\Hc}{\mc{H}}
+\newcommand{\lc}{\mc{l}}
 \newcommand{\Lc}{\mc{L}}
+\newcommand{\N}{\mb{N}}
+\newcommand{\R}{\mb{R}}
 \newcommand{\Rn}{\R^{ n }}
 \newcommand{\Rc}{\mc{R}}
-\newcommand{\Cc}{\mc{C}}
-\newcommand{\lc}{\mc{l}}
 
-% Mniej używane oznaczenia literowe
-\newcommand{\B}{\mc{B}}
-\newcommand{\Oc}{\mc{O}}
 \newcommand{\Rp}{\R_{ + }}
 
-% ####################
-% Standardowe matematyczne symbole literowe
-% Mathbb
-% \newcommand{\C}{\mb{C}}
-% \newcommand{\N}{\mb{N}}
-% \newcommand{\R}{\mb{R}}
-% \newcommand{\Rn}{\R^{ n }}
-% \newcommand{\Rp}{\R_{ + }}
 
-% % Mathcal
-% \newcommand{\B}{\mc{B}}
-% \newcommand{\D}{\mc{D}}
-% \newcommand{\Fc}{\mc{F}}
-% \newcommand{\M}{\mc{M}}
-% \newcommand{\Rc}{\mc{R}}
-% \newcommand{\Cc}{\mc{C}}
-% \newcommand{\Oc}{\mc{O}}
-% \newcommand{\T}{\mc{T}}
+% Rzadziej używane oznaczenia literowe
+% \mc = \mathcal
+\newcommand{\B}{\mc{B}}
+\newcommand{\Fc}{\mc{F}}
+\newcommand{\M}{\mc{M}}
+\newcommand{\Oc}{\mc{O}}
+\newcommand{\T}{\mc{T}}
+\newcommand{\Pc}{\mc{P}}
+
+\newcommand{\Rt}{\R^{ 3 }}
 
 
-% ####################
+
+% ##########
 % Teoria mnogości
 \newcommand{\set}[1]{\{ #1 \}}
 \newcommand{\es}{\emptyset}
@@ -166,7 +228,7 @@
 \newcommand{\ti}{\times}
 
 
-% ####################
+% ##########
 % Algebra
 \newcommand{\Real}{\mf{Re}}
 \newcommand{\Imag}{\mf{Im}}
@@ -174,7 +236,8 @@
 \newcommand{\Tr}{\mr{Tr}}
 
 
-% ####################
+
+% ##########
 % Analiza matematyczna
 
 % Granice
@@ -188,19 +251,67 @@
 \newcommand{\Sum}{\sum\limits}
 
 % Różniczkowanie i pochodne
-\newcommand{\dk}{\, d} % Różniczka Kończąca całkę
-\newcommand{\pr}{\partial}
+\newcommand{\Cinfty}{\Cc^{ \infty }}
+
 \newcommand{\de}{\mr{d}}
 \newcommand{\dd}[3]{\fr{ \de^{ #1 } { #2 } }{ \de { #3 }^{ #1 } }}
-\newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
 
-% Powszechnie używane symbole
-\newcommand{\Cinfty}{\Cc^{ \infty }}
+\newcommand{\pr}{\partial}
+\newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
 
 % Całki i całkowanie
 \newcommand{\dx}{\de x}
+\newcommand{\dk}{\, d}  % Różniczka Kończąca całkę
+
+\newcommand{\sqrtTwo}{\sqrt{ 2 }}
+\newcommand{\ovSqTwo}{\fr{ 1 }{ \sqrtTwo }}
+\newcommand{\sqTwoPi}{\sqrt{ 2 \pi }}
+\newcommand{\ovSqTwoPi}{\fr{ 1 }{ \sqrt{ 2 \pi } }}
+
 \newcommand{\Int}{\int\limits}
 \newcommand{\IntSet}[3]{\Int_{ #1 } #2 \, d#3} % Całka po zbiorze.
+\newcommand{\IntL}[3]{ \Int_{ { #1 } }^{ { #2 } } \de#3 \, }
+\newcommand{\IntCa}[2]{\Int #1 \, \de#2} % Juz z calkowaniem
+\newcommand{\IntFi}[2]{\Int \de#1 \, #2} % Bardziej Fizyczna notacja;)
+\newcommand{\IntWie}[3]{\Int_{ #1 } \de^{ #2 }#3 \,} % Wielowymiarowa
+\newcommand{\IntTro}[1]{ \Int \de^{ 3 }#1 \,} % Trójwymiarowa
+\newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
+
+
+
+% ##########
+% Analiza funkcjonalna
+\newcommand{\da}{\dagger}
+
+% Brakety (w analizie funkcjonalnej też się je często stosuje)
+\newcommand{\lket}{\langle}
+\newcommand{\rket}{\rangle}
+
+% Przestrzenie L^{ p }
+\newcommand{\Lj}{L^{ 1 }}
+\newcommand{\Ld}{L^{ 2 }}
+\newcommand{\Lp}{L^{ p }}
+\newcommand{\LIj}{\Lc^{ 1 }}
+\newcommand{\LIp}{\Lc^{ p }}
+\newcommand{\LdJ}{\Ld( \R, \de \mu )}
+\newcommand{\LdT}{\Ld( \R^{ 3 }, \de \mu )}
+\newcommand{\Ldlim}{L^{ 2 }-\Lim}
+
+
+
+
+% ########################################
+
+
+
+
+
+% ####################
+% Analiza matematyczna
+
+
+% Całki i całkowanie
+\newcommand{\Int}{\int\limits}
 \newcommand{\IntL}[3]{ \Int_{ { #1 } }^{ { #2 } } \de#3 \; }
 \newcommand{\IntCaJ}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
 % Całka Jeden
@@ -217,45 +328,10 @@
 \newcommand{\IntD}[1]{\Int_{ 0 }^{ +\infty } \de #1 \;}
 
 
-% ####################
-% Analiza funkcjonalna
-\newcommand{\da}{\dagger}
-
-% Brakety
-% W analizie funkcjonalnej też często się je stosuje
-\newcommand{\lket}{\langle}
-\newcommand{\rket}{\rangle}
-
-% Przestrzenie L^{ p }
-\newcommand{\Lj}{L^{ 1 }}
-\newcommand{\Ld}{L^{ 2 }}
-\newcommand{\Lp}{L^{ p }}
-\newcommand{\LIj}{\Lc^{ 1 }}
-\newcommand{\LIp}{\Lc^{ p }}
-\newcommand{\LdJ}{\Ld( \R, \de \mu )}
-\newcommand{\LdT}{\Ld( \R^{ 3 }, \de \mu )}
-\newcommand{\Ldlim}{L^{ 2 }-\Lim}
-
-
-% ####################
-% Wartość bezwzględna i normy
-\providecommand{\absj}[1]{\lvert #1 \rvert}
-\providecommand{\absd}[1]{\left| #1 \right|}
-\providecommand{\absd}[1]{\left| \, #1 \, \right|}
-\newcommand{\norm}[1]{\left|\left| #1 \right|\right|}
 
 
 % ####################
 % Edycja tekstu
-\newcommand{\tb}{\textbf}
-\newcommand{\noi}{\noindent}
-\newcommand{\start}{\noi \tb{--} {}}
-\newcommand{\Str}[1]{\tb{Str. #1.}}
-\newcommand{\StrWg}[2]{\tb{Str. #1, wiersz #2.}}
-\newcommand{\StrWd}[2]{\tb{Str. #1, wiersz #2 (od dołu).}}
-\newcommand{\Dow}{\tb{Dowód}}
-\newcommand{\Center}[1]{\begin{center} #1 \end{center}}
-\newcommand{\CenterTB}[1]{\Center{\tb{#1}}}
 \newcommand{\Jest}{\tb{Jest: }}
 \newcommand{\Pow}{\tb{Powinno być: }}
 \newcommand{\red}[1]{{\color{red} #1}}
@@ -269,24 +345,23 @@
 \newcommand{\Work}[1]{ \begin{center} {\large \tb{#1}} \end{center} }
 
 
-% ##############################
-% Oznaczenia dla Reeda, Simona
+
+
+
+% --------------------------------------------------------------------
+% Komendy zdefiniowane konkretnie dla tego pliku:
+% M-Reed-B-Simon.tex
+% --------------------------------------------------------------------
 
 \newcommand{\ci}{\circ}
 
 % Przestrzenie Hilberta
-\newcommand{\lcd}{\ell_{ 2 }} % l Caligraphy Dwa
-\newcommand{\SP}[2]{( #1, \, #2 )} % Scalar product.
-\newcommand{\dket}[2]{\lket #1, \, #2 \rket} % Dirac ket
+\newcommand{\lcd}{\ell_{ 2 }}  % l Caligraphy Dwa
+\newcommand{\SP}[2]{( #1, \, #2 )}  % Scalar product.
+\newcommand{\dket}[2]{\lket #1, \, #2 \rket}  % Dirac ket
 
-% % Sumy
-% \newcommand{\Sum}{\sum\limits}
-
-% % Różniczkowanie i pochodne
-% \newcommand{\pr}{\partial}
-% \newcommand{\de}{\mr{d}}
-% \newcommand{\dd}[3]{\fr{ \de^{ #1 } { #2 } }{ \de { #3 }^{ #1 } }}
-% \newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
+\newcommand{\vpk}{\vp_{ k }}
+\newcommand{\psil}{\psi_{ l }}
 
 % % Całki
 % \newcommand{\Int}{\int\limits}
@@ -298,6 +373,8 @@
 % \newcommand{\IntWie}[3]{ \int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa.
 % \newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
 % \newcommand{\IntL}[3]{ \int\limits_{ { #1 } }^{ { #2 } } \d#3 \; }
+
+
 
 
 
@@ -587,11 +664,12 @@ matematycznej'', str.~102 i~dalsze,
 odwzorowania liniowego odwzorowanie wieloliniowe jest ciągłe \wtw, gdy
 jest ograniczone, analogicznie również definiuje~się normę
 $\norm{ B }$ odwzorowania wieloliniowego~$B$. Dysponując już tymi
-pojęciami możemy sformułować potrzebne nam twierdzenie.
+pojęciami możemy sformułować potrzebne nam twierdzenie\footnote{Pewne
+  idee tego dowodu pochodzą od~Pawła Ducha.}.
 
 % ##############################
 \begin{twr}
-  \label{twr:OdzorowanieWielolinioweCiagle}
+  \label{twr:OdwzorowanieWielolinioweCiagle}
   Jeśli $B: X_{ 1 } \ti \ld \ti X_{ n } \ra Y$ jest odwzorowanie
   wieloliniowym ograniczonym przestrzeni unormowanych
   $X_{ 1 }, \ld, X_{ n }, Y$, zaś szeregi
@@ -675,7 +753,7 @@ mówiąc, sum te~zawsze da~się przedstawić jako
   = ( \Sum_{ k < K } a_{ k } ) ( \Sum_{ l < L } b_{ l } ).
 \end{equation*}
 Zbieżność tego typu sum
-do~$( \sum_{ l } a_{ l } ) ( \sum_{ k } b_{ k } )$ jest oczywista.
+do~$( \sum_{ k } a_{ k } ) ( \sum_{ l } b_{ l } )$ jest oczywista.
 Dopiero przy bardziej skomplikowanym wyborze sposobu sumowania,
 przykłady ponownie można znaleźć we~wspomnianym miejscu
 u~Fichtenholza, kolejność sumowania ma znaczenie. % Sprawdzone.
@@ -776,6 +854,7 @@ zbioru borelowskiego. % Sprawdzone.
 \vspace{\spaceFour}
 
 
+
 \start \Str{16} Choć jest to rozdział ,,Wiadomości wstępne''
 (``Preliminaries''), to dyskusja całkowania funkcji niedodatnich jest
 przeprowadzona zbyt szybko i~pobieżnie, by~uznać ją za~satysfakcję.
@@ -811,6 +890,7 @@ $f \geq 0$. % Sprawdzone.
 \vspace{\spaceFour}
 
 
+
 \start \Str{17} W~twierdzeniu o~zbieżności monotonicznej jest
 powiedziane, że~dla funkcji rozpatrywanych w~tym twierdzeniu zachodzi
 $\int | f( p ) - f_{ n }( p ) | \dk p \ra 0$, co~wymaga pewnego
@@ -823,7 +903,7 @@ $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
 \end{equation*}
 Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
 $f \in \LIj$ i~$\IntCaD{ f_{ n } }{ p } \ra \IntCaD{ f }{ p }$ można
-znaleźć w~każdej książce do~teorii całki, np.~str.29--30,
+znaleźć w~każdej książce do~teorii całki, np.~str.~29--30,
 \cite{Rudin98}. % Sprawdzone.
 
 \vspace{\spaceFour}
@@ -1151,6 +1231,8 @@ postać nierówności Bessela.
 \vspace{\spaceFour}
 
 
+
+% ####################
 \start \Str{49} Konstrukcja iloczynu tensorowego jest przeprowadzona
 bardzo szkicowo, przez co~sens tego co~robimy jest często ukryty,
 tutaj postaram~się uzupełnić brakujące elementy.
@@ -1303,6 +1385,8 @@ prostych, przeprowadzić następujący rachunek, kończący dowód
 \vspace{\spaceFour}
 
 
+
+% ####################
 \start \Str{50} Jako konkluzję konstrukcji iloczynu tensorowego
 przestrzeni Hilberta warto podać następującą piękną równość, która
 wynika wprost z~wprowadzonych definicji.
@@ -1316,64 +1400,29 @@ dowód jest taki sam jak w~przypadku iloczynu skalarnego. % Sprawdzone.
 \vspace{\spaceFour}
 
 
-\start \Str{50} Również tu~część dowodu, że~układ
-$\vp_{ l } \ot \psi_{ k }$ stanowi bazę ortonormalną, jest bardzo
-szkicowa\footnote{Pewne idee tu przedstawione pochodzą od~Pawła
-  Ducha.}. Aby~ją uzupełnić zauważmy najpierw, że~jeśli rozważane
-przestrzeń są metryczne, to~odwzorowanie jest topologiczne ciągłe
-\wtw, gdy jest ciągowo ciągła\footnote{Nie wiem czy tak jest
-  w~ogólności, może bowiem powstać problem gdy nie istnieje
-  przeliczalna baza otoczeń.} (tzn.
-$\lim_{ n \ra +\infty } f( x_{ n } ) = f( \lim_{ n \ra +\infty } x_{ n
-} )$). Ponieważ możemy udowodnić, że~również z~wieleindeksowymi
-ciągami liczb naturalnych\footnote{Zapewne nie tylko, ale~większa
-  ogólność nie jest nam tu potrzeba.} można wejść do~funkcji
-topologiczne ciągłej, aby~uzasadnić tą operację w~przypadku
-przestrzeni metrycznych, wystarczy pokazać, że~funkcja jest ciągowo
-ciągła. Nie wiem jak jest w~ogólniejszych sytuacjach, lecz na razie ta
-wiedza nie jest potrzebna.
 
-Ponieważ norma jest funkcją ciągłą, zachodzi więc równość
-\begin{equation*}
-  \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } || \vp \ot \psi
-  - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } ||
-  = || \vp \ot \psi - \Lim_{ \substack{ K \ra \infty \\ L \ra \infty } } \Sum_{ k < K }
-  \Sum_{ l < L } \vp_{ k } \ot \psi_{ l } ||.
-\end{equation*}
-Aby zakończyć dowód o~bazie ortonormalnej trzeba teraz wykonać
-,,bezpośredni rachunek'' i~pokazać, że~pierwsza z~tych granic jest
-równa~0. $\vp = \sum_{ l } \vp_{ l }$ możemy więc dobrać $L$ tak~by
-$\vp = \sum_{ l < L } \vp_{ l } + \vp_{ R }$, gdzie
-$\norm{ \vp_{ R } } < \veps$, analogicznie
-$\psi = \sum_{ k < K } \psi_{ k } + \psi_{ R }$,
-$\norm{ \psi_{ R } } < \veps$.
-
-Potrzebujemy jeszcze zauważyć, że~z~faktu, iż~suma
-$\sum_{ l < L } \vp_{ l }$ jest zbieżna do~$\vp$, wynika,
-że~$\norm{ \sum_{ l < L } \vp_{ l } } \ra \norm{ \psi }$, tworzy więc
-ona ciąg Cauchy'ego i~tym samym jest ograniczony.
-Dobierz % znów proponuje zmianę na >>Dobierzmy<<<
-$M$ tak~by było wspólnym ograniczeniem ciągów
-$\sum_{ l < L } \vp_{ l }$ i~$\sum_{ k < K } \psi_{ k }$. Tym samym
-\begin{equation*}
-  \begin{split}
-    & || \vp \ot \psi - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot
-    \psi_{ l } || = || ( \Sum_{ l < L } \vp_{ l } + \vp_{ R } ) \ot (
-    \Sum_{ k < K } \psi_{ k } + \psi_{ R } )
-    - \Sum_{ k < K }\Sum_{ l < L } \vp_{ k } \ot \psi_{ l } || \\
-    &= || ( \Sum_{ l < L } \vp_{ l } ) \ot \psi_{ R } + \vp_{ R } \ot
-    ( \Sum_{ k < K } \psi_{ k } ) + \vp_{ R } \ot \psi_{ R } || \leq
-    || ( \Sum_{ l < L } \vp_{ l } ) \ot \psi_{ R } ||
-    + || \vp_{ R } \ot ( \Sum_{ k < K } \psi_{ k } ) || \\
-    &+ || \vp_{ R } \ot \psi_{ R } || \leq 2 M \veps + \veps^{ 2 }.
-  \end{split}
-\end{equation*}
-Odpowiednio dobierając $L$ i~$K$ możemy uczynić tą różnicę dowolnie
-małą co kończy dowód.
+\start \Str{50} Część dowodu \tb{Propostion~2}, że~układ
+$\vp_{ l } \ot \psi_{ k }$ stanowi bazę ortonormalną, jest miejscami
+zbyt pobieżna by była zrozumiała dla mnie. W~tym jednak momencie
+kluczowa równość
+\begin{equation}
+  \label{eq:6}
+  \vp \ot \phi = \Sum_{ l,\, k } c_{ l } d_{ k }\, \vp_{ l } \ot \psi_{ k },
+\end{equation}
+wynika z~tego, że~iloczyn tensorowy jest funkcją dwuliniową ciągła
+i~twierdzenia \eqref{twr:OdwzorowanieWielolinioweCiagle}. Ponieważ
+$\vp_{ l } \ot \psi_{ k }$ jest układem ortonormalnym
+i~przeliczalnym\footnote{W~przypadku gdy nie jest, dla danego wektora
+  tylko przeliczalna ilość współczynników $c_{ l }$ i~$d_{ k }$ nie
+  znika i~można powtórzyć rozumowanie.} można go ustawić w~ciąg
+jednoindeksowy, którego suma nie zależy od kolejności sumowania. Tym
+samym równość \eqref{eq:6} zachodzi niezależnie od~sposobu sumowania.
 
 \vspace{\spaceFour}
 
 
+
+% ####################
 \start \Str{51} W~tym miejscu będziemy potrzebowali następującego
 twierdzenie, którego dowód znalazł Paweł Duch.
 
@@ -1382,11 +1431,13 @@ twierdzenie, którego dowód znalazł Paweł Duch.
   Jeżeli $( X, \mu )$ i~$( Y, \nu )$ są przestrzeniami z~miarą
   $\si$\dywiz skończoną i~$A \subs X \ti Y$ będzie zbiorem mierzalny
   względem miary $\mu \ot \nu$. Jeśli dla $\mu$\dywiz prawie każdego
-  $x \in X$, miara $\nu$ zbioru\footnote{Standardowo w~naturalny
-    sposób utożsamiany ten zbiór z~podzbiorem $Y$.}
-  $( x \ti Y ) \cap A$ jest równa 0, wówczas $(\mu \ot \nu)( A ) = 0$.
+  $x \in X$, miara $\nu$ zbioru $( x \ti Y ) \cap A$ jest równa 0,
+  wówczas $(\mu \ot \nu)( A ) = 0$.
 \end{twr}
 \begin{proof}
+  Standardowo będziemy utożsamiać zbiór $( x \ti Y ) \cap A$
+  z~odpowiednim podzbiorem $Y$
+
   W~przypadku miary dodatniej można tak sformułować teorię całki,
   że~dla każdego zbioru zachodzi\footnote{Zobacz uwagi o~całce górnej
     w~ujęciu Schwartza.}
@@ -1412,13 +1463,47 @@ twierdzenie, którego dowód znalazł Paweł Duch.
 Zauważmy, że~to twierdzenie ma prostą interpretację na płaszczyźnie
 $\R^{ 2 }$. Wówczas zbiór $x \ti Y$ jest prostą pionową przechodzącą
 przez punkt $x$ i~powyższe twierdzenie mówi, że~jeśli prawie każdy
-przekrój zbioru $A$ prostymi pionowymi ma miarę (długość)~0, to pole
+przekrój zbioru $A$ prostymi pionowymi ma długość~0, to pole
 powierzchni $A$ również jest zerowe.
 
 \vspace{\spaceFour}
 
 
-\start \Str{51}
+
+% ####################
+\start \Str{51} \tb{Dowód, że~$\vpk( x ) \ot \psil( y )$ tworzą układ
+  ortonormalny.} Sprawdźmy najpierw, że~funkcja
+$\vpk( x ) \ot \psil( y )$ jest całkowalna w~kwadracie. Zgodnie z~tym
+co napisano wcześnie prawdziwe są następujące
+\begin{subequations}
+  \begin{equation}
+    \label{eq:7}
+    \iint\limits_{ M_{ 1 } \ti M_{ 2 } } \absd{ \vpk( x ) \psil( y ) }^{ 2 } \,
+    d\mu_{ 1 }( x ) d\mu_{ 2 }( y ) = \Int_{ M_{ 1 } } \absd{ \vpk( x ) }^{ 2 }\,
+    d\mu_{ 1 }( x ) \Int_{ M_{ 2 } } \absd{ \psil( y ) }^{ 2 }\, d\mu_{ 2 }( y )
+    = 1.
+  \end{equation}
+
+  \begin{equation}
+    \label{eq:8}
+    \iint\limits_{ M_{ 1 } \ti M_{ 2 } } \ol{ \vpk( x ) }\, \ol{ \psil( y ) }
+    \vp_{ m }( x ) \psi_{ n }( y )\, d\mu_{ 1 }( x ) d\mu_{ 2 }( y )
+    = \Int_{ M_{ 1 } } \ol{ \vpk( x ) } \vp_{ m }( x )\, d\mu_{ 1 }( x )
+    \Int_{ M_{ 2 } } \ol{ \psil( y ) } \psi_{ n }( y )\, d\mu_{ 2 }( y )
+    = \del_{ k, m }\; \del_{ l, n }.
+  \end{equation}
+\end{subequations}
+Pierwsza całka w~drugiej równości to iloczyn skalarny funkcji
+$\vpk( x ) \psil( y )$ i~$\vp_{ m }( x ) \psi_{ n }( y )$
+w~przestrzeni $\Ld( M_{ 1 } \ti M_{ 2 }, d\mu_{ 1 } \ot d\mu_{ 2 } )$,
+funkcja podcałkowa jest więc całkowalna i~wszystkie dalsze przejścia
+są dozwolone.
+
+Teraz udowodnimy, że~funkcja $f( x, y ) = 0$ prawie wszędzie.
+Po~pierwsze zbiór na którym $f( x, y ) \neq 0$ jest równy
+$f^{ -1 }( \C \setm 0 )$, jest więc on mierzalny. Teraz fakt, że~zbiór
+ten ma~miarę~$0$ wynika z~tego co pokazali Reed i~Simon
+oraz~twierdzenia powyżej.
 
 \vspace{\spaceFour}
 
