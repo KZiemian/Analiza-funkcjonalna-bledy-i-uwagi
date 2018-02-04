@@ -2,18 +2,32 @@
 % Korekta: Wojciech Dyba
 
 % --------------------------------------------------------------------
-% Paczki
+% Podstawowe ustawienia i pakiety
 % --------------------------------------------------------------------
-\RequirePackage[l2tabu, orthodox]{nag}  % Wykrywa przestarzałe i niedobre
-% rozwiązania LaTeXa. Więcej jest w l2tabu engish version
-\documentclass[a4paper,11pt]{article}  % {rozmiar fontu}[klasa dokumentu]
-\usepackage[utf8]{inputenc}  % Włączenie kodowania UTF-8, daje polskie znaki
-\usepackage[polish]{babel}  % Nie pamiętam
-\usepackage[MeX]{polski}  % Nie pamiętam
-\usepackage{indentfirst}  % Wcięcie w pierwszym akapicie
-\usepackage{microtype}  % Twierdzi, że poprawi rozmiar odstępów w tekście
-\usepackage{vmargin}  % Pozwala na prostą kontrolę rozmiaru marginesów,
-% za pomocą komend poniżej
+\RequirePackage[l2tabu, orthodox]{nag} % Wykrywa przestarzałe i niewłaściwe
+% sposoby używania LaTeXa. Więcej jest w l2tabu English version.
+\documentclass[a4paper,11pt]{article}
+% {rozmiar papieru, rozmiar fontu}[klasa dokumentu]
+\usepackage[MeX]{polski} % Polonizacja LaTeXa, bez niej będzie pracował
+% w języku angielskim.
+\usepackage[utf8]{inputenc} % Włączenie kodowania UTF-8, co daje dostęp
+% do polskich znaków.
+\usepackage{lmodern} % Wprowadza fonty Latin Modern.
+\usepackage[T1]{fontenc} % Potrzebne do używania fontów Latin Modern.
+
+
+
+% ----------------------------
+% Podstawowe pakiety (niezwiązane z ustawieniami języka)
+% ----------------------------
+\usepackage{microtype} % Twierdzi, że poprawi rozmiar odstępów w tekście.
+\usepackage{graphicx} % Wprowadza bardzo potrzebne komendy do wstawiania
+% grafiki.
+\usepackage{verbatim} % Poprawia otoczenie VERBATIME.
+\usepackage{textcomp} % Dodaje takie symbole jak stopnie Celsiusa,
+% wprowadzane bezpośrednio w tekście.
+\usepackage{vmargin} % Pozwala na prostą kontrolę rozmiaru marginesów,
+% za pomocą komend poniżej. Rozmiar odstępów jest mierzony w calach.
 % ----------------------------
 % MARGINS
 % ----------------------------
@@ -26,32 +40,42 @@
 {0.25in} % head sep
 {   9pt} % foot height
 { 0.3in} % foot sep
-\usepackage{graphicx}  % Pozwala wstawiać do tekstu grafikę
-\usepackage{xcolor}  % Pozwala używać kolorowych czcionek (zapewne dużo
-% więcej, ale ja więcej nie potrafię zrobić)
-\usepackage{hyperref}  % Pozwala tworzyć hiperlinki i zamienia odwołania
-% do bibliografii na hiperlinki.
+
+
+
+% ------------------------------
+% Często używane pakiety
+% ------------------------------
+\usepackage{csquotes} % Pozwala w prosty sposób wstawiać cytaty do tekstu.
+\usepackage{xcolor} % Pozwala używać kolorowych czcionek (zapewne dużo
+% więcej, ale ja nie potrafię nic o tym powiedzieć).
 
 
 
 % ------------------------------
 % Pakiety do tekstów naukowych
 % ------------------------------
-\let\lll\undefined  % Amsmath gryzie się z językiem pakietami do języka
+\let\lll\undefined % Amsmath gryzie się z językiem pakietami do języka
 % polskiego, bo oba definiują komendę \lll. Aby rozwiązać ten problem
 % oddefiniowuję tę komendę, ale może tym samym pozbywam się dużego Ł.
-\usepackage[intlimits]{amsmath}  % Wsparcie od American Mathematical Society
-\usepackage{amsfonts, amssymb, amscd, amsthm}  % Dalsze wsparcie od AMS
-\usepackage{upgreek}  % Ładniejsze greckie litery
+\usepackage[intlimits]{amsmath} % Podstawowe wsparcie od American
+% Mathematical Society (w skrócie AMS)
+\usepackage{amsfonts, amssymb, amscd, amsthm} % Dalsze wsparcie od AMS
+\usepackage{siunitx} % Dla postrzego pisania jednostek fizycznych
+\usepackage{upgreek} % Ładniejsze greckie litery
 % Przykładowa składnia: pi = \uppi
-\usepackage{slashed}  % Pozwala pisać w prosty sposób slash Feynmana
-\usepackage{calrsfs}  % Zmienia czcionkę kaligraficzną w \mathcal
+\usepackage{slashed} % Pozwala w prosty sposób pisać slash Feynmana.
+\usepackage{calrsfs} % Zmienia czcionkę kaligraficzną w \mathcal
 % na ładniejszą. Może w innych miejscach robi to samo, ale o tym nic
-% nie wiem
+% nie wiem.
 
-\newtheorem{twr}{Twierdzenie}  % Komenda wprowadzająca środowisko (?)
+
+
+% ##########
+% Tworzenie otoczeń "Twierdzenie", "Definicja", "Lemat", etc.
+\newtheorem{twr}{Twierdzenie} % Komenda wprowadzająca otoczenie
 % ,,twr'' do pisania twierdzeń matematycznych
-\newtheorem{defin}{Definicja}  % Podobnie jak powyżej
+\newtheorem{defin}{Definicja} % Analogicznie jak powyżej
 \newtheorem{wni}{Wniosek}
 
 
@@ -66,16 +90,24 @@
 
 
 
-% ##################
-\renewcommand{\arraystretch}{1.2}  % Ustawienie szerokości odstępów między
-% wierszami w tabelach
+% ----------------------------
+% Ustawienia różnych parametrów tekstu
+% ----------------------------
+\renewcommand{\arraystretch}{1.2} % Ustawienie szerokości odstępów między
+% wierszami w tabelach.
 
 
+% ----------------------------
+% Pakiet "hyperref"
+% Polecano by umieszczać go na końcu preambuły.
+% ----------------------------
+\usepackage{hyperref} % Pozwala tworzyć hiperlinki i zamienia odwołania
+% do bibliografii na hiperlinki.
 
 
 
 % --------------------------------------------------------------------
-% Ogólne komendy zdefiniowane dla ułatwienia pracy z LaTeXem
+% Różne komendy zdefiniowane dla ułatwienia pracy z LaTeXem
 % --------------------------------------------------------------------
 
 % ##########
@@ -85,13 +117,25 @@
 \newcommand{\spaceThree}{1em}
 \newcommand{\spaceFour}{0.5em}
 
+
+
 % ##########
-% Skróty do częstych oznaczeń
+% Skróty do często używanych komend
 \newcommand{\ld}{\ldots}
 \newcommand{\tbs}{\textbackslash}  % Backslash w tekście
 
 % ##########
-% Edycja tekstu (może jest na to lepsze nazwa?)
+% Podstawowa komendy do edycja tekstu
+\newcommand{\tb}{\textbf}
+\newcommand{\noi}{\noindent}
+
+% ##########
+% Skróty do często używanych komend
+\newcommand{\ld}{\ldots}
+\newcommand{\tbs}{\textbackslash} % Backslash w tekście
+
+% ##########
+% Podstawowa edycja tekstu (może jest na to lepsze nazwa?)
 \newcommand{\tb}{\textbf}
 \newcommand{\noi}{\noindent}
 \newcommand{\start}{\noi \tb{--} {}}
@@ -102,7 +146,7 @@
 \newcommand{\StrWd}[2]{\tb{Str. #1, wiersz #2 (od dołu).}}
 
 % Do poprawiania błędów
-\newcommand{\Dow}{\tb{Dowód}}  % To niezbyt pasuje do opisu POPRAW
+\newcommand{\Dow}{\tb{Dowód}} % To niezbyt pasuje do opisu POPRAW
 \newcommand{\Jest}{\tb{Jest: }}
 \newcommand{\Pow}{\tb{Powinno być: }}
 
