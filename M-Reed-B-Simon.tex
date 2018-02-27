@@ -44,7 +44,7 @@
 
 
 % ------------------------------
-% Często używane pakiety
+% Często przydatne pakiety
 % ------------------------------
 \usepackage{csquotes} % Pozwala w prosty sposób wstawiać cytaty do tekstu.
 \usepackage{xcolor} % Pozwala używać kolorowych czcionek (zapewne dużo
@@ -61,7 +61,7 @@
 \usepackage[intlimits]{amsmath} % Podstawowe wsparcie od American
 % Mathematical Society (w skrócie AMS)
 \usepackage{amsfonts, amssymb, amscd, amsthm} % Dalsze wsparcie od AMS
-\usepackage{siunitx} % Dla postrzego pisania jednostek fizycznych
+% \usepackage{siunitx} % Do prostszego pisania jednostek fizycznych
 \usepackage{upgreek} % Ładniejsze greckie litery
 % Przykładowa składnia: pi = \uppi
 \usepackage{slashed} % Pozwala w prosty sposób pisać slash Feynmana.
@@ -77,6 +77,16 @@
 % ,,twr'' do pisania twierdzeń matematycznych
 \newtheorem{defin}{Definicja} % Analogicznie jak powyżej
 \newtheorem{wni}{Wniosek}
+
+
+
+% ----------------------------
+% Pakiety napisane przez użytkownika.
+% Mają być w tym samym katalogu to ten plik .tex
+% ----------------------------
+\usepackage{reedsimon} % Pakiet napisany konkretnie dla tego pliku.
+\usepackage{latexshortcuts}
+\usepackage{mathshortcuts}
 
 
 
@@ -99,308 +109,6 @@
 
 
 
-
-% --------------------------------------------------------------------
-% Różne komendy zdefiniowane dla ułatwienia pracy z LaTeXem
-% --------------------------------------------------------------------
-
-% ##########
-% Definicje odstępów w tekście
-\newcommand{\spaceOne}{3em}
-\newcommand{\spaceTwo}{2em}
-\newcommand{\spaceThree}{1em}
-\newcommand{\spaceFour}{0.5em}
-
-
-
-% ##########
-% Skróty do często używanych komend
-\newcommand{\ld}{\ldots}
-\newcommand{\tbs}{\textbackslash}  % Backslash w tekście
-
-% ##########
-% Podstawowa komendy do edycja tekstu
-\newcommand{\tb}{\textbf}
-\newcommand{\noi}{\noindent}
-
-% ##########
-% Skróty do często używanych komend
-\newcommand{\ld}{\ldots}
-\newcommand{\tbs}{\textbackslash} % Backslash w tekście
-
-% ##########
-% Podstawowa edycja tekstu (może jest na to lepsze nazwa?)
-\newcommand{\tb}{\textbf}
-\newcommand{\noi}{\noindent}
-\newcommand{\start}{\noi \tb{--} {}}
-
-% Numeracja stron i rozdziałów
-\newcommand{\Str}[1]{\tb{Str. #1.}}
-\newcommand{\StrWg}[2]{\tb{Str. #1, wiersz #2.}}
-\newcommand{\StrWd}[2]{\tb{Str. #1, wiersz #2 (od dołu).}}
-
-% Do poprawiania błędów
-\newcommand{\Dow}{\tb{Dowód}} % To niezbyt pasuje do opisu POPRAW
-\newcommand{\Jest}{\tb{Jest: }}
-\newcommand{\Pow}{\tb{Powinno być: }}
-
-% Nagłówki
-\newcommand{\Center}[1]{\begin{center} #1 \end{center}}
-\newcommand{\CenterTB}[1]{\Center{\tb{#1}}}
-
-\newcommand{\Main}[1]{ \begin{center} {\LARGE \tb{#1} } \end{center} }
-\newcommand{\Field}[1]{ \begin{center} {\Large \tb{#1} } \end{center} }
-\newcommand{\Work}[1]{ \begin{center} {\large \tb{#1}} \end{center} }
-
-
-
-
-
-% --------------------------------------
-% Komendy do trybu matematycznego
-% --------------------------------------
-
-
-% Ładniejszy zbiór pusty
-\let\oldemptyset\emptyset
-\let\emptyset\varnothing
-
-
-% Podstawowe oznaczenia matematyczne
-\newcommand{\fr}{\frac}
-\newcommand{\tfr}{\tfrac}
-\newcommand{\tr}{\textrm}
-
-% Ułamki
-\newcommand{\onehalf}{\fr{ 1 }{ 2 }}
-\newcommand{\ovOne}[1]{\fr{ 1 }{ #1 }}
-\newcommand{\ovTwo}[1]{\fr{ #1 }{ 2 }}
-
-% Oznaczenia ,,nad i pod''. Wymyśl lepszą nazwę
-\newcommand{\til}{\tilde}
-\newcommand{\ul}{\underline}
-\newcommand{\ol}{\overline}
-\newcommand{\wh}{\widehat}
-\newcommand{\wt}{\widetilde}
-
-% Trzcionki matematyczne
-\newcommand{\mr}{\mathrm}
-\newcommand{\mb}{\mathbb}
-\newcommand{\mc}{\mathcal}
-\newcommand{\mf}{\mathfrak}
-\newcommand{\mbf}{\mathbf}
-
-% Strzałki
-\newcommand{\ra}{\rightarrow}
-\newcommand{\Ra}{\Rightarrow}
-\newcommand{\lra}{\longrightarrow}
-\newcommand{\xra}{\xrightarrow}
-\newcommand{\ifonlyif}{\Longleftrightarrow}
-
-% Częste zwroty
-\newcommand{\wtw}{wtedy i~tylko wtedy}
-
-
-% Wartość bezwzględna i normy
-\providecommand{\absj}[1]{\lvert #1 \rvert}
-\providecommand{\absd}[1]{\left| #1 \right|}
-\providecommand{\absd}[1]{\left| \, #1 \, \right|}
-% Zupełnie nie wiem, czemu to jest \providecommand
-\newcommand{\norm}[1]{\left|\left| #1 \right|\right|}
-
-
-% ##########
-% Litery greckie
-\newcommand{\al}{\alpha}
-\newcommand{\be}{\beta}
-\newcommand{\ga}{\gamma}
-\newcommand{\Ga}{\Gamma}
-\newcommand{\del}{\delta}
-\newcommand{\Del}{\Delta}
-\newcommand{\la}{\uplambda}
-\newcommand{\eps}{\epsilon}
-\newcommand{\veps}{\varepsilon}
-\newcommand{\vp}{\varphi}
-\newcommand{\om}{\omega}
-\newcommand{\Om}{\Omega}
-\newcommand{\si}{\sigma}
-\newcommand{\Si}{\Sigma}
-\newcommand{\tet}{\theta}
-
-
-% ##########
-% Standardowe używane w oznaczeniach litery o specjalnej czcionce
-% \mb = \mathbb
-\newcommand{\Cc}{\mc{C}}
-\newcommand{\Dc}{\mc{D}}
-\newcommand{\Hc}{\mc{H}}
-\newcommand{\lc}{\mc{l}}
-\newcommand{\Lc}{\mc{L}}
-\newcommand{\N}{\mb{N}}
-\newcommand{\R}{\mb{R}}
-\newcommand{\Rn}{\R^{ n }}
-\newcommand{\Rc}{\mc{R}}
-
-\newcommand{\Rp}{\R_{ + }}
-
-
-% Rzadziej używane oznaczenia literowe
-% \mc = \mathcal
-\newcommand{\B}{\mc{B}}
-\newcommand{\Fc}{\mc{F}}
-\newcommand{\M}{\mc{M}}
-\newcommand{\Oc}{\mc{O}}
-\newcommand{\T}{\mc{T}}
-\newcommand{\Pc}{\mc{P}}
-
-\newcommand{\Rt}{\R^{ 3 }}
-
-
-
-% ##########
-% Teoria mnogości
-\newcommand{\set}[1]{\{ #1 \}}
-\newcommand{\es}{\emptyset}
-\newcommand{\subs}{\subset}
-\newcommand{\setm}{\setminus}
-\newcommand{\ti}{\times}
-
-
-% ##########
-% Algebra
-\newcommand{\Real}{\mf{Re}}
-\newcommand{\Imag}{\mf{Im}}
-\newcommand{\ot}{\otimes}
-\newcommand{\Tr}{\mr{Tr}}
-
-
-
-% ##########
-% Analiza matematyczna
-
-% Granice
-\newcommand{\Lim}{\lim\limits}
-\newcommand{\Liminf}{\ul{\lim}}
-\newcommand{\Limsup}{\ol{\lim}}
-
-\newcommand{\nToInfty}{n \ra +\infty}
-
-% Sumy
-\newcommand{\Sum}{\sum\limits}
-
-% Różniczkowanie i pochodne
-\newcommand{\Cinfty}{\Cc^{ \infty }}
-
-\newcommand{\de}{\mr{d}}
-\newcommand{\dd}[3]{\fr{ \de^{ #1 } { #2 } }{ \de { #3 }^{ #1 } }}
-
-\newcommand{\pr}{\partial}
-\newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
-
-% Całki i całkowanie
-\newcommand{\dx}{\de x}
-\newcommand{\dk}{\, d}  % Różniczka Kończąca całkę
-
-\newcommand{\sqrtTwo}{\sqrt{ 2 }}
-\newcommand{\ovSqTwo}{\fr{ 1 }{ \sqrtTwo }}
-\newcommand{\sqTwoPi}{\sqrt{ 2 \pi }}
-\newcommand{\ovSqTwoPi}{\fr{ 1 }{ \sqrt{ 2 \pi } }}
-
-\newcommand{\Int}{\int\limits}
-\newcommand{\IntSet}[3]{\Int_{ #1 } #2 \, d#3} % Całka po zbiorze.
-\newcommand{\IntL}[3]{ \Int_{ { #1 } }^{ { #2 } } \de#3 \, }
-\newcommand{\IntCa}[2]{\Int #1 \, \de#2} % Juz z calkowaniem
-\newcommand{\IntFi}[2]{\Int \de#1 \, #2} % Bardziej Fizyczna notacja;)
-\newcommand{\IntWie}[3]{\Int_{ #1 } \de^{ #2 }#3 \,} % Wielowymiarowa
-\newcommand{\IntTro}[1]{ \Int \de^{ 3 }#1 \,} % Trójwymiarowa
-\newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
-
-
-
-% ##########
-% Analiza funkcjonalna
-\newcommand{\da}{\dagger}
-
-% Brakety (w analizie funkcjonalnej też się je często stosuje)
-\newcommand{\lket}{\langle}
-\newcommand{\rket}{\rangle}
-
-% Przestrzenie L^{ p }
-\newcommand{\Lj}{L^{ 1 }}
-\newcommand{\Ld}{L^{ 2 }}
-\newcommand{\Lp}{L^{ p }}
-\newcommand{\LIj}{\Lc^{ 1 }}
-\newcommand{\LIp}{\Lc^{ p }}
-\newcommand{\LdJ}{\Ld( \R, \de \mu )}
-\newcommand{\LdT}{\Ld( \R^{ 3 }, \de \mu )}
-\newcommand{\Ldlim}{L^{ 2 }-\Lim}
-
-
-
-
-% ########################################
-
-
-
-
-
-% ####################
-% Analiza matematyczna
-
-
-% Całki i całkowanie
-\newcommand{\Int}{\int\limits}
-\newcommand{\IntL}[3]{ \Int_{ { #1 } }^{ { #2 } } \de#3 \; }
-\newcommand{\IntCaJ}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
-% Całka Jeden
-\newcommand{\IntCaD}[2] { \Int #1 \, d#2 } % Całka dwa
-\newcommand{\IntFi}[2]{ \Int \de#1 \, #2 } % Bardziej Fizyczna notacja;)
-\newcommand{\IntWie}[3]{ \Int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa
-\newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
-
-% ####################
-% Całki w określonych granicach
-\newcommand{\IntA}[1]{\Int_{ -\infty }^{ +\infty } \de #1 \;}
-\newcommand{\IntB}[1]{\int_{ \R } \de #1 \;}
-\newcommand{\IntC}[2]{\int_{ \R } #1 \, \de #2}
-\newcommand{\IntD}[1]{\Int_{ 0 }^{ +\infty } \de #1 \;}
-
-
-
-
-% ####################
-% Edycja tekstu
-\newcommand{\Jest}{\tb{Jest: }}
-\newcommand{\Pow}{\tb{Powinno być: }}
-\newcommand{\red}[1]{{\color{red} #1}}
-\newcommand{\Prze}{{\color{red} Przemyśl.}}
-\newcommand{\Pop}{{\color{red} Popraw.}}
-\newcommand{\Prob}{{\color{red} Problem.}}
-\newcommand{\Dok}{{\color{red} Dokończ.}}
-\newcommand{\Pyt}{{\color{red} Pytanie.}}
-\newcommand{\Main}[1]{ \begin{center} {\LARGE \tb{#1} } \end{center} }
-\newcommand{\Field}[1]{ \begin{center} {\Large \tb{#1} } \end{center} }
-\newcommand{\Work}[1]{ \begin{center} {\large \tb{#1}} \end{center} }
-
-
-
-
-
-% --------------------------------------------------------------------
-% Komendy zdefiniowane konkretnie dla tego pliku:
-% M-Reed-B-Simon.tex
-% --------------------------------------------------------------------
-
-\newcommand{\ci}{\circ}
-
-% Przestrzenie Hilberta
-\newcommand{\lcd}{\ell_{ 2 }}  % l Caligraphy Dwa
-\newcommand{\SP}[2]{( #1, \, #2 )}  % Scalar product.
-\newcommand{\dket}[2]{\lket #1, \, #2 \rket}  % Dirac ket
-
-\newcommand{\vpk}{\vp_{ k }}
-\newcommand{\psil}{\psi_{ l }}
-
 % % Całki
 % \newcommand{\Int}{\int\limits}
 % \newcommand{\IntA}[1]{\Int_{ -\infty }^{ +\infty } \de #1 \;}
@@ -411,11 +119,6 @@
 % \newcommand{\IntWie}[3]{ \int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa.
 % \newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
 % \newcommand{\IntL}[3]{ \int\limits_{ { #1 } }^{ { #2 } } \d#3 \; }
-
-
-
-% Koniec komend
-% ############################
 
 
 
@@ -692,7 +395,7 @@ $x_{ n_{ 1 }, \ld, \, n_{ m } }$ \wtw, gdy
 rozdziale potrzebujemy kilka razy pokazać równość następującego typu.
 Mamy dwa elementy $f = \sum_{ l = 1 }^{ \infty } c_{ l } \vp_{ l }$,
 $g = \sum_{ k = 1 }^{ \infty } d_{ k } \psi_{ k }$,
-$c_{ l }, d_{ k } \in \C$, to
+$c_{ l }, d_{ k } \in \Cc$, to
 \begin{equation*}
   \Lim_{ K,\, M \ra +\infty } \Sum_{ \substack{ l < L \\ k < K } }
   c_{ l } d_{ k } \, (\vp_{ l } \ci \psi_{ k } ) = f \ci g,
@@ -703,7 +406,7 @@ granicy ciągu wieloindeksowego. Aby~nadać tym operacjom sens, musimy
 najpierw zdefiniować odwzorowanie wieloliniowe ograniczone.
 
 Niech $X_{ 1 }, \ld, X_{ n }, Y$ będą przestrzeniami unormowanymi nad
-ciałem $\R$ lub~$\C$, zaś
+ciałem $\R$ lub~$\Cc$, zaś
 \begin{equation*}
   B: X_{ 1 } \ti \ld \ti X_{ n } \ra Y
 \end{equation*}
@@ -1210,7 +913,7 @@ na sumę.
 
 Schwartz bada w~swoje książce szeregi w~przestrzeniach Banacha, które
 nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
-sumowania (str.~110 i~dalsze \cite{Schwartz79}). Trajdos przetłumaczył
+sumowania (str.~110 i~dalsze \cite{SchwartzKursAnalizyMatematycznej79}). Trajdos przetłumaczył
 ich nazwę jako szeregi \emph{zbieżne przestawialnie}. % Sprawdzone.
 
 \vspace{\spaceFour}
@@ -1374,7 +1077,7 @@ $\Hc_{ 1 } \ti \Hc_{ 2 }$ strukturę sumy prostej
   \Sum_{ i = 1 }^{ N } d_{ i } \, \vp_{ i } \rket,
 \end{equation}
 i~$\eta = \Sum_{ i = 1 }^{ N } d_{ i } \: \vp_{ i } \ot \psi_{ i }$,
-$d_{ i } \in \C$, to~korzystając z~półtoraliniowości mamy
+$d_{ i } \in \Cc$, to~korzystając z~półtoraliniowości mamy
 \begin{equation*}
   \begin{split}
     ( \eta, \, \mu )_{ \mc{E} } &= \Sum_{ i = 1 }^{ N } \bar{ d }_{ i
@@ -1557,7 +1260,7 @@ są dozwolone.
 
 Teraz udowodnimy, że~funkcja $f( x, y ) = 0$ prawie wszędzie.
 Po~pierwsze zbiór na którym $f( x, y ) \neq 0$ jest równy
-$f^{ -1 }( \C \setm 0 )$, jest więc on mierzalny. Teraz fakt, że~zbiór
+$f^{ -1 }( \Cc \setm 0 )$, jest więc on mierzalny. Teraz fakt, że~zbiór
 ten ma~miarę~$0$ wynika z~tego co pokazali Reed i~Simon
 oraz~twierdzenia powyżej.
 

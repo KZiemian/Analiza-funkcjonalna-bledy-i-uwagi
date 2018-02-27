@@ -44,7 +44,7 @@
 
 
 % ------------------------------
-% Często używane pakiety
+% Często przydatne pakiety
 % ------------------------------
 \usepackage{csquotes} % Pozwala w prosty sposób wstawiać cytaty do tekstu.
 \usepackage{xcolor} % Pozwala używać kolorowych czcionek (zapewne dużo
@@ -61,7 +61,7 @@
 \usepackage[intlimits]{amsmath} % Podstawowe wsparcie od American
 % Mathematical Society (w skrócie AMS)
 \usepackage{amsfonts, amssymb, amscd, amsthm} % Dalsze wsparcie od AMS
-\usepackage{siunitx} % Dla prostszego pisania jednostek fizycznych
+% \usepackage{siunitx} % Dla prostszego pisania jednostek fizycznych
 \usepackage{upgreek} % Ładniejsze greckie litery
 % Przykładowa składnia: pi = \uppi
 \usepackage{slashed} % Pozwala w prosty sposób pisać slash Feynmana.
@@ -77,6 +77,16 @@
 % ,,twr'' do pisania twierdzeń matematycznych
 \newtheorem{defin}{Definicja} % Analogicznie jak powyżej
 \newtheorem{wni}{Wniosek}
+
+
+
+% ----------------------------
+% Pakiety napisane przez użytkownika.
+% Mają być w tym samym katalogu to ten plik .tex
+% ----------------------------
+\usepackage{latexshortcuts}
+\usepackage{mathshortcuts}
+\usepackage{analizafunkcjonalna}
 
 
 
@@ -97,280 +107,6 @@
 % wierszami w tabelach.
 
 
-
-
-
-% --------------------------------------------------------------------
-% Różne komendy zdefiniowane dla ułatwienia pracy z LaTeXem
-% --------------------------------------------------------------------
-
-% ##############################
-
-\newcommand{\spaceOne}{3em}
-\newcommand{\spaceTwo}{2em}
-\newcommand{\spaceThree}{1em}
-\newcommand{\spaceFour}{0.5em}
-
-% Ładniejszy zbiór pusty
-\let\oldemptyset\emptyset
-\let\emptyset\varnothing
-
-
-% ####################
-% Uproszczenia w pisaniu tekstu
-\newcommand{\ld}{\ldots}
-
-% Slashe w tekście
-\newcommand{\tbs}{\textbackslash}
-
-% Podstawowe oznaczenia matematyczne
-\newcommand{\fr}{\frac}
-\newcommand{\tfr}{\tfrac}
-\newcommand{\tr}{\textrm}
-
-% Oznaczenia ,,nad i pod''. Wymyśl lepszą nazwę
-\newcommand{\til}{\tilde}
-\newcommand{\ul}{\underline}
-\newcommand{\ol}{\overline}
-\newcommand{\wh}{\widehat}
-\newcommand{\wt}{\widetilde}
-
-% Trzcionki matematyczne
-\newcommand{\mr}{\mathrm}
-\newcommand{\mb}{\mathbb}
-\newcommand{\mc}{\mathcal}
-\newcommand{\mf}{\mathfrak}
-\newcommand{\mbf}{\mathbf}
-\newcommand{\bsym}{\boldsymbol}
-
-% Strzałki
-\newcommand{\ra}{\rightarrow}
-\newcommand{\Ra}{\Rightarrow}
-\newcommand{\lra}{\longrightarrow}
-\newcommand{\xra}{\xrightarrow}
-
-\newcommand{\wtw}{wtedy i~tylko wtedy}
-
-
-% ####################
-% Litery greckie
-\newcommand{\al}{\alpha}
-\newcommand{\be}{\beta}
-\newcommand{\ga}{\gamma}
-\newcommand{\del}{\delta}
-\newcommand{\Del}{\Delta}
-\newcommand{\la}{\uplambda}
-\newcommand{\La}{\Lambda}
-\newcommand{\eps}{\epsilon}
-\newcommand{\veps}{\varepsilon}
-\newcommand{\vp}{\varphi}
-\newcommand{\om}{\omega}
-\newcommand{\Om}{\Omega}
-\newcommand{\si}{\sigma}
-\newcommand{\Si}{\Sigma}
-\newcommand{\tet}{\theta}
-
-% Standardowe oznaczenia literowe
-\newcommand{\N}{\mb{N}}
-\newcommand{\R}{\mb{R}}
-\newcommand{\C}{\mb{C}}
-\newcommand{\D}{\mc{D}}
-\newcommand{\Hc}{\mc{H}}
-\newcommand{\Lc}{\mc{L}}
-\newcommand{\Rn}{\R^{ n }}
-\newcommand{\Rc}{\mc{R}}
-\newcommand{\Cc}{\mc{C}}
-
-% Mniej używane oznaczenia literowe
-\newcommand{\B}{\mc{B}}
-\newcommand{\Oc}{\mc{O}}
-\newcommand{\Rp}{\R_{ + }}
-
-% ####################
-% Standardowe matematyczne symbole literowe
-% Mathbb
-% \newcommand{\C}{\mb{C}}
-% \newcommand{\N}{\mb{N}}
-% \newcommand{\R}{\mb{R}}
-% \newcommand{\Rn}{\R^{ n }}
-% \newcommand{\Rp}{\R_{ + }}
-
-% % Mathcal
-% \newcommand{\B}{\mc{B}}
-% \newcommand{\D}{\mc{D}}
-% \newcommand{\Fc}{\mc{F}}
-% \newcommand{\M}{\mc{M}}
-% \newcommand{\Rc}{\mc{R}}
-% \newcommand{\Cc}{\mc{C}}
-% \newcommand{\Oc}{\mc{O}}
-% \newcommand{\T}{\mc{T}}
-
-
-% ####################
-% Teoria mnogości
-\newcommand{\es}{\emptyset}
-\newcommand{\set}[1]{\{ #1 \}}
-\newcommand{\subs}{\subset}
-\newcommand{\setm}{\setminus}
-\newcommand{\com}{\complement}
-\newcommand{\ti}{\times}
-
-
-% ####################
-% Algebra
-\newcommand{\Real}{\mf{Re}}
-\newcommand{\Imag}{\mf{Im}}
-\newcommand{\ot}{\otimes}
-\newcommand{\Tr}{\mr{Tr}}
-
-
-% ####################
-% Analiza matematyczna
-
-% Granice
-\newcommand{\Lim}{\lim\limits}
-\newcommand{\Liminf}{\ul{\lim}}
-\newcommand{\Limsup}{\ol{\lim}}
-
-\newcommand{\DelTtoZero}{\Del t \ra 0}
-
-\newcommand{\Delt}{\Del t}
-
-% Sumy
-\newcommand{\Sum}{\sum\limits}
-
-% Różniczkowanie i pochodne
-\newcommand{\pr}{\partial}
-\newcommand{\de}{\mr{d}}
-\newcommand{\dd}[3]{\fr{ \de^{ #1 } { #2 } }{ \de { #3 }^{ #1 } }}
-\newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
-
-% Powszechnie używane symbole
-\newcommand{\Cinfty}{\Cc^{ \infty }}
-\newcommand{\CinftyR}{\Cc^{ \infty }( \R )}
-\newcommand{\CinftyRn}{\Cc^{ \infty }( \Rn )}
-
-% Całki i całkowanie
-\newcommand{\dx}{\de x}
-\newcommand{\Int}{\int\limits}
-\newcommand{\IntL}[3]{ \Int_{ { #1 } }^{ { #2 } } \de#3 \; }
-\newcommand{\IntCa}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
-\newcommand{\IntFi}[2]{ \Int \de#1 \, #2 } % Bardziej Fizyczna notacja;)
-\newcommand{\IntWie}[3]{ \Int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa
-\newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
-
-% ####################
-% Całki w określonych granicach
-\newcommand{\IntA}[1]{\Int_{ -\infty }^{ +\infty } \de #1 \;}
-\newcommand{\IntB}[1]{\int_{ \R } \de #1 \;}
-\newcommand{\IntC}[2]{\int_{ \R } #1 \, \de #2}
-\newcommand{\IntD}[1]{\Int_{ 0 }^{ +\infty } \de #1 \;}
-
-
-% ####################
-% Analiza funkcjonalna
-\newcommand{\da}{\dagger}
-
-\newcommand{\supp}{\mr{supp}\,}
-
-% Brakety
-% W analizie funkcjonalnej też często się je stosuje
-\newcommand{\lket}{\langle}
-\newcommand{\rket}{\rangle}
-
-% Przestrzenie L^{ p }
-\newcommand{\Lj}{L^{ 1 }}
-\newcommand{\Ld}{L^{ 2 }}
-\newcommand{\Lp}{L^{ p }}
-\newcommand{\LIj}{\L^{ 1 }}
-\newcommand{\LIp}{\L^{ p }}
-\newcommand{\LdJ}{\Ld( \R, \de \mu )}
-\newcommand{\LdT}{\Ld( \R^{ 3 }, \de \mu )}
-\newcommand{\Ldlim}{L^{ 2 }-\Lim}
-
-
-% ####################
-% Wartość bezwzględna i normy
-\providecommand{\absj}[1]{\lvert #1 \rvert}
-\providecommand{\absd}[1]{\left| #1 \right|}
-\newcommand{\norm}[1]{\left|\left| #1 \right|\right|}
-
-
-% ####################
-% Edycja tekstu
-\newcommand{\tb}{\textbf}
-\newcommand{\noi}{\noindent}
-\newcommand{\start}{\noi \tb{--} {}}
-\newcommand{\Str}[1]{\tb{Str. #1.}}
-\newcommand{\StrWg}[2]{\tb{Str. #1, wiersz #2.}}
-\newcommand{\StrWd}[2]{\tb{Str. #1, wiersz #2 (od dołu).}}
-\newcommand{\Dow}{\tb{Dowód}}
-\newcommand{\Center}[1]{\begin{center} #1 \end{center}}
-\newcommand{\CenterTB}[1]{\Center{\tb{#1}}}
-\newcommand{\Jest}{\tb{Jest: }}
-\newcommand{\Pow}{\tb{Powinno być: }}
-\newcommand{\red}[1]{{\color{red} #1}}
-\newcommand{\Prze}{{\color{red} Przemyśl.}}
-\newcommand{\Pop}{{\color{red} Popraw.}}
-\newcommand{\Prob}{{\color{red} Problem.}}
-\newcommand{\Dok}{{\color{red} Dokończ.}}
-\newcommand{\Pyt}{{\color{red} Pytanie.}}
-\newcommand{\Work}[1]{ \begin{center} {\large \tb{#1}} \end{center} }
-\newcommand{\Field}[1]{ \begin{center} {\Large \tb{#1} } \end{center} }
-\newcommand{\Main}[1]{ \begin{center} {\LARGE \tb{#1} } \end{center} }
-
-
-
-
-
-% % Sumy
-% \newcommand{\Sum}{\sum\limits}
-
-% % Różniczkowanie i pochodne
-% \newcommand{\pr}{\partial}
-% \newcommand{\de}{\mr{d}}
-% \newcommand{\dd}[3]{\fr{ \de^{ #1 } { #2 } }{ \de { #3 }^{ #1 } }}
-% \newcommand{\pd}[3]{\fr{ \pr^{ #1 } { #2 } }{ \pr { #3 }^{ #1 } }}
-
-% % Całki
-% \newcommand{\Int}{\int\limits}
-% \newcommand{\IntA}[1]{\Int_{ -\infty }^{ +\infty } \de #1 \;}
-% \newcommand{\IntB}[1]{\int_{ \R } \de #1 \;}
-% \newcommand{\IntC}[1]{\Int_{ 0 }^{ +\infty } \de #1 \;}
-% \newcommand{\IntCa}[2]{ \Int #1 \, \de#2 } % Juz z calkowaniem
-% \newcommand{\IntFi}[2]{ \Int \de#1 \, #2 } % Bardziej Fizyczna notacja;)
-% \newcommand{\IntWie}[3]{ \int_{ #1 } \de^{ #2 }#3 \; } % Wielowymiarowa.
-% \newcommand{\IntDo}[5]{ \Int_{ #1 } \de^{ #2 }#3\, \de^{ #4 } #5 \; }
-% \newcommand{\IntL}[3]{ \int\limits_{ { #1 } }^{ { #2 } } \d#3 \; }
-
-
-
-% ##############################
-% Oznaczenia dla książki Zemaniana
-
-\newcommand{\vpt}{\vp( t )}
-\newcommand{\vpsequ}{\set{ \vp_{ \nu }( t ) }}
-
-\newcommand{\vpDer}{\vp^{ ( 1 ) }( t )}
-
-\newcommand{\CinftyRc}{\Cc^{ \infty }( \Rc )}
-\newcommand{\CinftyRnc}{\Cc^{ \infty }( \Rnc )}
-
-\newcommand{\DRc}{\D( \Rc )}
-\newcommand{\DRnc}{\D( \Rnc )}
-\newcommand{\DpRc}{\D'( \Rc )}
-\newcommand{\DpRnc}{\D'( \Rnc )}
-
-\newcommand{\dyst}[2]{\lket #1,\, #2 \rket}
-\newcommand{\Pf}{\mr{Pf}\,}
-\newcommand{\Fp}{\mr{Fp}}
-\newcommand{\Rnc}{\Rc^{ n }}
-\newcommand{\Hevp}{\mbf{1}_{ + }} % Oznaczenie tenty Heaviside'a
-\newcommand{\Hevm}{\mbf{1}_{ - }}
-
-
-% Koniec komend
-% ############################
 
 
 
@@ -402,7 +138,8 @@
 % ##############################
 \Work{
   A. V. Balakrishnan \\
-  ,,Analiza funkcjonalna stosowana'', \cite{Bal92}}
+  ,,Analiza funkcjonalna stosowana'',
+  \cite{BalakrishnanAnalizaFunkcjonalnaStosowana92} }
 
 % Uwagi:
 % \begin{itemize}
@@ -424,6 +161,45 @@
 \end{center}
 
 \vspace{\spaceTwo}
+
+
+
+
+
+% ##############################
+\Work{
+  Anton Deitmar, Siegrfied Echterhoff \\
+  ,,Principles~of Harmonic Analysis'',  }
+
+
+\CenterTB{Uwagi}
+
+% \noi \tb{Konkretne strony}
+
+% \vspace{\spaceFour}
+
+
+\start \Str{42}
+
+
+\CenterTB{Błędy}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & \multicolumn{2}{c|}{} & & \\
+    Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu &  &  \\ \hline
+    42  & 10 & & $s\: u\: p$ & $\sup$ \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\vspace{\spaceTwo}
+
+
 
 
 
@@ -472,7 +248,7 @@
 
 
 \start \Str{16} Rozważania o~zamkniętości ze~względu na zbieżność
-przestrzeni funkcji próbnych $\D$~są w~mojej ocenie trochę chaotyczne,
+przestrzeni funkcji próbnych $\Dc$~są w~mojej ocenie trochę chaotyczne,
 spróbuję więc je jakoś rozjaśnić. W~istocie chodzi o~to,
 że~definiujemy zbieżność ciągu funkcji próbnych
 $\set{ \vp_{ \nu }( t ) }$, żądając od~niego dwóch własności: 1)~Dla
@@ -496,7 +272,7 @@ $f^{ ( k ) }( t ) = f_{ k }( t )$. Tym samy pokazaliśmy, że~zbieżność
 zdefiniowana wyżej, jest rzeczywiście zbieżnością do~jakiejś funkcji.
 Z~drugiego warunku zbieżności ciągu funkcji próbnych wynika,
 że~funkcja $f( t )$ również ma~zwarty nośnik i~tym samym należy
-do~$\D$.
+do~$\Dc$.
 
 Tym samym możemy stwierdzić, że~jeśli istnieje funkcja zespolona,
 do~której ciąg funkcji próbnych jest zbieżny w~podanym wyżej sensie,
@@ -522,8 +298,8 @@ klasy $\CinftyRc$.
 \start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
 bardzo słusznie jest stale przypominany w~kontekście teorii
 dystrybucji: nie czegoś takiego jak wartość dystrybucji w~punkcie.
-Dystrybucja $f$ z~przestrzeni $\D'( \Rnc )$ jest określona
-na~funkcjach z~$\D( \Rnc )$, a~nie na $\Rnc$ i~nawet dla dystrybucji
+Dystrybucja $f$ z~przestrzeni $\Dc'( \Rnc )$ jest określona
+na~funkcjach z~$\Dc( \Rnc )$, a~nie na $\Rnc$ i~nawet dla dystrybucji
 regularnej wartość $f( t )$ w~konkretnym punkcie nie ma zwykle sensu.
 Punkt ma bowiem miarę Lebesgue'a równą~0, więc wartość funkcji która
 reprezentuje tę~dystrybucję można w~nim dowolnie zmienić.
@@ -539,7 +315,7 @@ np.~jeśli jedna z~tych funkcji jest ciągła.
 \start \Str{29} Użycie we wzorze~(3) symbolu
 \begin{equation}
   \label{eq:Zem-s01-01}
-  \Lim_{ \veps \ra 0^{ + } } \Int_{ \veps }^{ b } t^{ -3/2 } \vp( t ) \, dt,
+  \Lim_{ \veps \to 0^{ + } } \Int_{ \veps }^{ b } t^{ -3/2 } \vp( t ) \, dt,
 \end{equation}
 jest trochę mylące. Zdaje~się bowiem sugerować, że~całka
 $\int_{ 0 }^{ b } t^{ -3/2 } \vp( t ) \, dt$ istniej i~jest równa tej
@@ -554,12 +330,12 @@ Najpierw rozpatrzmy całkę
   + \Int_{ \veps }^{ b } \fr{ \psi( t ) }{ \sqrt{ t } } \, dt.
 \end{equation}
 Całka ta jest skończona dla każdego $\veps$ i~powyższy wzór pozwala
-nam zidentyfikować źródło rozbieżności w~granicy $\veps \ra 0^{ + }$.
+nam zidentyfikować źródło rozbieżności w~granicy $\veps \to 0^{ + }$.
 Dysponując tą wiedzą, możemy zdefiniować dystrybucję
 $\Pf \, t^{ -3/2 } \Hevp( t )$ wzorem
 \begin{equation}
   \label{eq:Zem-s01-03}
-  \lket \Pf \, t^{ -3/2 } \Hevp( t ), \vp( t ) \rket = \Lim_{ \veps \ra 0^{ + } }
+  \lket \Pf \, t^{ -3/2 } \Hevp( t ), \vp( t ) \rket = \Lim_{ \veps \to 0^{ + } }
   \left[ \Int_{ \veps }^{ +\infty } t^{ -3/2 } \vp( t ) \, dt
     - \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } \right].
 \end{equation}
@@ -759,7 +535,7 @@ zawiera pewną subtelność, którą warto wyjaśnić. \Dok
   \label{eq:Zem-s01-06}
   \fr{ \vp( t - \Delt ) - \vp( t ) }{ \Delt }
 \end{equation}
-dąży do $-\vpDer$ przy $\DelTtoZero$ wynika od~razu z~definicji
+dąży do $-\vpDer$ przy $\DelToZero$ wynika od~razu z~definicji
 pochodnej i~twierdzenia o~składaniu granic\footnote{Udowodnij i~zapisz
   gdzieś to twierdzenie.}, problem jest tylko taki, że~jest to
 zbieżność punktowa. Aby zaś skorzystać z~ciągłości dystrybucji
@@ -769,7 +545,7 @@ do~$-\vp^{ ( k + 1 ) }( t )$. Inaczej mówiąc dla $k = 0, 1, 2, \ld$
 musi zachodzić
 \begin{equation}
   \label{eq:Zem-s01-07}
-  \Lim_{ \DelTtoZero } \fr{ \vp^{ ( k ) }( t - \Delt ) - \vp^{ ( k ) }( t ) }
+  \Lim_{ \DelToZero } \fr{ \vp^{ ( k ) }( t - \Delt ) - \vp^{ ( k ) }( t ) }
   { \Delt } = -\vp^{ ( k + 1 ) }( t ),
 \end{equation}
 gdzie zbieżność jest rozumiana jako zbieżność jednostajna.
@@ -785,16 +561,16 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
     & \multicolumn{2}{c|}{} & & \\
     Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu &  &  \\ \hline
-    12 & & 6 & wartości & tylko rzeczywiste \\
-    14 & 6 & & całka & całka przedstawiająca $\vp_{ \al }'( t )$ \\
-    16 & & 6 & ciągi & funkcje \\
-    17 & & 4 & z przestrzeni & na przestrzeni \\
-    17 & & 3 & która ma & które mają \\
-    17 & & 2 & \emph{przestrzeni} & \emph{funkcjonału} \\
-    18 & 6 & & $\{ \vp_{ \nu } \}\nu \ra \infty$ & $\{ \vp_{ \nu } \}$,
-                                                   przy $\nu \ra \infty$ \\
+    12  & & 6 & wartości & tylko rzeczywiste \\
+    14  & 6 & & całka & całka przedstawiająca $\vp_{ \al }'( t )$ \\
+    16  & & 6 & ciągi & funkcje \\
+    17  & & 4 & z przestrzeni & na przestrzeni \\
+    17  & & 3 & która ma & które mają \\
+    17  & & 2 & \emph{przestrzeni} & \emph{funkcjonału} \\
+    18  & 6 & & $\{ \vp_{ \nu } \}\nu \to \infty$ & $\{ \vp_{ \nu } \}$,
+                                                   przy $\nu \to \infty$ \\
     18 & & 10 & dystrybuantę & dystrybucję \\
-    21 & 9 & & $\D$ & $\D'$ \\
+    21 & 9 & & $\Dc$ & $\Dc'$ \\
     25 & & 1 & dąży & dąży punktowo \\
     26 & 5 & & pochodnym od & pochodną \\
     27 & 7 & & $\del^{ ( 1 ) }\bsym{ ( t } )$ & $\del^{ ( 1 ) }( t )$ \\
