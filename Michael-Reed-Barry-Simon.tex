@@ -138,7 +138,7 @@
 
 
 % ######################################
-\maketitle  % Tytuł całego tekstu
+\maketitle % Tytuł całego tekstu
 % ######################################
 
 
@@ -147,7 +147,8 @@
 \Work{ % Autorzy i tytuł dzieła
   Michael Reed, Barry Simon \\
   ,,Methods~of Modern Mathematical Physics~I: \\
-  Functional Analysis'', \cite{ReedSimonTomI80} }
+  Functional Analysis'',
+  \cite{ReedSimonMethodsOfModernMathematicalPhysicsVolI1980} }
 % ######################################
 
 
@@ -198,7 +199,7 @@ Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
   \begin{equation}
     \label{eq:1}
     \int f( x ) \, \left( \Sum_{ i = 1 }^{ n } d\mu_{ i }( x ) \right)
-    = \Sum_{ i = 1 }^{ n } \IntM{ f( x ) }{ \mu_{ i }( x ) }.
+    = \Sum_{ i = 1 }^{ n } \IntMo{ f( x ) }{ \mu_{ i }( x ) }.
   \end{equation}
 \end{twr}
 % ##############################
@@ -260,15 +261,15 @@ Analogicznie określmy sumę $n$ miar dodatnich. Trzeba teraz pokazać,
   widzimy więc, że~funkcja całkowalna względem każdej z~miar
   $\mu_{ i }$, $i = 1, \ld, n$~tzn.
   \begin{align*}
-    \IntM{ f }{ \mu_{ 1 } } < +\infty \;\tr{  oraz  }
-    \IntM{ f }{ \mu_{ 2 } } < +\infty,
+    \IntMo{ f }{ \mu_{ 1 } } < +\infty \;\tr{  oraz  }
+    \IntMo{ f }{ \mu_{ 2 } } < +\infty,
   \end{align*}
   jest też całkowalna względem ich sumy i~na podstawie wzoru
   \eqref{eq:RSI2}, zachodzi równość:
   \begin{equation}
     \label{eq:RSI3}
-    \IntM{ f }{ ( \mu_{ 1 } + \mu_{ 2 } ) } = \IntM{ f }{ \mu_{ 1 } }
-    + \IntM{ f }{ \mu_{ 2 } }.
+    \IntMo{ f }{ ( \mu_{ 1 } + \mu_{ 2 } ) } = \IntMo{ f }{ \mu_{ 1 } }
+    + \IntMo{ f }{ \mu_{ 2 } }.
   \end{equation}
 
 \end{proof}
@@ -419,7 +420,7 @@ $x_{ 1 } \in X_{ 1 }, \ld, x_{ n } \in X_{ n }$ zachodzi
 \end{equation}
 Podstawowe ich własności przedstawił Schwartz w~swoim ,,Kursie analizy
 matematycznej'', str.~102 i~dalsze,
-\cite{SchwartzKursAnalizyMatematycznej79}. W~szczególności tak jak dla
+\cite{SchwartzKursAnalizyMatematycznej1979}. W~szczególności tak jak dla
 odwzorowania liniowego odwzorowanie wieloliniowe jest ciągłe \wtw, gdy
 jest ograniczone, analogicznie również definiuje~się normę
 $\norm{ B }$ odwzorowania wieloliniowego~$B$. Dysponując już tymi
@@ -500,11 +501,11 @@ iloczynu zależy od~kolejności sumowania poszczególnych
 wyrazów\footnote{Co jest prawdą pod warunkiem, że~iloczyn szeregów
   warunkowo zbieżnych nie może być przestawialnie zbieżny. \Dok.
   Zobacz książkę Schwartza str.~110 i~dalsze,
-  \cite{SchwartzKursAnalizyMatematycznej79}.}.
+  \cite{SchwartzKursAnalizyMatematycznej1979}.}.
 
 Problem jest jednak pozorny, bowiem twierdzenie powyższe dotyczy tylko
 szczególnego sposobu sumowania, które w~przedstawieniu tablicowym
-jakiego używa Fichtenholza (zobacz str.~??? \cite{Fichtenholz05a})
+jakiego używa Fichtenholza (zobacz str.~??? \cite{FichtenholzRachunekRiCTomII2004})
 odpowiada ,,sumowaniu po~coraz większych prostokątach''. Inaczej
 mówiąc, sum te~zawsze da~się przedstawić jako
 \begin{equation*}
@@ -545,7 +546,7 @@ powszechnie wiadomo z~pracy dotyczących analizy funkcjonalnej:
   \norm{ T x }_{ 2 } \leq C \norm{ x }_{ 1 } \}.
 \end{equation*}
 Elegancki dowód tego faktu, można znaleźć np.
-w~\cite{ChmielinskiAnalizaFunkcjonalna04},
+w~\cite{ChmielinskiAnalizaFunkcjonalna2004},
 str.~115--116. % Sprawdzone.
 
 \vspace{\spaceFour}
@@ -619,18 +620,18 @@ zbioru borelowskiego. % Sprawdzone.
 przeprowadzona zbyt szybko i~pobieżnie, by~uznać ją za~satysfakcję.
 
 Po~pierwsze należałoby zauważyć, że~jeżeli mamy dwie funkcje
-$0 \leq g \leq f$, to z~tego, że~$\IntM{ f }{ x } < \infty$, wynika
-że~$\IntM{ g }{ x } < \infty$, co przy przyjętej tu definicji całki
+$0 \leq g \leq f$, to z~tego, że~$\IntMo{ f }{ x } < \infty$, wynika
+że~$\IntMo{ g }{ x } < \infty$, co przy przyjętej tu definicji całki
 z~funkcji dodatniej nie jest od razu oczywiste. Istotnie, jak
 zauważyli Reed i~Simon, przy definicji zwykle spotykanej w~pracach dla
 matematyków, tego typu dowody~są prostsze. Wiedząc już jednak o~tym,
-widać od~razu, że~jeżeli $\IntM{ \abso{ f } }{ x } < \infty$ to
+widać od~razu, że~jeżeli $\IntMo{ \abso{ f } }{ x } < \infty$ to
 całkowalne~są również $f_{ + }$ i~$f_{ - }$, więc definicja całki
 z~funkcji niedodatniej ma sens. Idąc dalej~tą drogą można sformułować
 całkiem satysfakcjonującą teorię całki.
 
 Podążając ścieżką wskazaną przez Schwartza, zobacz rozdział o~teorii
-całki w~\cite{SchwartzKursAnalizyMatematycznej79}, będę zawsze
+całki w~\cite{SchwartzKursAnalizyMatematycznej1979}, będę zawsze
 przyjmował, że~mierzalna funkcja dodatnia jest zawsze całkowalna, choć
 jej całka możne wynosić $+\infty$. Jego podejście wskazuje, że~dla
 funkcji dodatniej mierzalność nie jest potrzebna, wprowadza więc
@@ -656,14 +657,14 @@ $\int | f( p ) - f_{ n }( p ) | \dk p \to 0$, co~wymaga pewnego
 komentarza. Ponieważ $f( p ) \geq f_{ n }( p )$ stąd
 $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
 \begin{equation*}
-  \IntM{ | f( p ) - f_{ n }( p ) | }{ p } = \IntM{ ( f( p )
-    - f_{ n }( p ) ) }{ p } = \IntM{ f( p ) }{ p }
-  - \IntM{ f_{ n }( p ) }{ p }
+  \IntMo{ | f( p ) - f_{ n }( p ) | }{ p }
+  = \IntMo{ ( f( p ) - f_{ n }( p ) ) }{ p }
+  = \IntMo{ f( p ) }{ p } - \IntMo{ f_{ n }( p ) }{ p }
 \end{equation*}
 Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
-$f \in \LIo$ i~$\IntM{ f_{ n } }{ p } \to \IntM{ f }{ p }$ można
+$f \in \LIo$ i~$\IntMo{ f_{ n } }{ p } \to \IntMo{ f }{ p }$ można
 znaleźć w~każdej książce do~teorii całki, np.~str.~29--30,
-\cite{Rudin98}. % Sprawdzone.
+\cite{RudinAnalizaRzeczywistaIZespolona1998}. % Sprawdzone.
 
 \vspace{\spaceFour}
 
@@ -724,11 +725,11 @@ z~twierdzenia Radona\dywiz Nikodyma
   \label{eq:2}
   \nu( A ) = \IntSeto{ A }{ f }{ \mu }.
 \end{equation}
-Dowód tego twierdzenie podał Rudin w~\cite{Rudin98}, str.~134--136,
+Dowód tego twierdzenie podał Rudin w~\cite{RudinAnalizaRzeczywistaIZespolona1998}, str.~134--136,
 jednie nie zamieścił w~treści twierdzenia stwierdzenia, że~$f \geq 0$,
 pomimo, że~udowodnił ten fakt. Tym samym, całka ta zawsze ma sens
-i~jak zauważył Rudin, dzięki $\sigma$\dywiz skończoności można pokazać,
-że~jest równa $\nu( A )$. % Sprawdzone.
+i~jak zauważył Rudin, dzięki $\sigma$\dywiz skończoności można
+pokazać, że~jest równa $\nu( A )$. % Sprawdzone.
 
 \vspace{\spaceFour}
 
@@ -914,14 +915,14 @@ na sumę.
 Schwartz bada w~swoje książce szeregi w~przestrzeniach Banacha, które
 nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
 sumowania (str.~110 i~dalsze
-\cite{SchwartzKursAnalizyMatematycznej79}). Trajdos przetłumaczył ich
+\cite{SchwartzKursAnalizyMatematycznej1979}). Trajdos przetłumaczył ich
 nazwę jako szeregi \emph{zbieżne przestawialnie}. % Sprawdzone.
 
 \vspace{\spaceFour}
 
 
 \start \Str{45} Wzorując~się na Grabowskim i~Ingardenie
-\cite{GrabowskiIngardenMechanikaKwantowa87}, warto w~kontekście
+\cite{GrabowskiIngardenMechanikaKwantowa1987}, warto w~kontekście
 twierdzenia II.6 udowodnić jeszcze jedną piękną równość:
 \begin{equation*}
   \SP{ y }{ y' } = \Sum_{ \al \in A } \SP{ y }{ x_{ \al } }
@@ -1188,10 +1189,10 @@ twierdzenie, którego dowód znalazł Paweł Duch.
 \begin{twr}
   \label{twr:miaraA}
   Jeżeli $( X, \mu )$ i~$( Y, \nu )$ są przestrzeniami z~miarą
-  $\sigma$\dywiz skończoną i~$A \subs X \ti Y$ będzie zbiorem mierzalny
-  względem miary $\mu \ot \nu$. Jeśli dla $\mu$\dywiz prawie każdego
-  $x \in X$, miara $\nu$ zbioru $( x \ti Y ) \cap A$ jest równa 0,
-  wówczas $(\mu \ot \nu)( A ) = 0$.
+  $\sigma$\dywiz skończoną i~$A \subs X \ti Y$ będzie zbiorem
+  mierzalny względem miary $\mu \ot \nu$. Jeśli dla $\mu$\dywiz prawie
+  każdego $x \in X$, miara $\nu$ zbioru $( x \ti Y ) \cap A$ jest
+  równa 0, wówczas $(\mu \ot \nu)( A ) = 0$.
 \end{twr}
 \begin{proof}
   Standardowo będziemy utożsamiać zbiór $( x \ti Y ) \cap A$
@@ -1204,9 +1205,9 @@ twierdzenie, którego dowód znalazł Paweł Duch.
     \mu( S ) = \int_{ S } \chi_{ S }( x ) \, d\mu( x ),
   \end{equation*}
   niezależnie czy jego miara jest skończona, czy nie. Skoro zaś obie
-  miary~są $\sigma$\dywiz skończone, to zachodzi twierdzenie o~zamianie
-  całki podwójnej na iterowaną, znów niezależnie od~tego czy
-  poszczególne całki są skończone czy nie.
+  miary~są $\sigma$\dywiz skończone, to zachodzi twierdzenie
+  o~zamianie całki podwójnej na iterowaną, znów niezależnie od~tego
+  czy poszczególne całki są skończone czy nie.
 
   Dostajemy więc
   \begin{equation*}
@@ -1290,7 +1291,7 @@ zwarte~są domknięte i~tym samym borelowskie.
     2   &  9 & & \tb{surjective} & surjective \\
     14  & 10 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
     14  & 14 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
-    17  &  3 & & $\int \;\: f_{ n } \;\: dp$ & $\IntM{ f_{ n } }{ p }$ \\
+    17  &  3 & & $\int \;\: f_{ n } \;\: dp$ & $\IntMo{ f_{ n } }{ p }$ \\
     25  &  2 & & $f$ & $f \geq 0$ \\
     40  & & 3 & a~Hilbert & a~separable Hilbert \\
     44  & & 7 & $\fr{ T( y ) }{ T( x_{ 0 } ) }$
@@ -1319,7 +1320,7 @@ zwarte~są domknięte i~tym samym borelowskie.
     106 &  5 & & $C \subs O$ & $C \subs Y$ \\
     107 &  4 & & $\Real[ e^{ -i \vp } f ]$ & $e^{ -i \vp } f$ \\
     107 &  4 & & $\Real( e^{ -i \vp } f )$ & $e^{ -i \vp } f$ \\
-    107 & 10 & & $\int\! fd\mu$ & $\IntM{ f }{ \mu }$ \\
+    107 & 10 & & $\int\! fd\mu$ & $\IntMo{ f }{ \mu }$ \\
     107 & & 10 & functions & functionals \\
     109 & 4 & & $\norm{ l }\!\sup$ & $\norm{ l } \sup$ \\
     112 & & 8 & $X$ & $F$ \\
@@ -1368,7 +1369,7 @@ zwarte~są domknięte i~tym samym borelowskie.
 % ####################################################################
 % ####################################################################
 % Bibliografia
-\bibliographystyle{alpha} \bibliography{Bibliography}{}
+\bibliographystyle{plalpha} \bibliography{LibMathInfo}{}
 
 
 
