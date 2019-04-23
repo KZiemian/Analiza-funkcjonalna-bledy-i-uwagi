@@ -195,11 +195,11 @@
 
 
 \start \Str{42} \tb{Twierdzenie 2.2.6. Wzór na~promień spektralny.}
-Aby~wykazać, że~$\la^{ n } \in \sigma_{ \mc{ A } }( a^{ n })$ należy
-pokazać, iż~element
+Aby~wykazać, że~$\lambda^{ n } \in \sigma_{ \mc{ A } }( a^{ n })$
+należy pokazać, iż~element
 \begin{equation}
   \label{eq:DE-1}
-  ( \la 1 - a ) \Sum_{ j = 0 }^{ n - 1 } \la^{ j } a^{ n - 1 - j }
+  ( \lambda 1 - a ) \sum_{ j = 0 }^{ n - 1 } \lambda^{ j } a^{ n - 1 - j }
 \end{equation}
 jest nieodwracalny. Nie jest to jednak dla~mnie oczywiste. Arkadiusz
 Bochniak powiedział, żeby zobaczyć na~dowód twierdzenia widmie
@@ -299,18 +299,18 @@ dowodzie.
 przestrzeni funkcji próbnych $\Dc$~są w~mojej ocenie trochę
 chaotyczne, spróbuję więc je jakoś rozjaśnić. W~istocie chodzi o~to,
 że~definiujemy zbieżność ciągu funkcji próbnych
-$\set{ \vp_{ \nu }( t ) }$, żądając od~niego dwóch własności: 1)~Dla
-każdego $k$, ciąg $\set{ \vp_{ \nu }^{ ( k ) }( t ) }$ jest zbieżny
-jednostajnie do jakiejś funkcji
+$\set{ \varphi_{ \nu }( t ) }$, żądając od~niego dwóch własności:
+1)~Dla każdego $k$, ciąg $\set{ \varphi_{ \nu }^{ ( k ) }( t ) }$ jest
+zbieżny jednostajnie do jakiejś funkcji
 $f_{ k }( t ), \; k = 0, 1, \ld$ \\
-2)~Nośniki wszystkich funkcji $\set{ \vp_{ \nu }( t ) }$ zawarte są
+2)~Nośniki wszystkich funkcji $\set{ \varphi_{ \nu }( t ) }$ zawarte są
 w~wspólnym zbiorze zwartym. \\
 Zwróćmy uwagę, że~na~razie nie możemy mówić, iż~ciąg
-$\set{ \vp_{ \nu }( t ) }$ jest zbieżny do funkcji
+$\set{ \varphi_{ \nu }( t ) }$ jest zbieżny do funkcji
 $f( t ) = f_{ 0 }( t )$, bo~nie wiemy, czy znajomość funkcji $f( t )$
 pozwala nam odtworzyć funkcje $f_{ 1 }( t ), f_{ 2 }( t ), \ld$ W~tym
 momencie właściwsze byłoby powiedzenie, że~ciąg
-$\set{ \vp_{ \nu }( t ) }$ jest zbieżny do~rodziny funkcji
+$\set{ \varphi_{ \nu }( t ) }$ jest zbieżny do~rodziny funkcji
 $f_{ k }( t )$.
 
 Jednak na mocy twierdzeń z~analizy matematycznej, które można znaleźć
@@ -329,16 +329,16 @@ to~funkcja graniczna również jest funkcją próbną.
 \vspace{\spaceFour}
 
 
-\start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy $\CinftyR$
-został, chyba przyjęty w~domyśle. Należy jednak~się nad nim zatrzymać
-i~dowieść tego faktu. \Dok
+\start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy
+$\Cb^{ \infty }( \Rb )$ został, chyba przyjęty w~domyśle. Należy jednak~się
+nad nim zatrzymać i~dowieść tego faktu. \Dok
 
 \vspace{\spaceFour}
 
 
 \start \Str{20} Aby wywód był pełny należy jeszcze dowieść,
-że~$[ \vp( t ) ]^{ \fr{ 1 }{ n } } = \sqrt[ n ]{ \vp( t ) }$ jest
-klasy $\CinftyR$.
+że~$[ \varphi( t ) ]^{ \fr{ 1 }{ n } } = \sqrt[ n ]{ \varphi( t ) }$ jest
+klasy $\Cc^{ \infty }( \Rb )$.
 
 \vspace{\spaceFour}
 
@@ -346,8 +346,8 @@ klasy $\CinftyR$.
 \start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
 bardzo słusznie jest stale przypominany w~kontekście teorii
 dystrybucji: nie czegoś takiego jak wartość dystrybucji w~punkcie.
-Dystrybucja $f$ z~przestrzeni $\Dc'( \Rnc )$ jest określona
-na~funkcjach z~$\Dc( \Rnc )$, a~nie na $\Rnc$ i~nawet dla dystrybucji
+Dystrybucja $f$ z~przestrzeni $\Dc'( \RnC )$ jest określona
+na~funkcjach z~$\Dc( \RnC )$, a~nie na $\RnC$ i~nawet dla dystrybucji
 regularnej wartość $f( t )$ w~konkretnym punkcie nie ma zwykle sensu.
 Punkt ma bowiem miarę Lebesgue'a równą~0, więc wartość funkcji która
 reprezentuje tę~dystrybucję można w~nim dowolnie zmienić.
@@ -363,29 +363,29 @@ np.~jeśli jedna z~tych funkcji jest ciągła.
 \start \Str{29} Użycie we wzorze~(3) symbolu
 \begin{equation}
   \label{eq:Zem-s01-01}
-  \Lim_{ \veps \to 0^{ + } } \Int_{ \veps }^{ b } t^{ -3/2 } \vp( t ) \, dt,
+  \Lim_{ \epsilon \to 0^{ + } } \int_{ \epsilon }^{ b } t^{ -3/2 } \varphi( t ) \, dt,
 \end{equation}
 jest trochę mylące. Zdaje~się bowiem sugerować, że~całka
-$\int_{ 0 }^{ b } t^{ -3/2 } \vp( t ) \, dt$ istniej i~jest równa tej
-granicy, jednak całka ta jest rozbieżna jeśli $\vp( 0 ) \neq 0$.
+$\int_{ 0 }^{ b } t^{ -3/2 } \varphi( t ) \, dt$ istniej i~jest równa tej
+granicy, jednak całka ta jest rozbieżna jeśli $\varphi( 0 ) \neq 0$.
 Poprawniejsze byłoby następujące rozumowanie.
 
 Najpierw rozpatrzmy całkę
 \begin{equation}
   \label{eq:Zem-s01-02}
-  \Int_{ \veps }^{ b } t^{ -3/2 } \vp( t ) \, dt
-  = \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } - \fr{ 2 \vp( 0 ) }{ \sqrt{ b } }
-  + \Int_{ \veps }^{ b } \fr{ \psi( t ) }{ \sqrt{ t } } \, dt.
+  \int_{ \epsilon }^{ b } t^{ -3/2 } \varphi( t ) \, dt
+  = \fr{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } - \fr{ 2 \varphi( 0 ) }{ \sqrt{ b } }
+  + \int_{ \epsilon }^{ b } \fr{ \psi( t ) }{ \sqrt{ t } } \, dt.
 \end{equation}
 Całka ta jest skończona dla każdego $\veps$ i~powyższy wzór pozwala
 nam zidentyfikować źródło rozbieżności w~granicy $\veps \to 0^{ + }$.
 Dysponując tą wiedzą, możemy zdefiniować dystrybucję
-$\Pf \, t^{ -3/2 } \Hevp( t )$ wzorem
+$\Pf \, t^{ -3/2 } \HevP( t )$ wzorem
 \begin{equation}
   \label{eq:Zem-s01-03}
-  \lket \Pf \, t^{ -3/2 } \Hevp( t ), \vp( t ) \rket = \Lim_{ \veps \to 0^{ + } }
-  \left[ \Int_{ \veps }^{ +\infty } t^{ -3/2 } \vp( t ) \, dt
-    - \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } \right].
+  \langle \Pf \, t^{ -3/2 } \HevP( t ), \varphi( t ) \rangle = \Lim_{ \epsilon \to 0^{ + } }
+  \left[ \int_{ \epsilon }^{ +\infty } t^{ -3/2 } \varphi( t ) \, dt
+    - \fr{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } \right].
 \end{equation}
 
 \vspace{\spaceFour}
@@ -393,7 +393,7 @@ $\Pf \, t^{ -3/2 } \Hevp( t )$ wzorem
 
 \start \Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
 bardziej naturalne, wprowadzić pseudofunkcję
-$\Pf \fr{ \Hevp( -t )}{ t }$.
+$\Pf \fr{ \HevP( -t )}{ t }$.
 
 \vspace{\spaceFour}
 
@@ -403,15 +403,15 @@ $A$, to przez $A( t )$ będziemy oznaczać taką funkcję, że~krzywa
 ta~ma~przedstawienie $( t, A( t ) )$. Teraz należy dokonać takiej
 zmienny w~linii 2~(od~dołu) na~stronie~34. \\
 \Jest Dlatego przesunięta cześć krzywej $B$ \\
-\Pow Dlatego pole pod~krzywą $\vp( t ) B( t )$ na~przedziale
-$\tau \leq t \leq \veps$
+\Powin Dlatego pole pod~krzywą $\varphi( t ) B( t )$ na~przedziale
+$\tau \leq t \leq \epsilon$
 
 \vspace{\spaceFour}
 
 
 \start \Str{36} W~tym miejscu po raz pierwszy chyba w~książce
 pojawia~się termin ,,obszar''. Z~kontekstu wynika, że~należy przez
-niego rozumieć dowolny podzbiór $\Rnc$.
+niego rozumieć dowolny podzbiór $\RnC$.
 
 \vspace{\spaceFour}
 
@@ -460,7 +460,7 @@ powiększyć zbiór zwarty $K$ do~zbioru zwartego $\ol{ V }$, przy czym
 $K \neq \ol{ V }$. Jest tak dlatego, że~$V$ jest otwarty,
 a~w~przestrzeni Hausdorffa zbiór zwarty jest domknięty. Jeśli więc
 przestrzeń jest spójna to nie może zajść równość $K = V$, chyba,
-że~$K = \es$ lub~$K = X$.
+że~$K = \emptyset$ lub~$K = X$.
 
 Jeśli przestrzeń nie jest spójna, to~może~się zdarzyć, że~$K$ jest
 maksymalną składową spójną i tym samym jest otwarto-domkniętym
@@ -481,7 +481,7 @@ zbiorem. Wtedy jak najbardziej może~się zdarzyć, iż~$K = V$.
 \noi Schwartz formułuje równoważne założenie twierdzenia, że~każda
 kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
 
-Będę również używał oznaczenia $\supp \vp$ na~oznaczenie nośnika
+Będę również używał oznaczenia $\supp \varphi$ na~oznaczenie nośnika
 funkcji $\vpt$ (z~ang.~support).
 
 \vspace{\spaceFour}
@@ -490,16 +490,16 @@ funkcji $\vpt$ (z~ang.~support).
 \start \Str{48--49} \tb{Lemat 1, uzupełnienie.} Na~podstawie
 twierdzenia \ref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych
 własnościach. Teraz na~mocy twierdzenia \eqref{twr:Zem-s01-02} mamy
-$d( \Theta, \com \Psi ) = d_{ 1 } > 0$, jeśli więc
-$\al_{ 1 } < d_{ 1 }$, to~nośnik funkcji
-$\ga_{ \al_{ 1 } }( t - \tau )$ zawiera~się $\Psi$ dla~każdego
-$t \in \Theta$, tym samym $\vp( t ) = 1$. Gwarantuje to~też,
-iż~funkcja podcałkowa jest klasy $\Cinfty$. Dowiedliśmy więc,
-że~$\vp( t ) = 1$ na~$\Theta$.
+$d( \Theta, \complement \Psi ) = d_{ 1 } > 0$, jeśli więc
+$\alpha_{ 1 } < d_{ 1 }$, to~nośnik funkcji
+$\gamma_{ \alpha_{ 1 } }( t - \tau )$ zawiera~się w~$\Psi$ dla~każdego
+$t \in \Theta$, tym samym $\varphi( t ) = 1$. Gwarantuje to~też,
+iż~funkcja podcałkowa jest klasy $\Cc^{ \infty }$. Dowiedliśmy więc,
+że~$\varphi( t ) = 1$ na~$\Theta$.
 
-Jeśli teraz oznaczymy odległość $d( \Psi, \com \Om ) = d_{ 2 } > 0$
-i~przyjmiemy $\al_{ 2 } < d_{ 2 }$, to dla każdego $t \in \com \Om$
-nośnik funkcji $\ga_{ \al_{ 1 } }( t - \tau )$ nie przecina~się
+Jeśli teraz oznaczymy odległość $d( \Psi, \com \Omega ) = d_{ 2 } > 0$
+i~przyjmiemy $\alpha_{ 2 } < d_{ 2 }$, to dla każdego $t \in \com \Omega$
+nośnik funkcji $\gamma_{ \alpha_{ 1 } }( t - \tau )$ nie przecina~się
 z~$\Psi$, więc $\vpt = 0$.
 
 \vspace{\spaceFour}
@@ -513,8 +513,8 @@ z~$\Psi$, więc $\vpt = 0$.
 
 
 \start \Str{49} \tb{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy
-założeń, każdy domknięty podzbiór $\Om_{ k }$ jest zwarty, więc
-istnienie zbiorów $\La_{ k }$ o~zadanych własnościach wynika ponownie
+założeń, każdy domknięty podzbiór $\Omega_{ k }$ jest zwarty, więc
+istnienie zbiorów $\Lc_{ k }$ o~zadanych własnościach wynika ponownie
 z~twierdzenia \eqref{twr:Zem-s01-01}.
 
 \vspace{\spaceFour}
@@ -522,23 +522,23 @@ z~twierdzenia \eqref{twr:Zem-s01-01}.
 
 \start \Str{50} \tb{Lemat 4, uzupełnienie.} Niech $A$ będzie zbiorem
 ograniczonym w~$\Rn$, czyli zawiera~się on w~kuli $K( 0, r )$. Trzeba
-teraz pokazać, że~tylko skończona ilość zbiorów $\Oc_{ \al }$ z~nowego
+teraz pokazać, że~tylko skończona ilość zbiorów $\Oc_{ \alpha }$ z~nowego
 pokrycia może przecinać~się z~tą kulą. Oznaczymy majorantę średnicy
 zbiorów przez $\mr{Diam}_{ \mf{ C } }$, a~przez $M$ minimalną
 odległość punktu prostopadłościanu reprezentowanego układem liczb
 $\{ m_{ 1 }, \ld, m_{ n } \}$ od~punktu $0$, czyli
 \begin{equation}
   \label{eq:Zem-s01-06}
-  M = \left( \Sum_{ i = 0 }^{ n } m_{ i } \right)^{ \fr{ 1 }{ 2 } }.
+  M = \left( \sum_{ i = 0 }^{ n } m_{ i } \right)^{ \fr{ 1 }{ 2 } }.
 \end{equation}
-Zbiór $\Oc_{ \al }$ może przeciąć zadaną kulę, tylko jeśli
+Zbiór $\Oc_{ \alpha }$ może przeciąć zadaną kulę, tylko jeśli
 $M - \mr{Diam}_{ \mf{C} } < r$, czyli mówiąc prościej,
-jeśli~prostopadłościan jest na tyle blisko, że~zbiór $\Oc_{ \al }$
+jeśli~prostopadłościan jest na tyle blisko, że~zbiór $\Oc_{ \alpha }$
 może dosięgnąć kuli $K( 0, r )$. Ponieważ istnieje tylko skończona
 ilość układów liczb $\{ m_{ 1 }, \ld, m_{ n } \}$ spełniających tę
 nierówność, więc tylko skończoną ilość razy będziemy wybierali
-skończoną rodzinę zbiorów $\Oc_{ \al }$ takich, że~jest możliwe
-by~$K( 0, r ) \cap \Oc_{ \al } \neq \O$.
+skończoną rodzinę zbiorów $\Oc_{ \alpha }$ takich, że~jest możliwe
+by~$K( 0, r ) \cap \Oc_{ \alpha } \neq \O$.
 
 \vspace{\spaceFour}
 
@@ -570,9 +570,9 @@ wprowadzony niepotrzebnie.
 \start \Str{71} Wzór
 \begin{equation}
   \label{eq:Zem-s01-07}
-  f( t ) = f_{ c }( t ) - \Sum_{ \nu = -1 }^{ -\infty } \Del f_{ \nu }
-  \Hevp( t_{ \nu } - t ) + \Sum_{ \nu = 0 }^{ \infty } \Del f_{ \nu }
-  \Hevp( t - t_{ \nu } ),
+  f( t ) = f_{ c }( t ) - \sum_{ \nu = -1 }^{ -\infty } \Delta f_{ \nu }
+  \HevP( t_{ \nu } - t ) + \sum_{ \nu = 0 }^{ \infty } \Delta f_{ \nu }
+  \HevP( t - t_{ \nu } ),
 \end{equation}
 zawiera pewną subtelność, którą warto wyjaśnić. \Dok
 
@@ -582,7 +582,7 @@ zawiera pewną subtelność, którą warto wyjaśnić. \Dok
 \start \Str{74} Fakt, że~iloraz różnicowy
 \begin{equation}
   \label{eq:Zem-s01-08}
-  \fr{ \vp( t - \Delt ) - \vp( t ) }{ \Delt }
+  \fr{ \varphi( t - \Delta ) - \varphi( t ) }{ \Delta }
 \end{equation}
 dąży do $-\vpDer$ przy $\DelToZero$ wynika od~razu z~definicji
 pochodnej i~twierdzenia o~składaniu granic\footnote{Udowodnij i~zapisz
@@ -590,12 +590,12 @@ pochodnej i~twierdzenia o~składaniu granic\footnote{Udowodnij i~zapisz
 zbieżność punktowa. Aby zaś skorzystać z~ciągłości dystrybucji
 potrzebujemy udowodnić zbieżność jednostajną tego ilorazy do~$-\vpDer$
 oraz jednostajną zbieżność jego $k$\dywiz pochodnej
-do~$-\vp^{ ( k + 1 ) }( t )$. Inaczej mówiąc dla $k = 0, 1, 2, \ld$
+do~$-\varphi^{ ( k + 1 ) }( t )$. Inaczej mówiąc dla $k = 0, 1, 2, \ld$
 musi zachodzić
 \begin{equation}
   \label{eq:Zem-s01-09}
-  \Lim_{ \DelToZero } \fr{ \vp^{ ( k ) }( t - \Delt ) - \vp^{ ( k ) }( t ) }
-  { \Delt } = -\vp^{ ( k + 1 ) }( t ),
+  \Lim_{ \Delta \to 0 } \fr{ \varphi^{ ( k ) }( t - \Delta ) - \varphi^{ ( k ) }( t ) }{ \Delta }
+  = -\varphi^{ ( k + 1 ) }( t ),
 \end{equation}
 gdzie zbieżność jest rozumiana jako zbieżność jednostajna.
 
@@ -624,34 +624,34 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
     % 25 & & 1 & dąży & dąży punktowo \\
     % 26 & 5 & & pochodnym od & pochodną \\
     12  & &  6 & wartości & tylko rzeczywiste \\
-    14  &  6 & & całka & całka przedstawiająca $\vp_{ \al }'( t )$ \\
+    14  &  6 & & całka & całka przedstawiająca $\varphi_{ \alpha }'( t )$ \\
     16  & &  6 & ciągi & funkcje \\
     17  & &  4 & z przestrzeni & na przestrzeni \\
     17  & &  3 & która ma & które mają \\
     17  & &  2 & \emph{przestrzeni} & \emph{funkcjonału} \\
-    18  &  6 & & $\{ \vp_{ \nu } \}\nu \to \infty$
-           & $\{ \vp_{ \nu } \}$, przy $\nu \to \infty$ \\
+    18  &  6 & & $\{ \varphi_{ \nu } \}\nu \to \infty$
+           & $\{ \varphi_{ \nu } \}$, przy $\nu \to \infty$ \\
     18  & & 10 & dystrybuantę & dystrybucję \\
     21  &  9 & & $\Dc$ & $\Dc'$ \\
     25  & &  1 & dąży & dąży punktowo \\
     26  &  5 & & pochodnym od & pochodną \\
-    27  &  7 & & $\del^{ ( 1 ) }\bsym{ ( t } )$ & $\del^{ ( 1 ) }( t )$ \\
-    27  & &  9 & $< f,\, \vp >$ & $\dyst{ f }{ \vp }$ \\
-    27  & &  3 & $\vp^{ ( k \bsym{ ) } }\bsym{ ( t ) } $
-           & $\vp^{ ( k ) }( t )$ \\
+    27  &  7 & & $\delta^{ ( 1 ) }\bsym{ ( t } )$ & $\delta^{ ( 1 ) }( t )$ \\
+    27  & &  9 & $< f,\, \varphi >$ & $\dyst{ f }{ \varphi }$ \\
+    27  & &  3 & $\varphi^{ ( k \bsym{ ) } }\bsym{ ( t ) } $
+           & $\varphi^{ ( k ) }( t )$ \\
     28  & & 17 & dążą & jednocześnie dążą \\
-    28  & &  4 & $\del^{ ( 2 ) }( 0 )$ & $\vp^{ ( 2 ) }( 0 )$ \\
+    28  & &  4 & $\delta^{ ( 2 ) }( 0 )$ & $\varphi^{ ( 2 ) }( 0 )$ \\
     29  & &  8 & $t = 0$ & $t \neq 0$ \\
-    31  &  6 & & $\vp( )$ & $\vp( t )$ \\
-    31  &  8 & & $\Pf \, | t |^{ \be } \; 1_{ + }( t )$
-           & $\Pf \, | t |^{ \be } \; 1_{ + }( -t )$ \\
+    31  &  6 & & $\varphi( )$ & $\varphi( t )$ \\
+    31  &  8 & & $\Pf \, | t |^{ \beta } \; 1_{ + }( t )$
+           & $\Pf \, | t |^{ \beta } \; 1_{ + }( -t )$ \\
     33  & &  1 & skończoną & nieskończoną \\
-    34  & &  1 & $\vp( 0 ) \log\veps$ & $\vp( 0 ) \log\veps.$ \\
-    35  &  1 & & tj.~$\dyst{ B }{ \vp }$. Wartość & Wartość \\
-    36  & &  7 & $\pr t_{ 2 }^{ \: k_{ 2 } } \ld \pr t_{ n }^{ \: k_{ n } }$
-           & $\pr t_{ 2 }^{ k_{ 2 } } \ld \pr t_{ n }^{ k_{ n } }$ \\
-    37  & & 16 & \emph{mamy $\vp_{ \al }( t )$ równe}
-           & \emph{$\vp_{ \al }( t )$ jest równa} \\
+    34  & &  1 & $\varphi( 0 ) \log\epsilon$ & $\varphi( 0 ) \log \epsilon.$ \\
+    35  &  1 & & tj.~$\dyst{ B }{ \varphi }$. Wartość & Wartość \\
+    36  & &  7 & $\partial t_{ 2 }^{ \: k_{ 2 } } \ld \partial t_{ n }^{ \: k_{ n } }$
+           & $\partial t_{ 2 }^{ k_{ 2 } } \ld \partial t_{ n }^{ k_{ n } }$ \\
+    37  & & 16 & \emph{mamy $\varphi_{ \alpha }( t )$ równe}
+           & \emph{$\varphi_{ \alpha }( t )$ jest równa} \\
     37  & &  1 & wyboru układu & układu \\
     38  &  4 & & $\{ 0, 0, \ld, 0 ) \}$ & $\{ 0, 0, \ld, 0 \}$) \\
     41  & &  2 & dystrybucji & dystrybucji regularnej \\
@@ -676,26 +676,26 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 \end{center}
 \noi \StrWd{21}{10} \\
 \Jest opisem niewykończonego \\
-\Pow niepełnym opisem pewnego \\
+\Powin niepełnym opisem pewnego \\
 \StrWg{34}{2} \\
 \Jest Odpowiednie nachylenie wskazuje \\
-\Pow Odpowiednią funkcje przedstawia \\
+\Powin Odpowiednią funkcje przedstawia \\
 \StrWd{38}{4} \\
 \Jest choć może nie być sprecyzowana jego wartość \\
-\Pow choć jego wartość może nie być podana jawnie \\
+\Powin choć jego wartość może nie być podana jawnie \\
 \StrWd{40}{6} \\
 \Jest wartości liczbowych \\
-\Pow wartości liczbowej w~punkcie \\
+\Powin wartości liczbowej w~punkcie \\
 \StrWg{50}{14} \\
 \Jest \emph{pokrycie $\Rn$.} \\
-\Pow \emph{pokrycie $\Rn$, przy czym średnice wszystkich jego zbiorów,
+\Powin \emph{pokrycie $\Rn$, przy czym średnice wszystkich jego zbiorów,
   są~ograniczone przez tą samą stałą, co~dla rodziny $\mf{C}_{ T }$.} \\
 \StrWd{71}{5} \\
 \Jest \emph{$M$ i $k$ stałych rzeczywistych} \\
-\Pow \emph{$M > 0$ i~$k$ naturalnego} \\
+\Powin \emph{$M > 0$ i~$k$ naturalnego} \\
 \StrWd{71}{4} \\
 \Jest \emph{gdzie $p$} \\
-\Pow \emph{gdzie $p = k + 2$, a~$g( t )$} \\
+\Powin \emph{gdzie $p = k + 2$, a~$g( t )$} \\
 
 \vspace{\spaceTwo}
 
@@ -717,27 +717,28 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 
 \vspace{\spaceThree}
 
+
 \start \Str{16} Rozważania o~zamkniętości ze~względu na zbieżność
 przestrzeni funkcji próbnych $\Dc$~są w~mojej ocenie trochę
 chaotyczne, spróbuję więc je jakoś rozjaśnić. W~istocie chodzi o~to,
 że~definiujemy zbieżność ciągu funkcji próbnych
-$\set{ \vp_{ \nu }( t ) }$, żądając od~niego dwóch własności: 1)~Dla
-każdego $k$, ciąg $\set{ \vp_{ \nu }^{ ( k ) }( t ) }$ jest zbieżny
+$\set{ \varphi_{ \nu }( t ) }$, żądając od~niego dwóch własności: 1)~Dla
+każdego $k$, ciąg $\set{ \varphi_{ \nu }^{ ( k ) }( t ) }$ jest zbieżny
 jednostajnie do jakiejś funkcji
 $f_{ k }( t ), \; k = 0, 1, \ld$ \\
-2)~Nośniki wszystkich funkcji $\set{ \vp_{ \nu }( t ) }$ zawarte są
+2)~Nośniki wszystkich funkcji $\set{ \varphi_{ \nu }( t ) }$ zawarte są
 w~wspólnym zbiorze zwartym. \\
 Zwróćmy uwagę, że~na~razie nie możemy mówić, iż~ciąg
-$\set{ \vp_{ \nu }( t ) }$ jest zbieżny do funkcji
+$\set{ \varphi_{ \nu }( t ) }$ jest zbieżny do funkcji
 $f( t ) = f_{ 0 }( t )$, bo~nie wiemy, czy znajomość funkcji $f( t )$
 pozwala nam odtworzyć funkcje $f_{ 1 }( t ), f_{ 2 }( t ), \ld$ W~tym
 momencie właściwsze byłoby powiedzenie, że~ciąg
-$\set{ \vp_{ \nu }( t ) }$ jest zbieżny do~rodziny funkcji
+$\set{ \varphi_{ \nu }( t ) }$ jest zbieżny do~rodziny funkcji
 $f_{ k }( t )$.
 
 Jednak na mocy twierdzeń z~analizy matematycznej, które można znaleźć
 np.~w~książce Schwartza, str.~649--652,~\cite{Sch79}, przy tych
-warunkach funkcja $f( t )$ jest klasy $\Cinfty$ i~zachodzi
+warunkach funkcja $f( t )$ jest klasy $\Cc^{ \infty }$ i~zachodzi
 $f^{ ( k ) }( t ) = f_{ k }( t )$. Tym samy pokazaliśmy, że~zbieżność
 zdefiniowana wyżej, jest rzeczywiście zbieżnością do~jakiejś funkcji.
 Z~drugiego warunku zbieżności ciągu funkcji próbnych wynika,
@@ -755,8 +756,8 @@ i~dowieść tego faktu. \Dok
 \start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
 bardzo słusznie jest stale przypominany w~kontekście teorii
 dystrybucji: nie czegoś takiego jak wartość dystrybucji w~punkcie.
-Dystrybucja $f$ z~przestrzeni $\Dc'( \Rnc )$ jest określona
-na~funkcjach z~$\Dc( \Rnc )$, a~nie na $\Rnc$ i~nawet dla dystrybucji
+Dystrybucja $f$ z~przestrzeni $\Dc'( \RnC )$ jest określona
+na~funkcjach z~$\Dc( \RnC )$, a~nie na $\RnC$ i~nawet dla dystrybucji
 regularnej wartość $f( t )$ w~konkretnym punkcie nie ma zwykle sensu.
 Punkt ma bowiem miarę Lebesgue'a równą~0, więc wartość funkcji która
 reprezentuje tę~dystrybucję można w~nim dowolnie zmienić.
@@ -769,47 +770,47 @@ np.~jeśli jedna z~tych funkcji jest ciągła.
 \start \Str{29} Użycie we wzorze (3) symbolu
 \begin{equation}
   \label{eq:Zem-s01-01}
-  \Lim_{ \veps \to 0^{ + } } \Int_{ \veps }^{ b } t^{ -3/2 } \vp( t ) \, dt,
+  \Lim_{ \epsilon \to 0^{ + } } \int_{ \epsilon }^{ b } t^{ -3/2 } \varphi( t ) \, dt,
 \end{equation}
 jest trochę mylące. Zdaje~się bowiem sugerować, że~całka
-$\int_{ 0 }^{ b } t^{ -3/2 } \vp( t ) \, dt$ istniej i~jest równa tej
-granicy, jednak całka ta jest rozbieżna jeśli $\vp( 0 ) \neq 0$.
+$\int_{ 0 }^{ b } t^{ -3/2 } \varphi( t ) \, dt$ istniej i~jest równa tej
+granicy, jednak całka ta jest rozbieżna jeśli $\varphi( 0 ) \neq 0$.
 Poprawniejsze byłoby następujące
 rozumowanie. % Może się nie znam ale czy tu też nie powinno być :
 
 Najpierw rozpatrzmy całkę
 \begin{equation}
   \label{eq:Zem-s01-02}
-  \Int_{ \veps }^{ b } t^{ -3/2 } \vp( t ) \, dt
-  = \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } - \fr{ 2 \vp( 0 ) }{ \sqrt{ b } }
-  + \Int_{ \veps }^{ b } \fr{ \psi( t ) }{ \sqrt{ t } } \, dt.
+  \int_{ \epsilon }^{ b } t^{ -3/2 } \varphi( t ) \, dt
+  = \fr{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } - \fr{ 2 \varphi( 0 ) }{ \sqrt{ b } }
+  + \int_{ \epsilon }^{ b } \fr{ \psi( t ) }{ \sqrt{ t } } \, dt.
 \end{equation}
 Całka ta jest skończona dla każdego $\veps$ i~powyższy wzór pozwala
-nam zidentyfikować źródło rozbieżności w~granicy $\veps \to 0^{ + }$.
+nam zidentyfikować źródło rozbieżności w~granicy $\epsilon \to 0^{ + }$.
 Dysponując tą wiedzą, możemy zdefiniować dystrybucję
-$\Pf \, t^{ -3/2 } \Hevp( t )$ wzorem
+$\Pf \, t^{ -3/2 } \HevP( t )$ wzorem
 \begin{equation}
   \label{eq:Zem-s01-03}
-  \lket \Pf \, t^{ -3/2 } \Hevp( t ), \vp( t ) \rket = \Lim_{ \veps \to 0^{ + } }
-  \left[ \Int_{ \veps }^{ +\infty } t^{ -3/2 } \vp( t ) \, dt
-    - \fr{ 2 \vp( 0 ) }{ \sqrt{ \veps } } \right].
+  \langle \Pf \, t^{ -3/2 } \HevP( t ), \varphi( t ) \rangle = \Lim_{ \epsilon \to 0^{ + } }
+  \left[ \int_{ \epsilon }^{ +\infty } t^{ -3/2 } \varphi( t ) \, dt
+    - \fr{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } \right].
 \end{equation}
 
 \start \Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
 bardziej naturalne, wprowadzić pseudofunkcję
-$\Pf \fr{ \Hevp( -t )}{ t }$.
+$\Pf \fr{ \HevP( -t ) }{ t }$.
 
 \start \Str{33--34} Przyjmijmy najpierw, że~jeżeli dana jest krzywa
 $A$, to przez $A( t )$ będziemy oznaczać taką funkcję, że~krzywa
 ta~ma~przedstawienie $( t, A( t ) )$. Teraz należy dokonać takiej
 zmienny w~linii 2~(od~dołu) na~stronie~34. \\
 \Jest Dlatego przesunięta cześć krzywej $B$ \\
-\Pow Dlatego pole pod~krzywą $\vp( t ) B( t )$ na~przedziale
-$\tau \leq t \leq \veps$
+\Powin Dlatego pole pod~krzywą $\varphi( t ) B( t )$ na~przedziale
+$\tau \leq t \leq \epsilon$
 
 \start \Str{36} W~tym miejscu po raz pierwszy chyba w~książce
 pojawia~się termin ,,obszar''. Z~kontekstu wynika, że~należy przez
-niego rozumieć dowolny podzbiór $\Rnc$.
+niego rozumieć dowolny podzbiór $\RnC$.
 
 \start \Str{41} Obok nazwy \emph{zbiór zer dystrybucji}, proponowałbym
 również \emph{zbiór zerowy dystrybucji}.
@@ -874,11 +875,11 @@ kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
 twierdzenia \ref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych
 własnościach. Teraz na~mocy twierdzenia \ref{twr:Zem-s01-02}
 $d( \Theta, \com \Psi ) = d_{ 1 } > 0$, jeśli więc
-$\al_{ 1 } < d_{ 1 }$, to~nośnik funkcji
-$\ga_{ \al_{ 1 } }( t - \tau )$ zawiera~się $\Psi$ dla~każdego
-$t$~z~$\Theta$, tym samym $\vp( t ) = 1$. Gwarantuje to~też,
-iż~funkcja podcałkowa jest klasy $\Cinfty$. Dowiedliśmy więc,
-że~$\vp( t ) = 1$ na~$\Theta$.
+$\alpha_{ 1 } < d_{ 1 }$, to~nośnik funkcji
+$\gamma_{ \alpha_{ 1 } }( t - \tau )$ zawiera~się $\Psi$ dla~każdego
+$t$~z~$\Theta$, tym samym $\varphi( t ) = 1$. Gwarantuje to~też,
+iż~funkcja podcałkowa jest klasy $\Cc^{ \infty }$. Dowiedliśmy więc,
+że~$\varphi( t ) = 1$ na~$\Theta$.
 
 
 \newpage
@@ -891,22 +892,22 @@ iż~funkcja podcałkowa jest klasy $\Cinfty$. Dowiedliśmy więc,
                               & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu & & \\
     \hline
-    27 & 7 & & $\del^{ ( 1 ) }\bsym{ ( t } )$ & $\del^{ ( 1 ) }( t )$ \\
-    27 & & 3 & $\vp^{ ( k \bsym{ ) } }\bsym{ ( t ) } $
-           & $\vp^{ ( k ) }( t )$ \\
+    27 & 7 & & $\delta^{ ( 1 ) }\bsym{ ( t } )$ & $\delta^{ ( 1 ) }( t )$ \\
+    27 & & 3 & $\varphi^{ ( k \bsym{ ) } }\bsym{ ( t ) } $
+           & $\varphi^{ ( k ) }( t )$ \\
     28 & & 17 & dążą & jednocześnie dążą \\
-    28 & & 4 & $\del^{ ( 2 ) }( 0 )$ & $\vp^{ ( 2 ) }( 0 )$ \\
+    28 & & 4 & $\delta^{ ( 2 ) }( 0 )$ & $\varphi^{ ( 2 ) }( 0 )$ \\
     29 & & 8 & $t = 0$ & $t \neq 0$ \\
-    31 & 6 & & $\vp( )$ & $\vp( t )$ \\
-    31 & 8 & & $\Pf \, | t |^{ \be } \; 1_{ + }( t )$
-           & $\Pf \, | t |^{ \be } \; 1_{ + }( -t )$ \\
+    31 & 6 & & $\varphi( )$ & $\varphi( t )$ \\
+    31 & 8 & & $\Pf \, | t |^{ \beta } \; 1_{ + }( t )$
+           & $\Pf \, | t |^{ \beta } \; 1_{ + }( -t )$ \\
     33 & & 1 & skończoną & nieskończoną \\
-    34 & & 1 & $\vp( 0 ) \log\veps$ & $\vp( 0 ) \log\veps.$ \\
-    35 & 1 & & tj.~$\lket B, \vp \rket$. Wartość & Wartość \\
-    36 & & 7 & $\pr t_{ 2 }^{ \: k_{ 2 } } \ld \pr t_{ n }^{ \: k_{ n } }$
-           & $\pr t_{ 2 }^{ k_{ 2 } } \ld \pr t_{ n }^{ k_{ n } }$ \\
-    37 & & 16 & \emph{mamy $\vp_{ \al }( t )$ równe}
-           & \emph{$\vp_{ \al }( t )$ jest równa} \\
+    34 & & 1 & $\varphi( 0 ) \log \epsilon$ & $\varphi( 0 ) \log \epsilon.$ \\
+    35 & 1 & & tj.~$\langle B, \varphi \rangle$. Wartość & Wartość \\
+    36 & & 7 & $\partial t_{ 2 }^{ \: k_{ 2 } } \ld \partial t_{ n }^{ \: k_{ n } }$
+           & $\partial t_{ 2 }^{ k_{ 2 } } \ld \partial t_{ n }^{ k_{ n } }$ \\
+    37 & & 16 & \emph{mamy $\varphi_{ \alpha }( t )$ równe}
+           & \emph{$\varphi_{ \alpha }( t )$ jest równa} \\
     37 & & 1 & wyboru układu & układu \\
     38 & 4 & & $\{ 0, 0, \ld, 0 ) \}$ & $\{ 0, 0, \ld, 0 \}$) \\
     41 & & 2 & dystrybucji & dystrybucji regularnej \\
@@ -924,16 +925,16 @@ iż~funkcja podcałkowa jest klasy $\Cinfty$. Dowiedliśmy więc,
 \noi
 \StrWd{21}{10} \\
 \Jest opisem niewykończonego \\
-\Pow niepełnym opisem pewnego \\
+\Powin niepełnym opisem pewnego \\
 \StrWg{34}{2} \\
 \Jest Odpowiednie nachylenie wskazuje \\
-\Pow Odpowiednią funkcje przedstawia \\
+\Powin Odpowiednią funkcje przedstawia \\
 \StrWd{38}{4} \\
 \Jest choć może nie być sprecyzowana jego wartość \\
-\Pow choć jego wartość może nie być podana jawnie \\
+\Powin choć jego wartość może nie być podana jawnie \\
 \StrWd{40}{6} \\
 \Jest wartości liczbowych \\
-\Pow wartości liczbowej w~punkcie \\
+\Powin wartości liczbowej w~punkcie \\
 
 \vspace{\spaceTwo}
 
@@ -1003,9 +1004,8 @@ wynikające z niej konsekwencje, nie są wystarczająco omówione.
 % \noi
 % \StrWd{21}{10} \\
 % \Jest opisem niewykończonego \\
-% \Pow niepełnym opisem pewnego \\
- Str. 31. \ldots the resolvent
-  $R( \lambda ) = ( A - \lambda I )$\ldots
+% \Powin niepełnym opisem pewnego \\
+Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
 
 
 
@@ -1027,16 +1027,27 @@ wynikające z niej konsekwencje, nie są wystarczająco omówione.
 % \begin{tabular}{|c|c|c|c|c|}
 %   \hline
 %   & \multicolumn{2}{c|}{} & & \\
-%   Strona & \multicolumn{2}{c|}{Wiersz}& Jest & Powinno być \\ \cline{2-3}
-%   & Od góry & Od dołu &  &  \\ \hline
+%   Strona & \multicolumn{2}{c|}{Wiersz}& Jest
+%                             & Powinno być \\ \cline{2-3}
+%   & Od góry & Od dołu & & \\
+%   \hline
+%   5 & & 6 & $x_{ 0 }^{ -1 } + \sum\limits_{ n = 0 }^{ \infty }
+%             [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n } x_{ 0 }^{ -1 }$
+%          & $\sum\limits_{ n = 0 }^{ \infty } [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n }
+%            x_{ 0 }^{ -1 }$ \\
+%   7 & & 9 & $[ ( 1 / \lambda ) x - 1 ]^{ -1 }$
+%          & $[ 1 - ( 1 / \lambda ) x ]^{ -1 }$ \\
+%   7 & & 8 & $\frac{ 1 }{ \lambda } \big( \frac{ 1 }{ \lambda } - x \big)^{ -1 }$
+%          & $-\frac{ 1 }{ \lambda } \big( 1 - \frac{ 1 }{ \lambda } x \big)^{ -1 }$ \\
+%   7 & & 3 & $\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$
+%          & $-\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$ \\
+%   8 & 3 & & $( \lambda - \lambda_{ 0 } )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$
+%          & $-( \lambda_{ 0 } - \lambda )^{ n } f( \plambda_{ 0 } )^{ n + 1 }$ \\
 %   & & & & \\
-%   5 & & 6 & $x_{ 0 }^{ -1 } + \sum\limits_{ n = 0 }^{ \infty } [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n } x_{ 0 }^{ -1 }$ & $\sum\limits_{ n = 0 }^{ \infty } [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n } x_{ 0 }^{ -1 }$ \\
-%   7 & & 9 & $[ ( 1 / \uplambda ) x - 1 ]^{ -1 }$ & $[ 1 - ( 1 / \uplambda ) x ]^{ -1 }$ \\
-%   7 & & 8 & $\frac{ 1 }{ \uplambda } \big( \frac{ 1 }{ \uplambda } - x \big)^{ -1 }$ & $-\frac{ 1 }{ \uplambda } \big( 1 - \frac{ 1 }{ \uplambda } x \big)^{ -1 }$ \\
-%   7 & & 3 & $\sum\limits_{ n = 0 }^{ \infty } ( 1 / \uplambda^{ n + 1 } ) x^{ n }$ & $-\sum\limits_{ n = 0 }^{ \infty } ( 1 / \uplambda^{ n + 1 } ) x^{ n }$ \\
-%   8 & 3 & & $( \uplambda - \uplambda_{ 0 } )^{ n } f( \uplambda_{ 0 } )^{ n + 1 }$ & $-( \uplambda_{ 0 } - \uplambda )^{ n } f( \uplambda_{ 0 } )^{ n + 1 }$ \\
-%   & & & & \\ \hline
+%   \hline
 % \end{tabular}
+
+
 
 
 
