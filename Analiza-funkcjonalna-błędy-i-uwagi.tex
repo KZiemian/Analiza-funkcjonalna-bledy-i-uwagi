@@ -1,9 +1,9 @@
 % Autor: Kamil Ziemian
 % Korekta: Wojciech Dyba
 
-% --------------------------------------------------------------------
+% ---------------------------------------------------------------------
 % Podstawowe ustawienia i pakiety
-% --------------------------------------------------------------------
+% ---------------------------------------------------------------------
 \RequirePackage[l2tabu, orthodox]{nag} % Wykrywa przestarzałe i niewłaściwe
 % sposoby używania LaTeXa. Więcej jest w l2tabu English version.
 \documentclass[a4paper,11pt]{article}
@@ -17,9 +17,9 @@
 
 
 
-% ----------------------------
+% ------------------------------
 % Podstawowe pakiety (niezwiązane z ustawieniami języka)
-% ----------------------------
+% ------------------------------
 \usepackage{microtype} % Twierdzi, że poprawi rozmiar odstępów w tekście.
 \usepackage{graphicx} % Wprowadza bardzo potrzebne komendy do wstawiania
 % grafiki.
@@ -28,9 +28,9 @@
 % wprowadzane bezpośrednio w tekście.
 \usepackage{vmargin} % Pozwala na prostą kontrolę rozmiaru marginesów,
 % za pomocą komend poniżej. Rozmiar odstępów jest mierzony w calach.
-% ----------------------------
+% ------------------------------
 % MARGINS
-% ----------------------------
+% ------------------------------
 \setmarginsrb
 { 0.7in} % left margin
 { 0.6in} % top margin
@@ -80,20 +80,20 @@
 
 
 
-% ----------------------------
+% ------------------------------
 % Pakiety napisane przez użytkownika.
 % Mają być w tym samym katalogu to ten plik .tex
-% ----------------------------
-\usepackage{analizafunkcjonalna}  % Pakiet napisany konkretnie dla tego
-% pliku.
-\usepackage{latexshortcuts}
-\usepackage{mathshortcuts}
+% ------------------------------
+\usepackage{latexgeneralcommands}
+\usepackage{mathcommands}
+
+\usepackage{functionalanalysiscommands}
 
 
 
-% --------------------------------------------------------------------
+% ---------------------------------------------------------------------
 % Dodatkowe ustawienia dla języka polskiego
-% --------------------------------------------------------------------
+% ---------------------------------------------------------------------
 \renewcommand{\thesection}{\arabic{section}.}
 % Kropki po numerach rozdziału (polski zwyczaj topograficzny)
 \renewcommand{\thesubsection}{\thesection\arabic{subsection}}
@@ -101,9 +101,9 @@
 
 
 
-% ----------------------------
+% ------------------------------
 % Ustawienia różnych parametrów tekstu
-% ----------------------------
+% ------------------------------
 \renewcommand{\arraystretch}{1.2} % Ustawienie szerokości odstępów między
 % wierszami w tabelach.
 
@@ -111,10 +111,10 @@
 
 
 
-% ----------------------------
+% ------------------------------
 % Pakiet "hyperref"
 % Polecano by umieszczać go na końcu preambuły.
-% ----------------------------
+% ------------------------------
 \usepackage{hyperref} % Pozwala tworzyć hiperlinki i zamienia odwołania
 % do bibliografii na hiperlinki.
 
@@ -122,13 +122,23 @@
 
 
 
-% --------------------------------------------------------------------
+
+
+
+
+
+% ---------------------------------------------------------------------
 % Tytuł, autor, data
 \title{Analiza funkcjonalna --~błędy i~uwagi}
 
 % \author{}
 % \date{}
-% --------------------------------------------------------------------
+% ---------------------------------------------------------------------
+
+
+
+
+
 
 
 
@@ -140,25 +150,30 @@
 
 
 
+
+
 % ######################################
 \maketitle % Tytuł całego tekstu
 % ######################################
 
 
 
-% ##################
+
+
+% ############################
 \Work{ % Autor i tytuł dzieła
   A. V. Balakrishnan \\
-  ,,Analiza funkcjonalna stosowana'',
-  \cite{BalakrishnanAnalizaFunkcjonalnaStosowana92} }
+  „Analiza funkcjonalna stosowana”,
+  \cite{BalakrishnanAnalizaFunkcjonalnaStosowana1992} }
 
-% Uwagi:
-% \begin{itemize}
-% \item[--]
-% \end{itemize}
 
-\CenterTB{Błędy}
+
+% ##################
+\CenterBoldFont{Błędy}
+
+
 \begin{center}
+
   \begin{tabular}{|c|c|c|c|c|}
     \hline
     & \multicolumn{2}{c|}{} & & \\
@@ -172,30 +187,38 @@
     % & & & & \\
     \hline
   \end{tabular}
+
 \end{center}
 
 \vspace{\spaceTwo}
+% ############################
 
 
 
+
+
+
+
+
+
+
+% ############################
+\Work{ % Autorzy i tytuł dzieła
+  Anton Deitmar, Siegrfied Echterhoff \\
+  „Principles~of Harmonic Analysis”,
+  \cite{DeitmarEcherhoffPrinciplesOfHarmonicAnalysis2009} }
 
 
 % ##################
-\Work{ % Autorzy i tytuł dzieła
-  Anton Deitmar, Siegrfied Echterhoff \\
-  ,,Principles~of Harmonic Analysis'',
-  \cite{DeitmarEcherhoffPrinciplesOfHarmonicAnalysis09} }
-
-
-\CenterTB{Uwagi}
+\CenterBoldFont{Uwagi}
 
 % \noi \tb{Konkretne strony}
 
 % \vspace{\spaceFour}
 
 
-\start \Str{42} \tb{Twierdzenie 2.2.6. Wzór na~promień spektralny.}
-Aby~wykazać, że~$\lambda^{ n } \in \sigma_{ \mc{ A } }( a^{ n })$
+\start \textbf{Str. 42. Twierdzenie 2.2.6. Wzór na~promień spektralny.}
+Aby~wykazać, że~$\lambda^{ n } \in \sigma_{ \Acal }( a^{ n })$
 należy pokazać, iż~element
 \begin{equation}
   \label{eq:DE-1}
@@ -203,22 +226,24 @@ należy pokazać, iż~element
 \end{equation}
 jest nieodwracalny. Nie jest to jednak dla~mnie oczywiste. Arkadiusz
 Bochniak powiedział, żeby zobaczyć na~dowód twierdzenia widmie
-wielomian operatora\footnote{Ang. polynomial spectral mapping
-  theorem.}. Należy przy tym zauważyć, że~z~tego twierdzenie wynika
+wielomian operatora (ang. \textit{polynomial spectral mapping
+  theorem}). Należy przy tym zauważyć, że~z~tego twierdzenie wynika
 od~razu poszukiwana własność.
 
 \vspace{\spaceFour}
 
 
-\start \Str{46} \tb{Lemat 2.4.2.} W~dowodzie tego twierdzenie trzeba
+
+\start \textbf{Str. 46. Lemat 2.4.2.} W~dowodzie tego twierdzenie trzeba
 chyba rozumować następująco. Chcemy pokazać,
-że~$m( a ) \leq \norm{ a }$ dla każdego $a \in \mc{A}$.
+że~$m( a ) \leq \norm{ a }$ dla każdego $a \in \Acal$.
 
 Rozpatrujemy dwa przypadki. 1) Gdy $m( a ) = 0$, wtedy oczywiście
 $m( a ) = 0 \leq \norm{ a }$. 2). Gdy $m( a ) \neq 0$. Wówczas
 $m( a - m( a ) 1 ) = 0$. Gdyby istniał element $b$~odwrotny
 do~$a - m( a ) 1$, to~zachodziłoby
 \begin{equation}
+  \label{eq:DE-2}
   1 = m( 1 ) = m( b ( a - m( a ) 1 ) ) = m( b ) m( a - m( a ) )
   = m( b ) 0 = 0,
 \end{equation}
@@ -226,8 +251,15 @@ co jest niemożliwe. Dalej można już postępować jak w~zaprezentowanym
 dowodzie.
 
 
-\CenterTB{Błędy}
+
+
+
+% ##################
+\CenterBoldFont{Błędy}
+
+
 \begin{center}
+
   \begin{tabular}{|c|c|c|c|c|}
     \hline
     & \multicolumn{2}{c|}{} & & \\
@@ -241,27 +273,35 @@ dowodzie.
     % & & & & \\
     \hline
   \end{tabular}
+
 \end{center}
 
+
 \vspace{\spaceTwo}
+% ############################
 
 
 
+
+
+
+
+
+
+
+% ############################
+\Work{ % Autorzy i tytuł dziełą
+  I. M. Gelfand, G. E. Shilov \\
+  „Generalized Functions: Volume~I, Properties and~Operations”,
+  \cite{GelfandShilovGeneralizedFunctionsVolI1964} }
 
 
 % ##################
-\Work{ % Autorzy i tytuł dziełą
-  I. M. Gelfand, G. E. Shilov \\
-  ,,Generalized Functions: Volume~I, Properties and~Operations'',
-  \cite{GS64}. }
+\CenterBoldFont{Błędy}
 
-% Uwagi:
-% \begin{itemize}
-% \item[--]
-% \end{itemize}
 
-\CenterTB{Błędy}
 \begin{center}
+
   \begin{tabular}{|c|c|c|c|c|}
     \hline
     & \multicolumn{2}{c|}{} & & \\
@@ -274,9 +314,18 @@ dowodzie.
     % & & & & \\
     \hline
   \end{tabular}
+
 \end{center}
 
 \vspace{\spaceTwo}
+% ############################
+
+
+
+
+
+
+
 
 
 
@@ -284,43 +333,40 @@ dowodzie.
 \newpage
 \Work{ % Autor i tytuł dzieła
   Armen H.~Zemanian \\
-  ,,Teoria dystrybucji i~analiza transformat'',
-  \cite{ZemanianTeoriaDystrybucji69} }
+  „Teoria dystrybucji i~analiza transformat”,
+  \cite{ZemanianTeoriaDystrybucji1969} }
 
 
-\CenterTB{Uwagi}
-
-\noi \tb{Konkretne strony}
-
-\vspace{\spaceFour}
+% ##################
+\CenterBoldFont{Uwagi do konkretnych stron}
 
 
 \start \Str{16} Rozważania o~zamkniętości ze~względu na zbieżność
-przestrzeni funkcji próbnych $\Dc$~są w~mojej ocenie trochę
+przestrzeni funkcji próbnych $\Dcal$~są w~mojej ocenie trochę
 chaotyczne, spróbuję więc je jakoś rozjaśnić. W~istocie chodzi o~to,
 że~definiujemy zbieżność ciągu funkcji próbnych
-$\set{ \varphi_{ \nu }( t ) }$, żądając od~niego dwóch własności:
-1)~Dla każdego $k$, ciąg $\set{ \varphi_{ \nu }^{ ( k ) }( t ) }$ jest
+$\{ \varphi_{ \nu }( t ) \}$, żądając od~niego dwóch własności:
+1)~Dla każdego $k$, ciąg $\{ \varphi_{ \nu }^{ ( k ) }( t ) \}$ jest
 zbieżny jednostajnie do jakiejś funkcji
-$f_{ k }( t ), \; k = 0, 1, \ld$ \\
-2)~Nośniki wszystkich funkcji $\set{ \varphi_{ \nu }( t ) }$ zawarte są
+$f_{ k }( t ), \; k = 0, 1, \ldots$ \\
+2)~Nośniki wszystkich funkcji $\{ \varphi_{ \nu }( t ) \}$ zawarte są
 w~wspólnym zbiorze zwartym. \\
 Zwróćmy uwagę, że~na~razie nie możemy mówić, iż~ciąg
-$\set{ \varphi_{ \nu }( t ) }$ jest zbieżny do funkcji
+$\{ \varphi_{ \nu }( t ) \}$ jest zbieżny do funkcji
 $f( t ) = f_{ 0 }( t )$, bo~nie wiemy, czy znajomość funkcji $f( t )$
-pozwala nam odtworzyć funkcje $f_{ 1 }( t ), f_{ 2 }( t ), \ld$ W~tym
+pozwala nam odtworzyć funkcje $f_{ 1 }( t ), f_{ 2 }( t ), \ldots$ W~tym
 momencie właściwsze byłoby powiedzenie, że~ciąg
-$\set{ \varphi_{ \nu }( t ) }$ jest zbieżny do~rodziny funkcji
+$\{ \varphi_{ \nu }( t ) \}$ jest zbieżny do~rodziny funkcji
 $f_{ k }( t )$.
 
 Jednak na mocy twierdzeń z~analizy matematycznej, które można znaleźć
-np.~w~książce Schwartza, str.~649--652,~\cite{Schwartz79}, przy tych
-warunkach funkcja $f( t )$ jest klasy $\Cinfty$ i~zachodzi
+np.~w~książce Schwartza, str.~649--652,~\cite{SchwartzKursAnalizyMatematycznejVolI1979}, przy tych
+warunkach funkcja $f( t )$ jest klasy $\Ccal^{ \infty }( \Rbb )$ i~zachodzi
 $f^{ ( k ) }( t ) = f_{ k }( t )$. Tym samy pokazaliśmy, że~zbieżność
 zdefiniowana wyżej, jest rzeczywiście zbieżnością do~jakiejś funkcji.
 Z~drugiego warunku zbieżności ciągu funkcji próbnych wynika,
 że~funkcja $f( t )$ również ma~zwarty nośnik i~tym samym należy
-do~$\Dc$.
+do~$\Dcal$.
 
 Tym samym możemy stwierdzić, że~jeśli istnieje funkcja zespolona,
 do~której ciąg funkcji próbnych jest zbieżny w~podanym wyżej sensie,
@@ -329,25 +375,28 @@ to~funkcja graniczna również jest funkcją próbną.
 \vspace{\spaceFour}
 
 
+
 \start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy
-$\Cb^{ \infty }( \Rb )$ został, chyba przyjęty w~domyśle. Należy jednak~się
+$\Ccal^{ \infty }( \Rbb )$ został, chyba przyjęty w~domyśle. Należy jednak~się
 nad nim zatrzymać i~dowieść tego faktu. \Dok
 
 \vspace{\spaceFour}
 
 
+
 \start \Str{20} Aby wywód był pełny należy jeszcze dowieść,
-że~$[ \varphi( t ) ]^{ \fr{ 1 }{ n } } = \sqrt[ n ]{ \varphi( t ) }$ jest
-klasy $\Cc^{ \infty }( \Rb )$.
+że~$[ \varphi( t ) ]^{ \frac{ 1 }{ n } } = \sqrt[ n ]{ \varphi( t ) }$ jest
+klasy $\Ccal^{ \infty }( \Rbb )$.
 
 \vspace{\spaceFour}
+
 
 
 \start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
 bardzo słusznie jest stale przypominany w~kontekście teorii
 dystrybucji: nie czegoś takiego jak wartość dystrybucji w~punkcie.
-Dystrybucja $f$ z~przestrzeni $\Dc'( \RnC )$ jest określona
-na~funkcjach z~$\Dc( \RnC )$, a~nie na $\RnC$ i~nawet dla dystrybucji
+Dystrybucja $f$ z~przestrzeni $\Dcal'( \Rbb ??? )$ jest określona
+na~funkcjach z~$\Dcal( ??? )$, a~nie na $\Rbb ???$ i~nawet dla dystrybucji
 regularnej wartość $f( t )$ w~konkretnym punkcie nie ma zwykle sensu.
 Punkt ma bowiem miarę Lebesgue'a równą~0, więc wartość funkcji która
 reprezentuje tę~dystrybucję można w~nim dowolnie zmienić.
@@ -360,13 +409,14 @@ np.~jeśli jedna z~tych funkcji jest ciągła.
 \vspace{\spaceFour}
 
 
+
 \start \Str{29} Użycie we wzorze~(3) symbolu
 \begin{equation}
   \label{eq:Zem-s01-01}
-  \Lim_{ \epsilon \to 0^{ + } } \int_{ \epsilon }^{ b } t^{ -3/2 } \varphi( t ) \, dt,
+  \lim_{ \epsilon \to 0^{ + } } \int_{ \epsilon }^{ b } t^{ -3 / 2 } \varphi( t ) \, dt,
 \end{equation}
 jest trochę mylące. Zdaje~się bowiem sugerować, że~całka
-$\int_{ 0 }^{ b } t^{ -3/2 } \varphi( t ) \, dt$ istniej i~jest równa tej
+$\int_{ 0 }^{ b } t^{ -3 / 2 } \varphi( t ) \, dt$ istniej i~jest równa tej
 granicy, jednak całka ta jest rozbieżna jeśli $\varphi( 0 ) \neq 0$.
 Poprawniejsze byłoby następujące rozumowanie.
 
@@ -374,50 +424,56 @@ Najpierw rozpatrzmy całkę
 \begin{equation}
   \label{eq:Zem-s01-02}
   \int_{ \epsilon }^{ b } t^{ -3/2 } \varphi( t ) \, dt
-  = \fr{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } - \fr{ 2 \varphi( 0 ) }{ \sqrt{ b } }
-  + \int_{ \epsilon }^{ b } \fr{ \psi( t ) }{ \sqrt{ t } } \, dt.
+  =
+  \frac{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } - \frac{ 2 \varphi( 0 ) }{ \sqrt{ b } }
+  + \int_{ \epsilon }^{ b } \frac{ \psi( t ) }{ \sqrt{ t } } \, dt.
 \end{equation}
-Całka ta jest skończona dla każdego $\veps$ i~powyższy wzór pozwala
-nam zidentyfikować źródło rozbieżności w~granicy $\veps \to 0^{ + }$.
+Całka ta jest skończona dla każdego $\varepsilon$ i~powyższy wzór pozwala
+nam zidentyfikować źródło rozbieżności w~granicy $\varepsilon \searrow 0$.
 Dysponując tą wiedzą, możemy zdefiniować dystrybucję
-$\Pf \, t^{ -3/2 } \HevP( t )$ wzorem
+$\Pf \, t^{ -3 / 2 } \HeavisideFunPlus( t )$ wzorem
 \begin{equation}
   \label{eq:Zem-s01-03}
-  \langle \Pf \, t^{ -3/2 } \HevP( t ), \varphi( t ) \rangle = \Lim_{ \epsilon \to 0^{ + } }
-  \left[ \int_{ \epsilon }^{ +\infty } t^{ -3/2 } \varphi( t ) \, dt
-    - \fr{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } \right].
+  \langle \Pf \, t^{ -3/2 } \HeavisideFunPlus( t ), \varphi( t ) \rangle
+  =
+  \lim_{ \epsilon \to 0^{ + } } \left[ \int_{ \epsilon }^{ +\infty } t^{ -3/2 } \varphi( t ) \, dt
+    - \frac{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } \right].
 \end{equation}
 
 \vspace{\spaceFour}
+
 
 
 \start \Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
 bardziej naturalne, wprowadzić pseudofunkcję
-$\Pf \fr{ \HevP( -t )}{ t }$.
+$\Pf \frac{ \HeavisideFunPlus( -t )}{ t }$.
 
 \vspace{\spaceFour}
+
 
 
 \start \Str{33--34} Przyjmijmy najpierw, że~jeżeli dana jest krzywa
 $A$, to przez $A( t )$ będziemy oznaczać taką funkcję, że~krzywa
 ta~ma~przedstawienie $( t, A( t ) )$. Teraz należy dokonać takiej
 zmienny w~linii 2~(od~dołu) na~stronie~34. \\
-\Jest Dlatego przesunięta cześć krzywej $B$ \\
+\Jest  Dlatego przesunięta cześć krzywej $B$ \\
 \Powin Dlatego pole pod~krzywą $\varphi( t ) B( t )$ na~przedziale
 $\tau \leq t \leq \epsilon$
 
 \vspace{\spaceFour}
 
 
+
 \start \Str{36} W~tym miejscu po raz pierwszy chyba w~książce
-pojawia~się termin ,,obszar''. Z~kontekstu wynika, że~należy przez
-niego rozumieć dowolny podzbiór $\RnC$.
+pojawia~się termin „obszar”. Z~kontekstu wynika, że~należy przez
+niego rozumieć dowolny podzbiór $???$.
 
 \vspace{\spaceFour}
 
 
-\start \Str{41} Obok nazwy \emph{zbiór zer dystrybucji}, proponowałbym
-również \emph{zbiór zerowy dystrybucji}.
+
+\start \Str{41} Obok nazwy \textit{zbiór zer dystrybucji}, proponowałbym
+również \textit{zbiór zerowy dystrybucji}.
 
 \vspace{\spaceFour}
 
@@ -425,10 +481,11 @@ również \emph{zbiór zerowy dystrybucji}.
 \start \Str{42} Logiczniej byłoby zaraz po~paragrafie \S 1.6 umieścić
 paragraf \S 1.8. Pojęcie zbioru zerowego i~nośnika dystrybucji nie ma
 wielkiego sensu 1.8.1 i~wynikających z~niego konsekwencji. Paragraf \S
-1.7 \emph{Kilka operacji na~dystrybucjach} najlepiej byłby umieścić
+1.7 \textit{Kilka operacji na~dystrybucjach} najlepiej byłby umieścić
 jako \S 1.6.
 
 \vspace{\spaceFour}
+
 
 
 \start \Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
@@ -439,25 +496,25 @@ informacje.
 Zacznijmy od~tego, że~aby nie obciążać Czytelnika nowymi pojęciami,
 nie używa pojęcia zbioru zwartego, zamiast tego mówi o~zbiorach
 domkniętych i~ograniczonych\footnote{Jak wiadomo z~twierdzenia
-  Heinego\dywiz Borela, zbiór w~$\Rn$ jest zwarty \wtw, gdy jest
-  domknięty i~ograniczony.} w~$\Rn$, ponieważ jednak jest to
+  Heinego\dywiz Borela, zbiór w~$\Rbb^{ n }$ jest zwarty wtedy i~tylko
+  wtedy, gdy jest domknięty i~ograniczony.} w~$\Rbb^{ n }$, ponieważ jednak jest to
 niewygodne, będę mówił o~zbiorach zwartych. Będziemy jeszcze
 potrzebowali dwóch twierdzeń odnośnie tych zbiorów.
 
 \begin{twr}[Walter Rudin, twr. 2.7, str.~45,~\cite{Rudin98}]
   \label{twr:Zem-s01-01}
   Niech $X$ będzie lokalnie zwartą przestrzenią Hausdorffa,
-  $K$~zbiorem zwartym, $U$~zbiorem otwartym i~$K \subs U$. Istnieje
+  $K$~zbiorem zwartym, $U$~zbiorem otwartym i~$K \subset U$. Istnieje
   zbiór otwarty o~zwartym domknięciu taki,~że
   \begin{equation}
     \label{eq:Zem-s01-04}
-    K \subs V \subs \ol{ V } \subs U.
+    K \subset V \subset \overline{ V } \subset U.
   \end{equation}
 \end{twr}
-Sens tego twierdzenia jest następujący. Jeśli $K \notin \{ \es, X \}$
+Sens tego twierdzenia jest następujący. Jeśli $K \notin \{ \emptyset, X \}$
 i~przestrzeń $X$ jest spójna, to wewnątrz zbioru otwartego $U$, można
-powiększyć zbiór zwarty $K$ do~zbioru zwartego $\ol{ V }$, przy czym
-$K \neq \ol{ V }$. Jest tak dlatego, że~$V$ jest otwarty,
+powiększyć zbiór zwarty $K$ do~zbioru zwartego $\overline{ V }$, przy czym
+$K \neq \overline{ V }$. Jest tak dlatego, że~$V$ jest otwarty,
 a~w~przestrzeni Hausdorffa zbiór zwarty jest domknięty. Jeśli więc
 przestrzeń jest spójna to nie może zajść równość $K = V$, chyba,
 że~$K = \emptyset$ lub~$K = X$.
@@ -470,7 +527,7 @@ zbiorem. Wtedy jak najbardziej może~się zdarzyć, iż~$K = V$.
   \label{twr:Zem-s01-02}
   Niech $( X, d )$ będzie przestrzenią metryczną, w~której każdy zbiór
   domknięty i~ograniczony jest zwarty. Jeśli $K$ jest zbiorem zwartym,
-  $D$ zbiorem domkniętym i~$K \cup D = \es$, to odległość zbiorów $K$
+  $D$ zbiorem domkniętym i~$K \cup D = \emptyset$, to odległość zbiorów $K$
   i~$D$
   \begin{equation}
     \label{eq:Zem-s01-05}
@@ -478,75 +535,81 @@ zbiorem. Wtedy jak najbardziej może~się zdarzyć, iż~$K = V$.
   \end{equation}
   do~tego odległość ta przyjmuje w~pewnym punkcie minimum.
 \end{twr}
-\noi Schwartz formułuje równoważne założenie twierdzenia, że~każda
+\noindent Schwartz formułuje równoważne założenie twierdzenia, że~każda
 kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
 
 Będę również używał oznaczenia $\supp \varphi$ na~oznaczenie nośnika
-funkcji $\vpt$ (z~ang.~support).
+funkcji $\varphi( t )$ (ang.~\textit{support}).
 
 \vspace{\spaceFour}
 
 
-\start \Str{48--49} \tb{Lemat 1, uzupełnienie.} Na~podstawie
-twierdzenia \ref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych
+
+\start \Str{48--49} \textbf{Lemat 1, uzupełnienie.} Na~podstawie
+twierdzenia \eqref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych
 własnościach. Teraz na~mocy twierdzenia \eqref{twr:Zem-s01-02} mamy
 $d( \Theta, \complement \Psi ) = d_{ 1 } > 0$, jeśli więc
 $\alpha_{ 1 } < d_{ 1 }$, to~nośnik funkcji
 $\gamma_{ \alpha_{ 1 } }( t - \tau )$ zawiera~się w~$\Psi$ dla~każdego
 $t \in \Theta$, tym samym $\varphi( t ) = 1$. Gwarantuje to~też,
-iż~funkcja podcałkowa jest klasy $\Cc^{ \infty }$. Dowiedliśmy więc,
+iż~funkcja podcałkowa jest klasy $\Ccal^{ \infty }$. Dowiedliśmy więc,
 że~$\varphi( t ) = 1$ na~$\Theta$.
 
-Jeśli teraz oznaczymy odległość $d( \Psi, \com \Omega ) = d_{ 2 } > 0$
-i~przyjmiemy $\alpha_{ 2 } < d_{ 2 }$, to dla każdego $t \in \com \Omega$
+Jeśli teraz oznaczymy odległość $d( \Psi, \complement \Omega ) = d_{ 2 } > 0$
+i~przyjmiemy $\alpha_{ 2 } < d_{ 2 }$, to dla każdego $t \in \complement \Omega$
 nośnik funkcji $\gamma_{ \alpha_{ 1 } }( t - \tau )$ nie przecina~się
-z~$\Psi$, więc $\vpt = 0$.
+z~$\Psi$, więc $\varphi( t ) = 0$.
 
 \vspace{\spaceFour}
 
 
+
 \start \Str{49} W~języku polskim znaczniej lepiej od~nazwy
-\emph{lokalnie skończonego pokrycia} brzmi określenie \emph{pokrycie
+\textit{lokalnie skończonego pokrycia} brzmi określenie \textit{pokrycie
   lokalnie skończone}. Jego też będę dalej używał.
 
 \vspace{\spaceFour}
 
 
-\start \Str{49} \tb{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy
+
+\start \Str{49} \textit{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy
 założeń, każdy domknięty podzbiór $\Omega_{ k }$ jest zwarty, więc
-istnienie zbiorów $\Lc_{ k }$ o~zadanych własnościach wynika ponownie
+istnienie zbiorów $\Lcal_{ k }$ o~zadanych własnościach wynika ponownie
 z~twierdzenia \eqref{twr:Zem-s01-01}.
 
 \vspace{\spaceFour}
 
 
-\start \Str{50} \tb{Lemat 4, uzupełnienie.} Niech $A$ będzie zbiorem
-ograniczonym w~$\Rn$, czyli zawiera~się on w~kuli $K( 0, r )$. Trzeba
-teraz pokazać, że~tylko skończona ilość zbiorów $\Oc_{ \alpha }$ z~nowego
+
+\start \Str{50} \textbf{Lemat 4, uzupełnienie.} Niech $A$ będzie zbiorem
+ograniczonym w~$\Rbb^{ n }$, czyli zawiera~się on w~kuli $K( 0, r )$. Trzeba
+teraz pokazać, że~tylko skończona ilość zbiorów $\Ocal_{ \alpha }$ z~nowego
 pokrycia może przecinać~się z~tą kulą. Oznaczymy majorantę średnicy
-zbiorów przez $\mr{Diam}_{ \mf{ C } }$, a~przez $M$ minimalną
+zbiorów przez $\Diam_{ \Cfrak }$, a~przez $M$ minimalną
 odległość punktu prostopadłościanu reprezentowanego układem liczb
-$\{ m_{ 1 }, \ld, m_{ n } \}$ od~punktu $0$, czyli
+$\{ m_{ 1 }, \ldots, m_{ n } \}$ od~punktu $0$, czyli
 \begin{equation}
   \label{eq:Zem-s01-06}
-  M = \left( \sum_{ i = 0 }^{ n } m_{ i } \right)^{ \fr{ 1 }{ 2 } }.
+  M =
+  \left( \sum_{ i = 0 }^{ n } m_{ i } \right)^{ \frac{ 1 }{ 2 } }.
 \end{equation}
-Zbiór $\Oc_{ \alpha }$ może przeciąć zadaną kulę, tylko jeśli
-$M - \mr{Diam}_{ \mf{C} } < r$, czyli mówiąc prościej,
-jeśli~prostopadłościan jest na tyle blisko, że~zbiór $\Oc_{ \alpha }$
+Zbiór $\Ocal_{ \alpha }$ może przeciąć zadaną kulę, tylko jeśli
+$M - \Diam_{ \Cfrak } < r$, czyli mówiąc prościej,
+jeśli~prostopadłościan jest na tyle blisko, że~zbiór $\Ocal_{ \alpha }$
 może dosięgnąć kuli $K( 0, r )$. Ponieważ istnieje tylko skończona
-ilość układów liczb $\{ m_{ 1 }, \ld, m_{ n } \}$ spełniających tę
+ilość układów liczb $\{ m_{ 1 }, \ldots, m_{ n } \}$ spełniających tę
 nierówność, więc tylko skończoną ilość razy będziemy wybierali
-skończoną rodzinę zbiorów $\Oc_{ \alpha }$ takich, że~jest możliwe
-by~$K( 0, r ) \cap \Oc_{ \alpha } \neq \O$.
+skończoną rodzinę zbiorów $\Ocal_{ \alpha }$ takich, że~jest możliwe
+by~$K( 0, r ) \cap \Ocal_{ \alpha } \neq \O$.
 
 \vspace{\spaceFour}
 
 
+
 \start \Str{51} Cel przedstawionej tu konstrukcji jest następujący.
-Potrzebujemy pokrycia lokalnie skończonego~$\Om_{ \nu }$, którego
+Potrzebujemy pokrycia lokalnie skończonego~$\Omega_{ \nu }$, którego
 elementy albo nie przecinają~się z~$\Xi$, albo
-$\Om_{ \nu } \subs \Theta$, gdy $\Om_{ \nu } \cap \Xi \neq \O$.
+$\Omega_{ \nu } \subset \Theta$, gdy $\Omega_{ \nu } \cap \Xi \neq \emptyset$.
 Rozkład jedności dla tego pokrycia pozwoli pokazać, że~funkcję~$\psi$
 można rozłożyć na~funkcje o~nośnikach w~zbiorach otwartych na~których
 dystrybucja $f$~jest równa $0$.
@@ -557,9 +620,11 @@ wprowadzony niepotrzebnie.
 \vspace{\spaceFour}
 
 
+
 \start \Str{59}
 
 \vspace{\spaceFour}
+
 
 
 \start \Str{62}
@@ -567,34 +632,38 @@ wprowadzony niepotrzebnie.
 \vspace{\spaceFour}
 
 
+
 \start \Str{71} Wzór
 \begin{equation}
   \label{eq:Zem-s01-07}
-  f( t ) = f_{ c }( t ) - \sum_{ \nu = -1 }^{ -\infty } \Delta f_{ \nu }
-  \HevP( t_{ \nu } - t ) + \sum_{ \nu = 0 }^{ \infty } \Delta f_{ \nu }
-  \HevP( t - t_{ \nu } ),
+  f( t ) =
+  f_{ c }( t )
+  - \sum_{ \nu = -1 }^{ -\infty } \Delta f_{ \nu } \HeavisideFunPlus( t_{ \nu } - t )
+  + \sum_{ \nu = 0 }^{ \infty } \Delta f_{ \nu } \HeavisideFunPlus( t - t_{ \nu } ),
 \end{equation}
 zawiera pewną subtelność, którą warto wyjaśnić. \Dok
 
 \vspace{\spaceFour}
 
 
+
 \start \Str{74} Fakt, że~iloraz różnicowy
 \begin{equation}
   \label{eq:Zem-s01-08}
-  \fr{ \varphi( t - \Delta ) - \varphi( t ) }{ \Delta }
+  \frac{ \varphi( t - \Delta ) - \varphi( t ) }{ \Delta }
 \end{equation}
-dąży do $-\vpDer$ przy $\DelToZero$ wynika od~razu z~definicji
+dąży do $-\varphi^{ ( 1 ) }( t )$ przy $\Delta \to 0$ wynika od~razu z~definicji
 pochodnej i~twierdzenia o~składaniu granic\footnote{Udowodnij i~zapisz
   gdzieś to twierdzenie.}, problem jest tylko taki, że~jest to
 zbieżność punktowa. Aby zaś skorzystać z~ciągłości dystrybucji
-potrzebujemy udowodnić zbieżność jednostajną tego ilorazy do~$-\vpDer$
-oraz jednostajną zbieżność jego $k$\dywiz pochodnej
-do~$-\varphi^{ ( k + 1 ) }( t )$. Inaczej mówiąc dla $k = 0, 1, 2, \ld$
+potrzebujemy udowodnić zbieżność jednostajną tego ilorazy do~$-\varphi^{ ( 1 ) }( t )$
+oraz jednostajną zbieżność jego $k$-pochodnej
+do~$-\varphi^{ ( k + 1 ) }( t )$. Inaczej mówiąc dla $k = 0, 1, 2, \ldots$
 musi zachodzić
 \begin{equation}
   \label{eq:Zem-s01-09}
-  \Lim_{ \Delta \to 0 } \fr{ \varphi^{ ( k ) }( t - \Delta ) - \varphi^{ ( k ) }( t ) }{ \Delta }
+  \lim_{ \Delta \to 0 }
+  \frac{ \varphi^{ ( k ) }( t - \Delta ) - \varphi^{ ( k ) }( t ) }{ \Delta }
   = -\varphi^{ ( k + 1 ) }( t ),
 \end{equation}
 gdzie zbieżność jest rozumiana jako zbieżność jednostajna.
@@ -602,9 +671,16 @@ gdzie zbieżność jest rozumiana jako zbieżność jednostajna.
 Dowód podany przez Zemaniana nie jest jedynym możliwym, ale~jest
 bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 
-\newpage
-\CenterTB{Błędy}
+
+
+
+
+% ##################
+\CenterBoldFont{Błędy}
+
+
 \begin{center}
+
   \begin{tabular}{|c|c|c|c|c|}
     \hline
     & \multicolumn{2}{c|}{} & & \\
@@ -612,17 +688,6 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
                               & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu & & \\
     \hline
-    % 16 & & 6 & ciągi & funkcje \\
-    % 17 & & 4 & z przestrzeni & na przestrzeni \\
-    % 17 & & 3 & która ma & które mają \\
-    % 17 & & 2 & \emph{przestrzeni} & \emph{funkcjonału} \\
-    % 18 & 6 & & $\{ \vp_{ \nu } \}\nu \to \infty$ &
-    % $\{ \vp_{ \nu } \}$,
-    % przy $\nu \to \infty$ \\
-    % 18 & & 10 & dystrybuantę & dystrybucję \\
-    % 21 & 9 & & $\Dc$ & $\Dc'$ \\
-    % 25 & & 1 & dąży & dąży punktowo \\
-    % 26 & 5 & & pochodnym od & pochodną \\
     12  & &  6 & wartości & tylko rzeczywiste \\
     14  &  6 & & całka & całka przedstawiająca $\varphi_{ \alpha }'( t )$ \\
     16  & &  6 & ciągi & funkcje \\
@@ -632,12 +697,12 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
     18  &  6 & & $\{ \varphi_{ \nu } \}\nu \to \infty$
            & $\{ \varphi_{ \nu } \}$, przy $\nu \to \infty$ \\
     18  & & 10 & dystrybuantę & dystrybucję \\
-    21  &  9 & & $\Dc$ & $\Dc'$ \\
+    21  &  9 & & $\Dcal$ & $\Dcal'$ \\
     25  & &  1 & dąży & dąży punktowo \\
     26  &  5 & & pochodnym od & pochodną \\
-    27  &  7 & & $\delta^{ ( 1 ) }\bsym{ ( t } )$ & $\delta^{ ( 1 ) }( t )$ \\
-    27  & &  9 & $< f,\, \varphi >$ & $\dyst{ f }{ \varphi }$ \\
-    27  & &  3 & $\varphi^{ ( k \bsym{ ) } }\bsym{ ( t ) } $
+    27  &  7 & & $\delta^{ ( 1 ) }\boldsymbol{ ( t } )$ & $\delta^{ ( 1 ) }( t )$ \\
+    27  & &  9 & $< f,\, \varphi >$ & $\langle f, \, \varphi \rangle$ \\
+    27  & &  3 & $\varphi^{ ( k \boldsymbol{ ) } }\boldsymbol{ ( t ) } $
            & $\varphi^{ ( k ) }( t )$ \\
     28  & & 17 & dążą & jednocześnie dążą \\
     28  & &  4 & $\delta^{ ( 2 ) }( 0 )$ & $\varphi^{ ( 2 ) }( 0 )$ \\
@@ -646,22 +711,25 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
     31  &  8 & & $\Pf \, | t |^{ \beta } \; 1_{ + }( t )$
            & $\Pf \, | t |^{ \beta } \; 1_{ + }( -t )$ \\
     33  & &  1 & skończoną & nieskończoną \\
-    34  & &  1 & $\varphi( 0 ) \log\epsilon$ & $\varphi( 0 ) \log \epsilon.$ \\
-    35  &  1 & & tj.~$\dyst{ B }{ \varphi }$. Wartość & Wartość \\
-    36  & &  7 & $\partial t_{ 2 }^{ \: k_{ 2 } } \ld \partial t_{ n }^{ \: k_{ n } }$
-           & $\partial t_{ 2 }^{ k_{ 2 } } \ld \partial t_{ n }^{ k_{ n } }$ \\
-    37  & & 16 & \emph{mamy $\varphi_{ \alpha }( t )$ równe}
-           & \emph{$\varphi_{ \alpha }( t )$ jest równa} \\
-    37  & &  1 & wyboru układu & układu \\
-    38  &  4 & & $\{ 0, 0, \ld, 0 ) \}$ & $\{ 0, 0, \ld, 0 \}$) \\
+    34  & &  1 & $\varphi( 0 ) \log \epsilon$ & $\varphi( 0 ) \log \epsilon$. \\
+    35 & 1 & & tj.~$\langle B, \varphi \rangle$. Wartość & Wartość \\
+    36 & & 7 & $\partial t_{ 2 }^{ \: k_{ 2 } } \ldots \partial t_{ n }^{ \: k_{ n } }$
+    & $\partial t_{ 2 }^{ k_{ 2 } } \ldots \partial t_{ n }^{ k_{ n } }$ \\
+    37 & & 16 & \textit{mamy $\varphi_{ \alpha }( t )$ równe}
+    & \textit{$\varphi_{ \alpha }( t )$ jest równa} \\
+    37 & & 1 & wyboru układu & układu \\
+    38  &  4 & & $\{ 0, 0, \ldots, 0 ) \}$ & $\{ 0, 0, \ldots, 0 \}$) \\
     41  & &  2 & dystrybucji & dystrybucji regularnej \\
-    45  & & 10 & $\bsym{f}$ & $f$ \\
-    50  & 13 & & \emph{jedną} & \emph{stałą} \\
-    50  & &  3 & $C$ & $\mf{C}$ \\
-    55  &  9 & & zbieżny w $\Dc'$ & zbieżny \\
-    % & & & & \\
+    45  & & 10 & $\boldsymbol{f}$ & $f$ \\
+    50  & 13 & & \textit{jedną} & \textit{stałą} \\
+    % 50 & 13 & & \emph{jedną} & \emph{jedną z~nich} \\
+    50  & &  3 & $C$ & $\Cfrak$ \\
+    55  &  9 & & zbieżny w~$\Dcal'$ & zbieżny \\
     59  &  3 & & $\theta_{ \nu }$ & $\theta$ \\
     64  &  6 & & $\nu f( \nu^{ n } t )$ & $\nu^{ n } f( \nu t )$ \\
+    71 & & 5 & $M$ i~$k$ stałych & $M$ rzeczywistego i~$k$ naturalnego \\
+    71 & & 4 & gdzie $p$ & gdzie $p = k - 1$, a $g( t )$ \\
+    71 & & 1 & $\leq M | \nu |^{ -2 }$ & $\leq M | \nu |^{ -1 }$ \\
     % & & & & \\
     % & & & & \\
     % & & & & \\
@@ -673,379 +741,253 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
     % & & & & \\
     \hline
   \end{tabular}
+
 \end{center}
-\noi \StrWd{21}{10} \\
-\Jest opisem niewykończonego \\
-\Powin niepełnym opisem pewnego \\
-\StrWg{34}{2} \\
-\Jest Odpowiednie nachylenie wskazuje \\
-\Powin Odpowiednią funkcje przedstawia \\
-\StrWd{38}{4} \\
-\Jest choć może nie być sprecyzowana jego wartość \\
-\Powin choć jego wartość może nie być podana jawnie \\
-\StrWd{40}{6} \\
-\Jest wartości liczbowych \\
-\Powin wartości liczbowej w~punkcie \\
-\StrWg{50}{14} \\
-\Jest \emph{pokrycie $\Rn$.} \\
-\Powin \emph{pokrycie $\Rn$, przy czym średnice wszystkich jego zbiorów,
-  są~ograniczone przez tą samą stałą, co~dla rodziny $\mf{C}_{ T }$.} \\
-\StrWd{71}{5} \\
-\Jest \emph{$M$ i $k$ stałych rzeczywistych} \\
-\Powin \emph{$M > 0$ i~$k$ naturalnego} \\
-\StrWd{71}{4} \\
-\Jest \emph{gdzie $p$} \\
-\Powin \emph{gdzie $p = k + 2$, a~$g( t )$} \\
-
-\vspace{\spaceTwo}
 
 
+% \noi \StrWd{21}{10} \\
+% \Jest opisem niewykończonego \\
+% \Powin niepełnym opisem pewnego \\
+% \StrWg{34}{2} \\
+% \Jest Odpowiednie nachylenie wskazuje \\
+% \Powin Odpowiednią funkcje przedstawia \\
+% \StrWd{38}{4} \\
+% \Jest choć może nie być sprecyzowana jego wartość \\
+% \Powin choć jego wartość może nie być podana jawnie \\
+% \StrWd{40}{6} \\
+% \Jest wartości liczbowych \\
+% \Powin wartości liczbowej w~punkcie \\
+% \StrWg{50}{14} \\
+% \Jest \emph{pokrycie $\Rn$.} \\
+% \Powin \emph{pokrycie $\Rn$, przy czym średnice wszystkich jego zbiorów,
+%   są~ograniczone przez tą samą stałą, co~dla rodziny $\mf{C}_{ T }$.} \\
+% \StrWd{71}{5} \\
+% \Jest \emph{$M$ i $k$ stałych rzeczywistych} \\
+% \Powin \emph{$M > 0$ i~$k$ naturalnego} \\
+% \StrWd{71}{4} \\
+% \Jest \emph{gdzie $p$} \\
+% \Powin \emph{gdzie $p = k + 2$, a~$g( t )$} \\
 
-
-
-% ##############################
-\Work{ % Autor i tytuł dzieła
-  Armen H.~Zemanian, ,,Teoria dystrybucji i analiza transformat'',
-  \cite{ZemanianTeoriaDystrybucji69} }
-
-% ###############
-
-
-\CenterTB{Uwagi}
-
-\noi \tb{Konkretne strony}
-
-\vspace{\spaceThree}
-
-
-\start \Str{16} Rozważania o~zamkniętości ze~względu na zbieżność
-przestrzeni funkcji próbnych $\Dc$~są w~mojej ocenie trochę
-chaotyczne, spróbuję więc je jakoś rozjaśnić. W~istocie chodzi o~to,
-że~definiujemy zbieżność ciągu funkcji próbnych
-$\set{ \varphi_{ \nu }( t ) }$, żądając od~niego dwóch własności: 1)~Dla
-każdego $k$, ciąg $\set{ \varphi_{ \nu }^{ ( k ) }( t ) }$ jest zbieżny
-jednostajnie do jakiejś funkcji
-$f_{ k }( t ), \; k = 0, 1, \ld$ \\
-2)~Nośniki wszystkich funkcji $\set{ \varphi_{ \nu }( t ) }$ zawarte są
-w~wspólnym zbiorze zwartym. \\
-Zwróćmy uwagę, że~na~razie nie możemy mówić, iż~ciąg
-$\set{ \varphi_{ \nu }( t ) }$ jest zbieżny do funkcji
-$f( t ) = f_{ 0 }( t )$, bo~nie wiemy, czy znajomość funkcji $f( t )$
-pozwala nam odtworzyć funkcje $f_{ 1 }( t ), f_{ 2 }( t ), \ld$ W~tym
-momencie właściwsze byłoby powiedzenie, że~ciąg
-$\set{ \varphi_{ \nu }( t ) }$ jest zbieżny do~rodziny funkcji
-$f_{ k }( t )$.
-
-Jednak na mocy twierdzeń z~analizy matematycznej, które można znaleźć
-np.~w~książce Schwartza, str.~649--652,~\cite{Sch79}, przy tych
-warunkach funkcja $f( t )$ jest klasy $\Cc^{ \infty }$ i~zachodzi
-$f^{ ( k ) }( t ) = f_{ k }( t )$. Tym samy pokazaliśmy, że~zbieżność
-zdefiniowana wyżej, jest rzeczywiście zbieżnością do~jakiejś funkcji.
-Z~drugiego warunku zbieżności ciągu funkcji próbnych wynika,
-że~funkcja $f( t )$ również ma~zwarty nośnik i~tym samym należy
-do~$\Dc$.
-
-Tym samym możemy stwierdzić, że~jeśli istnieje funkcja zespolona,
-do~której ciąg funkcji próbnych jest zbieżny w~podanym wyżej sensie,
-to~funkcja graniczna również jest funkcją próbną.
-
-\start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy $\Cinfty$
-został, chyba przyjęty w~domyśle. Należy jednak~się nad nim zatrzymać
-i~dowieść tego faktu. \Dok
-
-\start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
-bardzo słusznie jest stale przypominany w~kontekście teorii
-dystrybucji: nie czegoś takiego jak wartość dystrybucji w~punkcie.
-Dystrybucja $f$ z~przestrzeni $\Dc'( \RnC )$ jest określona
-na~funkcjach z~$\Dc( \RnC )$, a~nie na $\RnC$ i~nawet dla dystrybucji
-regularnej wartość $f( t )$ w~konkretnym punkcie nie ma zwykle sensu.
-Punkt ma bowiem miarę Lebesgue'a równą~0, więc wartość funkcji która
-reprezentuje tę~dystrybucję można w~nim dowolnie zmienić.
-
-Jedynie jeśli w~klasie abstrakcji funkcji reprezentujących daną
-dystrybucję istnieje jedna funkcja wyróżniona, to~wartość tej funkcji
-jest też wartością dystrybucji w~konkretnym punkcie. Jest tak
-np.~jeśli jedna z~tych funkcji jest ciągła.
-
-\start \Str{29} Użycie we wzorze (3) symbolu
-\begin{equation}
-  \label{eq:Zem-s01-01}
-  \Lim_{ \epsilon \to 0^{ + } } \int_{ \epsilon }^{ b } t^{ -3/2 } \varphi( t ) \, dt,
-\end{equation}
-jest trochę mylące. Zdaje~się bowiem sugerować, że~całka
-$\int_{ 0 }^{ b } t^{ -3/2 } \varphi( t ) \, dt$ istniej i~jest równa tej
-granicy, jednak całka ta jest rozbieżna jeśli $\varphi( 0 ) \neq 0$.
-Poprawniejsze byłoby następujące
-rozumowanie. % Może się nie znam ale czy tu też nie powinno być :
-
-Najpierw rozpatrzmy całkę
-\begin{equation}
-  \label{eq:Zem-s01-02}
-  \int_{ \epsilon }^{ b } t^{ -3/2 } \varphi( t ) \, dt
-  = \fr{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } - \fr{ 2 \varphi( 0 ) }{ \sqrt{ b } }
-  + \int_{ \epsilon }^{ b } \fr{ \psi( t ) }{ \sqrt{ t } } \, dt.
-\end{equation}
-Całka ta jest skończona dla każdego $\veps$ i~powyższy wzór pozwala
-nam zidentyfikować źródło rozbieżności w~granicy $\epsilon \to 0^{ + }$.
-Dysponując tą wiedzą, możemy zdefiniować dystrybucję
-$\Pf \, t^{ -3/2 } \HevP( t )$ wzorem
-\begin{equation}
-  \label{eq:Zem-s01-03}
-  \langle \Pf \, t^{ -3/2 } \HevP( t ), \varphi( t ) \rangle = \Lim_{ \epsilon \to 0^{ + } }
-  \left[ \int_{ \epsilon }^{ +\infty } t^{ -3/2 } \varphi( t ) \, dt
-    - \fr{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } \right].
-\end{equation}
-
-\start \Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
-bardziej naturalne, wprowadzić pseudofunkcję
-$\Pf \fr{ \HevP( -t ) }{ t }$.
-
-\start \Str{33--34} Przyjmijmy najpierw, że~jeżeli dana jest krzywa
-$A$, to przez $A( t )$ będziemy oznaczać taką funkcję, że~krzywa
-ta~ma~przedstawienie $( t, A( t ) )$. Teraz należy dokonać takiej
-zmienny w~linii 2~(od~dołu) na~stronie~34. \\
-\Jest Dlatego przesunięta cześć krzywej $B$ \\
-\Powin Dlatego pole pod~krzywą $\varphi( t ) B( t )$ na~przedziale
-$\tau \leq t \leq \epsilon$
-
-\start \Str{36} W~tym miejscu po raz pierwszy chyba w~książce
-pojawia~się termin ,,obszar''. Z~kontekstu wynika, że~należy przez
-niego rozumieć dowolny podzbiór $\RnC$.
-
-\start \Str{41} Obok nazwy \emph{zbiór zer dystrybucji}, proponowałbym
-również \emph{zbiór zerowy dystrybucji}.
-
-\start \Str{42} Logiczniej byłoby zaraz po~paragrafie \S 1.6 umieścić
-paragraf \S 1.8. Pojęcie zbioru zerowego i~nośnika dystrybucji nie ma
-wielkiego sensu 1.8.1 i~wynikających z~niego konsekwencji. Paragraf \S
-1.7 \emph{Kilka operacji na~dystrybucjach} najlepiej byłby umieścić
-jako \S 1.6.
-
-\start \Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
-jest niezmiernie ważne, zawiera wiele luk, które postaram~się
-w~dalszych podpunktach uzupełnić, tu zaś zbiorę potrzebne do~tego
-informacje.
-
-Zacznijmy od~tego, że~aby nie obciążać Czytelnika nowymi pojęciami,
-nie używa pojęcia zbioru zwartego, zamiast tego mówi o~zbiorach
-domkniętych i~ograniczonych w~$\Rn$\footnote{Jak wiadomo z~twierdzenia
-  Heinego\dywiz Borela, zbiór w~$\Rn$ jest zwarty \wtw, gdy jest
-  domknięty i~ograniczony.}, ponieważ jednak jest to niewygodne, będę
-mówił o~zbiorach zwartych. Będziemy jeszcze potrzebowali dwóch
-twierdzeń odnośnie tych zbiorów.
-
-\begin{twr}[Walter Rudin, twr. 2.7, str.~45,~\cite{Rud98}]
-  \label{twr:Zem-s01-01}
-  Niech $X$ będzie lokalnie zwartą przestrzenią Hausdorffa,
-  $K$~zbiorem zwartym, $U$~zbiorem otwartym i~$K \subs U$. Istnieje
-  zbiór otwarty o~zwartym domknięciu taki,~że
-  \begin{equation}
-    \label{eq:Zem-s01-04}
-    K \subs V \subs \ol{ V } \subs U.
-  \end{equation}
-\end{twr}
-Sens tego twierdzenia jest następujący. Jeśli $K \notin \{ \es, X \}$
-i~przestrzeń $X$ jest spójna, to wewnątrz zbioru otwartego $U$, można
-powiększyć zbiór zwarty $K$ do~zbioru zwartego $\ol{ V }$, przy czym
-$K \neq \ol{ V }$. Jest tak dlatego, że~$V$ jest otwarty,
-a~w~przestrzeni Hausdorffa zbiór zwarty jest domknięty. Jeśli więc
-przestrzeń jest spójna to nie może zajść równość $K = V$, chyba,
-że~$K = \es$ lub~$K = X$.
-
-Jeśli przestrzeń nie jest spójna, to~może~się zdarzyć, że~$K$ jest
-maksymalną składową spójną i tym samym jest otwarto-domkniętym
-zbiorem. Wtedy jak najbardziej może~się zdarzyć, iż~$K = V$.
-
-\begin{twr}[Laurent Schwartz, str??\cite{Sch79}]
-  \label{twr:Zem-s01-02}
-  Niech $( X, d )$ będzie przestrzenią metryczną, w~której każdy zbiór
-  domknięty i~ograniczony jest zwarty. Jeśli $K$ jest zbiorem zwartym,
-  $D$ zbiorem domkniętym i~$K \cup D = \es$, to odległość zbiorów $K$
-  i~$D$
-  \begin{equation}
-    \label{eq:Zem-s01-05}
-    d( K, D ) > 0,
-  \end{equation}
-  do~tego odległość ta przyjmuje w~pewnym punkcie minimum.
-\end{twr}
-\noi Schwartz formułuje równoważne założenie twierdzenia, że~każda
-kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
-
-\start \Str{48--49} \tb{Lemat 1, uzupełnienie.} Na~podstawie
-twierdzenia \ref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych
-własnościach. Teraz na~mocy twierdzenia \ref{twr:Zem-s01-02}
-$d( \Theta, \com \Psi ) = d_{ 1 } > 0$, jeśli więc
-$\alpha_{ 1 } < d_{ 1 }$, to~nośnik funkcji
-$\gamma_{ \alpha_{ 1 } }( t - \tau )$ zawiera~się $\Psi$ dla~każdego
-$t$~z~$\Theta$, tym samym $\varphi( t ) = 1$. Gwarantuje to~też,
-iż~funkcja podcałkowa jest klasy $\Cc^{ \infty }$. Dowiedliśmy więc,
-że~$\varphi( t ) = 1$ na~$\Theta$.
-
-
-\newpage
-\CenterTB{Błędy}
-\begin{center}
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    & \multicolumn{2}{c|}{} & & \\
-    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-                              & Powinno być \\ \cline{2-3}
-    & Od góry & Od dołu & & \\
-    \hline
-    27 & 7 & & $\delta^{ ( 1 ) }\bsym{ ( t } )$ & $\delta^{ ( 1 ) }( t )$ \\
-    27 & & 3 & $\varphi^{ ( k \bsym{ ) } }\bsym{ ( t ) } $
-           & $\varphi^{ ( k ) }( t )$ \\
-    28 & & 17 & dążą & jednocześnie dążą \\
-    28 & & 4 & $\delta^{ ( 2 ) }( 0 )$ & $\varphi^{ ( 2 ) }( 0 )$ \\
-    29 & & 8 & $t = 0$ & $t \neq 0$ \\
-    31 & 6 & & $\varphi( )$ & $\varphi( t )$ \\
-    31 & 8 & & $\Pf \, | t |^{ \beta } \; 1_{ + }( t )$
-           & $\Pf \, | t |^{ \beta } \; 1_{ + }( -t )$ \\
-    33 & & 1 & skończoną & nieskończoną \\
-    34 & & 1 & $\varphi( 0 ) \log \epsilon$ & $\varphi( 0 ) \log \epsilon.$ \\
-    35 & 1 & & tj.~$\langle B, \varphi \rangle$. Wartość & Wartość \\
-    36 & & 7 & $\partial t_{ 2 }^{ \: k_{ 2 } } \ld \partial t_{ n }^{ \: k_{ n } }$
-           & $\partial t_{ 2 }^{ k_{ 2 } } \ld \partial t_{ n }^{ k_{ n } }$ \\
-    37 & & 16 & \emph{mamy $\varphi_{ \alpha }( t )$ równe}
-           & \emph{$\varphi_{ \alpha }( t )$ jest równa} \\
-    37 & & 1 & wyboru układu & układu \\
-    38 & 4 & & $\{ 0, 0, \ld, 0 ) \}$ & $\{ 0, 0, \ld, 0 \}$) \\
-    41 & & 2 & dystrybucji & dystrybucji regularnej \\
-    45 & & 10 & $\bsym{f}$ & $f$ \\
-    50 & & 3 & $C$ & $\mf{C}$ \\
-    50 & 13 & & \emph{jedną} & \emph{jedną z~nich} \\
-    55 & 9 & & zbieżny w $\Dc'$ & zbieżny \\
-    71 & & 5 & $M$ i $k$ stałych & $M$ rzeczywistego i $k$ naturalnego \\
-    71 & & 4 & gdzie $p$ & gdzie $p = k - 1$, a $g( t )$\\
-    71 & & 1 & $\leq M | \nu |^{ -2 }$ & $\leq M | \nu |^{ -1 }$\\
-    % & & & & \\
-    \hline
-  \end{tabular}
-\end{center}
-\noi
-\StrWd{21}{10} \\
-\Jest opisem niewykończonego \\
-\Powin niepełnym opisem pewnego \\
-\StrWg{34}{2} \\
-\Jest Odpowiednie nachylenie wskazuje \\
-\Powin Odpowiednią funkcje przedstawia \\
-\StrWd{38}{4} \\
-\Jest choć może nie być sprecyzowana jego wartość \\
-\Powin choć jego wartość może nie być podana jawnie \\
-\StrWd{40}{6} \\
-\Jest wartości liczbowych \\
-\Powin wartości liczbowej w~punkcie \\
-
-\vspace{\spaceTwo}
+% \vspace{\spaceTwo}
 
 
 
 
 
-% ######################################
-\section{Algebry operatorów i~algebry topologiczne}
+% % ##############################
+% \Work{ % Autor i tytuł dzieła
+%   Armen H.~Zemanian, ,,Teoria dystrybucji i analiza transformat'',
+%   \cite{ZemanianTeoriaDystrybucji69} }
 
-\vspace{\spaceTwo}
-% ######################################
-
-
-% ####################
-\Work{ % Autorzy i tytuł dzieła
-  Ola Bratteli, Derek W.~Robinson \\
-  ,,Operator Algebras and~Quantum Statistical Mechanics 1. \\
-  $C^{ * }$- and $W^{ * }$-Algebras, Symmetry Groups. Decoposition~of
-  State'', \cite{BratteliRobinsonOperatorAlgebrasTomI2002} }
+% % ###############
 
 
-\CenterTB{Uwagi}
-
-\start \Str{19} Autorzy zapomnieli o~jednym warunku, który jest
-potrzebny w~definicji algebry
-\begin{equation}
-  \label{eq:BR-s01-01}
-  ( A + B ) C = A C + B C.
-\end{equation}
-
-\vspace{\spaceFour}
 
 
-\start \Str{27} Transformacja podana dla $\lambda^{ n } - A^{ n }$ i
-wynikające z niej konsekwencje, nie są wystarczająco omówione.
-
-\vspace{\spaceFour}
 
 
-\CenterTB{Błędy}
-\begin{center}
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    & \multicolumn{2}{c|}{} & & \\
-    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-                              & Powinno być \\ \cline{2-3}
-    & Od góry & Od dołu & & \\
-    \hline
-    21  & & 10 & $ff^{ * }$ & $f^{ * }\! f$ \\
-    22  & 12 & & $( \alpha, A^{ * } )$ & $( \alpha, A )^{ * }$ \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    \hline
-  \end{tabular}
-\end{center}
+
+
+
+% \start \Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
+% jest niezmiernie ważne, zawiera wiele luk, które postaram~się
+% w~dalszych podpunktach uzupełnić, tu zaś zbiorę potrzebne do~tego
+% informacje.
+
+% Zacznijmy od~tego, że~aby nie obciążać Czytelnika nowymi pojęciami,
+% nie używa pojęcia zbioru zwartego, zamiast tego mówi o~zbiorach
+% domkniętych i~ograniczonych w~$\Rn$\footnote{Jak wiadomo z~twierdzenia
+%   Heinego\dywiz Borela, zbiór w~$\Rn$ jest zwarty \wtw, gdy jest
+%   domknięty i~ograniczony.}, ponieważ jednak jest to niewygodne, będę
+% mówił o~zbiorach zwartych. Będziemy jeszcze potrzebowali dwóch
+% twierdzeń odnośnie tych zbiorów.
+
+% \begin{twr}[Walter Rudin, twr. 2.7, str.~45,~\cite{Rud98}]
+%   \label{twr:Zem-s01-01}
+%   Niech $X$ będzie lokalnie zwartą przestrzenią Hausdorffa,
+%   $K$~zbiorem zwartym, $U$~zbiorem otwartym i~$K \subs U$. Istnieje
+%   zbiór otwarty o~zwartym domknięciu taki,~że
+%   \begin{equation}
+%     \label{eq:Zem-s01-04}
+%     K \subs V \subs \ol{ V } \subs U.
+%   \end{equation}
+% \end{twr}
+% Sens tego twierdzenia jest następujący. Jeśli $K \notin \{ \es, X \}$
+% i~przestrzeń $X$ jest spójna, to wewnątrz zbioru otwartego $U$, można
+% powiększyć zbiór zwarty $K$ do~zbioru zwartego $\ol{ V }$, przy czym
+% $K \neq \ol{ V }$. Jest tak dlatego, że~$V$ jest otwarty,
+% a~w~przestrzeni Hausdorffa zbiór zwarty jest domknięty. Jeśli więc
+% przestrzeń jest spójna to nie może zajść równość $K = V$, chyba,
+% że~$K = \es$ lub~$K = X$.
+
+% Jeśli przestrzeń nie jest spójna, to~może~się zdarzyć, że~$K$ jest
+% maksymalną składową spójną i tym samym jest otwarto-domkniętym
+% zbiorem. Wtedy jak najbardziej może~się zdarzyć, iż~$K = V$.
+
+% \begin{twr}[Laurent Schwartz, str??\cite{Sch79}]
+%   \label{twr:Zem-s01-02}
+%   Niech $( X, d )$ będzie przestrzenią metryczną, w~której każdy zbiór
+%   domknięty i~ograniczony jest zwarty. Jeśli $K$ jest zbiorem zwartym,
+%   $D$ zbiorem domkniętym i~$K \cup D = \es$, to odległość zbiorów $K$
+%   i~$D$
+%   \begin{equation}
+%     \label{eq:Zem-s01-05}
+%     d( K, D ) > 0,
+%   \end{equation}
+%   do~tego odległość ta przyjmuje w~pewnym punkcie minimum.
+% \end{twr}
+% \noi Schwartz formułuje równoważne założenie twierdzenia, że~każda
+% kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
+
+% \start \Str{48--49} \tb{Lemat 1, uzupełnienie.} Na~podstawie
+% twierdzenia \ref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych
+% własnościach. Teraz na~mocy twierdzenia \ref{twr:Zem-s01-02}
+% $d( \Theta, \com \Psi ) = d_{ 1 } > 0$, jeśli więc
+% $\alpha_{ 1 } < d_{ 1 }$, to~nośnik funkcji
+% $\gamma_{ \alpha_{ 1 } }( t - \tau )$ zawiera~się $\Psi$ dla~każdego
+% $t$~z~$\Theta$, tym samym $\varphi( t ) = 1$. Gwarantuje to~też,
+% iż~funkcja podcałkowa jest klasy $\Cc^{ \infty }$. Dowiedliśmy więc,
+% że~$\varphi( t ) = 1$ na~$\Theta$.
+
+
+% \newpage
+% \CenterTB{Błędy}
+% \begin{center}
+%   \begin{tabular}{|c|c|c|c|c|}
+%     \hline
+%     & \multicolumn{2}{c|}{} & & \\
+%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
+%                               & Powinno być \\ \cline{2-3}
+%     & Od góry & Od dołu & & \\
+%     \hline
+%     % & & & & \\
+%     \hline
+%   \end{tabular}
+% \end{center}
 % \noi
 % \StrWd{21}{10} \\
 % \Jest opisem niewykończonego \\
 % \Powin niepełnym opisem pewnego \\
-Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
+% \StrWg{34}{2} \\
+% \Jest Odpowiednie nachylenie wskazuje \\
+% \Powin Odpowiednią funkcje przedstawia \\
+% \StrWd{38}{4} \\
+% \Jest choć może nie być sprecyzowana jego wartość \\
+% \Powin choć jego wartość może nie być podana jawnie \\
+% \StrWd{40}{6} \\
+% \Jest wartości liczbowych \\
+% \Powin wartości liczbowej w~punkcie \\
+
+% \vspace{\spaceTwo}
 
 
 
 
 
+% % ######################################
+% \section{Algebry operatorów i~algebry topologiczne}
+
+% \vspace{\spaceTwo}
+% % ######################################
+
+
+% % ####################
+% \Work{ % Autorzy i tytuł dzieła
+%   Ola Bratteli, Derek W.~Robinson \\
+%   ,,Operator Algebras and~Quantum Statistical Mechanics 1. \\
+%   $C^{ * }$- and $W^{ * }$-Algebras, Symmetry Groups. Decoposition~of
+%   State'', \cite{BratteliRobinsonOperatorAlgebrasTomI2002} }
+
+
+% \CenterTB{Uwagi}
+
+% \start \Str{19} Autorzy zapomnieli o~jednym warunku, który jest
+% potrzebny w~definicji algebry
+% \begin{equation}
+%   \label{eq:BR-s01-01}
+%   ( A + B ) C = A C + B C.
+% \end{equation}
+
+% \vspace{\spaceFour}
+
+
+% \start \Str{27} Transformacja podana dla $\lambda^{ n } - A^{ n }$ i
+% wynikające z niej konsekwencje, nie są wystarczająco omówione.
+
+% \vspace{\spaceFour}
+
+
+% \CenterTB{Błędy}
 % \begin{center}
-%   Masamichi Takesaki\\
-%   ,,Theory of Operator Algebras. Volume 1.'', \cite{MTTOAI}.
+%   \begin{tabular}{|c|c|c|c|c|}
+%     \hline
+%     & \multicolumn{2}{c|}{} & & \\
+%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
+%                               & Powinno być \\ \cline{2-3}
+%     & Od góry & Od dołu & & \\
+%     \hline
+%     21  & & 10 & $ff^{ * }$ & $f^{ * }\! f$ \\
+%     22  & 12 & & $( \alpha, A^{ * } )$ & $( \alpha, A )^{ * }$ \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     \hline
+%   \end{tabular}
 % \end{center}
+% % \noi
+% % \StrWd{21}{10} \\
+% % \Jest opisem niewykończonego \\
+% % \Powin niepełnym opisem pewnego \\
+% Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
 
 
-% % Uwagi:
-% % \begin{itemize}
-% % \item
-% % \end{itemize}
 
 
-% Błędy:\\
-% \begin{tabular}{|c|c|c|c|c|}
-%   \hline
-%   & \multicolumn{2}{c|}{} & & \\
-%   Strona & \multicolumn{2}{c|}{Wiersz}& Jest
-%                             & Powinno być \\ \cline{2-3}
-%   & Od góry & Od dołu & & \\
-%   \hline
-%   5 & & 6 & $x_{ 0 }^{ -1 } + \sum\limits_{ n = 0 }^{ \infty }
-%             [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n } x_{ 0 }^{ -1 }$
-%          & $\sum\limits_{ n = 0 }^{ \infty } [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n }
-%            x_{ 0 }^{ -1 }$ \\
-%   7 & & 9 & $[ ( 1 / \lambda ) x - 1 ]^{ -1 }$
-%          & $[ 1 - ( 1 / \lambda ) x ]^{ -1 }$ \\
-%   7 & & 8 & $\frac{ 1 }{ \lambda } \big( \frac{ 1 }{ \lambda } - x \big)^{ -1 }$
-%          & $-\frac{ 1 }{ \lambda } \big( 1 - \frac{ 1 }{ \lambda } x \big)^{ -1 }$ \\
-%   7 & & 3 & $\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$
-%          & $-\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$ \\
-%   8 & 3 & & $( \lambda - \lambda_{ 0 } )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$
-%          & $-( \lambda_{ 0 } - \lambda )^{ n } f( \plambda_{ 0 } )^{ n + 1 }$ \\
-%   & & & & \\
-%   \hline
-% \end{tabular}
+
+% % \begin{center}
+% %   Masamichi Takesaki\\
+% %   ,,Theory of Operator Algebras. Volume 1.'', \cite{MTTOAI}.
+% % \end{center}
+
+
+% % % Uwagi:
+% % % \begin{itemize}
+% % % \item
+% % % \end{itemize}
+
+
+% % Błędy:\\
+% % \begin{tabular}{|c|c|c|c|c|}
+% %   \hline
+% %   & \multicolumn{2}{c|}{} & & \\
+% %   Strona & \multicolumn{2}{c|}{Wiersz}& Jest
+% %                             & Powinno być \\ \cline{2-3}
+% %   & Od góry & Od dołu & & \\
+% %   \hline
+% %   5 & & 6 & $x_{ 0 }^{ -1 } + \sum\limits_{ n = 0 }^{ \infty }
+% %             [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n } x_{ 0 }^{ -1 }$
+% %          & $\sum\limits_{ n = 0 }^{ \infty } [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n }
+% %            x_{ 0 }^{ -1 }$ \\
+% %   7 & & 9 & $[ ( 1 / \lambda ) x - 1 ]^{ -1 }$
+% %          & $[ 1 - ( 1 / \lambda ) x ]^{ -1 }$ \\
+% %   7 & & 8 & $\frac{ 1 }{ \lambda } \big( \frac{ 1 }{ \lambda } - x \big)^{ -1 }$
+% %          & $-\frac{ 1 }{ \lambda } \big( 1 - \frac{ 1 }{ \lambda } x \big)^{ -1 }$ \\
+% %   7 & & 3 & $\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$
+% %          & $-\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$ \\
+% %   8 & 3 & & $( \lambda - \lambda_{ 0 } )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$
+% %          & $-( \lambda_{ 0 } - \lambda )^{ n } f( \plambda_{ 0 } )^{ n + 1 }$ \\
+% %   & & & & \\
+% %   \hline
+% % \end{tabular}
 
 
 
@@ -1054,7 +996,12 @@ Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
 % #####################################################################
 % #####################################################################
 % Bibliografia
-\bibliographystyle{plalpha} \bibliography{LibMathInfo}{}
+\bibliographystyle{plalpha}
+
+\bibliography{MathComScienceBooks}{}
+
+
+
 
 
 % ############################
