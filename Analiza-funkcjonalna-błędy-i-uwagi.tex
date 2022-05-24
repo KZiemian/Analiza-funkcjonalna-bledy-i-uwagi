@@ -501,8 +501,9 @@ domkniętych i~ograniczonych\footnote{Jak wiadomo z~twierdzenia
 niewygodne, będę mówił o~zbiorach zwartych. Będziemy jeszcze
 potrzebowali dwóch twierdzeń odnośnie tych zbiorów.
 
-\begin{twr}[Walter Rudin, twr. 2.7, str.~45,~\cite{Rudin98}]
-  \label{twr:Zem-s01-01}
+\begin{twr}[Walter Rudin, twr. 2.7,
+  str.~45,~\cite{RudinAnalizaRzeczywistaIZespolona1998}]
+  \label{thm:Zem-s01-01}
   Niech $X$ będzie lokalnie zwartą przestrzenią Hausdorffa,
   $K$~zbiorem zwartym, $U$~zbiorem otwartym i~$K \subset U$. Istnieje
   zbiór otwarty o~zwartym domknięciu taki,~że
@@ -523,8 +524,9 @@ Jeśli przestrzeń nie jest spójna, to~może~się zdarzyć, że~$K$ jest
 maksymalną składową spójną i tym samym jest otwarto-domkniętym
 zbiorem. Wtedy jak najbardziej może~się zdarzyć, iż~$K = V$.
 
-\begin{twr}[Laurent Schwartz, str??\cite{Schwartz79}]
-  \label{twr:Zem-s01-02}
+\begin{twr}[Laurent Schwartz,
+  str??\cite{SchwartzKursAnalizyMatematycznejVolI1979}]
+  \label{thm:Zem-s01-02}
   Niech $( X, d )$ będzie przestrzenią metryczną, w~której każdy zbiór
   domknięty i~ograniczony jest zwarty. Jeśli $K$ jest zbiorem zwartym,
   $D$ zbiorem domkniętym i~$K \cup D = \emptyset$, to odległość zbiorów $K$
@@ -655,8 +657,8 @@ dąży do $-\varphi^{ ( 1 ) }( t )$ przy $\Delta \to 0$ wynika od~razu z~definic
 pochodnej i~twierdzenia o~składaniu granic\footnote{Udowodnij i~zapisz
   gdzieś to twierdzenie.}, problem jest tylko taki, że~jest to
 zbieżność punktowa. Aby zaś skorzystać z~ciągłości dystrybucji
-potrzebujemy udowodnić zbieżność jednostajną tego ilorazy do~$-\varphi^{ ( 1 ) }( t )$
-oraz jednostajną zbieżność jego $k$-pochodnej
+potrzebujemy udowodnić zbieżność jednostajną tego ilorazy
+do~$-\varphi^{ ( 1 ) }( t )$ oraz jednostajną zbieżność jego $k$-pochodnej
 do~$-\varphi^{ ( k + 1 ) }( t )$. Inaczej mówiąc dla $k = 0, 1, 2, \ldots$
 musi zachodzić
 \begin{equation}
@@ -748,38 +750,30 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 \StrWd{21}{10} \\
 \Jest  opisem niewykończonego \\
 \Powin niepełnym opisem pewnego \\
-% \StrWg{34}{2} \\
-% \Jest Odpowiednie nachylenie wskazuje \\
-% \Powin Odpowiednią funkcje przedstawia \\
-% \StrWd{38}{4} \\
-% \Jest choć może nie być sprecyzowana jego wartość \\
-% \Powin choć jego wartość może nie być podana jawnie \\
-% \StrWd{40}{6} \\
-% \Jest wartości liczbowych \\
-% \Powin wartości liczbowej w~punkcie \\
-% \StrWg{50}{14} \\
-% \Jest \emph{pokrycie $\Rn$.} \\
-% \Powin \emph{pokrycie $\Rn$, przy czym średnice wszystkich jego zbiorów,
-%   są~ograniczone przez tą samą stałą, co~dla rodziny $\mf{C}_{ T }$.} \\
-% \StrWd{71}{5} \\
-% \Jest \emph{$M$ i $k$ stałych rzeczywistych} \\
-% \Powin \emph{$M > 0$ i~$k$ naturalnego} \\
-% \StrWd{71}{4} \\
-% \Jest \emph{gdzie $p$} \\
-% \Powin \emph{gdzie $p = k + 2$, a~$g( t )$} \\
-
-% \vspace{\spaceTwo}
-
+\StrWg{34}{2} \\
+\Jest  Odpowiednie nachylenie wskazuje \\
+\Powin Odpowiednią funkcje przedstawia \\
+\StrWd{38}{4} \\
+\Jest  choć może nie być sprecyzowana jego wartość \\
+\Powin choć jego wartość może nie być podana jawnie \\
+\StrWd{40}{6} \\
+\Jest  wartości liczbowych \\
+\Powin wartości liczbowej w~punkcie \\
+\StrWg{50}{14} \\
+\Jest  \textit{pokrycie $\Rbb^{ n }$.} \\
+\Powin \textit{pokrycie $\Rbb^{ n }$, przy czym średnice wszystkich jego
+  zbiorów, są~ograniczone przez tą samą stałą, co~dla rodziny
+  $\Cfrak_{ T }$.} \\
+\StrWd{71}{5} \\
+\Jest  \textit{$M$ i $k$ stałych rzeczywistych} \\
+\Powin \textit{$M > 0$ i~$k$ naturalnego} \\
+\StrWd{71}{4} \\
+\Jest  \textit{gdzie $p$} \\
+\Powin \textit{gdzie $p = k + 2$, a~$g( t )$} \\
 
 
-
-
-% % ##############################
-% \Work{ % Autor i tytuł dzieła
-%   Armen H.~Zemanian, ,,Teoria dystrybucji i analiza transformat'',
-%   \cite{ZemanianTeoriaDystrybucji69} }
-
-% % ###############
+\vspace{\spaceTwo}
+% ############################
 
 
 
@@ -790,134 +784,137 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 
 
 
+% ######################################
+\section{Algebry operatorów i~algebry topologiczne}
 
-% \newpage
-% \CenterTB{Błędy}
-% \begin{center}
-%   \begin{tabular}{|c|c|c|c|c|}
-%     \hline
-%     & \multicolumn{2}{c|}{} & & \\
-%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-%                               & Powinno być \\ \cline{2-3}
-%     & Od góry & Od dołu & & \\
-%     \hline
-%     % & & & & \\
-%     \hline
-%   \end{tabular}
-% \end{center}
-% \noi
-
-
-% \vspace{\spaceTwo}
+\vspace{\spaceTwo}
+% ######################################
 
 
 
+% ############################
+\Work{ % Autorzy i tytuł dzieła
+  Ola Bratteli, Derek W.~Robinson \\
+  „Operator Algebras and~Quantum Statistical Mechanics, Vol I. \\
+  $C^{ * }$- and $W^{ * }$-Algebras, Symmetry Groups. Decoposition~of
+  State”, \cite{BratteliRobinsonOperatorAlgebrasVolI2002} }
 
 
-% % ######################################
-% \section{Algebry operatorów i~algebry topologiczne}
-
-% \vspace{\spaceTwo}
-% % ######################################
+% ##################
+\CenterBoldFont{Uwagi do konkretnych stron}
 
 
-% % ####################
-% \Work{ % Autorzy i tytuł dzieła
-%   Ola Bratteli, Derek W.~Robinson \\
-%   ,,Operator Algebras and~Quantum Statistical Mechanics 1. \\
-%   $C^{ * }$- and $W^{ * }$-Algebras, Symmetry Groups. Decoposition~of
-%   State'', \cite{BratteliRobinsonOperatorAlgebrasTomI2002} }
+\start \Str{19} Autorzy zapomnieli o~jednym warunku, który jest
+potrzebny w~definicji algebry
+\begin{equation}
+  \label{eq:BRVolI-s01-01}
+  ( A + B ) C = A C + B C.
+\end{equation}
+
+\vspace{\spaceFour}
 
 
-% \CenterTB{Uwagi}
 
-% \start \Str{19} Autorzy zapomnieli o~jednym warunku, który jest
-% potrzebny w~definicji algebry
-% \begin{equation}
-%   \label{eq:BR-s01-01}
-%   ( A + B ) C = A C + B C.
-% \end{equation}
+\start \Str{27} Transformacja podana dla $\lambda^{ n } - A^{ n }$ i
+wynikające z niej konsekwencje, nie są wystarczająco omówione.
 
-% \vspace{\spaceFour}
-
-
-% \start \Str{27} Transformacja podana dla $\lambda^{ n } - A^{ n }$ i
-% wynikające z niej konsekwencje, nie są wystarczająco omówione.
-
-% \vspace{\spaceFour}
-
-
-% \CenterTB{Błędy}
-% \begin{center}
-%   \begin{tabular}{|c|c|c|c|c|}
-%     \hline
-%     & \multicolumn{2}{c|}{} & & \\
-%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-%                               & Powinno być \\ \cline{2-3}
-%     & Od góry & Od dołu & & \\
-%     \hline
-%     21  & & 10 & $ff^{ * }$ & $f^{ * }\! f$ \\
-%     22  & 12 & & $( \alpha, A^{ * } )$ & $( \alpha, A )^{ * }$ \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     \hline
-%   \end{tabular}
-% \end{center}
-% % \noi
-% % \StrWd{21}{10} \\
-% % \Jest opisem niewykończonego \\
-% % \Powin niepełnym opisem pewnego \\
-% Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
+\vspace{\spaceFour}
 
 
 
 
 
-% % \begin{center}
-% %   Masamichi Takesaki\\
-% %   ,,Theory of Operator Algebras. Volume 1.'', \cite{MTTOAI}.
-% % \end{center}
+% ##################
+\CenterBoldFont{Błędy}
 
 
-% % % Uwagi:
-% % % \begin{itemize}
-% % % \item
-% % % \end{itemize}
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & \multicolumn{2}{c|}{} & & \\
+    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
+                              & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu & & \\
+    \hline
+    21  & & 10 & $ff^{ * }$ & $f^{ * }\! f$ \\
+    22  & 12 & & $( \alpha, A^{ * } )$ & $( \alpha, A )^{ * }$ \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    \hline
+  \end{tabular}
+
+\end{center}
 
 
-% % Błędy:\\
-% % \begin{tabular}{|c|c|c|c|c|}
-% %   \hline
-% %   & \multicolumn{2}{c|}{} & & \\
-% %   Strona & \multicolumn{2}{c|}{Wiersz}& Jest
-% %                             & Powinno być \\ \cline{2-3}
-% %   & Od góry & Od dołu & & \\
-% %   \hline
-% %   5 & & 6 & $x_{ 0 }^{ -1 } + \sum\limits_{ n = 0 }^{ \infty }
-% %             [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n } x_{ 0 }^{ -1 }$
-% %          & $\sum\limits_{ n = 0 }^{ \infty } [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n }
-% %            x_{ 0 }^{ -1 }$ \\
-% %   7 & & 9 & $[ ( 1 / \lambda ) x - 1 ]^{ -1 }$
-% %          & $[ 1 - ( 1 / \lambda ) x ]^{ -1 }$ \\
-% %   7 & & 8 & $\frac{ 1 }{ \lambda } \big( \frac{ 1 }{ \lambda } - x \big)^{ -1 }$
-% %          & $-\frac{ 1 }{ \lambda } \big( 1 - \frac{ 1 }{ \lambda } x \big)^{ -1 }$ \\
-% %   7 & & 3 & $\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$
-% %          & $-\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$ \\
-% %   8 & 3 & & $( \lambda - \lambda_{ 0 } )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$
-% %          & $-( \lambda_{ 0 } - \lambda )^{ n } f( \plambda_{ 0 } )^{ n + 1 }$ \\
-% %   & & & & \\
-% %   \hline
-% % \end{tabular}
+Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
+
+
+\vspace{\spaceTwo}
+% ############################
+
+
+
+
+
+
+
+
+% ############################
+\Work{ % Autorzy i tytuł dzieła
+  Masamichi Takesaki \\
+  „Theory of Operator Algebras, volume I”, \cite{MTTOAI} }
+
+
+
+% ##################
+\CenterBoldFont{Błędy}
+
+
+\begin{center}
+
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & \multicolumn{2}{c|}{} & & \\
+    Strona & \multicolumn{2}{c|}{Wiersz}& Jest
+                              & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu & & \\
+    \hline
+    5 & & 6 & $x_{ 0 }^{ -1 } + \sum\limits_{ n = 0 }^{ \infty }
+              [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n } x_{ 0 }^{ -1 }$
+           & $\sum\limits_{ n = 0 }^{ \infty } [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n }
+             x_{ 0 }^{ -1 }$ \\
+    7 & & 9 & $[ ( 1 / \lambda ) x - 1 ]^{ -1 }$
+           & $[ 1 - ( 1 / \lambda ) x ]^{ -1 }$ \\
+    7 & & 8 & $\frac{ 1 }{ \lambda } \big( \frac{ 1 }{ \lambda } - x \big)^{ -1 }$
+           & $-\frac{ 1 }{ \lambda } \big( 1 - \frac{ 1 }{ \lambda } x \big)^{ -1 }$ \\
+    7 & & 3 & $\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$
+           & $-\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$ \\
+    8 & 3 & & $( \lambda - \lambda_{ 0 } )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$
+           & $-( \lambda_{ 0 } - \lambda )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$ \\
+    & & & & \\
+    \hline
+  \end{tabular}
+
+\end{center}
+
+
+\vspace{\spaceTwo}
+% ############################
+
+
+
+
+
 
 
 
