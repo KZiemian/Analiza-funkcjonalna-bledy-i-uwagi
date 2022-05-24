@@ -473,7 +473,7 @@ niego rozumieć dowolny podzbiór $???$.
 
 
 \start \Str{41} Obok nazwy \textit{zbiór zer dystrybucji}, proponowałbym
-również \textit{zbiór zerowy dystrybucji}.
+również używać dla tego pojęcia nazwy \textit{zbiór zerowy dystrybucji}.
 
 \vspace{\spaceFour}
 
@@ -590,8 +590,7 @@ odległość punktu prostopadłościanu reprezentowanego układem liczb
 $\{ m_{ 1 }, \ldots, m_{ n } \}$ od~punktu $0$, czyli
 \begin{equation}
   \label{eq:Zem-s01-06}
-  M =
-  \left( \sum_{ i = 0 }^{ n } m_{ i } \right)^{ \frac{ 1 }{ 2 } }.
+  M = \left( \sum_{ i = 0 }^{ n } m_{ i } \right)^{ \frac{ 1 }{ 2 } }.
 \end{equation}
 Zbiór $\Ocal_{ \alpha }$ może przeciąć zadaną kulę, tylko jeśli
 $M - \Diam_{ \Cfrak } < r$, czyli mówiąc prościej,
@@ -600,7 +599,7 @@ może dosięgnąć kuli $K( 0, r )$. Ponieważ istnieje tylko skończona
 ilość układów liczb $\{ m_{ 1 }, \ldots, m_{ n } \}$ spełniających tę
 nierówność, więc tylko skończoną ilość razy będziemy wybierali
 skończoną rodzinę zbiorów $\Ocal_{ \alpha }$ takich, że~jest możliwe
-by~$K( 0, r ) \cap \Ocal_{ \alpha } \neq \O$.
+by~$K( 0, r ) \cap \Ocal_{ \alpha } \neq \emptyset$.
 
 \vspace{\spaceFour}
 
@@ -745,9 +744,10 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 \end{center}
 
 
-% \noi \StrWd{21}{10} \\
-% \Jest opisem niewykończonego \\
-% \Powin niepełnym opisem pewnego \\
+\noindent
+\StrWd{21}{10} \\
+\Jest  opisem niewykończonego \\
+\Powin niepełnym opisem pewnego \\
 % \StrWg{34}{2} \\
 % \Jest Odpowiednie nachylenie wskazuje \\
 % \Powin Odpowiednią funkcje przedstawia \\
@@ -789,65 +789,6 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 
 
 
-% \start \Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
-% jest niezmiernie ważne, zawiera wiele luk, które postaram~się
-% w~dalszych podpunktach uzupełnić, tu zaś zbiorę potrzebne do~tego
-% informacje.
-
-% Zacznijmy od~tego, że~aby nie obciążać Czytelnika nowymi pojęciami,
-% nie używa pojęcia zbioru zwartego, zamiast tego mówi o~zbiorach
-% domkniętych i~ograniczonych w~$\Rn$\footnote{Jak wiadomo z~twierdzenia
-%   Heinego\dywiz Borela, zbiór w~$\Rn$ jest zwarty \wtw, gdy jest
-%   domknięty i~ograniczony.}, ponieważ jednak jest to niewygodne, będę
-% mówił o~zbiorach zwartych. Będziemy jeszcze potrzebowali dwóch
-% twierdzeń odnośnie tych zbiorów.
-
-% \begin{twr}[Walter Rudin, twr. 2.7, str.~45,~\cite{Rud98}]
-%   \label{twr:Zem-s01-01}
-%   Niech $X$ będzie lokalnie zwartą przestrzenią Hausdorffa,
-%   $K$~zbiorem zwartym, $U$~zbiorem otwartym i~$K \subs U$. Istnieje
-%   zbiór otwarty o~zwartym domknięciu taki,~że
-%   \begin{equation}
-%     \label{eq:Zem-s01-04}
-%     K \subs V \subs \ol{ V } \subs U.
-%   \end{equation}
-% \end{twr}
-% Sens tego twierdzenia jest następujący. Jeśli $K \notin \{ \es, X \}$
-% i~przestrzeń $X$ jest spójna, to wewnątrz zbioru otwartego $U$, można
-% powiększyć zbiór zwarty $K$ do~zbioru zwartego $\ol{ V }$, przy czym
-% $K \neq \ol{ V }$. Jest tak dlatego, że~$V$ jest otwarty,
-% a~w~przestrzeni Hausdorffa zbiór zwarty jest domknięty. Jeśli więc
-% przestrzeń jest spójna to nie może zajść równość $K = V$, chyba,
-% że~$K = \es$ lub~$K = X$.
-
-% Jeśli przestrzeń nie jest spójna, to~może~się zdarzyć, że~$K$ jest
-% maksymalną składową spójną i tym samym jest otwarto-domkniętym
-% zbiorem. Wtedy jak najbardziej może~się zdarzyć, iż~$K = V$.
-
-% \begin{twr}[Laurent Schwartz, str??\cite{Sch79}]
-%   \label{twr:Zem-s01-02}
-%   Niech $( X, d )$ będzie przestrzenią metryczną, w~której każdy zbiór
-%   domknięty i~ograniczony jest zwarty. Jeśli $K$ jest zbiorem zwartym,
-%   $D$ zbiorem domkniętym i~$K \cup D = \es$, to odległość zbiorów $K$
-%   i~$D$
-%   \begin{equation}
-%     \label{eq:Zem-s01-05}
-%     d( K, D ) > 0,
-%   \end{equation}
-%   do~tego odległość ta przyjmuje w~pewnym punkcie minimum.
-% \end{twr}
-% \noi Schwartz formułuje równoważne założenie twierdzenia, że~każda
-% kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
-
-% \start \Str{48--49} \tb{Lemat 1, uzupełnienie.} Na~podstawie
-% twierdzenia \ref{twr:Zem-s01-01} istniej zbiór $\Psi$ o~żądanych
-% własnościach. Teraz na~mocy twierdzenia \ref{twr:Zem-s01-02}
-% $d( \Theta, \com \Psi ) = d_{ 1 } > 0$, jeśli więc
-% $\alpha_{ 1 } < d_{ 1 }$, to~nośnik funkcji
-% $\gamma_{ \alpha_{ 1 } }( t - \tau )$ zawiera~się $\Psi$ dla~każdego
-% $t$~z~$\Theta$, tym samym $\varphi( t ) = 1$. Gwarantuje to~też,
-% iż~funkcja podcałkowa jest klasy $\Cc^{ \infty }$. Dowiedliśmy więc,
-% że~$\varphi( t ) = 1$ na~$\Theta$.
 
 
 % \newpage
@@ -865,18 +806,7 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 %   \end{tabular}
 % \end{center}
 % \noi
-% \StrWd{21}{10} \\
-% \Jest opisem niewykończonego \\
-% \Powin niepełnym opisem pewnego \\
-% \StrWg{34}{2} \\
-% \Jest Odpowiednie nachylenie wskazuje \\
-% \Powin Odpowiednią funkcje przedstawia \\
-% \StrWd{38}{4} \\
-% \Jest choć może nie być sprecyzowana jego wartość \\
-% \Powin choć jego wartość może nie być podana jawnie \\
-% \StrWd{40}{6} \\
-% \Jest wartości liczbowych \\
-% \Powin wartości liczbowej w~punkcie \\
+
 
 % \vspace{\spaceTwo}
 
