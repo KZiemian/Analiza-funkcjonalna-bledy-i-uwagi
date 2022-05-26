@@ -1207,88 +1207,104 @@ jednym z~argumentów oraz~że~zachodzi
   \bar{ \alpha } \, \mu\langle \psi, \, \varphi \rangle.
 \end{equation}
 
-% Jedną z~przyczyn zamieszania jest używanie tego samego symbolu na
-% iloczyn skalarny w~$\Hc_{ 1 }$, $\Hc_{ 2 }$ i~$\mc{E}$, tu będę je
-% oznaczał odpowiednio jako $( \cdot, \cdot )_{ \Hc_{ 1 } }$,
-% $( \cdot, \cdot )_{ \Hc_{ 2 } }$, $( \cdot, \cdot )_{ \mc{ E } }$.
-% Działanie formy $\vp_{ 1 } \ot \vp_{ 2 }$ można więc zapisać jako
-% \begin{equation*}
-%   ( \vp_{ 1 } \ot \vp_{ 2 } )\dket{ \psi_{ 1 }}{ \psi_{ 2 } }
-%   = \SP{ \psi_{ 1 } }{ \vp_{ 1 } }_{ \Hc_{ 1 } } \SP{ \psi_{ 2 } }
-%   { \vp_{ 2 } }_{ \Hc_{ 2 } }.
-% \end{equation*}
-% Iloczyn skalarny na~$\mc{E}$ ma więc postać:
-% \begin{equation*}
-%   \SP{ \vp \ot \psi }{ \eta \ot \mu }_{ \mc{E} }
-%   = \SP{ \vp }{ \eta }_{ \Hc_{ 1 } } \SP{ \psi }{ \mu }_{ \Hc_{ 2 } }.
-% \end{equation*}
-% Formę postaci $\vp \ot \psi$ będziemy nazywać \tb{formą prostą}.
-% Dowolna forma jest sumą form prostych.
+Jedną z~przyczyn zamieszania jest używanie tego samego symbolu na
+iloczyn skalarny w~$\Hcal_{ 1 }$, $\Hcal_{ 2 }$ i~$\Ecal$, tu będę je
+oznaczał odpowiednio jako $( \, \cdot \,, \cdot \, )_{ \Hcal_{ 1 } }$,
+$( \, \cdot \,, \cdot \, )_{ \Hcal_{ 2 } }$, $( \, \cdot \,, \cdot \, )_{ \Ecal }$.
+Działanie formy $\varphi_{ 1 } \otimes \varphi_{ 2 }$ można więc zapisać jako
+\begin{equation}
+  \label{RS-Vol-I-s01-25}
+  ( \varphi_{ 1 } \otimes \varphi_{ 2 } ) \langle \psi_{ 1 }, \, \psi_{ 2 } \rangle
+  =
+  ( \psi_{ 1 }, \, \varphi_{ 1 } )_{ \Hcal_{ 1 } }
+  ( \psi_{ 2 }, \, \varphi_{ 2 } )_{ \Hcal_{ 2 } }.
+\end{equation}
+Iloczyn skalarny na~$\Ecal$ ma więc postać:
+\begin{equation}
+  \label{RS-Vol-I-s01-26}
+  ( \varphi \otimes  \psi, \, \eta \otimes \mu )_{ \Ecal }
+  = ( \varphi, \, \eta )_{ \Hcal_{ 1 } } ( \psi, \,  \mu )_{ \Hcal_{ 2 } }.
+\end{equation}
+Formę postaci $\varphi \otimes \psi$ będziemy nazywać \textbf{formą prostą}.
+Dowolna forma jest sumą form prostych.
 
-% Tu~pojawia~się drugie źródło komplikacji. Ta sama forma może być
-% przedstawiona za~pomocą różnych sum form prostych. Na~przykład
-% \begin{equation*}
-%   \mu_{ 1 } = \vp \ot ( \psi_{ 1 } + \psi_{ 2 } ) = \mu_{ 2 }
-%   = \vp \ot \psi_{ 1 } + \vp \ot \psi_{ 2 }.
-% \end{equation*}
-% Z~tego względu należałoby zdefiniować $\mc{E}$ jako zbiór klas
-% abstrakcji względem relacji równoważności, która utożsamia dwie sumy
-% form prostych jeśli przedstawiają tę~samą dwuantyliniową formę.
-% Następnie dowiedlibyśmy, że~iloczyn w tej przestrzeni ilorazowej nie
-% zależy od~reprezentanta, co jest równoważne postępowaniu Reeda
-% i~Simona, jednak z~jakiegoś powodu nie chcieli pójść tą drogą.
+Tu~pojawia~się drugie źródło komplikacji. Ta sama forma może być
+przedstawiona za~pomocą różnych sum form prostych. Na~przykład
+\begin{equation}
+  \label{RS-Vol-I-s01-27}
+  \mu_{ 1 } = \varphi \otimes ( \psi_{ 1 } + \psi_{ 2 } ) = \mu_{ 2 }
+  = \varphi \otimes \psi_{ 1 } + \varphi \otimes \psi_{ 2 }.
+\end{equation}
+Z~tego względu należałoby zdefiniować $\Ecal$ jako zbiór klas
+abstrakcji względem relacji równoważności, która utożsamia dwie sumy
+form prostych jeśli przedstawiają tę~samą dwuantyliniową formę.
+Następnie dowiedlibyśmy, że~iloczyn w tej przestrzeni ilorazowej nie
+zależy od~reprezentanta, co jest równoważne postępowaniu Reeda
+i~Simona, jednak z~jakiegoś powodu nie chcieli pójść tą drogą.
 
-% Powyższy przykład uogólnia~się do~dobrze znanego z~algebry liniowej
-% faktu, iż~iloczyn tensorowy jest wieloliniowy. Z~samej definicji
-% wynika, że~zachodzi następująca równość form
-% \begin{equation*}
-%   \vp \ot \ld \ot ( \al \psi_{ 1 } + \beta \psi_{ 2 } ) \ot \ld \ot \eta
-%   = \al \, \vp \ot \ld \ot \psi_{ 1 } \ot \ld \ot \eta
-%   + \beta \, \vp \ot \ld \ot \psi_{ 2 } \ot \ld \ot \eta.
-% \end{equation*}
+Powyższy przykład uogólnia~się do~dobrze znanego z~algebry liniowej
+faktu, iż~iloczyn tensorowy jest wieloliniowy. Z~samej definicji
+wynika, że~zachodzi następująca równość form
+\begin{equation}
+  \label{RS-Vol-I-s01-28}
+  \varphi \otimes \ldots \otimes ( \alpha \psi_{ 1 } + \beta \psi_{ 2 } ) \otimes \ldots \otimes \eta =
+  \alpha \, \varphi \otimes \ldots \otimes \psi_{ 1 } \otimes \ldots \otimes \eta
+  + \beta \, \varphi \otimes \ldots \otimes \psi_{ 2 } \otimes \ldots \otimes \eta.
+\end{equation}
 
-% W~dalszym ciągu potrzebna będzie nam następująca obserwacja: jeżeli
-% $\mu \in \mc{E}$, to zachodzi równość:
-% \begin{equation*}
-%   \SP{ \vp \ot \psi }{ \mu }_{ \mc{E} } = \mu\dket{ \vp }{ \psi },
-% \end{equation*}
-% gdzie $\mu\dket{ \vp }{ \psi }$ oznacza wartość formy $\mu$ na~parze
-% uporządkowanej $\dket{ \vp }{ \psi }$. Jeżeli $\mu = \eta \ot \chi$ to
-% powyższa równość wynika z~definicji wszystkich działań. Jeśli zaś
-% $\mu = \Sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \ot \psi_{ i } )$,
-% wówczas
-% \begin{equation*}
-%   \begin{split}
-%     \SP{ \vp \ot \psi }{ \mu }_{ \mc{E} } &= \left( \vp \ot \psi, \,
-%       \Sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \ot \chi_{ i } )
-%     \right)_{ \mc{E} } = \Sum_{ i = 1 }^{ N } c_{ i } \, \SP{ \vp \ot
-%       \psi }
-%     { \eta_{ i } \ot \chi_{ i } }_{ \mc{E} } \\
-%     &= \Sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \ot \chi_{ i } )
-%     \dket{ \vp }{ \psi } = \mu\dket{ \vp }{ \psi }.
-%   \end{split}
-% \end{equation*}
-% Dla zupełności przedstawimy uogólnienie tej obserwacji. Jeśli nadamy
-% $\Hc_{ 1 } \ti \Hc_{ 2 }$ strukturę sumy prostej
-% \begin{equation}
-%   \label{eq:4}
-%   \Sum_{ i = 1 }^{ N } d_{ i } \, \dket{ \phi_{ i } }{ \vp_{ i } }
-%   := \lket \Sum_{ i = 1 }^{ N } d_{ i } \, \phi_{ i }, \,
-%   \Sum_{ i = 1 }^{ N } d_{ i } \, \vp_{ i } \rket,
-% \end{equation}
-% i~$\eta = \Sum_{ i = 1 }^{ N } d_{ i } \: \vp_{ i } \ot \psi_{ i }$,
-% $d_{ i } \in \Cc$, to~korzystając z~półtoraliniowości mamy
-% \begin{equation*}
-%   \begin{split}
-%     ( \eta, \, \mu )_{ \mc{E} } &= \Sum_{ i = 1 }^{ N } \bar{ d }_{ i
-%     } \: ( ( \vp_{ i } \ot \psi_{ i } ), \mu )_{ \mc{E} } = \Sum_{ i =
-%       1 }^{ N } \bar{ d }_{ i } \:
-%     \SP{ \vp_{ i } \ot \psi_{ i } }{ \mu }_{ \mc{E} } \\
-%     &= \Sum_{ i = 1 }^{ N } \bar{ d }_{ i } \: \mu \lket \vp_{ i }, \,
-%     \psi_{ i } \rket = \mu( \eta ).
-%   \end{split}
-% \end{equation*}
-% $\mu( \eta )$ oznacza wartość formy $\mu$ na~$\eta$.
+W~dalszym ciągu potrzebna będzie nam następująca obserwacja: jeżeli
+$\mu \in \Ecal$, to zachodzi równość:
+\begin{equation}
+  \label{RS-Vol-I-s01-29}
+  ( \varphi \otimes \psi, \, \mu )_{ \Ecal } ??? = \mu\langle \varphi, \psi \rangle,
+\end{equation}
+gdzie $\mu\langle \varphi,  \psi \rangle$ oznacza wartość formy $\mu$ na~parze
+uporządkowanej $\langle \varphi, \psi \rangle$. Jeżeli $\mu = \eta \otimes \chi$ to
+powyższa równość wynika z~definicji wszystkich działań. Jeśli zaś
+$\mu = \sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \otimes \psi_{ i } )$,
+wówczas
+\begin{equation}
+  \label{RS-Vol-I-s01-30}
+  \begin{split}
+    ( \varphi \otimes \psi, \mu )_{ \Ecal }
+    &=
+      \left( \varphi \otimes \psi, \, \sum_{ i = 1 }^{ N } c_{ i } \,
+      ( \eta_{ i } \otimes \chi_{ i } ) \right)_{ \Ecal }
+      =
+      \sum_{ i = 1 }^{ N } c_{ i } \, ( \varphi \otimes \psi, \, \eta_{ i } \otimes \chi_{ i } )_{ \Ecal } \\
+    &=
+      \sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \otimes \chi_{ i } )
+      \langle \varphi, \psi \rangle
+      = \mu\langle \varphi, \psi \rangle.
+  \end{split}
+\end{equation}
+Dla zupełności przedstawimy uogólnienie tej obserwacji. Jeśli nadamy
+$\Hcal_{ 1 } \times \Hcal_{ 2 }$ strukturę sumy prostej
+\begin{equation}
+  \label{RS-Vol-I-s01-30}
+  \sum_{ i = 1 }^{ N } d_{ i } \, \langle \phi_{ i }, \, \varphi_{ i } \rangle
+  :=
+  \langle \sum_{ i = 1 }^{ N } d_{ i } \, \phi_{ i }, \,
+  \sum_{ i = 1 }^{ N } d_{ i } \, \varphi_{ i } \rangle,
+\end{equation}
+i~$\eta = \sum_{ i = 1 }^{ N } d_{ i } \: \varphi_{ i } \otimes \psi_{ i }$,
+$d_{ i } \in \Cbb$, to~korzystając z~półtoraliniowości mamy
+\begin{equation}
+  \label{RS-Vol-I-s01-31}
+  \begin{split}
+    ( \eta, \, \mu )_{ \Ecal }
+    &=
+      \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \:
+      ( ( \varphi_{ i } \otimes \psi_{ i } ), \mu )_{ \Ecal }
+      =
+      \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \:
+    ( \varphi_{ i } \otimes \psi_{ i }, \, \mu )_{ \Ecal } \\
+    &=
+      \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \: \mu \langle \varphi_{ i }, \, \psi_{ i } \rangle
+      = \mu( \eta ).
+  \end{split}
+\end{equation}
+$\mu( \eta )$ oznacza wartość formy $\mu$ na~$\eta$.
 
 % % wtym fragmencie wielokrotnie powtarza się "zauważyć" <<<<<<<<<<<<
 % Teraz możemy przejść do~dyskusji, czy~wzór na iloczyn skalarny nie
@@ -1345,7 +1361,7 @@ jednym z~argumentów oraz~że~zachodzi
 
 
 
-% % ####################
+% #############
 % \start \Str{50} Jako konkluzję konstrukcji iloczynu tensorowego
 % przestrzeni Hilberta warto podać następującą piękną równość, która
 % wynika wprost z~wprowadzonych definicji.
