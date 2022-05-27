@@ -84,9 +84,10 @@
 % Pakiety napisane przez użytkownika.
 % Mają być w tym samym katalogu to ten plik .tex
 % ------------------------------
-\usepackage{reedsimon}  % Pakiet napisany konkretnie dla tego pliku.
 \usepackage{latexgeneralcommands}
 \usepackage{mathcommands}
+\usepackage{reedsimon}  % Pakiet napisany konkretnie dla tego pliku.
+
 
 
 
@@ -418,8 +419,7 @@ $x_{ n_{ 1 }, \ldots, \, n_{ m } }$ wtedy i~tylko wtedy, gdy
   $x_{ n_{ 1 }, \ldots, n_{ m } }$ ciągiem elementów przestrzeni $X$.
   Jeśli funkcja $f: X \to Y$ jest ciągła topologicznie i~istnieje
   granica ciągu
-  $\lim\limits_{ \substack{ n_{ 1 } \to +\infty \\ \cdots \\ n_{ m } \to
-      +\infty } } x_{ n_{ 1 }, \ldots, \, n_{ m } } = x_{ 0 }$, to
+  $\lim_{ \, n_{ 1 } \to +\infty, \, \ldots, \, n_{ m } \to +\infty } \, x_{ n_{ 1 }, \, \ldots, \, n_{ m } } = x_{ 0 }$, to
 
   \begin{equation}
     \label{eq:RS-Vol-I-s01-11}
@@ -723,7 +723,7 @@ zbiorów mierzalnych. Zbiór $M$ jest mierzalny wtedy i~tylko wtedy, gdy
 $M \cup B' = B$, gdzie $B$, $B'$ są pewnymi zbiorami borelowskimi
 i~$\mu( B' ) = 0$. Jeśli $M$ ma taką własność, to oczywiście spełniona
 jest definicja pierwotna przy $A_{ 1 } = B_{ 1 } = B'$,
-$A_{ 2 } = B_{ 2 } = \O$.
+$A_{ 2 } = B_{ 2 } = \emptyset$.
 
 Jeśli zaś $M \cup A_{ 1 } = B \cup A_{ 2 }$, to możemy do obu stron
 dodać $B_{ 1 } \cup B_{ 2 }$ i~dostajemy,
@@ -1042,7 +1042,7 @@ dla których $( x_{ \alpha }, y ) \neq 0$ i~niech $\alpha_{ i } \in A'$
 będzie jakimś jego uporządkowaniem. Wówczas przeprowadzone w~dowodzie
 rozumowanie pokazuje, że
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-18}
+  \label{eq:RS-Vol-I-s01-19}
   y = \sum_{ j = 1 }^{ \infty } ( x_{ \alpha_{ i } }, \, y ) \, x_{ \alpha_{ i } }.
 \end{equation}
 Jeżeli teraz weźmiemy jakieś inne jego uporządkowanie $x_{ j }$,
@@ -1053,21 +1053,21 @@ sumowania.
 Pomimo tego, że~jego suma nie zależy od porządku wyrazów, nie oznacza
 to, że~szereg ten musi być absolutnie zbieżny. Rozpatrzmy bowiem
 element przestrzeni $\lcal^{ 2 }$
-\begin{equation*}
-  \label{eq:RS-Vol-I-s01-19}
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-20}
   y = \left( 1, \tfrac{ 1 }{ 2 }, \tfrac{ 1 }{ 3 }, \ldots \right), \quad
   \norm{ y }^{ 2 }
   = \sum_{ i = 1 }^{ \infty } \frac{ 1 }{ n^{ 2 } }
   = \frac{ \pi^{ 2 } }{ 6 } < +\infty.
-\end{equation*}
+\end{equation}
 Jeśli~bazę ortonormalną przyjmiemy:
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-20}
+  \label{eq:RS-Vol-I-s01-21}
   e^{ k } = ( 0, \ldots, 0, \overbrace{ 1 }^{ k }, 0, \ldots, 0),
 \end{equation}
 to samym od~razu otrzymujemy
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-21}
+  \label{eq:RS-Vol-I-s01-22}
   y =
   \sum_{ k = 1 }^{ \infty } \tfrac{ 1 }{ k } e^{ k }, \quad
   \sum_{ k = 1 }^{ \infty } \norm{ \tfrac{ 1 }{ k } e^{ k } }
@@ -1100,7 +1100,7 @@ nazwę jako szeregi \textit{zbieżne przestawialnie}. % Sprawdzone.
 \cite{GrabowskiIngardenMechanikaKwantowa1987}, warto w~kontekście
 twierdzenia II.6 udowodnić jeszcze jedną piękną równość:
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-22}
+  \label{eq:RS-Vol-I-s01-23}
   ( y, \, y' ) =
   \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y' ),
 \end{equation}
@@ -1112,7 +1112,7 @@ taki,
 że~$y' = \sum_{ j = 1 }^{ \infty } ( x_{ \alpha_{ j } }, \, y' ) x_{ \alpha_{ j } }$.
 Wtedy
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-23}
+  \label{eq:RS-Vol-I-s01-24}
   \begin{split}
     ( y, \, y' )
     &=
@@ -1144,7 +1144,7 @@ Ta tożsamość pozwala nam wykazać, w~sposób bardziej elegancki niż
 zrobili to Reed i~Simon, równanie (II.2), mianowicie podstawiając
 $y' = y$, mamy
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-24}
+  \label{eq:RS-Vol-I-s01-25}
   \norm{ y }^{ 2 } = ( y, \, y ) =
   \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y )
   = \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \,  y ) }^{ 2 }.
@@ -1167,7 +1167,7 @@ postać nierówności Bessela.
   Niech $S = \{ x_{ \alpha } \}_{ \alpha \in A }$ będzie układem
   ortonormalny i~niech $B \subset A$. Wówczas:
   \begin{equation}
-    \label{eq:RS-Vol-I-s01-25}
+    \label{eq:RS-Vol-I-s01-26}
     \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 } \leq \norm{ x }^{ 2 }.
   \end{equation}
 
@@ -1179,7 +1179,7 @@ postać nierówności Bessela.
 
   Prawie nie ma czego dowodzić, bowiem
   \begin{equation*}
-    \label{eq:RS-Vol-I-s01-26}
+    \label{eq:RS-Vol-I-s01-27}
     \norm{ x }^{ 2 } = \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \, x ) }^{ 2 }
     \geq \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 }.
   \end{equation*}
@@ -1201,7 +1201,7 @@ Po~pierwsze zauważmy, że~aby mówić o~sprzężonej biliniowej formie
 $\mu$, przez co rozumiemy, że~jest ona addytywna przy ustalonym
 jednym z~argumentów oraz~że~zachodzi
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-27}
+  \label{eq:RS-Vol-I-s01-28}
   \mu\langle \alpha \psi, \, \varphi \rangle = \bar{ \alpha } \, \mu\langle \psi, \, \varphi \rangle, \quad
   \mu\langle \psi, \, \alpha \varphi \rangle =
   \bar{ \alpha } \, \mu\langle \psi, \, \varphi \rangle.
@@ -1213,7 +1213,7 @@ oznaczał odpowiednio jako $( \, \cdot \,, \cdot \, )_{ \Hcal_{ 1 } }$,
 $( \, \cdot \,, \cdot \, )_{ \Hcal_{ 2 } }$, $( \, \cdot \,, \cdot \, )_{ \Ecal }$.
 Działanie formy $\varphi_{ 1 } \otimes \varphi_{ 2 }$ można więc zapisać jako
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-28}
+  \label{eq:RS-Vol-I-s01-29}
   ( \varphi_{ 1 } \otimes \varphi_{ 2 } ) \langle \psi_{ 1 }, \, \psi_{ 2 } \rangle
   =
   ( \psi_{ 1 }, \, \varphi_{ 1 } )_{ \Hcal_{ 1 } }
@@ -1221,7 +1221,7 @@ Działanie formy $\varphi_{ 1 } \otimes \varphi_{ 2 }$ można więc zapisać jak
 \end{equation}
 Iloczyn skalarny na~$\Ecal$ ma więc postać:
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-29}
+  \label{eq:RS-Vol-I-s01-30}
   ( \varphi \otimes  \psi, \, \eta \otimes \mu )_{ \Ecal }
   = ( \varphi, \, \eta )_{ \Hcal_{ 1 } } ( \psi, \,  \mu )_{ \Hcal_{ 2 } }.
 \end{equation}
@@ -1231,7 +1231,7 @@ Dowolna forma jest sumą form prostych.
 Tu~pojawia~się drugie źródło komplikacji. Ta sama forma może być
 przedstawiona za~pomocą różnych sum form prostych. Na~przykład
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-30}
+  \label{eq:RS-Vol-I-s01-31}
   \mu_{ 1 } = \varphi \otimes ( \psi_{ 1 } + \psi_{ 2 } ) = \mu_{ 2 }
   = \varphi \otimes \psi_{ 1 } + \varphi \otimes \psi_{ 2 }.
 \end{equation}
@@ -1246,7 +1246,7 @@ Powyższy przykład uogólnia~się do~dobrze znanego z~algebry liniowej
 faktu, iż~iloczyn tensorowy jest wieloliniowy. Z~samej definicji
 wynika, że~zachodzi następująca równość form
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-31}
+  \label{eq:RS-Vol-I-s01-32}
   \varphi \otimes \ldots \otimes ( \alpha \psi_{ 1 } + \beta \psi_{ 2 } ) \otimes \ldots \otimes \eta =
   \alpha \, \varphi \otimes \ldots \otimes \psi_{ 1 } \otimes \ldots \otimes \eta
   + \beta \, \varphi \otimes \ldots \otimes \psi_{ 2 } \otimes \ldots \otimes \eta.
@@ -1255,7 +1255,7 @@ wynika, że~zachodzi następująca równość form
 W~dalszym ciągu potrzebna będzie nam następująca obserwacja: jeżeli
 $\mu \in \Ecal$, to zachodzi równość:
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-32}
+  \label{eq:RS-Vol-I-s01-33}
   ( \varphi \otimes \psi, \, \mu )_{ \Ecal } ??? = \mu\langle \varphi, \psi \rangle,
 \end{equation}
 gdzie $\mu\langle \varphi,  \psi \rangle$ oznacza wartość formy $\mu$ na~parze
@@ -1264,7 +1264,7 @@ powyższa równość wynika z~definicji wszystkich działań. Jeśli zaś
 $\mu = \sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \otimes \psi_{ i } )$,
 wówczas
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-33}
+  \label{eq:RS-Vol-I-s01-34}
   \begin{split}
     ( \varphi \otimes \psi, \mu )_{ \Ecal }
     &=
@@ -1281,7 +1281,7 @@ wówczas
 Dla zupełności przedstawimy uogólnienie tej obserwacji. Jeśli nadamy
 $\Hcal_{ 1 } \times \Hcal_{ 2 }$ strukturę sumy prostej
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-34}
+  \label{eq:RS-Vol-I-s01-35}
   \sum_{ i = 1 }^{ N } d_{ i } \, \langle \phi_{ i }, \, \varphi_{ i } \rangle
   :=
   \langle \sum_{ i = 1 }^{ N } d_{ i } \, \phi_{ i }, \,
@@ -1290,7 +1290,7 @@ $\Hcal_{ 1 } \times \Hcal_{ 2 }$ strukturę sumy prostej
 i~$\eta = \sum_{ i = 1 }^{ N } d_{ i } \: \varphi_{ i } \otimes \psi_{ i }$,
 $d_{ i } \in \Cbb$, to~korzystając z~półtoraliniowości mamy
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-35}
+  \label{eq:RS-Vol-I-s01-36}
   \begin{split}
     ( \eta, \, \mu )_{ \Ecal }
     &=
@@ -1311,7 +1311,7 @@ Teraz możemy przejść do~dyskusji, czy~wzór na iloczyn skalarny nie
 zależy od~przedstawienia jako sumy form prostych. Zauważmy, że~dwie
 formy $\mu$, $\eta$~są równe gdy
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-36}
+  \label{eq:RS-Vol-I-s01-37}
   \mu\langle \varphi, \, \psi \rangle = \eta\langle \varphi, \, \psi \rangle, \quad
   \forall \varphi \in \Hcal_{ 1 }, \psi \in \Hcal_{ 2 }.
 \end{equation}
@@ -1323,7 +1323,7 @@ tej samej formy różnią się o~sumę form prostych reprezentującą formę
 zerową. Dla przykładu, jeżeli weźmiemy dwie formy określone wyżej
 $\mu_{ 1 }$ i~$\mu_{ 2 }$, to ich różnica:
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-37}
+  \label{eq:RS-Vol-I-s01-38}
   \mu_{ 1 } - \mu_{ 2 } =
   \varphi \otimes ( \psi_{ 1 } + \psi_{ 2 } ) - \varphi \otimes \psi_{ 1 } - \varphi \otimes \psi_{ 2 }
 \end{equation}
@@ -1339,7 +1339,7 @@ wystarczające by~wykazać żądaną ortogonalność formy zerowej.
 Dokładniej Reed i~Simon pokazali, że~wybierając bazę odpowiedniej
 przestrzeni dostajemy dla każdego $\lambda \in \Ecal$
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-38}
+  \label{eq:RS-Vol-I-s01-39}
   ( \lambda, \, \lambda ) = \sum_{ j l } \absOne{ c_{ j l } }^{ 2 } \geq 0,
 \end{equation}
 czyli iloczyn skalarny jest dodatnio określony, jeśli zaś jest
@@ -1352,7 +1352,7 @@ i~$\varphi' = \varphi + \mu$, przy czym konkretna postać $\mu$ może być w~obu
 przypadkach różna. Teraz możemy, na~poziomie konkretnych sum form
 prostych, przeprowadzić następujący rachunek, kończący dowód
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-39}
+  \label{eq:RS-Vol-I-s01-40}
   ( \varphi', \, \psi' ) = ( \varphi + \mu, \, \psi' )
   = ( \varphi, \, \psi' ) + ( \mu, \, \psi' ) = ( \varphi, \, \psi' )
   = ( \varphi, \, \psi + \mu ) = ( \varphi, \, \psi ).
@@ -1370,7 +1370,7 @@ $\mu_{ 1 }, \mu_{ 2 } \in \Ecal$ są równoważne, wtedy i~tylko wtedy
 przestrzeni Hilberta warto podać następującą piękną równość, która
 wynika wprost z~wprowadzonych definicji.
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-40}
+  \label{eq:RS-Vol-I-s01-41}
   \norm{ \varphi \otimes \psi }_{ \Hcal_{ 1 } \otimes \Hcal_{ 2 } }
   = \norm{ \varphi }_{ \Hcal_{ 1 } } \norm{ \psi }_{ \Hcal_{ 2 } }.
 \end{equation}
@@ -1386,7 +1386,7 @@ $\varphi_{ l } \otimes \psi_{ k }$ stanowi bazę ortonormalną, jest miejscami
 zbyt pobieżna by była zrozumiała dla mnie. W~tym jednak momencie
 kluczowa równość
 \begin{equation}
-  \label{eq:RS-Vol-I-s01-41}
+  \label{eq:RS-Vol-I-s01-42}
   \varphi \otimes \phi = \sum_{ l,\, k } c_{ l } d_{ k }\, \varphi_{ l } \otimes \psi_{ k },
 \end{equation}
 wynika z~tego, że~iloczyn tensorowy jest funkcją dwuliniową ciągła
@@ -1396,7 +1396,7 @@ i~przeliczalnym\footnote{W~przypadku gdy nie jest, dla danego wektora
   tylko przeliczalna ilość współczynników $c_{ l }$ i~$d_{ k }$ nie
   znika i~można powtórzyć rozumowanie.} można go ustawić w~ciąg
 jednoindeksowy, którego suma nie zależy od kolejności sumowania. Tym
-samym równość \eqref{eq:RS-Vol-I-s01-41} zachodzi niezależnie od~sposobu
+samym równość \eqref{eq:RS-Vol-I-s01-42} zachodzi niezależnie od~sposobu
 sumowania.
 
 \vspace{\spaceFour}
@@ -1434,7 +1434,7 @@ twierdzenie, którego dowód znalazł Paweł Duch.
   że~dla każdego zbioru zachodzi\footnote{Zobacz uwagi o~całce górnej
     w~ujęciu Schwartza.}
   \begin{equation}
-    \label{eq:RS-Vol-I-s01-42}
+    \label{eq:RS-Vol-I-s01-43}
     \mu( S ) = \int_{ S } \chi_{ S }( x ) \, d\mu( x ),
   \end{equation}
   niezależnie czy jego miara jest skończona, czy nie. Skoro zaś obie
@@ -1444,7 +1444,7 @@ twierdzenie, którego dowód znalazł Paweł Duch.
 
   Dostajemy więc
   \begin{equation}
-    \label{eq:RS-Vol-I-s01-43}
+    \label{eq:RS-Vol-I-s01-44}
     (\mu \otimes \nu)( A ) =
     \int_{ X \times Y } \chi( x, y ) \, d\mu( x ) \otimes d\nu( y )
     =
@@ -1472,137 +1472,160 @@ powierzchni $A$ również jest zerowe.
 
 
 
-% % ####################
-% \start \Str{51} \tb{Dowód, że~$\vpk( x ) \ot \psil( y )$ tworzą układ
-%   ortonormalny.} Sprawdźmy najpierw, że~funkcja
-% $\vpk( x ) \ot \psil( y )$ jest całkowalna w~kwadracie. Zgodnie z~tym
-% co napisano wcześnie prawdziwe są następujące
-% \begin{subequations}
-%   \begin{equation}
-%     \label{eq:7}
-%     \iint\limits_{ M_{ 1 } \ti M_{ 2 } } \abso{ \vpk( x ) \psil( y ) }^{ 2 } \,
-%     d\mu_{ 1 }( x ) d\mu_{ 2 }( y ) = \Int_{ M_{ 1 } } \abso{ \vpk( x ) }^{ 2 }\,
-%     d\mu_{ 1 }( x ) \Int_{ M_{ 2 } } \abso{ \psil( y ) }^{ 2 }\, d\mu_{ 2 }( y )
-%     = 1.
-%   \end{equation}
-
-%   \begin{equation}
-%     \label{eq:8}
-%     \iint\limits_{ M_{ 1 } \ti M_{ 2 } } \ol{ \vpk( x ) }\, \ol{ \psil( y ) }
-%     \vp_{ m }( x ) \psi_{ n }( y )\, d\mu_{ 1 }( x ) d\mu_{ 2 }( y )
-%     = \Int_{ M_{ 1 } } \ol{ \vpk( x ) } \vp_{ m }( x )\, d\mu_{ 1 }( x )
-%     \Int_{ M_{ 2 } } \ol{ \psil( y ) } \psi_{ n }( y )\, d\mu_{ 2 }( y )
-%     = \del_{ k, m }\; \del_{ l, n }.
-%   \end{equation}
-% \end{subequations}
-% Pierwsza całka w~drugiej równości to iloczyn skalarny funkcji
-% $\vpk( x ) \psil( y )$ i~$\vp_{ m }( x ) \psi_{ n }( y )$
-% w~przestrzeni $\Lt( M_{ 1 } \ti M_{ 2 }, d\mu_{ 1 } \ot d\mu_{ 2 } )$,
-% funkcja podcałkowa jest więc całkowalna i~wszystkie dalsze przejścia
-% są dozwolone.
-
-% Teraz udowodnimy, że~funkcja $f( x, y ) = 0$ prawie wszędzie.
-% Po~pierwsze zbiór na którym $f( x, y ) \neq 0$ jest równy
-% $f^{ -1 }( \Cc \setm 0 )$, jest więc on mierzalny. Teraz fakt,
-% że~zbiór ten ma~miarę~$0$ wynika z~tego co pokazali Reed i~Simon
-% oraz~twierdzenia powyżej.
-
-% \vspace{\spaceFour}
-
-
-% \start \StrWg{106}{5} Nie rozumiem dlaczego w~tym miejscu dodatkowo
-% zaznacza~się, że~miarę dowolnego zbioru mierzalnego, można
-% aproksymować od~wewnątrz przez zbiory zwarte i~\textit{borelowskie}.
-% Skoro rozważamy tylko zwarte przestrzenie Hausdorffa, wszystkie zbiory
-% zwarte~są domknięte i~tym samym borelowskie.
+% ####################
+\start \Str{51} \textbf{Dowód, że~$\varphi_{ k }( x ) \otimes \psi_{ l }( y )$ tworzą układ
+  ortonormalny.} Sprawdźmy najpierw, że~funkcja
+$\varphi_{ l }( x ) \otimes \psi_{ l }( y )$ jest całkowalna w~kwadracie. Zgodnie z~tym
+co napisano wcześnie prawdziwe są następujące
+\begin{subequations}
+  \begin{equation}
+    \label{eq:RS-Vol-I-s01-45}
+    \iint\limits_{ M_{ 1 } \times M_{ 2 } }
+    \absOne{ \varphi_{ k }( x ) \psil( y ) }^{ 2 } \,
+    d\mu_{ 1 }( x ) d\mu_{ 2 }( y )
+    =
+    \int_{ M_{ 1 } } \absOne{ \varphi_{ k }( x ) }^{ 2 } \, d\mu_{ 1 }( x )
+    \int_{ M_{ 2 } } \absOne{ \psi_{ l }( y ) }^{ 2 } \, d\mu_{ 2 }( y )
+    = 1.
+  \end{equation}
 
 
 
+  \begin{equation}
+    \label{eq:RS-Vol-I-s01-46}
+    \begin{split}
+      \iint\limits_{ M_{ 1 } \times M_{ 2 } } \overline{ \varphi( x ) } \,
+      \overline{ \psi_{ l }( y ) } \varphi_{ m }( x ) \psi_{ n }( y ) \,
+      d\mu_{ 1 }( x ) d\mu_{ 2 }( y )
+      &=
+      \int_{ M_{ 1 } } \overline{ \varphi_{ k }( x ) } \varphi_{ m }( x ) \, d\mu_{ 1 }( x )
+        \int_{ M_{ 2 } } \overline{ \psi_{ l }( y ) } \psi_{ n }( y ) \, d\mu_{ 2 }( y )
+        = \\
+      &= \delta_{ k, m } \; \delta_{ l, n }.
+    \end{split}
+  \end{equation}
+\end{subequations}
+Pierwsza całka w~drugiej równości to iloczyn skalarny funkcji
+$\varphi_{ k }( x ) \psi_{ l }( y )$ i~$\varphi_{ m }( x ) \psi_{ n }( y )$
+w~przestrzeni $\Lcal^{ 2 }( M_{ 1 } \times M_{ 2 }, d\mu_{ 1 } \otimes d\mu_{ 2 } )$,
+funkcja podcałkowa jest więc całkowalna i~wszystkie dalsze przejścia
+są dozwolone.
 
-% \newpage
-% \CenterTB{Błędy}
-% \begin{center}
-%   \begin{tabular}{|c|c|c|c|c|}
-%     \hline
-%     & \multicolumn{2}{c|}{} & & \\
-%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-%                               & Powinno być \\ \cline{2-3}
-%     & Od góry & Od dołu & & \\
-%     \hline
-%     2   &  8 & & surjective & \tb{surjective} \\
-%     2   &  9 & & \tb{surjective} & surjective \\
-%     14  & 10 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
-%     14  & 14 & & $\Si_{ 2^{ n } }( f )$ & $\Si_{ 2 n }( f )$ \\
-%     17  &  3 & & $\int \;\: f_{ n } \;\: dp$ & $\IntMo{ f_{ n } }{ p }$ \\
-%     25  &  2 & & $f$ & $f \geq 0$ \\
-%     40  & & 3 & a~Hilbert & a~separable Hilbert \\
-%     44  & & 7 & $\fr{ T( y ) }{ T( x_{ 0 } ) }$
-%            & $\fr{ \SP{ x_{ 0 } }{ y } }{ \SP{ x_{ 0 } }{ x_{ 0 } } }$ \\
-%     45  & & 2 & some & all \\
-%     46  & & 9 & $\SP{ v_{ 1 } }{ u_{ 1 } } v_{ k }$
-%            & $\SP{ v_{ 1 } }{ u_{ 2 } } v_{ 1 }$ \\
-%     49  & & 7 & linear & bilinear \\
-%     50  & 16 & & $\Sum_{ j l } \abso{ c_{ j l } }^{ 2 }$
-%            & $\Sum_{ j l } \abso{ c_{ j l } }^{ 2 } \geq 0$ \\
-%     53  & & 12 & $\vp_{ k_{ \sigma( 1 ) } } \ot \vp_{ k_{ \sigma( 2 ) } } \cdots
-%                  \ot \vp_{ k_{ n( p ) } }$
-%            & $\vp_{ k_{ \sigma( 1 ) } } \ot \vp_{ k_{ \sigma( 2 ) } } \ot \cdots
-%              \ot \vp_{ k_{ \sigma( p ) } }$ \\
-%     70  & 8 & & $\Lim_{ n \to +\infty }$ & $\Lim_{ m \to +\infty }$ \\ % Sprawdź czy
-%     % dobrze.
-%     73  & & 2 & $\Sum_{ k = 1 }^{ \infty } \abso{ \la_{ k } } < \infty$
-%            & $\Sum_{ k = 1 }^{ \infty } \abso{ \la_{ k } } \leq
-%              \norm{ \la_{ 0 } }_{ c_{ 0 }^{ * } } < \infty$ \\
-%     79  & 6 & & $\norm{ [x] }$ & $\norm{ [x] }_{ 1 }$ \\
-%     82  & & 15 & since$T[ B_{ r }^{ X } ]$ & since $T[ B_{ r }^{ X } ]$ \\
-%     104 &  5 & & $[ 0, 1 ]$ & $[ -1, 1 ]$ \\
-%     104 &  6 & & $||P_{ n }( f )$ & $|| \, P_{ n }( f )$ \\
-%     106 & 11 & & $\mu( \, Y \setm \wt{ Y } )$
-%            & $\mu( Y \setm \wt{ Y } )$ \\
-%     106 &  5 & & $C \subs O$ & $C \subs Y$ \\
-%     107 &  4 & & $\Real[ e^{ -i \vp } f ]$ & $e^{ -i \vp } f$ \\
-%     107 &  4 & & $\Real( e^{ -i \vp } f )$ & $e^{ -i \vp } f$ \\
-%     107 & 10 & & $\int\! fd\mu$ & $\IntMo{ f }{ \mu }$ \\
-%     107 & & 10 & functions & functionals \\
-%     109 & 4 & & $\norm{ l }\!\sup$ & $\norm{ l } \sup$ \\
-%     112 & & 8 & $X$ & $F$ \\
-%     128 & 2 & & $| \rho_{ \al_{ 1 } }( x ) |$ & $\rho_{ \al_{ 1 } }( x )$ \\
-%     128 & 2 & & $| \rho_{ \al_{ n } }( x ) |$ & $\rho_{ \al_{ n } }( x )$ \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     \hline
-%   \end{tabular}
-% \end{center}
-% \noi
-% \tb{Grzbiet} \\
-% \Jest REVSED \\
-% \Pow  REVISED \\
-% \StrWg{43}{3} \\
-% \Jest
-% \begin{equation*}
-%   \sup_{ \substack{ \norm{ x }_{ \Hc } = 1 } } \;\;\; \norm{ T x }_{ \Hc' }
-% \end{equation*}
-% \Pow
-% \begin{equation*}
-%   \sup_{ \substack{ \norm{ x }_{ \Hc } = 1 } } \norm{ T x }_{ \Hc' }
-% \end{equation*}
-% \StrWd{50}{17} \\
-% \Jest is~positive defined \\
-% \Pow  is positive defined and well defined \\
-% \StrWd{51}{13} \\
-% \Jest
-% \begin{equation*}
-%   \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } } \ol{ f( x, y ) } \vp_{ k }( x ) \,
-%   d\mu_{ 1 }( x ) \bigg) \quad \psi_{ l }( y ) \, d\mu_{ 2 }( y )
-% \end{equation*}
-% \Pow
-% \begin{equation*}
-%   \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } } \ol{ f( x, y ) } \vp_{ k }( x ) \,
-%   d\mu_{ 1 }( x ) \bigg) \psi_{ l }( y ) \, d\mu_{ 2 }( y )
-% \end{equation*}
+Teraz udowodnimy, że~funkcja $f( x, y ) = 0$ prawie wszędzie.
+Po~pierwsze zbiór na którym $f( x, y ) \neq 0$ jest równy
+$f^{ -1 }( \Cbb \setminus 0 )$, jest więc on mierzalny. Teraz fakt,
+że~zbiór ten ma~miarę~$0$ wynika z~tego co pokazali Reed i~Simon
+oraz~twierdzenia powyżej.
+
+\vspace{\spaceFour}
+
+
+
+\start \StrWg{106}{5} Nie rozumiem dlaczego w~tym miejscu dodatkowo
+zaznacza~się, że~miarę dowolnego zbioru mierzalnego, można
+aproksymować od~wewnątrz przez zbiory zwarte i~\textit{borelowskie}.
+Skoro rozważamy tylko zwarte przestrzenie Hausdorffa, wszystkie zbiory
+zwarte~są domknięte i~tym samym borelowskie.
+
+
+
+
+
+% ##################
+\newpage
+\CenterBoldFont{Błędy}
+
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & \multicolumn{2}{c|}{} & & \\
+    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
+                              & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu & & \\
+    \hline
+    2   &  8 & & surjective & \textbf{surjective} \\
+    2   &  9 & & \textbf{surjective} & surjective \\
+    14  & 10 & & $\sum_{ 2^{ n } }( f )$ & $\sum_{ 2 n }( f )$ \\
+    14  & 14 & & $\sum_{ 2^{ n } }( f )$ & $\sum_{ 2 n }( f )$ \\
+    17  &  3 & & $\int \;\: f_{ n } \;\: dp$ & $\int f_{ n } \, dp$ \\
+    25  &  2 & & $f$ & $f \geq 0$ \\
+    40  & & 3 & a~Hilbert & a~separable Hilbert \\
+    44  & & 7 & $\frac{ T( y ) }{ T( x_{ 0 } ) }$
+           & $\frac{ ( x_{ 0 }, \, y ) }{ ( x_{ 0 }, \, x_{ 0 } ) }$ \\
+    45  & & 2 & some & all \\
+    46  & & 9 & $( v_{ 1 }, \, u_{ 1 } ) v_{ k }$
+           & $( v_{ 1 }, \, u_{ 2 } ) v_{ 1 }$ \\
+    49  & & 7 & linear & bilinear \\
+    50  & 16 & & $\sum_{ j l } \absOne{ c_{ j l } }^{ 2 }$
+           & $\sum_{ j l } \absOne{ c_{ j l } }^{ 2 } \geq 0$ \\
+    53  & & 12 & $\varphi_{ k_{ \sigma( 1 ) } } \otimes \varphi_{ k_{ \sigma( 2 ) } }
+                 \cdots \otimes \varphi_{ k_{ n( p ) } }$
+           & $\varphi_{ k_{ \sigma( 1 ) } } \otimes \varphi_{ k_{ \sigma( 2 ) } } \otimes
+             \cdots \otimes \varphi_{ k_{ \sigma( p ) } }$ \\
+    70  & 8 & & $\lim\limits_{ n \to +\infty }$ & $\lim\limits_{ m \to +\infty }$ \\
+    % Sprawdź czy dobrze.
+    73  & & 2 & $\sum_{ k = 1 }^{ \infty } \absOne{ \lambda_{ k } } < \infty$
+           & $\sum_{ k = 1 }^{ \infty } \absOne{ \lambda_{ k } } \leq
+             \norm{ \lambda_{ 0 } }_{ c_{ 0 }^{ * } } < \infty$ \\
+    79  & 6 & & $\norm{ [x] }$ & $\norm{ [x] }_{ 1 }$ \\
+    82  & & 15 & since$T[ B_{ r }^{ X } ]$ & since $T[ B_{ r }^{ X } ]$ \\
+    104 &  5 & & $[ 0, 1 ]$ & $[ -1, 1 ]$ \\
+    104 &  6 & & $\Vert P_{ n }( f )$ & $\Vert \, P_{ n }( f )$ \\
+    106 & 11 & & $\mu( \, Y \setminus \widetilde{ Y } )$
+           & $\mu( Y \setminus \widetilde{ Y } )$ \\
+    106 &  5 & & $C \subset O$ & $C \subset Y$ \\
+    107 &  4 & & $\Real[ e^{ -i \varphi } f ]$ & $e^{ -i \varphi } f$ \\
+    107 &  4 & & $\Real( e^{ -i \varphi } f )$ & $e^{ -i \varphi } f$ \\
+    107 & 10 & & $\int\! fd\mu$ & $\int f \, d\mu$ \\
+    107 & & 10 & functions & functionals \\
+    109 & 4 & & $\norm{ l }\!\sup$ & $\norm{ l } \sup$ \\
+    112 & & 8 & $X$ & $F$ \\
+    128 & 2 & & $| \rho_{ \alpha_{ 1 } }( x ) |$ & $\rho_{ \alpha_{ 1 } }( x )$ \\
+    128 & 2 & & $| \rho_{ \alpha_{ n } }( x ) |$ & $\rho_{ \alpha_{ n } }( x )$ \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    \hline
+  \end{tabular}
+
+\end{center}
+
+
+\noindent
+\textbf{Grzbiet} \\
+\Jest  REVSED \\
+\Powin REVISED \\
+\StrWg{43}{3} \\
+\Jest
+$\displaystyle \sup_{ \substack{ \norm{ x }_{ \Hcal } = 1 } } \;\;\;
+\norm{ T x }_{ \Hcal' }$ \\[0.4em]
+\Powin
+$\displaystyle \sup_{ \substack{ \norm{ x }_{ \Hcal } = 1 } }
+\norm{ T x }_{ \Hcal' }$ \\[0.4em]
+\StrWd{50}{17} \\
+\Jest  is~positive defined \\
+\Powin is positive defined and well defined \\
+\StrWd{51}{13} \\
+\Jest
+$\displaystyle \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } }
+\overline{ f( x, y ) } \varphi_{ k }( x ) \,
+d\mu_{ 1 }( x ) \bigg) \quad \psi_{ l }( y ) \, d\mu_{ 2 }( y )$ \\
+\Powin
+$\displaystyle \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } }
+\overline{ f( x, y ) } \varphi_{ k }( x ) \, d\mu_{ 1 }( x ) \bigg)
+\psi_{ l }( y ) \, d\mu_{ 2 }( y )$
+
+
+\vspace{\spaceTwo}
+% ############################
+
+
+
+
+
 
 
 
