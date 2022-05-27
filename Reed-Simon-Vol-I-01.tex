@@ -584,14 +584,14 @@ pojęciami możemy sformułować potrzebne nam twierdzenie\footnote{Pewne
         =
         \Vert B( \sum_{ k < N } \varphi_{ k } + \varphi_{ R }, \sum_{ l < N } d_{ l } \psi_{ l }
         + \psi_{ R } ) - \sum_{ k,\, l < N } c_{ k } d_{ l }
-        B( \varphi_{ k }, \psi_{ l } ) \Vert_{ Y } \\
+        B( \varphi_{ k }, \psi_{ l } ) \Vert_{ Y } = \\
       &=
         \Vert B( \sum_{ l < N } \varphi_{ l }, \psi_{ R } )
         + B( \varphi_{ R }, \sum_{ k < N } \psi_{ k } )
         + B( \varphi_{ R }, \psi_{ R } ) \Vert_{ Y }
         \leq
         \Vert B( \sum_{ l < N } \varphi_{ l }, \psi_{ R } ) \Vert_{ Y }
-        + \Vert B( \varphi_{ R }, \sum_{ k < N } \psi_{ k } ) \Vert_{ Y } \\
+        + \Vert B( \varphi_{ R }, \sum_{ k < N } \psi_{ k } ) \Vert_{ Y } + \\
       &+ \Vert B( \varphi_{ R }, \psi_{ R } ) \Vert_{ Y }
         \leq 2 \norm{ B } M \varepsilon + \norm{ B } \varepsilon^{ 2 }.
     \end{split}
@@ -1120,7 +1120,7 @@ Wtedy
       ( x_{ \alpha_{ j } }, \,  y' ) \, x_{ \alpha_{ j } } )
       =
       \lim_{ n \to \infty } ( y, \, \sum_{ j = 1 }^{ n }
-      ( x_{ \alpha_{ j } }, \, y' ) x_{ \alpha_{ j } } ) \\
+      ( x_{ \alpha_{ j } }, \, y' ) x_{ \alpha_{ j } } ) = \\
     &=
       \lim_{ n \to \infty } \sum_{ j = 1 }^{ n } ( y, \, ( x_{ \alpha_{ j } }, \, y' )
       x_{ \alpha_{ j } } )
@@ -1271,7 +1271,8 @@ wówczas
       \left( \varphi \otimes \psi, \, \sum_{ i = 1 }^{ N } c_{ i } \,
       ( \eta_{ i } \otimes \chi_{ i } ) \right)_{ \Ecal }
       =
-      \sum_{ i = 1 }^{ N } c_{ i } \, ( \varphi \otimes \psi, \, \eta_{ i } \otimes \chi_{ i } )_{ \Ecal } \\
+      \sum_{ i = 1 }^{ N } c_{ i } \,
+      ( \varphi \otimes \psi, \, \eta_{ i } \otimes \chi_{ i } )_{ \Ecal } = \\
     &=
       \sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \otimes \chi_{ i } )
       \langle \varphi, \, \psi \rangle
@@ -1298,7 +1299,7 @@ $d_{ i } \in \Cbb$, to~korzystając z~półtoraliniowości mamy
       \big( ( \varphi_{ i } \otimes \psi_{ i } ), \, \mu \big)_{ \Ecal }
       =
       \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \:
-    ( \varphi_{ i } \otimes \psi_{ i }, \, \mu )_{ \Ecal } \\
+    ( \varphi_{ i } \otimes \psi_{ i }, \, \mu )_{ \Ecal } = \\
     &=
       \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \: \mu \langle \varphi_{ i }, \, \psi_{ i } \rangle
       = \mu( \eta ).
