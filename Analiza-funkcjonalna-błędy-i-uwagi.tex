@@ -101,6 +101,8 @@
 % ------------------------------
 % Ustawienia różnych parametrów tekstu
 % ------------------------------
+\renewcommand{\baselinestretch}{1.1}
+
 \renewcommand{\arraystretch}{1.2} % Ustawienie szerokości odstępów między
 % wierszami w tabelach.
 
@@ -109,7 +111,7 @@
 
 
 % ------------------------------
-% Pakiet "hyperref"
+% Pakiet „hyperref”
 % Polecano by umieszczać go na końcu preambuły.
 % ------------------------------
 \usepackage{hyperref} % Pozwala tworzyć hiperlinki i zamienia odwołania
@@ -127,7 +129,7 @@
 % ---------------------------------------------------------------------
 % Tytuł i tytuł tekstu
 \title{Analiza funkcjonalna \\
-  błędy i~uwagi}
+  {\Large Błędy i~uwagi}}
 
 \author{Kamil Ziemian, korekta Wojciech Dyba}
 
@@ -171,7 +173,7 @@
 % ############################
 \Work{ % Autor i tytuł dzieła
   A. V. Balakrishnan \\
-  „Analiza funkcjonalna stosowana”,
+  \textit{Analiza funkcjonalna stosowana},
   \cite{BalakrishnanAnalizaFunkcjonalnaStosowana1992}}
 
 
@@ -215,8 +217,8 @@
 
 \Work{ % Autorzy i tytuł dzieła
   Anton Deitmar, Siegrfied Echterhoff \\
-  „Principles~of Harmonic Analysis”,
-  \cite{DeitmarEcherhoffPrinciplesOfHarmonicAnalysis2009} }
+  \textit{Principles~of Harmonic Analysis},
+  \cite{DeitmarEcherhoffPrinciplesOfHarmonicAnalysis2009}}
 
 
 % ##################
@@ -304,7 +306,7 @@ dowodzie.
 
 \Work{ % Autorzy i tytuł dziełą
   I. M. Gelfand, G. E. Shilov \\
-  „Generalized Functions: Volume~I, Properties and~Operations”,
+  \textit{Generalized Functions: Volume~I, Properties and~Operations},
   \cite{GelfandShilovGeneralizedFunctionsVolI1964}}
 
 
@@ -537,7 +539,6 @@ byśmy mogli się nim zajmować.
 
   \begin{tabular}{|c|c|c|c|c|}
     \hline
-    & \multicolumn{2}{c|}{} & & \\
     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
                               & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu & & \\
@@ -1157,9 +1158,9 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 % ############################
 \Work{ % Autorzy i tytuł dzieła
   Ola Bratteli, Derek W.~Robinson \\
-  „Operator Algebras and~Quantum Statistical Mechanics, Vol I. \\
-  $C^{ * }$- and $W^{ * }$-Algebras, Symmetry Groups. Decoposition~of
-  State”, \cite{BratteliRobinsonOperatorAlgebrasVolI2002}}
+  \textit{Operator Algebras and~Quantum Statistical Mechanics, Vol I.} \\
+  \textit{$C^{ * }$- and $W^{ * }$-Algebras, Symmetry Groups. Decoposition~of
+  State}, \cite{BratteliRobinsonOperatorAlgebrasVolI2002}}
 
 
 % ##################
@@ -1169,7 +1170,7 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 \start \Str{19} Autorzy zapomnieli o~jednym warunku, który jest
 potrzebny w~definicji algebry
 \begin{equation}
-  \label{eq:BRVolI-s01-01}
+  \label{eq:BR-VolI-s01-01}
   ( A + B ) C = A C + B C.
 \end{equation}
 
