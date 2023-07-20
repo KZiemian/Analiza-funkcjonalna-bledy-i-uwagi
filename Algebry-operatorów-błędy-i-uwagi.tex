@@ -399,7 +399,7 @@ odwracalnego określiliśmy potęgę $A^{ m }$, dla dowolnego $m \in \Zbb$.
 
 
 \noindent
-\Str{25} Warto zwrócić tu uwagę, na~pewną własność normy elementu
+\Str{25} Dobrze jest zwrócić tu uwagę, na~pewną własność normy elementu
 odwrotnego, która zachodzi dla każdej algebry unormowanej. Ponieważ mamy
 \begin{equation}
   \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-18}
@@ -410,6 +410,177 @@ co prowadzi do nierówności
   \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-19}
   \frac{ 1 }{ \Vert A \Vert } \leq \Vert A^{ -1 } \Vert.
 \end{equation}
+
+\vspace{\VerSpaceFour}
+
+
+
+
+
+\noindent
+\Str{25--26} Przekształcając szereg wyrażający element odwrotny
+do~$\lambda \UnitAlg - A$ można otrzymać ciekawy wynik. Zacznijmy od przyjęcia,
+że~$\lambda = 1$. Wówczas operator odwrotny do $\UnitAlg - A$, gdzie $\Vert A \Vert < 1$
+wyraża~się wzorem
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-20}
+  \sum_{ m \geq 0 } A^{ m }.
+\end{equation}
+Rozpoznajemy tu wzór analogiczny do wyrażeni na sumę szeregu geometrycznego
+liczb rzeczywistych:
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-21}
+  \frac{ \UnitAlg }{ \UnitAlg - A } \equiv ( \UnitAlg - A )^{ -1 } =
+  \sum_{ m \geq 0 } A^{ m }.
+\end{equation}
+Używając standardowej metody na szacowanie normy szeregu od~razu dostajemy
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-22}
+  \Vert ( \UnitAlg - A )^{ -1 } \Vert \leq
+  \frac{ 1 }{ 1 - \Vert A \Vert }.
+\end{equation}
+
+Rozpatrzymy teraz element $B$ taki, że~$\Vert \UnitAlg - B \Vert < 1$. Ponieważ
+$B = \UnitAlg - ( \UnitAlg - B )$, a~na~mocy tego co zostało
+powiedziane wcześniej operator $\UnitAlg - ( \UnitAlg - B )$ jest
+odwracalny, tym samym
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-23}
+  B^{ -1 } =
+  \big( \UnitAlg - ( \UnitAlg - B ) \big)^{ -1 } =
+  \sum_{ m \geq 0 } ( \UnitAlg - B )^{ m }.
+\end{equation}
+Oszacowanie \eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-22}
+przyjmuje teraz formę
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-24}
+  \Vert B^{ -1 } \Vert =
+  \big( \UnitAlg - ( \UnitAlg - B ) \big)^{ -1 } \leq
+  \frac{ 1 }{ 1 - \Vert \UnitAlg - B \Vert }.
+\end{equation}
+
+\vspace{\VerSpaceFour}
+
+
+
+
+
+\noindent
+\Str{26} W~dowodzie propozycji 2.2.2 jest pokazane, że~jeśli
+$0 \in r_{ \Ufrak }( A )$ to $r_{ A } > 0$. Później zostanie udowodnione,
+że~$\rho( A ) = r_{ A }$, ale na razie będziemy~się trzymać tych oznaczeń.
+Kiedy jednak udowodnimy, że~$r_{ A }$ jest równy promieniowi spektralnemu,
+i~że widmo zawsze jest niepuste ta implikacja zyska elegancką interpretację.
+Mianowicie, $0 \in r_{ \Ufrak }( A )$ oznacza, że~operator
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-25}
+  0 \, \UnitAlg - A = -A,
+\end{equation}
+jest odwracalny, a~tym samy odwracalny jest element $-( -A ) = A$. Ponieważ
+zaś, jeśli element $A$ jest odwracalny to odwracalne są też wszystkie
+elementy $\lambda \UnitAlg - A$, gdzie $| \lambda | < \Vert A^{ -1 } \Vert$. Tym samym w~kole
+wyznaczonym przez ostatnią nierówność nie elementów widma, więc promień
+spektralny musi być większy od~zera.
+
+Analogicznie możemy wyjaśnić, czemu $r_{ A } = 0$ oznacza,
+że~$0 \in \sigma_{ \Ufrak }( A )$. Aby promień spektralny był równy $0$, dla
+dowolnego otoczenia punktu $\lambda = 0$ musi istnieć $\lambda_{ 1 }$ taki,
+że~element $\lambda_{ 1 } \UnitAlg - A$ jest nieodwracalny. Ale na mocy tego co
+zostało powiedziane wyżej, jest to możliwe tylko wtedy, gdy~$A$ sam jest
+nieodwracalny.
+
+\vspace{\VerSpaceFour}
+
+
+
+
+
+\noindent
+\Str{26--27} Dowód bardzo ważnej propozycji 2.2.2 można w~wielu miejsca
+przedstawić w~jaśniejszy sposób, co postaram~się tutaj uczynić. Zacznijmy od
+udowodnienia tego, że~z~wzoru
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-26}
+  \rho( A ) = \lim_{ n \to \infty } \Vert A^{ n } \Vert^{ 1 / n },
+\end{equation}
+wynika, że~$\rho( A ) \leq \Vert A \Vert$. Z~nierówności iloczynowej dostajemy w~prosty
+sposób $\Vert A^{ n } \Vert \leq \Vert A \Vert^{ n }$ i~tym samym
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-27}
+  \rho( A ) =
+  \lim_{ n \to \infty } \Vert A^{ n } \Vert^{ 1 / n } \leq
+  \lim_{ n \to \infty } \Vert A \Vert = \Vert A \Vert.
+\end{equation}
+
+Przejdźmy teraz do obliczeń na elementach $A_{ n }$
+i~$R_{ n } = ( \UnitAlg - A_{ n } )^{ -1 }$. Przyjmujemy, że~$R_{ n }$ istniej
+dla każdej wartości $n$, a~tym samym
+$R_{ n }^{ \; -1 } = ( \UnitAlg - A_{ n } )$ też istnieje dla każdego~$n$. Tym
+samym możemy napisać
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-28}
+  \UnitAlg - R_{ n } = R_{ n }^{ \; -1 } R_{ n } - R_{ n } =
+  ( R_{ n }^{ \; -1 } - \UnitAlg ) R_{ n } =
+  -A_{ n } R_{ n }.
+\end{equation}
+Ta równość inaczej zapisana daje nam
+$\UnitAlg - R_{ n } = -A_{ n } ( \UnitAlg - A_{ n } )^{ -1 }$. Jeśli
+$\Vert A_{ n } \Vert \to 0$ to dla dostatecznie dużych $n$ mamy $\Vert A_{ n } \Vert < 1$,
+czyli możemy użyć oszacowania
+\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-22}. Tym samym
+dla odpowiednio dużych wartości~$n$ zachodzi
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-01}
+  \Vert \UnitAlg - R_{ n } \Vert \leq
+  \Vert A_{ n } \Vert \, \frac{ 1 }{ 1 - \Vert A_{ n } \Vert }.
+\end{equation}
+W~konsekwencji jeśli $\Vert A_{ n } \Vert \to 0$ to również
+$\Vert \UnitAlg - R_{ n } \Vert \to 0$.
+
+To daje nam $A_{ n } = -( \UnitAlg - R_{ n } ) R_{ n }^{ \; -1 }$. Chcemy zbadać
+zachowanie $A_{ n }$ w~sytuacji gdy $\Vert \UnitAlg - R_{ n } \Vert \to 0$, w~takiej
+sytuacji potrzebujemy wyrazić w~jakiś sposób $R_{ n }^{ \; - 1 }$ za~pomocą
+wyrażenia $\UnitAlg - R_{ n }$. Ponieważ dla odpowiednio dużych $n$ zachodzi
+$\Vert \UnitAlg - R_{ n } \Vert < 1$, więc możemy skorzystać ze wzoru
+\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-23}:
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-29}
+  A_{ n } =
+  -( \UnitAlg - R_{ n } )
+  \big( \UnitAlg - ( \UnitAlg - R_{ n } ) \big)^{ -1 }.
+\end{equation}
+Korzystając ze wzoru
+\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-24} dostajemy
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-30}
+  \Vert A_{ n } \Vert \leq
+  \frac{ \Vert \UnitAlg - R_{ n } \Vert }{ 1 - \Vert \UnitAlg - R_{ n } \Vert }.
+\end{equation}
+Tym samym $\Vert \UnitAlg - R_{ n } \Vert \to 0$ pociąga za sobą $\Vert A_{ n } \Vert \to 0$, co
+wraz z~poprzednio udowodnionym wnioskiem oznacza, że~jedna z~tych granic
+implikuje drugą.
+
+Ostatnia część dowodu opiera~się na następującej pomyśle. Jak wykazano
+poprzednio możemy przyjąć, iż~$r_{ A } > 0$. Rozważmy zbiór
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-01}
+  S_{ A } =
+  \{ \lambda; \; \lambda \in \Cbb, \, | \lambda | \geq r_{ A } \}.
+\end{equation}
+Przyjmiemy, że~$r_{ A } > \rho( A )$, co oznacza, że~$S_{ A } \subseteq r_{ \Ufrak }( A )$
+i~wykażemy, iż~prowadzi to do sprzeczności, to zaś dowodzi, iż~musi
+być~$r_{ A } \leq \rho( A )$, co wraz z~poprzednio wykazanymi nierównościami
+kończy dowód twierdzenia.
+
+
+
+
+
+
+
+
+
+
 
 \vspace{\VerSpaceFour}
 
