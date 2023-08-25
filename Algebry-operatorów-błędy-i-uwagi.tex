@@ -89,17 +89,18 @@
 
 
 % ---------------------------------------------------------------------
-% Dodatkowe ustawienia dla języka polskiego
+% Ustawienie polskich konwencji numerowania rozdziałów i podrozdziałów.
 % ---------------------------------------------------------------------
-\renewcommand{\thesection}{\arabic{section}.}
-% Kropki po numerach rozdziału (polski zwyczaj topograficzny)
-\renewcommand{\thesubsection}{\thesection\arabic{subsection}}
-% Brak kropki po numerach podrozdziału
 
+% Po tytule rozdziału następuje kropka.
+\renewcommand{\thesection}{\arabic{section}.}
+
+% Brak kropki po numerze podrozdziału.
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}}
 
 
 % ------------------------------
-% Ustawienia różnych parametrów tekstu
+% Ustawienia rozmiarów odstępów w tekście
 % ------------------------------
 \renewcommand{\baselinestretch}{1.1}
 
@@ -173,6 +174,41 @@
 \vspace{0em}
 
 
+
+Podziękowania za pomoc przy zrozumieniu fragmentów książki dla: Kamila
+Niczyja, Jackowi Jakimiukowi.
+
+
+
+% ##################
+\CenterBoldFont{Uwagi}
+
+\vspace{0em}
+
+
+W~notatkach do omawianej książki zawsze będziemy przyjmować, że~zbiór liczb
+naturalnych $\Nbb$ zawiera~$0$. Symbolem $\Nbb_{ + }$ będziemy oznaczać
+zbiór dodatnich liczb naturalny.
+
+\vspace{\VerSpaceFour}
+
+
+
+
+
+Jeżeli nie powiedziano inaczej, to będziemy przyjmować, że~wszystkie
+omawiane w~książce i~w~tych notatkach przestrzenie wektorowe oraz algebry są
+określone nad ciałem liczb zespolonych $\Cbb$. Ewentualnie nad ciałem
+liczb rzeczywistych $\Rbb$.
+
+\vspace{\VerSpaceFour}
+
+
+
+
+
+
+
 % ##################
 \CenterBoldFont{Uwagi do~konkretnych stron}
 
@@ -198,7 +234,8 @@ warunkiem jest liniowość w~lewym argumencie:
 iloczynowej dla algebry $\UfrakTilde$ jest prosty w~sprawdzeniu, lecz ja nie
 znalazłem prostego, elementarnego dowodu tej nierówności. Najbardziej
 bezpośredni dowód jaki znalazłem, to ten z~widea
-\href{https://www.youtube.com/watch?v=6NC0UWjDcBQ}{\textit{C*-algebras 3: Unitization}}, który mówi, żeby
+\href{https://www.youtube.com/watch?v=6NC0UWjDcBQ}{\textit{C*-algebras 3:
+    Unitization}}, który mówi, żeby
 potraktować elementy $\UfrakTilde$ jako operatory liniowe działające
 na przestrzeni Banach $\Ufrak$. Przedyskutujemy tą idę teraz dokładniej.
 
@@ -350,11 +387,12 @@ $\alpha = 0$ i~$A = 0$.
 
 
 
+
 \noindent
 \Str{25} W~tym miejscu warto przypomnieć w~jaki sposób zdefiniowane są
 potęgi elementu danej algebry. Zacznijmy od przypadku, gdy $A$ jest
 elementem dowolnej algebry~$\Acal$. Potęga $A^{ n }$, gdzie
-$n = 1, 2, 3, \ldots$ jest określona prze dwa proste związki
+$n \in \Nbb_{ + }$ jest określona prze dwa proste związki
 
 \vspace{\negVerSpaceFour}
 
@@ -384,7 +422,7 @@ element, że~zachodzi
   \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-17}
   A \, A_{ \textrm{inv} } = A_{ \textrm{inv} } \, A = \UnitAlg,
 \end{equation}
-to określamy $A^{ -n }$, $n = 1, 2, 3, \ldots$, wzorem
+to określamy $A^{ -n }$, $n \in \Nbb_{ + }$, wzorem
 \begin{equation}
   \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-18}
   A^{ -n } = ( A_{ \textrm{inv} } )^{ n }.
@@ -399,15 +437,80 @@ odwracalnego określiliśmy potęgę $A^{ m }$, dla dowolnego $m \in \Zbb$.
 
 
 \noindent
+\Str{25} Opiszemy tutaj pewne podstawowe własności jakie posiadają
+elementy odwracalne algebry, a~które są wykorzystywane w~różnych miejscach
+w~książce.
+
+Przyjmijmy, że~$\Ufrak$ jest algebrą z~jednością i~$A$ jest jej elementem
+odwracalnym. Wówczas odwracalny jest dowolny element $\alpha A$, gdzie $\alpha \neq 0$
+jest liczbą zespoloną, zachodzi bowiem
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-19}
+  ( \alpha A )^{ -1 } = \frac{ 1 }{ \alpha } A^{ -1 }.
+\end{equation}
+
+Niech teraz $A$ i~$B$ będą odwracalnymi elementami algebry, które są
+przemienne: $A B = B A$. Wówczas $A^{ -1 }$ i~$B^{ -1 }$ również są
+przemienne. Dowód przebiega w~następujący sposób. Wiemy,
+że~$B^{ -1 } A^{ -1 }$ jest elementem odwrotnym do $A B$, rozważmy
+wyraz $A^{ -1 } B^{ -1 }$. Mamy
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-20}
+  A B A^{ -1 } B^{ -1 } = B A A^{ -1 } B^{ -1 } = B \UnitAlg B^{ -1 } =
+  B B^{ -1 } = \UnitAlg.
+\end{equation}
+W~ten sam sposób pokazujemy, że~$A^{ -1 } B^{ -1 } A B = \UnitAlg$, więc
+$A^{ -1 } B^{ -1 }$ jest elementem odwrotnym do~$A B$. Ponieważ zakładamy,
+że~mnożenie w~algebrze jest łączne, dla dowolnego elementu istnieje tylko
+jeden element odwrotny, czyli
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-21}
+  A^{ -1 } B^{ -1 } = B^{ -1 } A^{ -1 }.
+\end{equation}
+
+Przejdźmy teraz do trudnego problemu. Mamy dwa elementy algebry $A$, $B$,
+takie że
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-22}
+  C = A B
+\end{equation}
+jest odwracalny. Co można powiedzieć o~odwracalności elementów $A$ i~$B$?
+Jeden prosty przykład dotyczy sytuacji, gdy element $B C^{ -1 }$ jest
+przemienny z~elementem~$A$:
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-23}
+  A ( B C^{ -1 } ) = ( B C^{ -1 } ) A.
+\end{equation}
+Wówczas bowiem możemy pomnożyć
+\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-20} przez
+$C^{ -1 }$ dostając
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-24}
+  \UnitAlg = A ( B C^{ -1 } ).
+\end{equation}
+Z~przemienności mnożenia $A$ i~$B C^{ -1 }$ dostajemy
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-25}
+  \UnitAlg = A ( B C^{ -1 } ) = ( B C^{ -1 } ) A.
+\end{equation}
+Czyli $B C^{ -1 }$ jest elementem odwrotnym do~$A$.
+
+\vspace{\VerSpaceFour}
+
+
+
+
+
+\noindent
 \Str{25} Dobrze jest zwrócić tu uwagę, na~pewną własność normy elementu
 odwrotnego, która zachodzi dla każdej algebry unormowanej. Ponieważ mamy
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-19}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-26}
   1 = \Vert \UnitAlg \Vert = \Vert A \, A^{ -1 } \Vert \leq \Vert A \Vert \, \Vert A^{ -1 } \Vert,
 \end{equation}
 co prowadzi do nierówności
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-20}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-27}
   \frac{ 1 }{ \Vert A \Vert } \leq \Vert A^{ -1 } \Vert.
 \end{equation}
 
@@ -418,24 +521,30 @@ co prowadzi do nierówności
 
 
 \noindent
-\Str{25--26} Przekształcając szereg wyrażający element odwrotny
-do~$\lambda \UnitAlg - A$ można otrzymać ciekawy wynik. Zacznijmy od przyjęcia,
+\Str{25--26} Przekształcając równość
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-28}
+  ( \lambda \UnitAlg - A )^{ -1 } =
+  \lambda^{ -1 } \sum_{ m \geq 0 } \frac{ A^{ n } }{ \lambda^{ n } }, \qquad
+  | \lambda | > \Vert A \Vert,
+\end{equation}
+można otrzymać ciekawe rezultaty wynik. Zacznijmy od przyjęcia,
 że~$\lambda = 1$. Wówczas operator odwrotny do $\UnitAlg - A$, gdzie $\Vert A \Vert < 1$
 wyraża~się wzorem
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-21}
-  \sum_{ m \geq 0 } A^{ m }.
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-29}
+  ( \UnitAlg - A )^{ -1 } = \sum_{ m \geq 0 } A^{ m }.
 \end{equation}
 Rozpoznajemy tu wzór analogiczny do wyrażeni na sumę szeregu geometrycznego
 liczb rzeczywistych:
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-22}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-30}
   \frac{ \UnitAlg }{ \UnitAlg - A } \equiv ( \UnitAlg - A )^{ -1 } =
   \sum_{ m \geq 0 } A^{ m }.
 \end{equation}
 Używając standardowej metody na szacowanie normy szeregu od~razu dostajemy
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-23}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-31}
   \Vert ( \UnitAlg - A )^{ -1 } \Vert \leq
   \frac{ 1 }{ 1 - \Vert A \Vert }.
 \end{equation}
@@ -445,19 +554,51 @@ $B = \UnitAlg - ( \UnitAlg - B )$, a~na~mocy tego co zostało
 powiedziane wcześniej operator $\UnitAlg - ( \UnitAlg - B )$ jest
 odwracalny, tym samym
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-24}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-32}
   B^{ -1 } =
   \big( \UnitAlg - ( \UnitAlg - B ) \big)^{ -1 } =
   \sum_{ m \geq 0 } ( \UnitAlg - B )^{ m }.
 \end{equation}
-Oszacowanie \eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-23}
+Oszacowanie \eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-31}
 przyjmuje teraz formę
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-25}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-33}
   \Vert B^{ -1 } \Vert =
   \big( \UnitAlg - ( \UnitAlg - B ) \big)^{ -1 } \leq
   \frac{ 1 }{ 1 - \Vert \UnitAlg - B \Vert }.
 \end{equation}
+
+\vspace{\VerSpaceFour}
+
+
+
+
+
+\noindent
+\Str{26} W~propozycji 2.2.2 czytamy, że~jeśli zdefiniujemy promień spektralny
+jako
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-34}
+  \rho( A ) =
+  \sup\big\{ | \lambda |, \lambda \in \sigma_{ \Ufrak }( A ) \big\},
+\end{equation}
+to zachodzi
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-35}
+  \rho( A ) =
+  \lim_{ n \to \infty } \Vert A^{ n } \Vert^{ 1 / n }.
+\end{equation}
+Co więcej granica ta istniej i~na mocy tego widmo jest niepuste. Jeśli
+dobrze pamiętam dla zbioru pustego $\sup \emptyset = -\infty$, więc fakt,
+że~$\rho( A ) \geq 0$ dowodziłby, że~istotnie widmo nie może być puste. Mam jednak
+obawy, czy nie istnieje jakaś luka, między definicją promienia spektralnego
+jako supremum po~wartościach bezwzględnych z~widma
+\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-26},
+a~wnioskowaniem z~tego, że~skoro jest dodatni, to widmo musi być niepuste.
+
+Niezależnie od tego, z~dowodu wiemy, że~widmo zawsze jest niepuste. Jeśli
+$\rho( A ) > 0$ to musi istnieć $\lambda \in \sigma_{ \Ufrak }( A )$, taki że $\lambda \neq 0$. Jeśli
+zaś $\rho( A ) = 0$, to wówczas $0 \in \sigma_{ \Ufrak }( A )$.
 
 \vspace{\VerSpaceFour}
 
@@ -473,7 +614,7 @@ Kiedy jednak udowodnimy, że~$r_{ A }$ jest równy promieniowi spektralnemu,
 i~że widmo zawsze jest niepuste ta implikacja zyska elegancką interpretację.
 Mianowicie, $0 \in r_{ \Ufrak }( A )$ oznacza, że~operator
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-26}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-36}
   0 \, \UnitAlg - A = -A,
 \end{equation}
 jest odwracalny, a~tym samy odwracalny jest element $-( -A ) = A$. Ponieważ
@@ -500,13 +641,13 @@ nieodwracalny.
 uczynić w~jaśniejszy sposób, co postaram~się tutaj zrobić. Zacznijmy od
 udowodnienia tego, że~z~wzoru
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-27}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-37}
   \rho( A ) = \lim_{ n \to \infty } \Vert A^{ n } \Vert^{ 1 / n },
 \end{equation}
 wynika, iż~$\rho( A ) \leq \Vert A \Vert$. Z~nierówności iloczynowej dostajemy w~prosty
 sposób $\Vert A^{ n } \Vert \leq \Vert A \Vert^{ n }$ i~tym samym
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-28}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-38}
   \rho( A ) =
   \lim_{ n \to \infty } \Vert A^{ n } \Vert^{ 1 / n } \leq
   \lim_{ n \to \infty } \Vert A \Vert = \Vert A \Vert.
@@ -518,7 +659,7 @@ dla każdej wartości $n$, a~tym samym
 $R_{ n }^{ \; -1 } = ( \UnitAlg - A_{ n } )$ też istnieje dla każdego~$n$. Tym
 samym możemy napisać
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-29}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-39}
   \UnitAlg - R_{ n } = R_{ n }^{ \; -1 } R_{ n } - R_{ n } =
   ( R_{ n }^{ \; -1 } - \UnitAlg ) R_{ n } =
   -A_{ n } R_{ n }.
@@ -527,10 +668,10 @@ Ta równość inaczej zapisana daje nam
 $\UnitAlg - R_{ n } = -A_{ n } ( \UnitAlg - A_{ n } )^{ -1 }$. Jeśli
 $\Vert A_{ n } \Vert \to 0$ to dla dostatecznie dużych $n$ mamy $\Vert A_{ n } \Vert < 1$,
 czyli możemy użyć oszacowania
-\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-23}, tym samym
+\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-31}, tym samym
 dostajemy
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-30}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-40}
   \Vert \UnitAlg - R_{ n } \Vert \leq
   \frac{ \Vert A_{ n } \Vert }{ 1 - \Vert A_{ n } \Vert }.
 \end{equation}
@@ -538,7 +679,7 @@ W~konsekwencji jeśli $\Vert A_{ n } \Vert \to 0$ to również
 $\Vert \UnitAlg - R_{ n } \Vert \to 0$.
 
 Przekształcając
-\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-29} w~inny
+\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-39} w~inny
 sposób dostajemy $A_{ n } = -( \UnitAlg - R_{ n } ) R_{ n }^{ \; -1 }$. Będziemy
 chcieli teraz zbadać zachowanie $\Vert A_{ n } \Vert$ w~sytuacji gdy
 $\Vert \UnitAlg - R_{ n } \Vert \to 0$, dlatego potrzebujemy wyrazić w~jakiś sposób
@@ -547,7 +688,7 @@ odpowiednio dużych $n$ zachodzi
 $\Vert \UnitAlg - R_{ n } \Vert < 1$, więc możemy skorzystać ze wzoru
 \eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-24}:
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-31}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-41}
   A_{ n } =
   -( \UnitAlg - R_{ n } )
   \big( \UnitAlg - ( \UnitAlg - R_{ n } ) \big)^{ -1 }.
@@ -555,7 +696,7 @@ $\Vert \UnitAlg - R_{ n } \Vert < 1$, więc możemy skorzystać ze wzoru
 Korzystając ze wzoru
 \eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-25} dostajemy
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-32}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-42}
   \Vert A_{ n } \Vert \leq
   \frac{ \Vert \UnitAlg - R_{ n } \Vert }{ 1 - \Vert \UnitAlg - R_{ n } \Vert }.
 \end{equation}
@@ -563,27 +704,96 @@ Tym samym $\Vert \UnitAlg - R_{ n } \Vert \to 0$ pociąga za sobą $\Vert A_{ n 
 wraz z~poprzednio udowodnionym wnioskiem oznacza, że~jedna z~tych granic
 implikuje drugą.
 
-Ostatnia część dowodu opiera~się na następującej pomyśle. Jak wykazano
+Kolejna część dowodu opiera~się na następującej pomyśle. Jak wykazano
 wcześniej w~dowodzie możemy przyjąć, iż~$r_{ A } > 0$. Rozważmy zbiór
 \begin{equation}
-  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-33}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-40}
   S_{ A } =
   \{ \lambda; \; \lambda \in \Cbb, \, | \lambda | \geq r_{ A } \}.
 \end{equation}
 Przyjmiemy, że~$r_{ A } > \rho( A )$, co oznacza, że~$S_{ A } \subseteq r_{ \Ufrak }( A )$
-i~wykażemy, iż~prowadzi to do sprzeczności, to zaś dowodzi, iż~musi
-być~$r_{ A } \leq \rho( A )$, co wraz z~poprzednio wykazanymi nierównościami
-kończy dowód twierdzenia.
+i~wykażemy, iż~prowadzi to do sprzeczności. Tym samym musi być
+być~$r_{ A } \leq \rho( A )$, co wraz z~poprzednio dowiedzionymi wcześniej
+nierównościami kończy dowód twierdzenia.
 
+Dowód zaczniemy od wprowadzenia podstawowego zespolonego pierwiastka
+$n$-tego stopnia z~$1$, będziemy go oznaczać symbolem~$\omega$. Dany jest on przez
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-41}
+  \omega = e^{ i \frac{ 2 \pi }{ n } }.
+\end{equation}
+Ponieważ $| \omega | = 1$ więc, jeśli $\lambda \in S_{ A }$ to również
+$\lambda / \omega^{ k }$, $k = 1, 2, \ldots, n$, tym samym element
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-42}
+  \frac{ \lambda }{ \omega^{ k } } \UnitAlg - A,
+\end{equation}
+jest odwracalny. Na mocy zależności \eqref{} również element
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-43}
+  \UnitAlg - \frac{ \omega^{ k } A }{ \lambda }
+\end{equation}
+jest odwracalny.
 
+W~następnym kroku definiujemy
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-44}
+  R_{ n }( A; \lambda ) =
+  n^{ -1 } \sum_{ k = 1 }^{ n } \left( \UnitAlg -
+    \frac{ \omega^{ k } A }{ \lambda } \right)^{ -1 }.
+\end{equation}
+Funkcja ta jest dobrze określona dla wszystkich $\lambda \in S_{ A }$. Wedle książki
+„elementarny rachunek” pozwala pokazać, że
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-45}
+  R_{ n }( A; \lambda ) =
+  \left( \UnitAlg - \frac{ A^{ n } }{ \lambda^{ n } } \right)^{ -1 }.
+\end{equation}
+Pierwsze pytanie na które należy odpowiedzieć, jest to, czy możemy zapisać
+wyraz $( \UnitAlg - \omega^{ k } A / \lambda )^{ -1 }$, $\lambda \in S_{ A }$ za pomocą szeregu
+\eqref{}? W~ogólnym przypadku odpowiedź jest negatywna.
 
+Przypomnijmy, że~$r_{ A }$ jest zdefiniowany jako limes supremum ciągu
+$\Vert A^{ n }\Vert^{ 1 / n }$, jeśli więc $| \lambda | > r_{ A }$,
+to~$| \lambda | > \Vert A^{ n } \Vert^{ 1 / n }$ dla pewnego~$n$. Tym samym mamy
+$| \lambda |^{ n } > \Vert A^{ n } \Vert$ i~można powtórzyć rozumowanie z~początku dowodu,
+by pokazać, że~element $( \lambda - A )^{ -1 }$ można wyrazić za pomocą szeregu
+potęgowego \eqref{}.
+Jednak dla $| \lambda | = r_{ A }$ takiego rozumowania nie można powtórzyć. W~tym
+momencie nie możemy wykluczyć, że~dla pewnego $A$ zachodzi przykładowo
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-01}
+  \Vert A^{ n } \Vert^{ 1 / n } = 1 + \frac{ 1 }{ n },
+\end{equation}
+więc nie istnieje takie $n$, że~$| \lambda | > \Vert A^{ n } \Vert^{ 1 / n }$. Wobec tego
+musimy znaleźć metodę dowodu, która działa dla wszystkich $\lambda \in S_{ A }$.
 
+Nie znalazłem żadnego prawdziwie elementarnego sposobu pokazania,
+że~wzory \eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-44}
+i~\eqref{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-45} są
+równoważne. Jedyną ideą jaką mam jest to, że~ponieważ wszystkie elementy
+algebry jakie występują w~tych wyrażają~się przez $\UnitAlg$ i~$A$, więc są
+między sobą przemienne. W~takiej sytuacji powinno dać~się przenieść dowody
+twierdzeń o~funkcjach wymiernych obowiązujących dla funkcji o~argumencie
+zespolonym.
 
-
-
-
-
-
+Zacznijmy od~następującego wzoru
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-01}
+  ( z^{ n } - 1 ) =
+  ( z - \omega ) ( z - \omega^{ 2 } ) ( z - \omega^{ 3 } ) \ldots
+  ( z - \omega^{ n } ).
+\end{equation}
+W~tej sytuacji powinien zachodzić rozkład na ułamki proste postaci
+\begin{equation}
+  \label{eq:Bratteli-Robinson-Operator-Algebras-ETC-Vol-I-s01-01}
+  \frac{ 1 }{ z^{ n } - 1 } =
+  \frac{ 1 }{ n } \frac{ 1 }{ z - \omega } +
+  \frac{ 1 }{ n } \frac{ 1 }{ z - \omega^{ 2 } } + \ldots +
+  \frac{ 1 }{ n } \frac{ 1 }{ z - \omega^{ n } }.
+\end{equation}
+Idąc tą drogą i~dokonując stosownych modyfikacji powinno~się jakoś dojść do
+pożądanego wyniku. Do tego problemu będzie trzeba wrócić w~przyszłości.
 
 \vspace{\VerSpaceFour}
 
