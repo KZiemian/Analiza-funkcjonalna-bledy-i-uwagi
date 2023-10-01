@@ -1,121 +1,124 @@
 % ---------------------------------------------------------------------
-% Podstawowe ustawienia i pakiety
+% Basic configuration and packages
 % ---------------------------------------------------------------------
-\RequirePackage[l2tabu, orthodox]{nag} % Wykrywa przestarzałe i niewłaściwe
-% sposoby używania LaTeXa. Więcej jest w l2tabu English version.
+% Package for discovering wrong and outdated usage of LaTeX.
+% More information to be found in l2tabu English version.
+\RequirePackage[l2tabu, orthodox]{nag}
+% Class of LaTeX document: {size of paper, size of font}[document class]
 \documentclass[a4paper,11pt]{article}
-% {rozmiar papieru, rozmiar fontu}[klasa dokumentu]
-\usepackage[MeX]{polski} % Polonizacja LaTeXa, bez niej będzie pracował
-% w języku angielskim.
-\usepackage[utf8]{inputenc} % Włączenie kodowania UTF-8, co daje dostęp
-% do polskich znaków.
-\usepackage{lmodern} % Wprowadza fonty Latin Modern.
-\usepackage[T1]{fontenc} % Potrzebne do używania fontów Latin Modern.
 
 
 
-% ------------------------------
-% Podstawowe pakiety (niezwiązane z ustawieniami języka)
-% ------------------------------
-\usepackage{microtype} % Twierdzi, że poprawi rozmiar odstępów w tekście.
-\usepackage{graphicx} % Wprowadza bardzo potrzebne komendy do wstawiania
-% grafiki.
-\usepackage{verbatim} % Poprawia otoczenie VERBATIME.
-\usepackage{textcomp} % Dodaje takie symbole jak stopnie Celsiusa,
-% wprowadzane bezpośrednio w tekście.
-\usepackage{vmargin} % Pozwala na prostą kontrolę rozmiaru marginesów,
-% za pomocą komend poniżej. Rozmiar odstępów jest mierzony w calach.
-% ------------------------------
-% MARGINS
-% ------------------------------
+% ---------------------------------------
+% Packages not tied to particular normal language
+% ---------------------------------------
+% This package should improved spaces in the text.
+\usepackage{microtype}
+% Add few important symbols, like text Celcius degree
+\usepackage{textcomp}
+
+
+
+% ---------------------------------------
+% Polonization of LaTeX document
+% ---------------------------------------
+% Basic polonization of the text
+\usepackage[MeX]{polski}
+% Switching on UTF-8 encoding
+\usepackage[utf8]{inputenc}
+% Adding font Latin Modern
+\usepackage{lmodern}
+% Package is need for fonts Latin Modern
+\usepackage[T1]{fontenc}
+
+
+
+% ---------------------------------------
+% Setting margines
+% ---------------------------------------
+% Package for easy settings of margins. Unit of measurement is inch.
+\usepackage{vmargin}
 \setmarginsrb
-{ 0.7in} % left margin
-{ 0.6in} % top margin
-{ 0.7in} % right margin
-{ 0.8in} % bottom margin
-{  20pt} % head height
-{0.25in} % head sep
-{   9pt} % foot height
-{ 0.3in} % foot sep
+{ 0.7in}  % left margin
+{ 0.6in}  % top margin
+{ 0.7in}  % right margin
+{ 0.8in}  % bottom margin
+{  20pt}  % head height
+{0.25in}  % head sep
+{   9pt}  % foot height
+{ 0.3in}  % foot sep
 
 
 
-% ------------------------------
-% Często przydatne pakiety
-% ------------------------------
-\usepackage{csquotes} % Pozwala w prosty sposób wstawiać cytaty do tekstu.
-\usepackage{xcolor} % Pozwala używać kolorowych czcionek (zapewne dużo
-% więcej, ale ja nie potrafię nic o tym powiedzieć).
-
-
-
-% ------------------------------
-% Pakiety do tekstów z nauk przyrodniczych
-% ------------------------------
-\let\lll\undefined % Amsmath gryzie się z językiem pakietami do języka
-% polskiego, bo oba definiują komendę \lll. Aby rozwiązać ten problem
-% oddefiniowuję tę komendę, ale może tym samym pozbywam się dużego Ł.
-\usepackage[intlimits]{amsmath} % Podstawowe wsparcie od American
-% Mathematical Society (w skrócie AMS)
-\usepackage{amsfonts, amssymb, amscd, amsthm} % Dalsze wsparcie od AMS
-% \usepackage{siunitx} % Dla prostszego pisania jednostek fizycznych
-\usepackage{upgreek} % Ładniejsze greckie litery
-% Przykładowa składnia: pi = \uppi
-\usepackage{slashed} % Pozwala w prosty sposób pisać slash Feynmana.
-\usepackage{calrsfs} % Zmienia czcionkę kaligraficzną w \mathcal
-% na ładniejszą. Może w innych miejscach robi to samo, ale o tym nic
-% nie wiem.
-
-
-
-% ##########
-% Tworzenie otoczeń "Twierdzenie", "Definicja", "Lemat", etc.
-\newtheorem{theorem}{Twierdzenie}  % Komenda wprowadzająca otoczenie
-% „theorem” do pisania twierdzeń matematycznych
-\newtheorem{definition}{Definicja}  % Analogicznie jak powyżej
-\newtheorem{corollary}{Wniosek}
-
-
-
-% ------------------------------
-% Pakiety napisane przez użytkownika.
-% Mają być w tym samym katalogu to ten plik .tex
-% ------------------------------
-\usepackage{latexgeneralcommands}
-\usepackage{mathcommands}
-
-\usepackage{functionalanalysiscommands}
-
-
-
-% ---------------------------------------------------------------------
-% Dodatkowe ustawienia dla języka polskiego
-% ---------------------------------------------------------------------
-\renewcommand{\thesection}{\arabic{section}.}
-% Kropki po numerach rozdziału (polski zwyczaj topograficzny)
-\renewcommand{\thesubsection}{\thesection\arabic{subsection}}
-% Brak kropki po numerach podrozdziału
-
-
-
-% ------------------------------
-% Ustawienia różnych parametrów tekstu
-% ------------------------------
+% ---------------------------------------
+% Setting vertical spaces in the text
+% ---------------------------------------
+% Setting space between lines
 \renewcommand{\baselinestretch}{1.1}
 
-% Ustawienie szerokości odstępów między wierszami w tabelach.
+% Setting space between lines in tables
 \renewcommand{\arraystretch}{1.4}
 
 
 
+% ---------------------------------------
+% Packages for scientific papers
+% ---------------------------------------
+% Switching off \lll symbol, that I guess is representing letter ``Ł''.
+% It collide with `amsmath' package's command with the same name
+\let\lll\undefined
+% Basic package from American Mathematical Society (AMS)
+\usepackage[intlimits]{amsmath}
+% Other very useful packages from AMS
+\usepackage{amsfonts, amssymb, amscd, amsthm}
+% Better looking calligraphy fonts
+\usepackage{calrsfs}
+
+% Better looking greek letters
+% Example of use: pi -> \uppi
+\usepackage{upgreek}
+% Improving look of lambda letter
+\let\oldlambda\Lambda
+\renewcommand{\lambda}{\uplambda}
+
+
+
+
+
+% ---------------------------------------
+% Defining new environments (?)
+% ---------------------------------------
+% Defining enviroment ``Wniosek''
+\newtheorem{corollary}{Wniosek}
+\newtheorem{definition}{Definicja}
+\newtheorem{theorem}{Twierdzenie}
+
+
+
 
 
 % ------------------------------
-% Pakiet „hyperref”
-% Polecano by umieszczać go na końcu preambuły.
+% Private packages
+% You need to put them in the same directory as .tex file
 % ------------------------------
-\usepackage{hyperref} % Pozwala tworzyć hiperlinki i zamienia odwołania
-% do bibliografii na hiperlinki.
+% Contains various command useful for working with a text
+\usepackage{latexgeneralcommands}
+% Contains definitions useful for working with mathematical text
+\usepackage{mathcommands}
+
+% Package for use in text about functional analysis
+\usepackage{functionalanalysiscommands}
+
+
+
+
+
+% ------------------------------
+% Package ``hyperref''
+% They advised to put it on the end of preambule
+% ------------------------------
+% It allows you to use hyperlinks in the text
+\usepackage{hyperref}
 
 
 
@@ -127,7 +130,7 @@
 
 
 % ---------------------------------------------------------------------
-% Tytuł i tytuł tekstu
+% Defining title and author of the text
 \title{Analiza funkcjonalna \\
   {\Large Błędy i~uwagi}}
 
@@ -155,7 +158,8 @@
 
 
 % ######################################
-\maketitle % Tytuł całego tekstu
+% Title of the text
+\maketitle
 % ######################################
 
 
@@ -163,18 +167,11 @@
 
 
 % ######################################
-\section{Algebry operatorów i~algebry topologiczne}
-
-\vspace{\spaceTwo}
-% ######################################
-
-
-
-% ############################
-\Work{ % Autor i tytuł dzieła
-  A. V. Balakrishnan \\
+\section{A. V. Balakrishnan
   \textit{Analiza funkcjonalna stosowana},
   \cite{BalakrishnanAnalizaFunkcjonalnaStosowana1992}}
+% ######################################
+
 
 
 
@@ -200,7 +197,10 @@
 
 \end{center}
 
-\vspace{\spaceTwo}
+\VerSpaceSix
+
+
+
 % ############################
 
 
@@ -215,7 +215,7 @@
 % ############################
 \newpage
 
-\Work{ % Autorzy i tytuł dzieła
+{ % Autorzy i tytuł dzieła
   Anton Deitmar, Siegrfied Echterhoff \\
   \textit{Principles~of Harmonic Analysis},
   \cite{DeitmarEcherhoffPrinciplesOfHarmonicAnalysis2009}}
@@ -225,7 +225,8 @@
 \CenterBoldFont{Uwagi}
 
 
-\start \textbf{Str. 42. Twierdzenie 2.2.6. Wzór na~promień spektralny.}
+\noindent
+\textbf{Str. 42. Twierdzenie 2.2.6. Wzór na~promień spektralny.}
 Aby~wykazać, że~$\lambda^{ n } \in \sigma_{ \Acal }( a^{ n })$
 należy pokazać, iż~element
 \begin{equation}
@@ -238,13 +239,14 @@ wielomian operatora (ang. \textit{polynomial spectral mapping
   theorem}). Należy przy tym zauważyć, że~z~tego twierdzenie wynika
 od~razu poszukiwana własność.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \textbf{Str. 46. Lemat 2.4.2.} W~dowodzie tego twierdzenie trzeba
+\noindent
+\textbf{Str. 46. Lemat 2.4.2.} W~dowodzie tego twierdzenie trzeba
 chyba rozumować następująco. Chcemy pokazać,
 że~$m( a ) \leq \norm{ a }$ dla każdego $a \in \Acal$.
 
@@ -288,8 +290,9 @@ dowodzie.
 
 \end{center}
 
+\VerSpaceSix
 
-\vspace{\spaceTwo}
+
 % ############################
 
 
@@ -304,7 +307,7 @@ dowodzie.
 % ############################
 \newpage
 
-\Work{ % Autorzy i tytuł dziełą
+{ % Autorzy i tytuł dziełą
   I. M. Gelfand, G. E. Shilov \\
   \textit{Generalized Functions: Volume~I, Properties and~Operations},
   \cite{GelfandShilovGeneralizedFunctionsVolI1964}}
@@ -331,39 +334,41 @@ dowodzie.
 
 \end{center}
 
-\vspace{\spaceTwo}
-% ############################
-
-
-
-
-
-
-
+\VerSpaceSix
 
 
 
 % ############################
-\newpage
 
-\Work{ % Autor i tytuł dzieła
-  Walter Rudin \\
-  \textit{Analiza funkcjonalna},
+
+
+
+
+
+
+
+
+
+% ######################################
+\section{Walter Rudin \textit{Analiza funkcjonalna},
   \cite{RudinAnalizaFunkcjonalna2012}}
+% ######################################
+
 
 
 % ##################
 \CenterBoldFont{Uwagi}
 
 
-\start W~tych notatkach, tak jak i~w~samej książce, będziemy domyślnie
+\noindent
+W~tych notatkach, tak jak i~w~samej książce, będziemy domyślnie
 zakładać, że~wszystkie przestrzenie wektorowe są albo nad ciałem liczb
 rzeczywistych~$\Rbb$ albo liczby zespolonych $\Cbb$. Zagadnienie które
 wyniki można uogólnić na ciała takie jak $\Zbb_{ p }$, gdzie $p$~jest liczbą
 pierwszą, jest bardzo ciekawe, lecz w~tym momencie nie jest na tyle ważny
 byśmy mogli się nim zajmować.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
@@ -373,157 +378,169 @@ byśmy mogli się nim zajmować.
 \CenterBoldFont{Uwagi do konkretnych stron}
 
 
-\start \Str{}
+\noindent
+\Str{17}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{18}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{20}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{22}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+\noindent
+\Str{}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{}
+% \start \Str{}
 
-\vspace{\spaceFour}
+% \vspace{\spaceFour}
 
 
 
 
 
-\start \Str{}
+% \start \Str{}
 
-\vspace{\spaceFour}
+% \vspace{\spaceFour}
 
 
 
 
 
-\start \Str{}
+% \start \Str{}
 
-\vspace{\spaceFour}
+% \vspace{\spaceFour}
 
 
 
-\start \Str{}
+% \start \Str{}
 
-\vspace{\spaceFour}
+% \vspace{\spaceFour}
 
 
 
 
 
-\start \Str{}
+% \start \Str{}
 
-\vspace{\spaceFour}
+% \vspace{\spaceFour}
 
 
 
 
 
-\start \Str{}
+% \start \Str{}
 
-\vspace{\spaceFour}
+% \vspace{\spaceFour}
 
 
 
 
 
-\start \Str{}
+% \start \Str{}
 
-\vspace{\spaceFour}
+% \vspace{\spaceFour}
 
 
 
 
 
-\start \Str{}
+% \start \Str{}
 
 
 
@@ -594,7 +611,7 @@ byśmy mogli się nim zajmować.
 
 \end{center}
 
-\vspace{\spaceTwo}
+\VerSpaceSix
 
 
 \noindent
@@ -621,7 +638,7 @@ byśmy mogli się nim zajmować.
 % \Powin  \\
 
 
-\vspace{\spaceTwo}
+
 % ############################
 
 
@@ -636,7 +653,7 @@ byśmy mogli się nim zajmować.
 % ############################
 \newpage
 
-\Work{ % Autor i tytuł dzieła
+{ % Autor i tytuł dzieła
   Armen H.~Zemanian \\
   \textit{Teoria dystrybucji i~analiza transformat},
   \cite{ZemanianTeoriaDystrybucji1969}}
@@ -646,7 +663,8 @@ byśmy mogli się nim zajmować.
 \CenterBoldFont{Uwagi do konkretnych stron}
 
 
-\start \Str{16} Rozważania o~zamkniętości ze~względu na zbieżność
+\noindent
+\Str{16} Rozważania o~zamkniętości ze~względu na zbieżność
 przestrzeni funkcji próbnych $\Dcal$~są w~mojej ocenie trochę
 chaotyczne, spróbuję więc je jakoś rozjaśnić. W~istocie chodzi o~to,
 że~definiujemy zbieżność ciągu funkcji próbnych
@@ -677,33 +695,36 @@ Tym samym możemy stwierdzić, że~jeśli istnieje funkcja zespolona,
 do~której ciąg funkcji próbnych jest zbieżny w~podanym wyżej sensie,
 to~funkcja graniczna również jest funkcją próbną.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy
+\noindent
+\Str{19} Fakt, że~funkcja dana wzorem (4) jest klasy
 $\Ccal^{ \infty }( \Rbb )$ został, chyba przyjęty w~domyśle. Należy jednak~się
-nad nim zatrzymać i~dowieść tego faktu. \Dok
+nad nim zatrzymać i~dowieść tego faktu. ???
 
-\vspace{\spaceFour}
-
-
+\VerSpaceFour
 
 
 
-\start \Str{20} Aby wywód był pełny należy jeszcze dowieść,
+
+
+\noindent
+\Str{20} Aby wywód był pełny należy jeszcze dowieść,
 że~$[ \varphi( t ) ]^{ \frac{ 1 }{ n } } = \sqrt[ n ]{ \varphi( t ) }$ jest
 klasy $\Ccal^{ \infty }( \Rbb )$.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
+\noindent
+\Str{21} Warto zatrzymać~się tu na~chwilę, nad faktem który
 bardzo słusznie jest stale przypominany w~kontekście teorii
 dystrybucji: nie czegoś takiego jak wartość dystrybucji w~punkcie.
 Dystrybucja $f$ z~przestrzeni $\Dcal'( \Rbb ??? )$ jest określona
@@ -717,13 +738,14 @@ dystrybucję istnieje jedna funkcja wyróżniona, to~wartość tej funkcji
 jest też wartością dystrybucji w~konkretnym punkcie. Jest tak
 np.~jeśli jedna z~tych funkcji jest ciągła.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{29} Użycie we wzorze~(3) symbolu
+\noindent
+\Str{29} Użycie we wzorze~(3) symbolu
 \begin{equation}
   \label{eq:Zemanian-01}
   \lim_{ \epsilon \to 0^{ + } } \int_{ \epsilon }^{ b } t^{ -3 / 2 } \varphi( t ) \, dt,
@@ -751,23 +773,25 @@ $\Pf \, t^{ -3 / 2 } \HeavisideFunPlus( t )$ wzorem
     - \frac{ 2 \varphi( 0 ) }{ \sqrt{ \epsilon } } \right].
 \end{equation}
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
+\noindent
+\Str{32} W~tym miejscu można bez trudności, i~nawet byłoby to
 bardziej naturalne, wprowadzić pseudofunkcję
 $\Pf \frac{ \HeavisideFunPlus( -t )}{ t }$.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{33--34} Przyjmijmy najpierw, że~jeżeli dana jest krzywa
+\noindent
+\Str{33--34} Przyjmijmy najpierw, że~jeżeli dana jest krzywa
 $A$, to przez $A( t )$ będziemy oznaczać taką funkcję, że~krzywa
 ta~ma~przedstawienie $( t, A( t ) )$. Teraz należy dokonać takiej
 zmienny w~linii 2~(od~dołu) na~stronie~34. \\
@@ -775,43 +799,47 @@ zmienny w~linii 2~(od~dołu) na~stronie~34. \\
 \Powin Dlatego pole pod~krzywą $\varphi( t ) B( t )$ na~przedziale
 $\tau \leq t \leq \epsilon$
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{36} W~tym miejscu po raz pierwszy chyba w~książce
+\noindent
+\Str{36} W~tym miejscu po raz pierwszy chyba w~książce
 pojawia~się termin „obszar”. Z~kontekstu wynika, że~należy przez
 niego rozumieć dowolny podzbiór $???$.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{41} Obok nazwy \textit{zbiór zer dystrybucji}, proponowałbym
+\noindent
+\Str{41} Obok nazwy \textit{zbiór zer dystrybucji}, proponowałbym
 również używać dla tego pojęcia nazwy \textit{zbiór zerowy dystrybucji}.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
-\start \Str{42} Logiczniej byłoby zaraz po~paragrafie \S 1.6 umieścić
+\noindent
+\Str{42} Logiczniej byłoby zaraz po~paragrafie \S 1.6 umieścić
 paragraf \S 1.8. Pojęcie zbioru zerowego i~nośnika dystrybucji nie ma
 wielkiego sensu 1.8.1 i~wynikających z~niego konsekwencji. Paragraf \S
 1.7 \textit{Kilka operacji na~dystrybucjach} najlepiej byłby umieścić
 jako \S 1.6.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
+\noindent
+\Str{47--51} Przedstawiony tu dowód twierdzenia 1.8.1, które
 jest niezmiernie ważne, zawiera wiele luk, które postaram~się
 w~dalszych podpunktach uzupełnić, tu zaś zbiorę potrzebne do~tego
 informacje.
@@ -893,13 +921,14 @@ kula domknięta jest zwarta. Tą~równoważność łatwo pokazać.
 Będę również używał oznaczenia $\supp \varphi$ na~oznaczenie nośnika
 funkcji $\varphi( t )$ (ang.~\textit{support}).
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{48--49} \textbf{Lemat 1, uzupełnienie.} Na~podstawie twierdzenia
+\noindent
+\Str{48--49} \textbf{Lemat 1, uzupełnienie.} Na~podstawie twierdzenia
 \eqref{thm:Zemanian-01} istniej zbiór $\Psi$ o~żądanych własnościach. Teraz
 na~mocy twierdzenia \eqref{thm:Zemanian-02} mamy
 $d( \Theta, \complement \Psi ) = d_{ 1 } > 0$, jeśli więc $\alpha_{ 1 } < d_{ 1 }$, to~nośnik funkcji
@@ -911,34 +940,37 @@ Jeśli teraz oznaczymy odległość $d( \Psi, \complement \Omega ) = d_{ 2 } > 0
 $\alpha_{ 2 } < d_{ 2 }$, to dla każdego $t \in \complement \Omega$ nośnik funkcji
 $\gamma_{ \alpha_{ 1 } }( t - \tau )$ nie przecina~się z~$\Psi$, więc $\varphi( t ) = 0$.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{49} W~języku polskim znaczniej lepiej od~nazwy
+\noindent
+\Str{49} W~języku polskim znaczniej lepiej od~nazwy
 \textit{lokalnie skończonego pokrycia} brzmi określenie \textit{pokrycie
   lokalnie skończone}. Jego też będę dalej używał.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{49} \textit{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy
+\noindent
+\Str{49} \textit{Lemat 2, uzupełnienie.} Zauważmy, że~każdy na~mocy
 założeń, każdy domknięty podzbiór $\Omega_{ k }$ jest zwarty, więc
 istnienie zbiorów $\Lcal_{ k }$ o~zadanych własnościach wynika ponownie
 z~twierdzenia \eqref{thm:Zemanian-01}.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{50} \textbf{Lemat 4, uzupełnienie.} Niech $A$ będzie zbiorem
+\noindent
+\Str{50} \textbf{Lemat 4, uzupełnienie.} Niech $A$ będzie zbiorem
 ograniczonym w~$\Rbb^{ n }$, czyli zawiera~się on w~kuli $K( 0, r )$. Trzeba
 teraz pokazać, że~tylko skończona ilość zbiorów $\Ocal_{ \alpha }$ z~nowego
 pokrycia może przecinać~się z~tą kulą. Oznaczymy majorantę średnicy
@@ -958,13 +990,14 @@ nierówność, więc tylko skończoną ilość razy będziemy wybierali
 skończoną rodzinę zbiorów $\Ocal_{ \alpha }$ takich, że~jest możliwe
 by~$K( 0, r ) \cap \Ocal_{ \alpha } \neq \emptyset$.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
 
 
-\start \Str{51} Cel przedstawionej tu konstrukcji jest następujący.
+\noindent
+\Str{51} Cel przedstawionej tu konstrukcji jest następujący.
 Potrzebujemy pokrycia lokalnie skończonego~$\Omega_{ \nu }$, którego
 elementy albo nie przecinają~się z~$\Xi$, albo
 $\Omega_{ \nu } \subset \Theta$, gdy $\Omega_{ \nu } \cap \Xi \neq \emptyset$.
@@ -975,23 +1008,32 @@ dystrybucja $f$~jest równa $0$.
 Wydaje mi~się, że~do tej konstrukcji zbiór $\Xi_{ 1 }$ jest
 wprowadzony niepotrzebnie.
 
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
-\start \Str{59}
-
-\vspace{\spaceFour}
 
 
+\noindent
+\Str{59}
 
-\start \Str{62}
-
-\vspace{\spaceFour}
+\VerSpaceFour
 
 
 
-\start \Str{71} Wzór
+
+
+\noindent
+\Str{62}
+
+\VerSpaceFour
+
+
+
+
+
+\noindent
+\Str{71} Wzór
 \begin{equation}
   \label{eq:Zemanian-07}
   f( t ) =
@@ -999,15 +1041,16 @@ wprowadzony niepotrzebnie.
   - \sum_{ \nu = -1 }^{ -\infty } \Delta f_{ \nu } \HeavisideFunPlus( t_{ \nu } - t )
   + \sum_{ \nu = 0 }^{ \infty } \Delta f_{ \nu } \HeavisideFunPlus( t - t_{ \nu } ),
 \end{equation}
-zawiera pewną subtelność, którą warto wyjaśnić. \Dok
+zawiera pewną subtelność, którą warto wyjaśnić. ????
 
-\vspace{\spaceFour}
-
-
+\VerSpaceFour
 
 
 
-\start \Str{74} Fakt, że~iloraz różnicowy
+
+
+\noindent
+\Str{74} Fakt, że~iloraz różnicowy
 \begin{equation}
   \label{eq:Zemanian-08}
   \frac{ \varphi( t - \Delta ) - \varphi( t ) }{ \Delta }
@@ -1045,7 +1088,6 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 
   \begin{tabular}{|c|c|c|c|c|}
     \hline
-    & \multicolumn{2}{c|}{} & & \\
     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
                               & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu & & \\
@@ -1106,34 +1148,36 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 
 \end{center}
 
+\VerSpaceSix
+
 
 \noindent
-\StrWd{21}{10} \\
+\StrWierszD{21}{10} \\
 \Jest  opisem niewykończonego \\
 \Powin niepełnym opisem pewnego \\
-\StrWg{34}{2} \\
+\StrWierszG{34}{2} \\
 \Jest  Odpowiednie nachylenie wskazuje \\
 \Powin Odpowiednią funkcje przedstawia \\
-\StrWd{38}{4} \\
+\StrWierszD{38}{4} \\
 \Jest  choć może nie być sprecyzowana jego wartość \\
 \Powin choć jego wartość może nie być podana jawnie \\
-\StrWd{40}{6} \\
+\StrWierszD{40}{6} \\
 \Jest  wartości liczbowych \\
 \Powin wartości liczbowej w~punkcie \\
-\StrWg{50}{14} \\
+\StrWierszG{50}{14} \\
 \Jest  \textit{pokrycie $\Rbb^{ n }$.} \\
 \Powin \textit{pokrycie $\Rbb^{ n }$, przy czym średnice wszystkich jego
   zbiorów, są~ograniczone przez tą samą stałą, co~dla rodziny
   $\Cfrak_{ T }$.} \\
-\StrWd{71}{5} \\
+\StrWierszD{71}{5} \\
 \Jest  \textit{$M$ i $k$ stałych rzeczywistych} \\
 \Powin \textit{$M > 0$ i~$k$ naturalnego} \\
-\StrWd{71}{4} \\
+\StrWierszD{71}{4} \\
 \Jest  \textit{gdzie $p$} \\
 \Powin \textit{gdzie $p = k + 2$, a~$g( t )$} \\
 
 
-\vspace{\spaceTwo}
+
 % ############################
 
 
@@ -1146,86 +1190,11 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 
 
 % ######################################
-\newpage
-
 \section{Algebry operatorów i~algebry topologiczne}
-
-\vspace{\spaceTwo}
 % ######################################
 
 
 
-% ############################
-\Work{ % Autorzy i tytuł dzieła
-  Ola Bratteli, Derek W.~Robinson \\
-  \textit{Operator Algebras and~Quantum Statistical Mechanics, Vol I.} \\
-  \textit{$C^{ * }$- and $W^{ * }$-Algebras, Symmetry Groups. Decoposition~of
-  State}, \cite{BratteliRobinsonOperatorAlgebrasVolI2002}}
-
-
-% ##################
-\CenterBoldFont{Uwagi do konkretnych stron}
-
-
-\start \Str{19} Autorzy zapomnieli o~jednym warunku, który jest
-potrzebny w~definicji algebry
-\begin{equation}
-  \label{eq:BR-VolI-s01-01}
-  ( A + B ) C = A C + B C.
-\end{equation}
-
-\vspace{\spaceFour}
-
-
-
-\start \Str{27} Transformacja podana dla $\lambda^{ n } - A^{ n }$ i
-wynikające z niej konsekwencje, nie są wystarczająco omówione.
-
-\vspace{\spaceFour}
-
-
-
-
-
-% ##################
-\CenterBoldFont{Błędy}
-
-
-\begin{center}
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    & \multicolumn{2}{c|}{} & & \\
-    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-                              & Powinno być \\ \cline{2-3}
-    & Od góry & Od dołu & & \\
-    \hline
-    21  & & 10 & $ff^{ * }$ & $f^{ * }\! f$ \\
-    22  & 12 & & $( \alpha, A^{ * } )$ & $( \alpha, A )^{ * }$ \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    \hline
-  \end{tabular}
-
-\end{center}
-
-\vspace{\spaceTwo}
-
-
-Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
-
-
-
-% ############################
 
 
 
@@ -1239,7 +1208,7 @@ Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
 % ############################
 \newpage
 
-\Work{ % Autor i tytuł dzieła
+{ % Autor i tytuł dzieła
   Masamichi Takesaki \\
   \textit{Theory of Operator Algebras. Volume I}, cite\{MTTOAI\}}
 
@@ -1276,7 +1245,7 @@ Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
 
 \end{center}
 
-\vspace{\spaceTwo}
+\VerSpaceSix
 
 
 
@@ -1297,7 +1266,7 @@ Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
 
 \bibliographystyle{plalpha}
 
-\bibliography{MathComScienceBooks}{}
+\bibliography{MathematicsBooks}{}
 
 
 
