@@ -1,0 +1,242 @@
+% ---------------------------------------------------------------------
+% Basic configuration and packages
+% ---------------------------------------------------------------------
+% Package for discovering wrong and outdated usage of LaTeX.
+% More information to be found in l2tabu English version.
+\RequirePackage[l2tabu, orthodox]{nag}
+% Class of LaTeX document: {size of paper, size of font}[document class]
+\documentclass[a4paper,11pt]{article}
+
+
+
+% ---------------------------------------
+% Packages not tied to particular normal language
+% ---------------------------------------
+% This package should improved spaces in the text.
+\usepackage{microtype}
+% Add few important symbols, like text Celcius degree
+\usepackage{textcomp}
+
+
+
+% ---------------------------------------
+% Polonization of LaTeX document
+% ---------------------------------------
+% Basic polonization of the text
+\usepackage[MeX]{polski}
+% Switching on UTF-8 encoding
+\usepackage[utf8]{inputenc}
+% Adding font Latin Modern
+\usepackage{lmodern}
+% Package is need for fonts Latin Modern
+\usepackage[T1]{fontenc}
+
+
+
+% ---------------------------------------
+% Setting margines
+% ---------------------------------------
+% Package for easy settings of margins. Unit of measurement is inch.
+\usepackage{vmargin}
+\setmarginsrb
+{ 0.7in}  % left margin
+{ 0.6in}  % top margin
+{ 0.7in}  % right margin
+{ 0.8in}  % bottom margin
+{  20pt}  % head height
+{0.25in}  % head sep
+{   9pt}  % foot height
+{ 0.3in}  % foot sep
+
+
+
+% ---------------------------------------
+% Setting vertical spaces in the text
+% ---------------------------------------
+% Setting space between lines
+\renewcommand{\baselinestretch}{1.1}
+
+% Setting space between lines in tables
+\renewcommand{\arraystretch}{1.4}
+
+
+
+% ---------------------------------------
+% Packages for scientific papers
+% ---------------------------------------
+% Switching off \lll symbol, that I guess is representing letter ``Ł''.
+% It collide with `amsmath' package's command with the same name
+\let\lll\undefined
+% Basic package from American Mathematical Society (AMS)
+\usepackage[intlimits]{amsmath}
+% Equations are numbered separately in every section.
+\numberwithin{equation}{section}
+
+% Other very useful packages from AMS
+\usepackage{amsfonts, amssymb, amscd, amsthm}
+% Better looking calligraphy fonts
+\usepackage{calrsfs}
+
+% Better looking greek letters
+% Example of use: pi -> \uppi
+\usepackage{upgreek}
+% Improving look of lambda letter
+\let\oldlambda\Lambda
+\renewcommand{\lambda}{\uplambda}
+
+
+
+
+
+% ---------------------------------------
+% Defining new environments (?)
+% ---------------------------------------
+% Defining enviroment ``Wniosek''
+\newtheorem{corollary}{Wniosek}
+\newtheorem{definition}{Definicja}
+\newtheorem{theorem}{Twierdzenie}
+
+
+
+
+
+% ------------------------------
+% Private packages
+% You need to put them in the same directory as .tex file
+% ------------------------------
+% Contains various command useful for working with a text
+\usepackage{latexgeneralcommands}
+% Contains definitions useful for working with mathematical text
+\usepackage{mathcommands}
+
+% Package for use in text about functional analysis
+\usepackage{functionalanalysiscommands}
+
+
+
+
+
+% ------------------------------
+% Package ``hyperref''
+% They advised to put it on the end of preambule
+% ------------------------------
+% It allows you to use hyperlinks in the text
+\usepackage{hyperref}
+
+
+
+
+
+
+
+
+
+
+
+% ---------------------------------------------------------------------
+% Defining title and author of the text
+\title{Algebry operatorów \\
+  {\Large Błędy i~uwagi}}
+
+\author{Kamil Ziemian}
+
+
+% \date{}
+% ---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+% ####################################################################
+\begin{document}
+% ####################################################################
+
+
+
+
+
+% ######################################
+% Title of the text
+\maketitle
+% ######################################
+
+
+
+
+
+% ######################################
+\section{Masamichi Takesaki
+  \textit{Theory of Operator Algebras. Volume I},
+  cite\{MTTOAI\}}
+
+\label{sec:TakesakiTheoryOfOperatorETC}
+% ######################################
+
+
+
+% ##################
+\CenterBoldFont{Błędy}
+
+
+\begin{center}
+
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Strona & \multicolumn{2}{c|}{Wiersz}& Jest
+    & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu & & \\
+    \hline
+    5 & &  6 & $x_{ 0 }^{ -1 } + \sum\limits_{ n = 0 }^{ \infty }
+              [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n } x_{ 0 }^{ -1 }$
+           & $\sum\limits_{ n = 0 }^{ \infty } [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n }
+             x_{ 0 }^{ -1 }$ \\
+    7 & &  9 & $[ ( 1 / \lambda ) x - 1 ]^{ -1 }$
+           & $[ 1 - ( 1 / \lambda ) x ]^{ -1 }$ \\
+    7 & &  8 & $\frac{ 1 }{ \lambda } \big( \frac{ 1 }{ \lambda } - x \big)^{ -1 }$
+           & $-\frac{ 1 }{ \lambda } \big( 1 - \frac{ 1 }{ \lambda } x \big)^{ -1 }$ \\
+    7 & &  3 & $\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$
+           & $-\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$ \\
+    8 &  3 & & $( \lambda - \lambda_{ 0 } )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$
+           & $-( \lambda_{ 0 } - \lambda )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$ \\
+    % & & & & \\
+    \hline
+  \end{tabular}
+
+\end{center}
+
+\VerSpaceSix
+
+
+
+% ############################
+
+
+
+
+
+
+
+
+
+% #####################################################################
+% #####################################################################
+% Bibliography
+
+\bibliographystyle{plalpha}
+
+\bibliography{MathematicsBooks}{}
+
+
+
+
+
+% ############################
+
+% End of the document
+\end{document}
