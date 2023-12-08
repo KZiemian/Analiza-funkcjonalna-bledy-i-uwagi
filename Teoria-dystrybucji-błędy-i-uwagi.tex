@@ -131,7 +131,7 @@
 
 % ---------------------------------------------------------------------
 % Defining title and author of the text
-\title{Analiza funkcjonalna \\
+\title{Teoria dystrybucji \\
   {\Large Błędy i~uwagi}}
 
 \author{Kamil Ziemian, korekta Wojciech Dyba}
@@ -167,13 +167,25 @@
 
 
 % ######################################
-\section{A. V. Balakrishnan
-  \textit{Analiza funkcjonalna stosowana},
-  \cite{BalakrishnanAnalizaFunkcjonalnaStosowana1992}}
+\section{P.~Antosik, J.~Mikusiński, R.~Sikorski \\
+  \textit{Theory~of distributions. The~sequential
+    approach},
+  \cite{AntosikMikusinskiSikorskiTheoryOfDistributionsETC1973}}
 % ######################################
 
 
 
+% ############################
+\subsection{Uwagi do~konkretnych stron}
+
+\label{subsec:Uwagi-do-konkrentych-stron}
+% ############################
+
+
+% \rightrightarrows, \leftleftarrows
+
+
+
 
 % ##################
 \CenterBoldFont{Błędy}
@@ -183,14 +195,17 @@
 
   \begin{tabular}{|c|c|c|c|c|}
     \hline
-    & \multicolumn{2}{c|}{} & & \\
     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
                               & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu & & \\
     \hline
-    13  & & 10 & $\int^{ 1 }_{ -1 }$ & $2 \int^{ 1 }_{ -1 }$ \\
-    14  & 15 & & $<$ & $\leq$ \\
-    15  & 18 & & otrzymywaliśmy & otrzymalibyśmy \\
+    & & & & \\
+    & & & & \\
+    & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
     % & & & & \\
     \hline
   \end{tabular}
@@ -212,90 +227,88 @@
 
 
 
-% ############################
-\newpage
+% % ############################
+% \newpage
 
-{ % Autorzy i tytuł dzieła
-  Anton Deitmar, Siegrfied Echterhoff \\
-  \textit{Principles~of Harmonic Analysis},
-  \cite{DeitmarEcherhoffPrinciplesOfHarmonicAnalysis2009}}
-
-
-% ##################
-\CenterBoldFont{Uwagi}
+% { % Autorzy i tytuł dzieła
+%   Anton Deitmar, Siegrfied Echterhoff \\
+%   \textit{Principles~of Harmonic Analysis},
+%   \cite{DeitmarEcherhoffPrinciplesOfHarmonicAnalysis2009}}
 
 
-\noindent
-\textbf{Str. 42. Twierdzenie 2.2.6. Wzór na~promień spektralny.}
-Aby~wykazać, że~$\lambda^{ n } \in \sigma_{ \Acal }( a^{ n })$
-należy pokazać, iż~element
-\begin{equation}
-  \label{eq:DE-1}
-  ( \lambda 1 - a ) \sum_{ j = 0 }^{ n - 1 } \lambda^{ j } a^{ n - 1 - j }
-\end{equation}
-jest nieodwracalny. Nie jest to jednak dla~mnie oczywiste. Arkadiusz
-Bochniak powiedział, żeby zobaczyć na~dowód twierdzenia widmie
-wielomian operatora (ang. \textit{polynomial spectral mapping
-  theorem}). Należy przy tym zauważyć, że~z~tego twierdzenie wynika
-od~razu poszukiwana własność.
-
-\VerSpaceFour
+% % ##################
+% \CenterBoldFont{Uwagi}
 
 
+% \noindent
+% \textbf{Str. 42. Twierdzenie 2.2.6. Wzór na~promień spektralny.}
+% Aby~wykazać, że~$\lambda^{ n } \in \sigma_{ \Acal }( a^{ n })$
+% należy pokazać, iż~element
+% \begin{equation}
+%   \label{eq:DE-1}
+%   ( \lambda 1 - a ) \sum_{ j = 0 }^{ n - 1 } \lambda^{ j } a^{ n - 1 - j }
+% \end{equation}
+% jest nieodwracalny. Nie jest to jednak dla~mnie oczywiste. Arkadiusz
+% Bochniak powiedział, żeby zobaczyć na~dowód twierdzenia widmie
+% wielomian operatora (ang. \textit{polynomial spectral mapping
+%   theorem}). Należy przy tym zauważyć, że~z~tego twierdzenie wynika
+% od~razu poszukiwana własność.
 
-
-
-\noindent
-\textbf{Str. 46. Lemat 2.4.2.} W~dowodzie tego twierdzenie trzeba
-chyba rozumować następująco. Chcemy pokazać,
-że~$m( a ) \leq \norm{ a }$ dla każdego $a \in \Acal$.
-
-Rozpatrujemy dwa przypadki. 1) Gdy $m( a ) = 0$, wtedy oczywiście
-$m( a ) = 0 \leq \norm{ a }$. 2). Gdy $m( a ) \neq 0$. Wówczas
-$m( a - m( a ) 1 ) = 0$. Gdyby istniał element $b$~odwrotny
-do~$a - m( a ) 1$, to~zachodziłoby
-\begin{equation}
-  \label{eq:DE-2}
-  1 = m( 1 ) = m( b ( a - m( a ) 1 ) ) = m( b ) m( a - m( a ) ) =
-  m( b ) 0 = 0,
-\end{equation}
-co jest niemożliwe. Dalej można już postępować jak w~zaprezentowanym
-dowodzie.
+% \VerSpaceFour
 
 
 
 
 
-% ##################
-\newpage
+% \noindent
+% \textbf{Str. 46. Lemat 2.4.2.} W~dowodzie tego twierdzenie trzeba
+% chyba rozumować następująco. Chcemy pokazać,
+% że~$m( a ) \leq \norm{ a }$ dla każdego $a \in \Acal$.
 
-\CenterBoldFont{Błędy}
-
-
-\begin{center}
-
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    & \multicolumn{2}{c|}{} & & \\
-    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-                              & Powinno być \\ \cline{2-3}
-    & Od góry & Od dołu & & \\
-    \hline
-    42  & 10 & & $s\: u\: p$ & $\sup$ \\
-    44  &  9 & & Banach-Algebras & Banach algebras \\
-    % & & & & \\
-    % & & & & \\
-    \hline
-  \end{tabular}
-
-\end{center}
-
-\VerSpaceSix
+% Rozpatrujemy dwa przypadki. 1) Gdy $m( a ) = 0$, wtedy oczywiście
+% $m( a ) = 0 \leq \norm{ a }$. 2). Gdy $m( a ) \neq 0$. Wówczas
+% $m( a - m( a ) 1 ) = 0$. Gdyby istniał element $b$~odwrotny
+% do~$a - m( a ) 1$, to~zachodziłoby
+% \begin{equation}
+%   \label{eq:DE-2}
+%   1 = m( 1 ) = m( b ( a - m( a ) 1 ) ) = m( b ) m( a - m( a ) ) =
+%   m( b ) 0 = 0,
+% \end{equation}
+% co jest niemożliwe. Dalej można już postępować jak w~zaprezentowanym
+% dowodzie.
 
 
-% ############################
 
 
+
+% % ##################
+% \newpage
+
+% \CenterBoldFont{Błędy}
+
+
+% \begin{center}
+
+%   \begin{tabular}{|c|c|c|c|c|}
+%     \hline
+%     & \multicolumn{2}{c|}{} & & \\
+%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
+%                               & Powinno być \\ \cline{2-3}
+%     & Od góry & Od dołu & & \\
+%     \hline
+%     42  & 10 & & $s\: u\: p$ & $\sup$ \\
+%     44  &  9 & & Banach-Algebras & Banach algebras \\
+%     % & & & & \\
+%     % & & & & \\
+%     \hline
+%   \end{tabular}
+
+% \end{center}
+
+% \VerSpaceSix
+
+
+% % ############################
 
 
 
@@ -304,13 +317,14 @@ dowodzie.
 
 
 
-% ############################
-\newpage
 
-{ % Autorzy i tytuł dziełą
-  I. M. Gelfand, G. E. Shilov \\
+
+% ######################################
+\section{I.M. Gelfand, G.E. Shilov \\
   \textit{Generalized Functions: Volume~I, Properties and~Operations},
   \cite{GelfandShilovGeneralizedFunctionsVolI1964}}
+% ######################################
+
 
 
 % ##################
@@ -326,9 +340,10 @@ dowodzie.
                               & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu & & \\
     \hline
-    12  &  4 & & $f_{ 0 } = 0$ & $x_{ 0 } = 0$ \\
+    12  & \hphantom{0}4 & & $f_{ 0 } = 0$ & $x_{ 0 } = 0$ \\
     28  & 16 & & $r \leq a$ & $r \geq a$ \\
     % & & & & \\
+    % & & & & \\
     \hline
   \end{tabular}
 
@@ -349,138 +364,138 @@ dowodzie.
 
 
 
-% ######################################
-\section{Walter Rudin \textit{Analiza funkcjonalna},
-  \cite{RudinAnalizaFunkcjonalna2012}}
-% ######################################
+% % ######################################
+% \section{Walter Rudin \textit{Analiza funkcjonalna},
+%   \cite{RudinAnalizaFunkcjonalna2012}}
+% % ######################################
 
 
 
-% ##################
-\CenterBoldFont{Uwagi}
+% % ##################
+% \CenterBoldFont{Uwagi}
 
 
-\noindent
-W~tych notatkach, tak jak i~w~samej książce, będziemy domyślnie
-zakładać, że~wszystkie przestrzenie wektorowe są albo nad ciałem liczb
-rzeczywistych~$\Rbb$ albo liczby zespolonych $\Cbb$. Zagadnienie które
-wyniki można uogólnić na ciała takie jak $\Zbb_{ p }$, gdzie $p$~jest liczbą
-pierwszą, jest bardzo ciekawe, lecz w~tym momencie nie jest na tyle ważny
-byśmy mogli się nim zajmować.
+% \noindent
+% W~tych notatkach, tak jak i~w~samej książce, będziemy domyślnie
+% zakładać, że~wszystkie przestrzenie wektorowe są albo nad ciałem liczb
+% rzeczywistych~$\Rbb$ albo liczby zespolonych $\Cbb$. Zagadnienie które
+% wyniki można uogólnić na ciała takie jak $\Zbb_{ p }$, gdzie $p$~jest liczbą
+% pierwszą, jest bardzo ciekawe, lecz w~tym momencie nie jest na tyle ważny
+% byśmy mogli się nim zajmować.
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-% ##################
-\CenterBoldFont{Uwagi do konkretnych stron}
+% % ##################
+% \CenterBoldFont{Uwagi do konkretnych stron}
 
 
-\noindent
-\Str{17}
+% \noindent
+% \Str{17}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{18}
+% \noindent
+% \Str{18}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{20}
+% \noindent
+% \Str{20}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{22}
+% \noindent
+% \Str{22}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{}
+% \noindent
+% \Str{}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{}
+% \noindent
+% \Str{}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{}
+% \noindent
+% \Str{}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{}
+% \noindent
+% \Str{}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{}
+% \noindent
+% \Str{}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{}
+% \noindent
+% \Str{}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{}
+% \noindent
+% \Str{}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
 
 
-\noindent
-\Str{}
+% \noindent
+% \Str{}
 
-\VerSpaceFour
+% \VerSpaceFour
 
 
 
@@ -546,75 +561,75 @@ byśmy mogli się nim zajmować.
 
 
 
-% ##################
-\newpage
+% % ##################
+% \newpage
 
-\CenterBoldFont{Błędy}
-
-
-\begin{center}
-
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-                              & Powinno być \\ \cline{2-3}
-    & Od góry & Od dołu & & \\
-    \hline
-    % & &   &  &  \\
-    % &   & &  &  \\
-    % & &   &  &  \\
-    % & &   &  &  \\
-    % & &   &  &  \\
-    % & &   &  &  \\
-    % &   & & &  \\
-    % & &  &  &  \\
-    % &   & &  &  \\
-    % & &   &  &  \\
-    % &   & &  &  \\
-    % &   & &  &  \\
-    % & &   &  &  \\
-    % & &   & &  \\
-    % & &  &  &  \\
-    % & &   &  &  \\
-    % & &   &  &  \\
-    % &   & &  &  \\
-    % &   & & &  \\
-    % & &  &  &  \\
-    % & &   &  &  \\
-    % &  & &  &  \\
-    % & &  & &  \\
-    % & &  & &  \\
-    % & &  &  &  \\
-    % &   & &  &  \\
-    % & &   &  &  \\
-    % & &  &  &  \\
-    % &  & &  &  \\
-    %  &  & &  &  \\
-    %  & &   &  &  \\
-    %  &   & &  &  \\
-    %  &   & &  &  \\
-    %  &   & &  &  \\
-    % & &  &  &  \\
-    % & &  &  &  \\
-    % & &  &  &  \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    \hline
-  \end{tabular}
-
-\end{center}
-
-\VerSpaceSix
+% \CenterBoldFont{Błędy}
 
 
-\noindent
+% \begin{center}
+
+%   \begin{tabular}{|c|c|c|c|c|}
+%     \hline
+%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
+%                               & Powinno być \\ \cline{2-3}
+%     & Od góry & Od dołu & & \\
+%     \hline
+%     % & &   &  &  \\
+%     % &   & &  &  \\
+%     % & &   &  &  \\
+%     % & &   &  &  \\
+%     % & &   &  &  \\
+%     % & &   &  &  \\
+%     % &   & & &  \\
+%     % & &  &  &  \\
+%     % &   & &  &  \\
+%     % & &   &  &  \\
+%     % &   & &  &  \\
+%     % &   & &  &  \\
+%     % & &   &  &  \\
+%     % & &   & &  \\
+%     % & &  &  &  \\
+%     % & &   &  &  \\
+%     % & &   &  &  \\
+%     % &   & &  &  \\
+%     % &   & & &  \\
+%     % & &  &  &  \\
+%     % & &   &  &  \\
+%     % &  & &  &  \\
+%     % & &  & &  \\
+%     % & &  & &  \\
+%     % & &  &  &  \\
+%     % &   & &  &  \\
+%     % & &   &  &  \\
+%     % & &  &  &  \\
+%     % &  & &  &  \\
+%     %  &  & &  &  \\
+%     %  & &   &  &  \\
+%     %  &   & &  &  \\
+%     %  &   & &  &  \\
+%     %  &   & &  &  \\
+%     % & &  &  &  \\
+%     % & &  &  &  \\
+%     % & &  &  &  \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     \hline
+%   \end{tabular}
+
+% \end{center}
+
+% \VerSpaceSix
+
+
+% \noindent
 % \StrWd{}{} \\
 % \Jest   \\
 % \Powin  \\
@@ -650,17 +665,20 @@ byśmy mogli się nim zajmować.
 
 
 
-% ############################
-\newpage
-
-{ % Autor i tytuł dzieła
-  Armen H.~Zemanian \\
+% ######################################
+\section{Armen H.~Zemanian \\
   \textit{Teoria dystrybucji i~analiza transformat},
-  \cite{ZemanianTeoriaDystrybucji1969}}
+  \cite{ZemanianTeoriaDystrybucjiETC1969}}
+% ######################################
 
 
-% ##################
-\CenterBoldFont{Uwagi do konkretnych stron}
+
+% ############################
+\subsection{Uwagi do~konkretnych stron}
+
+\label{sec:Uwagi-do-konkrentych-stron}
+% ############################
+
 
 
 \noindent
@@ -1078,10 +1096,11 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 
 
 
-% ##################
-\newpage
+% ############################
+\subsection{Błędy}
 
-\CenterBoldFont{Błędy}
+\label{sec:Bledy}
+% ############################
 
 
 \begin{center}
@@ -1092,48 +1111,62 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
                               & Powinno być \\ \cline{2-3}
     & Od góry & Od dołu & & \\
     \hline
-    12  & &  6 & wartości & tylko rzeczywiste \\
-    14  &  6 & & całka & całka przedstawiająca $\varphi_{ \alpha }'( t )$ \\
-    16  & &  6 & ciągi & funkcje \\
-    17  & &  2 & \textit{przestrzeni} & \textit{funkcjonału} \\
-    17  & &  3 & która ma & które mają \\
-    17  & &  4 & z przestrzeni & na przestrzeni \\
-    18  &  6 & & $\{ \varphi_{ \nu } \}\nu \to \infty$
-           & $\{ \varphi_{ \nu } \}$, przy $\nu \to \infty$ \\
+    12  & & \hphantom{0}6 & wartości & tylko rzeczywiste \\
+    14  & \hphantom{0}6 & & całka
+    & całka przedstawiająca $\varphi_{ \alpha }'( t )$ \\
+    16  & & \hphantom{0}6 & ciągi & funkcje \\
+    17  & & \hphantom{0}2 & \textit{przestrzeni} & \textit{funkcjonału} \\
+    17  & & \hphantom{0}3 & która ma & które mają \\
+    17  & & \hphantom{0}4 & z przestrzeni & na przestrzeni \\
+    18  & \hphantom{0}6 & & $\{ \varphi_{ \nu } \}\nu \to \infty$
+    & $\{ \varphi_{ \nu } \}$, przy $\nu \to \infty$ \\
     18  & & 10 & dystrybuantę & dystrybucję \\
-    21  &  9 & & $\Dcal$ & $\Dcal'$ \\
-    25  & &  1 & dąży & dąży punktowo \\
-    26  &  5 & & pochodnym od & pochodną \\
-    27  &  7 & & $\delta^{ ( 1 ) }\boldsymbol{ ( t } )$ & $\delta^{ ( 1 ) }( t )$ \\
-    27  & &  3 & $\varphi^{ ( k \boldsymbol{ ) } }\boldsymbol{ ( t ) } $
+    21  & \hphantom{0}9 & & $\Dcal$ & $\Dcal'$ \\
+    25  & & \hphantom{0}1 & dąży & dąży punktowo \\
+    26  & \hphantom{0}5 & & pochodnym od & pochodną \\
+    27  & \hphantom{0}7 & & $\delta^{ ( 1 ) }\boldsymbol{ ( t } )$
+    & $\delta^{ ( 1 ) }( t )$ \\
+    27  & & \hphantom{0}3 & $\varphi^{ ( k \boldsymbol{ ) } }\boldsymbol{ ( t ) } $
            & $\varphi^{ ( k ) }( t )$ \\
-    27  & &  9 & $< f,\, \varphi >$ & $\langle f, \, \varphi \rangle$ \\
-    28  & &  4 & $\delta^{ ( 2 ) }( 0 )$ & $\varphi^{ ( 2 ) }( 0 )$ \\
+    27  & & \hphantom{0}9 & $< f,\, \varphi >$ & $\langle f, \, \varphi \rangle$ \\
+    28  & & \hphantom{0}4 & $\delta^{ ( 2 ) }( 0 )$ & $\varphi^{ ( 2 ) }( 0 )$ \\
     28  & & 17 & dążą & jednocześnie dążą \\
-    29  & &  8 & $t = 0$ & $t \neq 0$ \\
-    31  &  6 & & $\varphi( )$ & $\varphi( t )$ \\
-    31  &  8 & & $\Pf \, | t |^{ \beta } \; 1_{ + }( t )$
+    29  & & \hphantom{0}8 & $t = 0$ & $t \neq 0$ \\
+    31  & \hphantom{0}6 & & $\varphi( )$ & $\varphi( t )$ \\
+    31  & \hphantom{0}8 & & $\Pf \, | t |^{ \beta } \; 1_{ + }( t )$
            & $\Pf \, | t |^{ \beta } \; 1_{ + }( -t )$ \\
-    33  & &  1 & skończoną & nieskończoną \\
-    34  & &  1 & $\varphi( 0 ) \log \epsilon$ & $\varphi( 0 ) \log \epsilon$. \\
-    35 & 1 & & tj.~$\langle B, \varphi \rangle$. Wartość & Wartość \\
-    36 & & 7 & $\partial t_{ 2 }^{ \: k_{ 2 } } \ldots \partial t_{ n }^{ \: k_{ n } }$
+    33  & & \hphantom{0}1 & skończoną & nieskończoną \\
+    34  & & \hphantom{0}1 & $\varphi( 0 ) \log \epsilon$ & $\varphi( 0 ) \log \epsilon$. \\
+    35 & \hphantom{0}1 & & tj.~$\langle B, \varphi \rangle$. Wartość & Wartość \\
+    36 & & \hphantom{0}7 & $\partial t_{ 2 }^{ \: k_{ 2 } } \ldots \partial t_{ n }^{ \: k_{ n } }$
            & $\partial t_{ 2 }^{ k_{ 2 } } \ldots \partial t_{ n }^{ k_{ n } }$ \\
-    37 & & 1 & wyboru układu & układu \\
+    37 & & \hphantom{0}1 & wyboru układu & układu \\
     37 & & 16 & \textit{mamy $\varphi_{ \alpha }( t )$ równe}
            & \textit{$\varphi_{ \alpha }( t )$ jest równa} \\
-    38  &  4 & & $\{ 0, 0, \ldots, 0 ) \}$ & $\{ 0, 0, \ldots, 0 \}$) \\
-    41  & &  2 & dystrybucji & dystrybucji regularnej \\
+    38  & \hphantom{0}4 & & $\{ 0, 0, \ldots, 0 ) \}$ & $\{ 0, 0, \ldots, 0 \}$) \\
+    41  & & \hphantom{0}2 & dystrybucji & dystrybucji regularnej \\
     45  & & 10 & $\boldsymbol{f}$ & $f$ \\
     50  & 13 & & \textit{jedną} & \textit{stałą} \\
     % 50 & 13 & & \textit{jedną} & \textit{jedną z~nich} \\
-    50  & &  3 & $C$ & $\Cfrak$ \\
-    55  &  9 & & zbieżny w~$\Dcal'$ & zbieżny \\
-    59  &  3 & & $\theta_{ \nu }$ & $\theta$ \\
-    64  &  6 & & $\nu f( \nu^{ n } t )$ & $\nu^{ n } f( \nu t )$ \\
-    71 & & 1 & $\leq M | \nu |^{ -2 }$ & $\leq M | \nu |^{ -1 }$ \\
-    71 & & 4 & gdzie $p$ & gdzie $p = k - 1$, a $g( t )$ \\
-    71 & & 5 & $M$ i~$k$ stałych & $M$ rzeczywistego i~$k$ naturalnego \\
+    \hline
+  \end{tabular}
+
+
+
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
+                              & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu & & \\
+    \hline
+    50  & & \hphantom{0}3 & $C$ & $\Cfrak$ \\
+    55  & \hphantom{0}9 & & zbieżny w~$\Dcal'$ & zbieżny \\
+    59  & \hphantom{0}3 & & $\theta_{ \nu }$ & $\theta$ \\
+    64  & \hphantom{0}6 & & $\nu f( \nu^{ n } t )$ & $\nu^{ n } f( \nu t )$ \\
+    71 & & \hphantom{0}1 & $\leq M | \nu |^{ -2 }$ & $\leq M | \nu |^{ -1 }$ \\
+    71 & & \hphantom{0}4 & gdzie $p$ & gdzie $p = k - 1$, a $g( t )$ \\
+    71 & & \hphantom{0}5 & $M$ i~$k$ stałych
+    & $M$ rzeczywistego i~$k$ naturalnego \\
     % & & & & \\
     % & & & & \\
     % & & & & \\
@@ -1168,7 +1201,7 @@ bezpośredni rachunkowo, przez co stosunkowo łatwy do~zrozumienia.
 \Jest  \textit{pokrycie $\Rbb^{ n }$.} \\
 \Powin \textit{pokrycie $\Rbb^{ n }$, przy czym średnice wszystkich jego
   zbiorów, są~ograniczone przez tą samą stałą, co~dla rodziny
-  $\Cfrak_{ T }$.} \\
+  $\Cfrak_{ \HorSpaceEight T }$.} \\
 \StrWierszD{71}{5} \\
 \Jest  \textit{$M$ i $k$ stałych rzeczywistych} \\
 \Powin \textit{$M > 0$ i~$k$ naturalnego} \\
