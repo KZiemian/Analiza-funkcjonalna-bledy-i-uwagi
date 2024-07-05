@@ -1,6 +1,6 @@
-% ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------------------------------------------
 % Basic configuration and packages
-% ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------------------------------------------
 % Package for discovering wrong and outdated usage of LaTeX.
 % More information to be found in l2tabu English version.
 \RequirePackage[l2tabu, orthodox]{nag}
@@ -9,19 +9,19 @@
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Packages not tied to particular normal language
-% ---------------------------------------
-% This package should improved spaces in the text.
+% ------------------------------------------------------
+% This package should improved spaces in the text
 \usepackage{microtype}
 % Add few important symbols, like text Celcius degree
 \usepackage{textcomp}
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Polonization of LaTeX document
-% ---------------------------------------
+% ------------------------------------------------------
 % Basic polonization of the text
 \usepackage[MeX]{polski}
 % Switching on UTF-8 encoding
@@ -33,51 +33,45 @@
 
 
 
-% ---------------------------------------
-% Setting margines
-% ---------------------------------------
-% Package for easy settings of margins. Unit of measurement is inch.
-\usepackage{vmargin}
-\setmarginsrb
-{ 0.7in}  % left margin
-{ 0.6in}  % top margin
-{ 0.7in}  % right margin
-{ 0.8in}  % bottom margin
-{  20pt}  % head height
-{0.25in}  % head sep
-{   9pt}  % foot height
-{ 0.3in}  % foot sep
+% ------------------------------------------------------
+% Setting margins
+% ------------------------------------------------------
+\usepackage[a4paper, total={14cm, 25cm}]{geometry}
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Setting vertical spaces in the text
-% ---------------------------------------
+% ------------------------------------------------------
 % Setting space between lines
 \renewcommand{\baselinestretch}{1.1}
 
 % Setting space between lines in tables
-\renewcommand{\arraystretch}{1.4}
+\renewcommand{\arraystretch}{1.6}
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Packages for scientific papers
-% ---------------------------------------
-% Switching off \lll symbol, that I guess is representing letter ``Ł''.
+% ------------------------------------------------------
+% Switching off \lll symbol, that I guess is representing letter "Ł"
 % It collide with `amsmath' package's command with the same name
 \let\lll\undefined
 % Basic package from American Mathematical Society (AMS)
 \usepackage[intlimits]{amsmath}
-% Equations are numbered separately in every section.
+% Equations are numbered separately in every section
 \numberwithin{equation}{section}
 
 % Other very useful packages from AMS
-\usepackage{amsfonts, amssymb, amscd, amsthm}
-% Better looking calligraphy fonts
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+
+% Package with better looking calligraphy fonts
 \usepackage{calrsfs}
 
-% Better looking greek letters
+% Package with better looking greek letters
 % Example of use: pi -> \uppi
 \usepackage{upgreek}
 % Improving look of lambda letter
@@ -87,11 +81,29 @@
 
 
 
+% ------------------------------------------------------
+% BibLaTeX
+% ------------------------------------------------------
+% Package biblatex, with biber as its backend, allow us to handle
+% bibliography entries that use Unicode symbols outside ASCII
+\usepackage[
+language=polish,
+backend=biber,
+style=alphabetic,
+url=false,
+eprint=true,
+]{biblatex}
 
-% ---------------------------------------
+\addbibresource{Algebry-operatorów-Bibliography.bib}
+
+
+
+
+
+% ------------------------------------------------------
 % Defining new environments (?)
-% ---------------------------------------
-% Defining enviroment ``Wniosek''
+% ------------------------------------------------------
+% Defining enviroment "Wniosek"
 \newtheorem{corollary}{Wniosek}
 \newtheorem{definition}{Definicja}
 \newtheorem{theorem}{Twierdzenie}
@@ -100,26 +112,27 @@
 
 
 
-% ------------------------------
+% ------------------------------------------------------
 % Private packages
 % You need to put them in the same directory as .tex file
-% ------------------------------
+% ------------------------------------------------------
 % Contains various command useful for working with a text
 \usepackage{latexgeneralcommands}
 % Contains definitions useful for working with mathematical text
 \usepackage{mathcommands}
 
 % Package for use in text about functional analysis
-\usepackage{functionalanalysiscommands}
+% \usepackage{functionalanalysiscommands}
 
 
 
 
 
-% ------------------------------
-% Package ``hyperref''
+
+% ------------------------------------------------------
+% Package "hyperref"
 % They advised to put it on the end of preambule
-% ------------------------------
+% ------------------------------------------------------
 % It allows you to use hyperlinks in the text
 \usepackage{hyperref}
 
@@ -132,9 +145,8 @@
 
 
 
-
-% ---------------------------------------------------------------------
-% Defining title and author of the text
+% ------------------------------------------------------------------------------------------------------------------
+% Title and author of the text
 \title{Algebry operatorów \\
   {\Large Błędy i~uwagi}}
 
@@ -142,7 +154,7 @@
 
 
 % \date{}
-% ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -173,7 +185,7 @@
 % ######################################
 \section{Masamichi Takesaki
   \textit{Theory of Operator Algebras. Volume I},
-  cite\{MTTOAI\}}
+  parencite\{MTTOAI\}}
 
 \label{sec:TakesakiTheoryOfOperatorETC}
 % ######################################
@@ -224,19 +236,18 @@
 
 
 
-% #####################################################################
-% #####################################################################
+
+% ####################################################################
+% ####################################################################
 % Bibliography
 
-\bibliographystyle{plalpha}
-
-\bibliography{MathematicsBooks}{}
+\printbibliography
 
 
 
 
 
 % ############################
-
 % End of the document
+
 \end{document}

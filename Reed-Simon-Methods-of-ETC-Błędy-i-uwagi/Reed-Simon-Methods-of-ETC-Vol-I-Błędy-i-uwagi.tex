@@ -1167,574 +1167,576 @@ to~możemy powtórzyć całe rozumowanie i~otrzymać, że~suma nowego
 szeregu znów wynosi $y$, tym samym jest niezależna od~kolejności
 sumowania.
 
-% Pomimo tego, że~jego suma nie zależy od porządku wyrazów, nie oznacza
-% to, że~szereg ten musi być absolutnie zbieżny. Rozpatrzmy bowiem
-% element przestrzeni $\lcal^{ 2 }$
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-20}
-%   y = \left( 1, \tfrac{ 1 }{ 2 }, \tfrac{ 1 }{ 3 }, \ldots \right), \quad
-%   \norm{ y }^{ 2 }
-%   = \sum_{ i = 1 }^{ \infty } \frac{ 1 }{ n^{ 2 } }
-%   = \frac{ \pi^{ 2 } }{ 6 } < +\infty.
-% \end{equation}
-% Jeśli~bazę ortonormalną przyjmiemy:
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-21}
-%   e^{ k } = ( 0, \ldots, 0, \overbrace{ 1 }^{ k }, 0, \ldots, 0),
-% \end{equation}
-% to samym od~razu otrzymujemy
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-22}
-%   y =
-%   \sum_{ k = 1 }^{ \infty } \tfrac{ 1 }{ k } e^{ k }, \quad
-%   \sum_{ k = 1 }^{ \infty } \norm{ \tfrac{ 1 }{ k } e^{ k } }
-%   = \sum_{ k = 1 }^{ \infty } \tfrac{ 1 }{ k } = +\infty.
-% \end{equation}
-
-% Paweł Duch znalazł dobre wyjaśnienie dlaczego suma tego konkretnego
-% typu szeregów nie zależy od~kolejności. Szereg zbieżny warunkowo jest
-% zbieżny bowiem jego wyrazy ,,odpowiednio~się kompensują'', wyrazy
-% ujemne kasują poprzedzające jej wyrazy dodatnie w~taki sposób,
-% że~granica istnieje. Dlatego też jeśli zmienimy ich kolejność to~mogą
-% one~się nie skompensowań tak jak poprzednio i~otrzymamy inną sumę.
-
-% Jednak tutaj każdy wyraz jest w~kierunku prostopadłym, do~wszystkich
-% innych, więc żadne dwa z~nich nie mogą~się wzajemnie skompensować.
-% Jeżeli więc taki szereg jest zbieżny, to zmiana kolejności nie wpływa
-% na sumę.
-
-% Schwartz bada w~swoje książce szeregi w~przestrzeniach Banacha, które
-% nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
-% sumowania (str.~110 i~dalsze
-% \cite{SchwartzKursAnalizyMatematycznejVolI1979}). Trajdos przetłumaczył ich
-% nazwę jako szeregi \textit{zbieżne przestawialnie}. % Sprawdzone.
-
-% \vspace{\spaceFour}
-
-
-
-% \start \Str{45} Wzorując~się na Grabowskim i~Ingardenie
-% \cite{GrabowskiIngardenMechanikaKwantowa1987}, warto w~kontekście
-% twierdzenia II.6 udowodnić jeszcze jedną piękną równość:
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-23}
-%   ( y, \, y' ) =
-%   \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y' ),
-% \end{equation}
-% gdzie $S = \{ x_{ \alpha } \}_{ \alpha \in A }$ jest bazą ortonormalną,
-% niekoniecznie przeliczalną.
-
-% Zacznijmy od~tego, że~istniej przeliczalny zbiór $x_{ \alpha_{ j } }$
-% taki,
-% że~$y' = \sum_{ j = 1 }^{ \infty } ( x_{ \alpha_{ j } }, \, y' ) x_{ \alpha_{ j } }$.
-% Wtedy
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-24}
-%   \begin{split}
-%     ( y, \, y' )
-%     &=
-%       ( y, \, \lim_{ n \to \infty } \sum_{ j = i }^{ n }
-%       ( x_{ \alpha_{ j } }, \,  y' ) \, x_{ \alpha_{ j } } )
-%       =
-%       \lim_{ n \to \infty } ( y, \, \sum_{ j = 1 }^{ n }
-%       ( x_{ \alpha_{ j } }, \, y' ) x_{ \alpha_{ j } } ) = \\
-%     &=
-%       \lim_{ n \to \infty } \sum_{ j = 1 }^{ n } ( y, \, ( x_{ \alpha_{ j } }, \, y' )
-%       x_{ \alpha_{ j } } )
-%       =
-%       \sum_{ j = 1 }^{ \infty } ( y, x_{ \alpha_{ j } } ) ( x_{ \alpha_{ j } }, y' )
-%       =
-%       \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \,  y' ).
-%   \end{split}
-% \end{equation}
-% Zastąpienie w~ostatniej równości sumy po zbiorze
-% $\alpha_{ j }$, $j \in \Nbb$ sumą po~$A$ jest możliwe na mocy tego,
-% że~jeżeli $\alpha \neq \alpha_{ j }$ dla każdego $j$, to wyrażenie pod
-% sumą jest równe zeru. Zauważmy też, że~skoro zbieżność szeregu
-% $\sum_{ \alpha \in A } ( x_{ \alpha }, \, y ) x_{ \alpha }$ nie zależy
-% od~kolejności, to~na~mocy przeprowadzone rozumowania również suma
-% szeregu
-% $\sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y' )$, nie
-% zależy od~kolejności wyrazów.
-
-% Ta tożsamość pozwala nam wykazać, w~sposób bardziej elegancki niż
-% zrobili to Reed i~Simon, równanie (II.2), mianowicie podstawiając
-% $y' = y$, mamy
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-25}
-%   \norm{ y }^{ 2 } = ( y, \, y ) =
-%   \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y )
-%   = \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \,  y ) }^{ 2 }.
-% \end{equation}
-% % Sprawdzone.
-
-% \vspace{\spaceFour}
-
-
-
-% \start \Str{45} Dysponując twierdzeniem II.6, można teraz podać ogólną
-% postać nierówności Bessela.
-
-
-
-
-% % #############
-% \begin{theorem}[Ogólna postać nierówności Bessela]
-
-%   Niech $S = \{ x_{ \alpha } \}_{ \alpha \in A }$ będzie układem
-%   ortonormalny i~niech $B \subset A$. Wówczas:
-%   \begin{equation}
-%     \label{eq:RS-Vol-I-s01-26}
-%     \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 } \leq \norm{ x }^{ 2 }.
-%   \end{equation}
-
-% \end{theorem}
-
-
-
-% \begin{proof}
-
-%   Prawie nie ma czego dowodzić, bowiem
-%   \begin{equation*}
-%     \label{eq:RS-Vol-I-s01-27}
-%     \norm{ x }^{ 2 } = \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \, x ) }^{ 2 }
-%     \geq \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 }.
-%   \end{equation*}
-
-% \end{proof}
-% % #############
-% % Sprawdzone.
-
-% \vspace{\spaceFour}
-
-
-
-% % ##################
-% \start \Str{49} Konstrukcja iloczynu tensorowego jest przeprowadzona
-% bardzo szkicowo, przez co~sens tego co~robimy jest często ukryty,
-% tutaj postaram~się uzupełnić brakujące elementy.
-
-% Po~pierwsze zauważmy, że~aby mówić o~sprzężonej biliniowej formie
-% $\mu$, przez co rozumiemy, że~jest ona addytywna przy ustalonym
-% jednym z~argumentów oraz~że~zachodzi
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-28}
-%   \mu\langle \alpha \psi, \, \varphi \rangle = \bar{ \alpha } \, \mu\langle \psi, \, \varphi \rangle, \quad
-%   \mu\langle \psi, \, \alpha \varphi \rangle =
-%   \bar{ \alpha } \, \mu\langle \psi, \, \varphi \rangle.
-% \end{equation}
-
-% Jedną z~przyczyn zamieszania jest używanie tego samego symbolu na
-% iloczyn skalarny w~$\Hcal_{ 1 }$, $\Hcal_{ 2 }$ i~$\Ecal$, tu będę je
-% oznaczał odpowiednio jako $( \, \cdot \,, \cdot \, )_{ \Hcal_{ 1 } }$,
-% $( \, \cdot \,, \cdot \, )_{ \Hcal_{ 2 } }$, $( \, \cdot \,, \cdot \, )_{ \Ecal }$.
-% Działanie formy $\varphi_{ 1 } \otimes \varphi_{ 2 }$ można więc zapisać jako
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-29}
-%   ( \varphi_{ 1 } \otimes \varphi_{ 2 } ) \langle \psi_{ 1 }, \, \psi_{ 2 } \rangle
-%   =
-%   ( \psi_{ 1 }, \, \varphi_{ 1 } )_{ \Hcal_{ 1 } }
-%   ( \psi_{ 2 }, \, \varphi_{ 2 } )_{ \Hcal_{ 2 } }.
-% \end{equation}
-% Iloczyn skalarny na~$\Ecal$ ma więc postać:
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-30}
-%   ( \varphi \otimes  \psi, \, \eta \otimes \mu )_{ \Ecal }
-%   = ( \varphi, \, \eta )_{ \Hcal_{ 1 } } ( \psi, \,  \mu )_{ \Hcal_{ 2 } }.
-% \end{equation}
-% Formę postaci $\varphi \otimes \psi$ będziemy nazywać \textbf{formą prostą}.
-% Dowolna forma jest sumą form prostych.
-
-% Tu~pojawia~się drugie źródło komplikacji. Ta sama forma może być
-% przedstawiona za~pomocą różnych sum form prostych. Na~przykład
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-31}
-%   \mu_{ 1 } = \varphi \otimes ( \psi_{ 1 } + \psi_{ 2 } ) = \mu_{ 2 }
-%   = \varphi \otimes \psi_{ 1 } + \varphi \otimes \psi_{ 2 }.
-% \end{equation}
-% Z~tego względu należałoby zdefiniować $\Ecal$ jako zbiór klas
-% abstrakcji względem relacji równoważności, która utożsamia dwie sumy
-% form prostych jeśli przedstawiają tę~samą dwuantyliniową formę.
-% Następnie dowiedlibyśmy, że~iloczyn w tej przestrzeni ilorazowej nie
-% zależy od~reprezentanta, co jest równoważne postępowaniu Reeda
-% i~Simona, jednak z~jakiegoś powodu nie chcieli pójść tą drogą.
-
-% Powyższy przykład uogólnia~się do~dobrze znanego z~algebry liniowej
-% faktu, iż~iloczyn tensorowy jest wieloliniowy. Z~samej definicji
-% wynika, że~zachodzi następująca równość form
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-32}
-%   \varphi \otimes \ldots \otimes ( \alpha \psi_{ 1 } + \beta \psi_{ 2 } ) \otimes \ldots \otimes \eta =
-%   \alpha \, \varphi \otimes \ldots \otimes \psi_{ 1 } \otimes \ldots \otimes \eta
-%   + \beta \, \varphi \otimes \ldots \otimes \psi_{ 2 } \otimes \ldots \otimes \eta.
-% \end{equation}
-
-% W~dalszym ciągu potrzebna będzie nam następująca obserwacja: jeżeli
-% $\mu \in \Ecal$, to zachodzi równość:
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-33}
-%   ( \varphi \otimes \psi, \, \mu )_{ \Ecal } ??? = \mu\langle \varphi, \psi \rangle,
-% \end{equation}
-% gdzie $\mu\langle \varphi,  \psi \rangle$ oznacza wartość formy $\mu$ na~parze
-% uporządkowanej $\langle \varphi, \psi \rangle$. Jeżeli $\mu = \eta \otimes \chi$ to
-% powyższa równość wynika z~definicji wszystkich działań. Jeśli zaś
-% $\mu = \sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \otimes \psi_{ i } )$,
-% wówczas
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-34}
-%   \begin{split}
-%     ( \varphi \otimes \psi, \mu )_{ \Ecal }
-%     &=
-%       \left( \varphi \otimes \psi, \, \sum_{ i = 1 }^{ N } c_{ i } \,
-%       ( \eta_{ i } \otimes \chi_{ i } ) \right)_{ \Ecal }
-%       =
-%       \sum_{ i = 1 }^{ N } c_{ i } \,
-%       ( \varphi \otimes \psi, \, \eta_{ i } \otimes \chi_{ i } )_{ \Ecal } = \\
-%     &=
-%       \sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \otimes \chi_{ i } )
-%       \langle \varphi, \, \psi \rangle
-%       = \mu\langle \varphi, \, \psi \rangle.
-%   \end{split}
-% \end{equation}
-% Dla zupełności przedstawimy uogólnienie tej obserwacji. Jeśli nadamy
-% $\Hcal_{ 1 } \times \Hcal_{ 2 }$ strukturę sumy prostej
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-35}
-%   \sum_{ i = 1 }^{ N } d_{ i } \, \langle \phi_{ i }, \, \varphi_{ i } \rangle
-%   :=
-%   \langle \sum_{ i = 1 }^{ N } d_{ i } \, \phi_{ i }, \,
-%   \sum_{ i = 1 }^{ N } d_{ i } \, \varphi_{ i } \rangle,
-% \end{equation}
-% i~$\eta = \sum_{ i = 1 }^{ N } d_{ i } \: \varphi_{ i } \otimes \psi_{ i }$,
-% $d_{ i } \in \Cbb$, to~korzystając z~półtoraliniowości mamy
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-36}
-%   \begin{split}
-%     ( \eta, \, \mu )_{ \Ecal }
-%     &=
-%       \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \:
-%       \big( ( \varphi_{ i } \otimes \psi_{ i } ), \, \mu \big)_{ \Ecal }
-%       =
-%       \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \:
-%     ( \varphi_{ i } \otimes \psi_{ i }, \, \mu )_{ \Ecal } = \\
-%     &=
-%       \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \: \mu \langle \varphi_{ i }, \, \psi_{ i } \rangle
-%       = \mu( \eta ).
-%   \end{split}
-% \end{equation}
-% $\mu( \eta )$ oznacza wartość formy $\mu$ na~$\eta$.
-
-% % W tym fragmencie wielokrotnie powtarza się "zauważyć" <<<<<<<<<<<<
-% Teraz możemy przejść do~dyskusji, czy~wzór na iloczyn skalarny nie
-% zależy od~przedstawienia jako sumy form prostych. Zauważmy, że~dwie
-% formy $\mu$, $\eta$~są równe gdy
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-37}
-%   \mu\langle \varphi, \, \psi \rangle = \eta\langle \varphi, \, \psi \rangle, \quad
-%   \forall \varphi \in \Hcal_{ 1 }, \psi \in \Hcal_{ 2 }.
-% \end{equation}
-
-% Musimy teraz pokazać, że~iloczyn skalarnych dwóch form z~$\Ecal$,
-% nie~zależy od ich przedstawienia w~postaci sumy form prostych.
-% Kluczowe tu jest wynikający z~definicji fakt, że~dwie różne postaci
-% tej samej formy różnią się o~sumę form prostych reprezentującą formę
-% zerową. Dla przykładu, jeżeli weźmiemy dwie formy określone wyżej
-% $\mu_{ 1 }$ i~$\mu_{ 2 }$, to ich różnica:
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-38}
-%   \mu_{ 1 } - \mu_{ 2 } =
-%   \varphi \otimes ( \psi_{ 1 } + \psi_{ 2 } ) - \varphi \otimes \psi_{ 1 } - \varphi \otimes \psi_{ 2 }
-% \end{equation}
-% jest formą zerową. Zwróćmy uwagę, że~rozkład formy zerowej na formy
-% proste również nie jest jednoznaczny, np.~każda forma postaci
-% $\varphi \otimes 0$ reprezentuje formę zerową. Jeżeli teraz uda~się pokazać,
-% że~forma zerowa niezależnie od~swojej postaci, jest ortogonalna
-% do~każdej formy w~$\Ecal$, to~będziemy mogli pokazać niezależność
-% iloczynu skalarnego w~$\Ecal$ od~konkretnej postaci form.
-
-% Wyniki uzyskane wyżej, wraz z~tym co~napisali Reed i~Simon jest
-% wystarczające by~wykazać żądaną ortogonalność formy zerowej.
-% Dokładniej Reed i~Simon pokazali, że~wybierając bazę odpowiedniej
-% przestrzeni dostajemy dla każdego $\lambda \in \Ecal$
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-39}
-%   ( \lambda, \, \lambda ) = \sum_{ j l } \absOne{ c_{ j l } }^{ 2 } \geq 0,
-% \end{equation}
-% czyli iloczyn skalarny jest dodatnio określony, jeśli zaś jest
-% równy~0, to $\lambda$ jest formą zerową.
-
-% Teraz wykażemy, że~rozważany iloczyn skalarny jest niezależny od
-% użytego rozkładu. Niech $\psi \sim \psi'$ i~$\varphi' \sim \varphi$, a~$\mu$
-% będzie formą zerową. W~takiej sytuacji $\psi' = \psi + \mu$
-% i~$\varphi' = \varphi + \mu$, przy czym konkretna postać $\mu$ może być w~obu
-% przypadkach różna. Teraz możemy, na~poziomie konkretnych sum form
-% prostych, przeprowadzić następujący rachunek, kończący dowód
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-40}
-%   ( \varphi', \, \psi' ) = ( \varphi + \mu, \, \psi' )
-%   = ( \varphi, \, \psi' ) + ( \mu, \, \psi' ) = ( \varphi, \, \psi' )
-%   = ( \varphi, \, \psi + \mu ) = ( \varphi, \, \psi ).
-% \end{equation}
-
-% Ta relacja stanowi po~prostu, że~dwa elementy
-% $\mu_{ 1 }, \mu_{ 2 } \in \Ecal$ są równoważne, wtedy i~tylko wtedy
-
-% \vspace{\spaceFour}
-
-
-
-% % #############
-% \start \Str{50} Jako konkluzję konstrukcji iloczynu tensorowego
-% przestrzeni Hilberta warto podać następującą piękną równość, która
-% wynika wprost z~wprowadzonych definicji.
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-41}
-%   \norm{ \varphi \otimes \psi }_{ \Hcal_{ 1 } \otimes \Hcal_{ 2 } }
-%   = \norm{ \varphi }_{ \Hcal_{ 1 } } \norm{ \psi }_{ \Hcal_{ 2 } }.
-% \end{equation}
-% Za jej pomocą można łatwo pokazać, że~iloczyn tensorowy jest ciągły,
-% dowód jest taki sam jak w~przypadku iloczynu skalarnego. % Sprawdzone.
-
-% \vspace{\spaceFour}
-
-
-
-% \start \Str{50} Część dowodu \textbf{Propostion~2}, że~układ
-% $\varphi_{ l } \otimes \psi_{ k }$ stanowi bazę ortonormalną, jest miejscami
-% zbyt pobieżna by była zrozumiała dla mnie. W~tym jednak momencie
-% kluczowa równość
-% \begin{equation}
-%   \label{eq:RS-Vol-I-s01-42}
-%   \varphi \otimes \phi = \sum_{ l,\, k } c_{ l } d_{ k }\, \varphi_{ l } \otimes \psi_{ k },
-% \end{equation}
-% wynika z~tego, że~iloczyn tensorowy jest funkcją dwuliniową ciągła
-% i~twierdzenia \eqref{thm:OdwzorowanieWielolinioweCiagle}. Ponieważ
-% $\varphi_{ l } \otimes \psi_{ k }$ jest układem ortonormalnym
-% i~przeliczalnym\footnote{W~przypadku gdy nie jest, dla danego wektora
-%   tylko przeliczalna ilość współczynników $c_{ l }$ i~$d_{ k }$ nie
-%   znika i~można powtórzyć rozumowanie.} można go ustawić w~ciąg
-% jednoindeksowy, którego suma nie zależy od kolejności sumowania. Tym
-% samym równość \eqref{eq:RS-Vol-I-s01-42} zachodzi niezależnie od~sposobu
-% sumowania.
-
-% \vspace{\spaceFour}
-
-
-
-% % ####################
-% \start \Str{51} W~tym miejscu będziemy potrzebowali następującego
-% twierdzenie, którego dowód znalazł Paweł Duch.
-
-
-
-
-
-% % #############
-% \begin{theorem}
-%   \label{thm:TwierdzenieOIloczynieMiarPWZerowym}
-
-%   Niech $( X, \mu )$ i~$( Y, \nu )$ są przestrzeniami z~miarą
-%   $\sigma$-skończoną i~niech $A \subset X \times Y$ będzie zbiorem
-%   mierzalny względem miary $\mu \otimes \nu$. Jeśli dla $\mu$-prawie
-%   każdego $x \in X$, miara $\nu$ zbioru $( x \times Y ) \cap A$ jest
-%   równa 0, wówczas $(\mu \otimes \nu)( A ) = 0$.
-
-% \end{theorem}
-
-
-
-% \begin{proof}
-
-%   Standardowo będziemy utożsamiać zbiór $( x \times Y ) \cap A$
-%   z~odpowiednim podzbiorem $Y$
-
-%   W~przypadku miary dodatniej można tak sformułować teorię całki,
-%   że~dla każdego zbioru zachodzi\footnote{Zobacz uwagi o~całce górnej
-%     w~ujęciu Schwartza.}
-%   \begin{equation}
-%     \label{eq:RS-Vol-I-s01-43}
-%     \mu( S ) = \int_{ S } \chi_{ S }( x ) \, d\mu( x ),
-%   \end{equation}
-%   niezależnie czy jego miara jest skończona, czy nie. Skoro zaś obie
-%   miary~są $\sigma$-skończone, to zachodzi twierdzenie
-%   o~zamianie całki podwójnej na iterowaną, znów niezależnie od~tego
-%   czy poszczególne całki są skończone czy nie.
-
-%   Dostajemy więc
-%   \begin{equation}
-%     \label{eq:RS-Vol-I-s01-44}
-%     (\mu \otimes \nu)( A ) =
-%     \int_{ X \times Y } \chi( x, y ) \, d\mu( x ) \otimes d\nu( y )
-%     =
-%     \int_{ X } \left( \int_{ Y } \chi( x, y ) \, d\nu( y ) \right) \,
-%     d\mu( x )
-%     = 0,
-%   \end{equation}
-%   bowiem na mocy założeń
-%   $\mu\big( ( x \times Y ) \cap A \big) = \int_{ Y } \chi( x, y ) \, d\nu( y )$
-%   jest równa zeru dla $\mu$-prawie wszystkich~$x$.
-% \end{proof}
-% % #############
-
-
-
-
-
-% Zauważmy, że~to twierdzenie ma prostą interpretację na płaszczyźnie
-% $\Rbb^{ 2 }$. Wówczas zbiór $x \times Y$ jest prostą pionową przechodzącą
-% przez punkt $x$ i~powyższe twierdzenie mówi, że~jeśli prawie każdy
-% przekrój zbioru $A$ prostymi pionowymi ma długość~0, to pole
-% powierzchni $A$ również jest zerowe.
-
-% \vspace{\spaceFour}
-
-
-
-% % ####################
-% \start \Str{51} \textbf{Dowód, że~$\varphi_{ k }( x ) \otimes \psi_{ l }( y )$ tworzą układ
-%   ortonormalny.} Sprawdźmy najpierw, że~funkcja
-% $\varphi_{ l }( x ) \otimes \psi_{ l }( y )$ jest całkowalna w~kwadracie. Zgodnie z~tym
-% co napisano wcześnie prawdziwe są następujące
-% \begin{subequations}
-%   \begin{equation}
-%     \label{eq:RS-Vol-I-s01-45}
-%     \iint\limits_{ M_{ 1 } \times M_{ 2 } }
-%     \absOne{ \varphi_{ k }( x ) \psil( y ) }^{ 2 } \,
-%     d\mu_{ 1 }( x ) d\mu_{ 2 }( y )
-%     =
-%     \int_{ M_{ 1 } } \absOne{ \varphi_{ k }( x ) }^{ 2 } \, d\mu_{ 1 }( x )
-%     \int_{ M_{ 2 } } \absOne{ \psi_{ l }( y ) }^{ 2 } \, d\mu_{ 2 }( y )
-%     = 1.
-%   \end{equation}
-
-
-
-%   \begin{equation}
-%     \label{eq:RS-Vol-I-s01-46}
-%     \begin{split}
-%       \iint\limits_{ M_{ 1 } \times M_{ 2 } } \overline{ \varphi( x ) } \,
-%       \overline{ \psi_{ l }( y ) } \varphi_{ m }( x ) \psi_{ n }( y ) \,
-%       d\mu_{ 1 }( x ) d\mu_{ 2 }( y )
-%       &=
-%       \int_{ M_{ 1 } } \overline{ \varphi_{ k }( x ) } \varphi_{ m }( x ) \, d\mu_{ 1 }( x )
-%         \int_{ M_{ 2 } } \overline{ \psi_{ l }( y ) } \psi_{ n }( y ) \, d\mu_{ 2 }( y )
-%         = \\
-%       &= \delta_{ k, m } \; \delta_{ l, n }.
-%     \end{split}
-%   \end{equation}
-% \end{subequations}
-% Pierwsza całka w~drugiej równości to iloczyn skalarny funkcji
-% $\varphi_{ k }( x ) \psi_{ l }( y )$ i~$\varphi_{ m }( x ) \psi_{ n }( y )$
-% w~przestrzeni $\Lcal^{ 2 }( M_{ 1 } \times M_{ 2 }, d\mu_{ 1 } \otimes d\mu_{ 2 } )$,
-% funkcja podcałkowa jest więc całkowalna i~wszystkie dalsze przejścia
-% są dozwolone.
-
-% Teraz udowodnimy, że~funkcja $f( x, y ) = 0$ prawie wszędzie.
-% Po~pierwsze zbiór na którym $f( x, y ) \neq 0$ jest równy
-% $f^{ -1 }( \Cbb \setminus 0 )$, jest więc on mierzalny. Teraz fakt,
-% że~zbiór ten ma~miarę~$0$ wynika z~tego co pokazali Reed i~Simon
-% oraz~twierdzenia powyżej.
-
-% \vspace{\spaceFour}
-
-
-
-% \start \StrWg{106}{5} Nie rozumiem dlaczego w~tym miejscu dodatkowo
-% zaznacza~się, że~miarę dowolnego zbioru mierzalnego, można
-% aproksymować od~wewnątrz przez zbiory zwarte i~\textit{borelowskie}.
-% Skoro rozważamy tylko zwarte przestrzenie Hausdorffa, wszystkie zbiory
-% zwarte~są domknięte i~tym samym borelowskie.
-
-
-
-
-
-% % ##################
-% \newpage
-% \CenterBoldFont{Błędy}
-
-
-% \begin{center}
-%   \begin{tabular}{|c|c|c|c|c|}
-%     \hline
-%     & \multicolumn{2}{c|}{} & & \\
-%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-%                               & Powinno być \\ \cline{2-3}
-%     & Od góry & Od dołu & & \\
-%     \hline
-%     2   &  8 & & surjective & \textbf{surjective} \\
-%     2   &  9 & & \textbf{surjective} & surjective \\
-%     14  & 10 & & $\sum_{ 2^{ n } }( f )$ & $\sum_{ 2 n }( f )$ \\
-%     14  & 14 & & $\sum_{ 2^{ n } }( f )$ & $\sum_{ 2 n }( f )$ \\
-%     17  &  3 & & $\int \;\: f_{ n } \;\: dp$ & $\int f_{ n } \, dp$ \\
-%     25  &  2 & & $f$ & $f \geq 0$ \\
-%     40  & & 3 & a~Hilbert & a~separable Hilbert \\
-%     44  & & 7 & $\frac{ T( y ) }{ T( x_{ 0 } ) }$
-%            & $\frac{ ( x_{ 0 }, \, y ) }{ ( x_{ 0 }, \, x_{ 0 } ) }$ \\
-%     45  & & 2 & some & all \\
-%     46  & & 9 & $( v_{ 1 }, \, u_{ 1 } ) v_{ k }$
-%            & $( v_{ 1 }, \, u_{ 2 } ) v_{ 1 }$ \\
-%     49  & & 7 & linear & bilinear \\
-%     50  & 16 & & $\sum_{ j l } \absOne{ c_{ j l } }^{ 2 }$
-%            & $\sum_{ j l } \absOne{ c_{ j l } }^{ 2 } \geq 0$ \\
-%     53  & & 12 & $\varphi_{ k_{ \sigma( 1 ) } } \otimes \varphi_{ k_{ \sigma( 2 ) } }
-%                  \cdots \otimes \varphi_{ k_{ n( p ) } }$
-%            & $\varphi_{ k_{ \sigma( 1 ) } } \otimes \varphi_{ k_{ \sigma( 2 ) } } \otimes
-%              \cdots \otimes \varphi_{ k_{ \sigma( p ) } }$ \\
-%     70  & 8 & & $\lim\limits_{ n \to +\infty }$ & $\lim\limits_{ m \to +\infty }$ \\
-%     % Sprawdź czy dobrze.
-%     73  & & 2 & $\sum_{ k = 1 }^{ \infty } \absOne{ \lambda_{ k } } < \infty$
-%            & $\sum_{ k = 1 }^{ \infty } \absOne{ \lambda_{ k } } \leq
-%              \norm{ \lambda_{ 0 } }_{ c_{ 0 }^{ * } } < \infty$ \\
-%     79  & 6 & & $\norm{ [x] }$ & $\norm{ [x] }_{ 1 }$ \\
-%     82  & & 15 & since$T[ B_{ r }^{ X } ]$ & since $T[ B_{ r }^{ X } ]$ \\
-%     104 &  5 & & $[ 0, 1 ]$ & $[ -1, 1 ]$ \\
-%     104 &  6 & & $\Vert P_{ n }( f )$ & $\Vert \, P_{ n }( f )$ \\
-%     106 & 11 & & $\mu( \, Y \setminus \widetilde{ Y } )$
-%            & $\mu( Y \setminus \widetilde{ Y } )$ \\
-%     106 &  5 & & $C \subset O$ & $C \subset Y$ \\
-%     107 &  4 & & $\Real[ e^{ -i \varphi } f ]$ & $e^{ -i \varphi } f$ \\
-%     107 &  4 & & $\Real( e^{ -i \varphi } f )$ & $e^{ -i \varphi } f$ \\
-%     107 & 10 & & $\int\! fd\mu$ & $\int f \, d\mu$ \\
-%     107 & & 10 & functions & functionals \\
-%     109 & 4 & & $\norm{ l }\!\sup$ & $\norm{ l } \sup$ \\
-%     112 & & 8 & $X$ & $F$ \\
-%     128 & 2 & & $| \rho_{ \alpha_{ 1 } }( x ) |$ & $\rho_{ \alpha_{ 1 } }( x )$ \\
-%     128 & 2 & & $| \rho_{ \alpha_{ n } }( x ) |$ & $\rho_{ \alpha_{ n } }( x )$ \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     \hline
-%   \end{tabular}
-
-% \end{center}
-
-
-% \noindent
-% \textbf{Grzbiet} \\
-% \Jest  REVSED \\
-% \Powin REVISED \\
-% \StrWg{43}{3} \\
-% \Jest
-% $\displaystyle \sup_{ \substack{ \norm{ x }_{ \Hcal } = 1 } } \;\;\;
-% \norm{ T x }_{ \Hcal' }$ \\[0.4em]
-% \Powin
-% $\displaystyle \sup_{ \substack{ \norm{ x }_{ \Hcal } = 1 } }
-% \norm{ T x }_{ \Hcal' }$ \\[0.4em]
-% \StrWd{50}{17} \\
-% \Jest  is~positive defined \\
-% \Powin is positive defined and well defined \\
-% \StrWd{51}{13} \\
-% \Jest
-% $\displaystyle \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } }
-% \overline{ f( x, y ) } \varphi_{ k }( x ) \,
-% d\mu_{ 1 }( x ) \bigg) \quad \psi_{ l }( y ) \, d\mu_{ 2 }( y )$ \\
-% \Powin
-% $\displaystyle \int_{ M_{ 2 } } \bigg( \, \int_{ M_{ 1 } }
-% \overline{ f( x, y ) } \varphi_{ k }( x ) \, d\mu_{ 1 }( x ) \bigg)
-% \psi_{ l }( y ) \, d\mu_{ 2 }( y )$
+Pomimo tego, że~jego suma nie zależy od porządku wyrazów, nie oznacza
+to, że~szereg ten musi być absolutnie zbieżny. Rozpatrzmy bowiem
+element przestrzeni $\lcal^{ 2 }$
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-20}
+  y = \left( 1, \tfrac{ 1 }{ 2 }, \tfrac{ 1 }{ 3 }, \ldots \right), \quad
+  \norm{ y }^{ 2 }
+  = \sum_{ i = 1 }^{ \infty } \frac{ 1 }{ n^{ 2 } }
+  = \frac{ \pi^{ 2 } }{ 6 } < +\infty.
+\end{equation}
+Jeśli~bazę ortonormalną przyjmiemy:
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-21}
+  e^{ k } = ( 0, \ldots, 0, \overbrace{ 1 }^{ k }, 0, \ldots, 0),
+\end{equation}
+to samym od~razu otrzymujemy
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-22}
+  y =
+  \sum_{ k = 1 }^{ \infty } \tfrac{ 1 }{ k } e^{ k }, \quad
+  \sum_{ k = 1 }^{ \infty } \norm{ \tfrac{ 1 }{ k } e^{ k } }
+  = \sum_{ k = 1 }^{ \infty } \tfrac{ 1 }{ k } = +\infty.
+\end{equation}
+
+Paweł Duch znalazł dobre wyjaśnienie dlaczego suma tego konkretnego
+typu szeregów nie zależy od~kolejności. Szereg zbieżny warunkowo jest
+zbieżny bowiem jego wyrazy ,,odpowiednio~się kompensują'', wyrazy
+ujemne kasują poprzedzające jej wyrazy dodatnie w~taki sposób,
+że~granica istnieje. Dlatego też jeśli zmienimy ich kolejność to~mogą
+one~się nie skompensowań tak jak poprzednio i~otrzymamy inną sumę.
+
+Jednak tutaj każdy wyraz jest w~kierunku prostopadłym, do~wszystkich
+innych, więc żadne dwa z~nich nie mogą~się wzajemnie skompensować.
+Jeżeli więc taki szereg jest zbieżny, to zmiana kolejności nie wpływa
+na sumę.
+
+Schwartz bada w~swoje książce szeregi w~przestrzeniach Banacha, które
+nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
+sumowania (str.~110 i~dalsze
+\cite{SchwartzKursAnalizyMatematycznejVolI1979}). Trajdos przetłumaczył ich
+nazwę jako szeregi \textit{zbieżne przestawialnie}. % Sprawdzone.
+
+\VerSpaceFour
+
+
+
+\noindent
+\Str{45} Wzorując~się na Grabowskim i~Ingardenie
+\cite{GrabowskiIngardenMechanikaKwantowa1987}, warto w~kontekście
+twierdzenia II.6 udowodnić jeszcze jedną piękną równość:
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-23}
+  ( y, \, y' ) =
+  \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y' ),
+\end{equation}
+gdzie $S = \{ x_{ \alpha } \}_{ \alpha \in A }$ jest bazą ortonormalną,
+niekoniecznie przeliczalną.
+
+Zacznijmy od~tego, że~istniej przeliczalny zbiór $x_{ \alpha_{ j } }$
+taki,
+że~$y' = \sum_{ j = 1 }^{ \infty } ( x_{ \alpha_{ j } }, \, y' ) x_{ \alpha_{ j } }$.
+Wtedy
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-24}
+  \begin{split}
+    ( y, \, y' )
+    &=
+      ( y, \, \lim_{ n \to \infty } \sum_{ j = i }^{ n }
+      ( x_{ \alpha_{ j } }, \,  y' ) \, x_{ \alpha_{ j } } )
+      =
+      \lim_{ n \to \infty } ( y, \, \sum_{ j = 1 }^{ n }
+      ( x_{ \alpha_{ j } }, \, y' ) x_{ \alpha_{ j } } ) = \\
+    &=
+      \lim_{ n \to \infty } \sum_{ j = 1 }^{ n } ( y, \, ( x_{ \alpha_{ j } }, \, y' )
+      x_{ \alpha_{ j } } )
+      =
+      \sum_{ j = 1 }^{ \infty } ( y, x_{ \alpha_{ j } } ) ( x_{ \alpha_{ j } }, y' )
+      =
+      \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \,  y' ).
+  \end{split}
+\end{equation}
+Zastąpienie w~ostatniej równości sumy po zbiorze
+$\alpha_{ j }$, $j \in \Nbb$ sumą po~$A$ jest możliwe na mocy tego,
+że~jeżeli $\alpha \neq \alpha_{ j }$ dla każdego $j$, to wyrażenie pod
+sumą jest równe zeru. Zauważmy też, że~skoro zbieżność szeregu
+$\sum_{ \alpha \in A } ( x_{ \alpha }, \, y ) x_{ \alpha }$ nie zależy
+od~kolejności, to~na~mocy przeprowadzone rozumowania również suma
+szeregu
+$\sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y' )$, nie
+zależy od~kolejności wyrazów.
+
+Ta tożsamość pozwala nam wykazać, w~sposób bardziej elegancki niż
+zrobili to Reed i~Simon, równanie (II.2), mianowicie podstawiając
+$y' = y$, mamy
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-25}
+  \norm{ y }^{ 2 } = ( y, \, y ) =
+  \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y )
+  = \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \,  y ) }^{ 2 }.
+\end{equation}
+% Sprawdzone.
+
+\VerSpaceFour
+
+
+
+\noindent
+\Str{45} Dysponując twierdzeniem II.6, można teraz podać ogólną
+postać nierówności Bessela.
+
+
+
+
+% #############
+\begin{theorem}[Ogólna postać nierówności Bessela]
+
+  Niech $S = \{ x_{ \alpha } \}_{ \alpha \in A }$ będzie układem
+  ortonormalny i~niech $B \subset A$. Wówczas:
+  \begin{equation}
+    \label{eq:RS-Vol-I-s01-26}
+    \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 } \leq \norm{ x }^{ 2 }.
+  \end{equation}
+
+\end{theorem}
+
+
+
+\begin{proof}
+
+  Prawie nie ma czego dowodzić, bowiem
+  \begin{equation*}
+    \label{eq:RS-Vol-I-s01-27}
+    \norm{ x }^{ 2 } = \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \, x ) }^{ 2 }
+    \geq \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 }.
+  \end{equation*}
+
+\end{proof}
+% #############
+% Sprawdzone.
+
+\VerSpaceFour
+
+
+
+% ##################
+\Str{49} Konstrukcja iloczynu tensorowego jest przeprowadzona
+bardzo szkicowo, przez co~sens tego co~robimy jest często ukryty,
+tutaj postaram~się uzupełnić brakujące elementy.
+
+Po~pierwsze zauważmy, że~aby mówić o~sprzężonej biliniowej formie
+$\mu$, przez co rozumiemy, że~jest ona addytywna przy ustalonym
+jednym z~argumentów oraz~że~zachodzi
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-28}
+  \mu\langle \alpha \psi, \, \varphi \rangle = \bar{ \alpha } \, \mu\langle \psi, \, \varphi \rangle, \quad
+  \mu\langle \psi, \, \alpha \varphi \rangle =
+  \bar{ \alpha } \, \mu\langle \psi, \, \varphi \rangle.
+\end{equation}
+
+Jedną z~przyczyn zamieszania jest używanie tego samego symbolu na
+iloczyn skalarny w~$\Hcal_{ 1 }$, $\Hcal_{ 2 }$ i~$\Ecal$, tu będę je
+oznaczał odpowiednio jako $( \, \cdot \,, \cdot \, )_{ \Hcal_{ 1 } }$,
+$( \, \cdot \,, \cdot \, )_{ \Hcal_{ 2 } }$, $( \, \cdot \,, \cdot \, )_{ \Ecal }$.
+Działanie formy $\varphi_{ 1 } \otimes \varphi_{ 2 }$ można więc zapisać jako
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-29}
+  ( \varphi_{ 1 } \otimes \varphi_{ 2 } ) \langle \psi_{ 1 }, \, \psi_{ 2 } \rangle
+  =
+  ( \psi_{ 1 }, \, \varphi_{ 1 } )_{ \Hcal_{ 1 } }
+  ( \psi_{ 2 }, \, \varphi_{ 2 } )_{ \Hcal_{ 2 } }.
+\end{equation}
+Iloczyn skalarny na~$\Ecal$ ma więc postać:
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-30}
+  ( \varphi \otimes  \psi, \, \eta \otimes \mu )_{ \Ecal }
+  = ( \varphi, \, \eta )_{ \Hcal_{ 1 } } ( \psi, \,  \mu )_{ \Hcal_{ 2 } }.
+\end{equation}
+Formę postaci $\varphi \otimes \psi$ będziemy nazywać \textbf{formą prostą}.
+Dowolna forma jest sumą form prostych.
+
+Tu~pojawia~się drugie źródło komplikacji. Ta sama forma może być
+przedstawiona za~pomocą różnych sum form prostych. Na~przykład
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-31}
+  \mu_{ 1 } = \varphi \otimes ( \psi_{ 1 } + \psi_{ 2 } ) = \mu_{ 2 }
+  = \varphi \otimes \psi_{ 1 } + \varphi \otimes \psi_{ 2 }.
+\end{equation}
+Z~tego względu należałoby zdefiniować $\Ecal$ jako zbiór klas
+abstrakcji względem relacji równoważności, która utożsamia dwie sumy
+form prostych jeśli przedstawiają tę~samą dwuantyliniową formę.
+Następnie dowiedlibyśmy, że~iloczyn w tej przestrzeni ilorazowej nie
+zależy od~reprezentanta, co jest równoważne postępowaniu Reeda
+i~Simona, jednak z~jakiegoś powodu nie chcieli pójść tą drogą.
+
+Powyższy przykład uogólnia~się do~dobrze znanego z~algebry liniowej
+faktu, iż~iloczyn tensorowy jest wieloliniowy. Z~samej definicji
+wynika, że~zachodzi następująca równość form
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-32}
+  \varphi \otimes \ldots \otimes ( \alpha \psi_{ 1 } + \beta \psi_{ 2 } ) \otimes \ldots \otimes \eta =
+  \alpha \, \varphi \otimes \ldots \otimes \psi_{ 1 } \otimes \ldots \otimes \eta
+  + \beta \, \varphi \otimes \ldots \otimes \psi_{ 2 } \otimes \ldots \otimes \eta.
+\end{equation}
+
+W~dalszym ciągu potrzebna będzie nam następująca obserwacja: jeżeli
+$\mu \in \Ecal$, to zachodzi równość:
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-33}
+  ( \varphi \otimes \psi, \, \mu )_{ \Ecal } ??? = \mu\langle \varphi, \psi \rangle,
+\end{equation}
+gdzie $\mu\langle \varphi,  \psi \rangle$ oznacza wartość formy $\mu$ na~parze
+uporządkowanej $\langle \varphi, \psi \rangle$. Jeżeli $\mu = \eta \otimes \chi$ to
+powyższa równość wynika z~definicji wszystkich działań. Jeśli zaś
+$\mu = \sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \otimes \psi_{ i } )$,
+wówczas
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-34}
+  \begin{split}
+    ( \varphi \otimes \psi, \mu )_{ \Ecal }
+    &=
+      \left( \varphi \otimes \psi, \, \sum_{ i = 1 }^{ N } c_{ i } \,
+      ( \eta_{ i } \otimes \chi_{ i } ) \right)_{ \Ecal }
+      =
+      \sum_{ i = 1 }^{ N } c_{ i } \,
+      ( \varphi \otimes \psi, \, \eta_{ i } \otimes \chi_{ i } )_{ \Ecal } = \\
+    &=
+      \sum_{ i = 1 }^{ N } c_{ i } \, ( \eta_{ i } \otimes \chi_{ i } )
+      \langle \varphi, \, \psi \rangle
+      = \mu\langle \varphi, \, \psi \rangle.
+  \end{split}
+\end{equation}
+Dla zupełności przedstawimy uogólnienie tej obserwacji. Jeśli nadamy
+$\Hcal_{ 1 } \times \Hcal_{ 2 }$ strukturę sumy prostej
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-35}
+  \sum_{ i = 1 }^{ N } d_{ i } \, \langle \phi_{ i }, \, \varphi_{ i } \rangle
+  :=
+  \langle \sum_{ i = 1 }^{ N } d_{ i } \, \phi_{ i }, \,
+  \sum_{ i = 1 }^{ N } d_{ i } \, \varphi_{ i } \rangle,
+\end{equation}
+i~$\eta = \sum_{ i = 1 }^{ N } d_{ i } \: \varphi_{ i } \otimes \psi_{ i }$,
+$d_{ i } \in \Cbb$, to~korzystając z~półtoraliniowości mamy
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-36}
+  \begin{split}
+    ( \eta, \, \mu )_{ \Ecal }
+    &=
+      \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \:
+      \big( ( \varphi_{ i } \otimes \psi_{ i } ), \, \mu \big)_{ \Ecal }
+      =
+      \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \:
+    ( \varphi_{ i } \otimes \psi_{ i }, \, \mu )_{ \Ecal } = \\
+    &=
+      \sum_{ i = 1 }^{ N } \bar{ d }_{ i } \: \mu \langle \varphi_{ i }, \, \psi_{ i } \rangle
+      = \mu( \eta ).
+  \end{split}
+\end{equation}
+$\mu( \eta )$ oznacza wartość formy $\mu$ na~$\eta$.
+
+% W tym fragmencie wielokrotnie powtarza się "zauważyć" <<<<<<<<<<<<
+Teraz możemy przejść do~dyskusji, czy~wzór na iloczyn skalarny nie
+zależy od~przedstawienia jako sumy form prostych. Zauważmy, że~dwie
+formy $\mu$, $\eta$~są równe gdy
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-37}
+  \mu\langle \varphi, \, \psi \rangle = \eta\langle \varphi, \, \psi \rangle, \quad
+  \forall \varphi \in \Hcal_{ 1 }, \psi \in \Hcal_{ 2 }.
+\end{equation}
+
+Musimy teraz pokazać, że~iloczyn skalarnych dwóch form z~$\Ecal$,
+nie~zależy od ich przedstawienia w~postaci sumy form prostych.
+Kluczowe tu jest wynikający z~definicji fakt, że~dwie różne postaci
+tej samej formy różnią się o~sumę form prostych reprezentującą formę
+zerową. Dla przykładu, jeżeli weźmiemy dwie formy określone wyżej
+$\mu_{ 1 }$ i~$\mu_{ 2 }$, to ich różnica:
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-38}
+  \mu_{ 1 } - \mu_{ 2 } =
+  \varphi \otimes ( \psi_{ 1 } + \psi_{ 2 } ) - \varphi \otimes \psi_{ 1 } - \varphi \otimes \psi_{ 2 }
+\end{equation}
+jest formą zerową. Zwróćmy uwagę, że~rozkład formy zerowej na formy
+proste również nie jest jednoznaczny, np.~każda forma postaci
+$\varphi \otimes 0$ reprezentuje formę zerową. Jeżeli teraz uda~się pokazać,
+że~forma zerowa niezależnie od~swojej postaci, jest ortogonalna
+do~każdej formy w~$\Ecal$, to~będziemy mogli pokazać niezależność
+iloczynu skalarnego w~$\Ecal$ od~konkretnej postaci form.
+
+Wyniki uzyskane wyżej, wraz z~tym co~napisali Reed i~Simon jest
+wystarczające by~wykazać żądaną ortogonalność formy zerowej.
+Dokładniej Reed i~Simon pokazali, że~wybierając bazę odpowiedniej
+przestrzeni dostajemy dla każdego $\lambda \in \Ecal$
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-39}
+  ( \lambda, \, \lambda ) = \sum_{ j l } \absOne{ c_{ j l } }^{ 2 } \geq 0,
+\end{equation}
+czyli iloczyn skalarny jest dodatnio określony, jeśli zaś jest
+równy~0, to $\lambda$ jest formą zerową.
+
+Teraz wykażemy, że~rozważany iloczyn skalarny jest niezależny od
+użytego rozkładu. Niech $\psi \sim \psi'$ i~$\varphi' \sim \varphi$, a~$\mu$
+będzie formą zerową. W~takiej sytuacji $\psi' = \psi + \mu$
+i~$\varphi' = \varphi + \mu$, przy czym konkretna postać $\mu$ może być w~obu
+przypadkach różna. Teraz możemy, na~poziomie konkretnych sum form
+prostych, przeprowadzić następujący rachunek, kończący dowód
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-40}
+  ( \varphi', \, \psi' ) = ( \varphi + \mu, \, \psi' )
+  = ( \varphi, \, \psi' ) + ( \mu, \, \psi' ) = ( \varphi, \, \psi' )
+  = ( \varphi, \, \psi + \mu ) = ( \varphi, \, \psi ).
+\end{equation}
+
+Ta relacja stanowi po~prostu, że~dwa elementy
+$\mu_{ 1 }, \mu_{ 2 } \in \Ecal$ są równoważne, wtedy i~tylko wtedy
+
+\VerSpaceFour
+
+
+
+% #############
+\Str{50} Jako konkluzję konstrukcji iloczynu tensorowego
+przestrzeni Hilberta warto podać następującą piękną równość, która
+wynika wprost z~wprowadzonych definicji.
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-41}
+  \norm{ \varphi \otimes \psi }_{ \Hcal_{ 1 } \otimes \Hcal_{ 2 } }
+  = \norm{ \varphi }_{ \Hcal_{ 1 } } \norm{ \psi }_{ \Hcal_{ 2 } }.
+\end{equation}
+Za jej pomocą można łatwo pokazać, że~iloczyn tensorowy jest ciągły,
+dowód jest taki sam jak w~przypadku iloczynu skalarnego. % Sprawdzone.
+
+\VerSpaceFour
+
+
+
+\noindent
+\Str{50} Część dowodu \textbf{Propostion~2}, że~układ
+$\varphi_{ l } \otimes \psi_{ k }$ stanowi bazę ortonormalną, jest miejscami
+zbyt pobieżna by była zrozumiała dla mnie. W~tym jednak momencie
+kluczowa równość
+\begin{equation}
+  \label{eq:RS-Vol-I-s01-42}
+  \varphi \otimes \phi = \sum_{ l,\, k } c_{ l } d_{ k }\, \varphi_{ l } \otimes \psi_{ k },
+\end{equation}
+wynika z~tego, że~iloczyn tensorowy jest funkcją dwuliniową ciągła
+i~twierdzenia \eqref{thm:OdwzorowanieWielolinioweCiagle}. Ponieważ
+$\varphi_{ l } \otimes \psi_{ k }$ jest układem ortonormalnym
+i~przeliczalnym\footnote{W~przypadku gdy nie jest, dla danego wektora
+  tylko przeliczalna ilość współczynników $c_{ l }$ i~$d_{ k }$ nie
+  znika i~można powtórzyć rozumowanie.} można go ustawić w~ciąg
+jednoindeksowy, którego suma nie zależy od kolejności sumowania. Tym
+samym równość \eqref{eq:RS-Vol-I-s01-42} zachodzi niezależnie od~sposobu
+sumowania.
+
+\VerSpaceFour
+
+
+
+% ####################
+\Str{51} W~tym miejscu będziemy potrzebowali następującego
+twierdzenie, którego dowód znalazł Paweł Duch.
+
+
+
+
+
+% #############
+\begin{theorem}
+  \label{thm:TwierdzenieOIloczynieMiarPWZerowym}
+
+  Niech $( X, \mu )$ i~$( Y, \nu )$ są przestrzeniami z~miarą
+  $\sigma$-skończoną i~niech $A \subset X \times Y$ będzie zbiorem
+  mierzalny względem miary $\mu \otimes \nu$. Jeśli dla $\mu$-prawie
+  każdego $x \in X$, miara $\nu$ zbioru $( x \times Y ) \cap A$ jest
+  równa 0, wówczas $(\mu \otimes \nu)( A ) = 0$.
+
+\end{theorem}
+
+
+
+\begin{proof}
+
+  Standardowo będziemy utożsamiać zbiór $( x \times Y ) \cap A$
+  z~odpowiednim podzbiorem $Y$
+
+  W~przypadku miary dodatniej można tak sformułować teorię całki,
+  że~dla każdego zbioru zachodzi\footnote{Zobacz uwagi o~całce górnej
+    w~ujęciu Schwartza.}
+  \begin{equation}
+    \label{eq:RS-Vol-I-s01-43}
+    \mu( S ) = \int_{ S } \chi_{ S }( x ) \, d\mu( x ),
+  \end{equation}
+  niezależnie czy jego miara jest skończona, czy nie. Skoro zaś obie
+  miary~są $\sigma$-skończone, to zachodzi twierdzenie
+  o~zamianie całki podwójnej na iterowaną, znów niezależnie od~tego
+  czy poszczególne całki są skończone czy nie.
+
+  Dostajemy więc
+  \begin{equation}
+    \label{eq:RS-Vol-I-s01-44}
+    (\mu \otimes \nu)( A ) =
+    \int_{ X \times Y } \chi( x, y ) \, d\mu( x ) \otimes d\nu( y )
+    =
+    \int_{ X } \left( \int_{ Y } \chi( x, y ) \, d\nu( y ) \right) \,
+    d\mu( x )
+    = 0,
+  \end{equation}
+  bowiem na mocy założeń
+  $\mu\big( ( x \times Y ) \cap A \big) = \int_{ Y } \chi( x, y ) \, d\nu( y )$
+  jest równa zeru dla $\mu$-prawie wszystkich~$x$.
+\end{proof}
+% #############
+
+
+
+
+
+Zauważmy, że~to twierdzenie ma prostą interpretację na płaszczyźnie
+$\Rbb^{ 2 }$. Wówczas zbiór $x \times Y$ jest prostą pionową przechodzącą
+przez punkt $x$ i~powyższe twierdzenie mówi, że~jeśli prawie każdy
+przekrój zbioru $A$ prostymi pionowymi ma długość~0, to pole
+powierzchni $A$ również jest zerowe.
+
+\VerSpaceFour
+
+
+
+% ####################
+\Str{51} \textbf{Dowód, że~$\varphi_{ k }( x ) \otimes \psi_{ l }( y )$ tworzą układ
+  ortonormalny.} Sprawdźmy najpierw, że~funkcja
+$\varphi_{ l }( x ) \otimes \psi_{ l }( y )$ jest całkowalna w~kwadracie. Zgodnie z~tym
+co napisano wcześnie prawdziwe są następujące
+\begin{subequations}
+  \begin{equation}
+    \label{eq:RS-Vol-I-s01-45}
+    \iint\limits_{ M_{ 1 } \times M_{ 2 } }
+    \absOne{ \varphi_{ k }( x ) \psi_{ l }( y ) }^{ 2 } \,
+    d\mu_{ 1 }( x ) d\mu_{ 2 }( y ) =
+    \int_{ M_{ 1 } } \absOne{ \varphi_{ k }( x ) }^{ 2 } \, d\mu_{ 1 }( x )
+    \int_{ M_{ 2 } } \absOne{ \psi_{ l }( y ) }^{ 2 } \, d\mu_{ 2 }( y ) = 1.
+  \end{equation}
+
+
+
+  \begin{equation}
+    \label{eq:RS-Vol-I-s01-46}
+    \begin{split}
+      \iint\limits_{ M_{ 1 } \times M_{ 2 } } \overline{ \varphi( x ) } \,
+      \overline{ \psi_{ l }( y ) } \varphi_{ m }( x ) \psi_{ n }( y ) \,
+      d\mu_{ 1 }( x ) d\mu_{ 2 }( y )
+      &=
+      \int_{ M_{ 1 } } \overline{ \varphi_{ k }( x ) } \varphi_{ m }( x ) \, d\mu_{ 1 }( x )
+        \int_{ M_{ 2 } } \overline{ \psi_{ l }( y ) } \psi_{ n }( y ) \, d\mu_{ 2 }( y )
+        = \\
+      &= \delta_{ k, m } \; \delta_{ l, n }.
+    \end{split}
+  \end{equation}
+\end{subequations}
+Pierwsza całka w~drugiej równości to iloczyn skalarny funkcji
+$\varphi_{ k }( x ) \psi_{ l }( y )$ i~$\varphi_{ m }( x ) \psi_{ n }( y )$
+w~przestrzeni $\Lcal^{ 2 }( M_{ 1 } \times M_{ 2 }, d\mu_{ 1 } \otimes d\mu_{ 2 } )$,
+funkcja podcałkowa jest więc całkowalna i~wszystkie dalsze przejścia
+są dozwolone.
+
+Teraz udowodnimy, że~funkcja $f( x, y ) = 0$ prawie wszędzie.
+Po~pierwsze zbiór na którym $f( x, y ) \neq 0$ jest równy
+$f^{ -1 }( \Cbb \setminus 0 )$, jest więc on mierzalny. Teraz fakt,
+że~zbiór ten ma~miarę~$0$ wynika z~tego co pokazali Reed i~Simon
+oraz~twierdzenia powyżej.
+
+\VerSpaceFour
+
+
+
+\noindent
+\StrWierszGora{106}{5} Nie rozumiem dlaczego w~tym miejscu dodatkowo
+zaznacza~się, że~miarę dowolnego zbioru mierzalnego, można
+aproksymować od~wewnątrz przez zbiory zwarte i~\textit{borelowskie}.
+Skoro rozważamy tylko zwarte przestrzenie Hausdorffa, wszystkie zbiory
+zwarte~są domknięte i~tym samym borelowskie.
+
+
+
+
+
+% ##################
+\newpage
+\CenterBoldFont{Błędy}
+
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    & \multicolumn{2}{c|}{} & & \\
+    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
+                              & Powinno być \\ \cline{2-3}
+    & Od góry & Od dołu & & \\
+    \hline
+    2   &  8 & & surjective & \textbf{surjective} \\
+    2   &  9 & & \textbf{surjective} & surjective \\
+    14  & 10 & & $\sum_{ 2^{ n } }( f )$ & $\sum_{ 2 n }( f )$ \\
+    14  & 14 & & $\sum_{ 2^{ n } }( f )$ & $\sum_{ 2 n }( f )$ \\
+    17  &  3 & & $\int \;\: f_{ n } \;\: dp$ & $\int f_{ n } \, dp$ \\
+    25  &  2 & & $f$ & $f \geq 0$ \\
+    40  & & 3 & a~Hilbert & a~separable Hilbert \\
+    44  & & 7 & $\frac{ T( y ) }{ T( x_{ 0 } ) }$
+           & $\frac{ ( x_{ 0 }, \, y ) }{ ( x_{ 0 }, \, x_{ 0 } ) }$ \\
+    45  & & 2 & some & all \\
+    46  & & 9 & $( v_{ 1 }, \, u_{ 1 } ) v_{ k }$
+           & $( v_{ 1 }, \, u_{ 2 } ) v_{ 1 }$ \\
+    49  & & 7 & linear & bilinear \\
+    50  & 16 & & $\sum_{ j l } \absOne{ c_{ j l } }^{ 2 }$
+           & $\sum_{ j l } \absOne{ c_{ j l } }^{ 2 } \geq 0$ \\
+    53  & & 12 & $\varphi_{ k_{ \sigma( 1 ) } } \otimes \varphi_{ k_{ \sigma( 2 ) } }
+                 \cdots \otimes \varphi_{ k_{ n( p ) } }$
+           & $\varphi_{ k_{ \sigma( 1 ) } } \otimes \varphi_{ k_{ \sigma( 2 ) } } \otimes
+             \cdots \otimes \varphi_{ k_{ \sigma( p ) } }$ \\
+    70  & 8 & & $\lim\limits_{ n \to +\infty }$ & $\lim\limits_{ m \to +\infty }$ \\
+    % Sprawdź czy dobrze.
+    73  & & 2 & $\sum_{ k = 1 }^{ \infty } \absOne{ \lambda_{ k } } < \infty$
+           & $\sum_{ k = 1 }^{ \infty } \absOne{ \lambda_{ k } } \leq
+             \norm{ \lambda_{ 0 } }_{ c_{ 0 }^{ * } } < \infty$ \\
+    79  & 6 & & $\norm{ [x] }$ & $\norm{ [x] }_{ 1 }$ \\
+    82  & & 15 & since$T[ B_{ r }^{ X } ]$ & since $T[ B_{ r }^{ X } ]$ \\
+    104 &  5 & & $[ 0, 1 ]$ & $[ -1, 1 ]$ \\
+    104 &  6 & & $\Vert P_{ n }( f )$ & $\Vert \, P_{ n }( f )$ \\
+    106 & 11 & & $\mu( \, Y \setminus \widetilde{ Y } )$
+           & $\mu( Y \setminus \widetilde{ Y } )$ \\
+    106 &  5 & & $C \subset O$ & $C \subset Y$ \\
+    107 &  4 & & $\Real[ e^{ -i \varphi } f ]$ & $e^{ -i \varphi } f$ \\
+    107 &  4 & & $\Real( e^{ -i \varphi } f )$ & $e^{ -i \varphi } f$ \\
+    107 & 10 & & $\int\! fd\mu$ & $\int f \, d\mu$ \\
+    107 & & 10 & functions & functionals \\
+    109 & 4 & & $\norm{ l }\!\sup$ & $\norm{ l } \sup$ \\
+    112 & & 8 & $X$ & $F$ \\
+    128 & 2 & & $| \rho_{ \alpha_{ 1 } }( x ) |$ & $\rho_{ \alpha_{ 1 } }( x )$ \\
+    128 & 2 & & $| \rho_{ \alpha_{ n } }( x ) |$ & $\rho_{ \alpha_{ n } }( x )$ \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    % & & & & \\
+    \hline
+  \end{tabular}
+
+\end{center}
+
+
+\noindent
+\textbf{Grzbiet} \\
+\Jest  REVSED \\
+\Powin REVISED \\
+\StrWg{43}{3} \\
+\Jest
+$\displaystyle \sup_{ \substack{ \norm{ x }_{ \Hcal } = 1 } } \;\;\;
+\norm{ T x }_{ \Hcal' }$ \\[0.4em]
+\Powin
+$\displaystyle \sup_{ \substack{ \norm{ x }_{ \Hcal } = 1 } }
+\norm{ T x }_{ \Hcal' }$ \\[0.4em]
+\StrWd{50}{17} \\
+\Jest  is~positive defined \\
+\Powin is positive defined and well defined \\
+\StrWd{51}{13} \\
+\Jest
+$\displaystyle \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } }
+\overline{ f( x, y ) } \varphi_{ k }( x ) \,
+d\mu_{ 1 }( x ) \bigg) \quad \psi_{ l }( y ) \, d\mu_{ 2 }( y )$ \\
+\Powin
+$\displaystyle \int_{ M_{ 2 } } \bigg( \, \int_{ M_{ 1 } }
+\overline{ f( x, y ) } \varphi_{ k }( x ) \, d\mu_{ 1 }( x ) \bigg)
+\psi_{ l }( y ) \, d\mu_{ 2 }( y )$
 
 
 % \vspace{\spaceTwo}
@@ -1760,6 +1762,6 @@ sumowania.
 
 
 % ############################
+% End of the document
 
-% Koniec dokumentu
 \end{document}
