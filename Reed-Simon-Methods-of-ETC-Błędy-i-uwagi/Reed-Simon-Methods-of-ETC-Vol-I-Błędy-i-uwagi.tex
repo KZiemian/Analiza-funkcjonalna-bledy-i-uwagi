@@ -94,7 +94,7 @@ url=false,
 eprint=true,
 ]{biblatex}
 
-\addbibresource{ReedSimonMethodsOfModernETCVolIBibliography.bib}
+\addbibresource{Reed-Simon-Methods-of-modern-ETC-Vol-I-Bibliography.bib}
 
 
 
@@ -116,10 +116,11 @@ eprint=true,
 % Private packages
 % You need to put them in the same directory as .tex file
 % ------------------------------------------------------
-% Contains various command useful for working with a text
-\usepackage{latexgeneralcommands}
-% Contains definitions useful for working with mathematical text
-\usepackage{mathcommands}
+% Package containing various command useful for working with a text
+\usepackage{general-commands}
+% Package containing commands and other code useful for working with
+% mathematical text
+\usepackage{math-commands}
 
 
 
@@ -548,8 +549,8 @@ istnieje taka stała $C \in \Rbb_{ + }$, że~dla wszystkich
 $x_{ 1 } \in X_{ 1 }, \ldots, x_{ n } \in X_{ n }$ zachodzi
 \begin{equation}
   \label{eq:RS-Vol-I-02-03}
-  \norm{ B( x_{ 1 }, \ldots, x_{ n } ) }_{ Y } \leq
-  C \norm{ x_{ 1 } }_{ X_{ 1 } } \cdot \ldots \cdot \norm{ x_{ n } }_{ X_{ n } }.
+  \Vert B( x_{ 1 }, \ldots, x_{ n } ) \Vert_{ Y } \leq
+  C \Vert x_{ 1 } \Vert_{ X_{ 1 } } \cdot \ldots \cdot \Vert x_{ n } \Vert_{ X_{ n } }.
 \end{equation}
 Podstawowe ich własności przedstawił Schwartz w~swoim „Kursie analizy
 matematycznej”, str.~102 i~dalsze,
@@ -557,7 +558,7 @@ matematycznej”, str.~102 i~dalsze,
 W~szczególności tak jak dla odwzorowania liniowego odwzorowanie
 wieloliniowe jest ciągłe wtedy i~tylko wtedy, gdy
 jest ograniczone, analogicznie również definiuje~się normę
-$\norm{ B }$ odwzorowania wieloliniowego~$B$. Dysponując już tymi
+$\Vert B \Vert$ odwzorowania wieloliniowego~$B$. Dysponując już tymi
 pojęciami możemy sformułować potrzebne nam twierdzenie\footnote{Pewne
   idee tego dowodu pochodzą od~Pawła Ducha.}.
 
@@ -607,18 +608,18 @@ pojęciami możemy sformułować potrzebne nam twierdzenie\footnote{Pewne
   $\eta_{ 1 } = \varphi$ oraz~$\eta_{ 2 } = \psi$. Ponieważ
   $\varphi = \sum_{ l } c_{ l } \, \varphi_{ l }$, więc istniej takie $K$,
   że~$\varphi = \sum_{ k < K } c_{ k } \, \varphi_{ k } + \varphi_{ R }$, gdzie
-  $\norm{ \varphi_{ R } }_{ X_{ 1 } } \leq \varepsilon$. Analogicznie
+  $\Vert \varphi_{ R } \Vert_{ X_{ 1 } } \leq \varepsilon$. Analogicznie
   $\psi = \sum_{ l < L } d_{ l } \psi_{ l } + \psi_{ R }$,
-  $\norm{ \psi_{ R } }_{ X_{ 2 } } \leq \varepsilon$. Ponieważ suma
+  $\Vert \psi_{ R } \Vert_{ X_{ 2 } } \leq \varepsilon$. Ponieważ suma
   $\sum_{ k < K } c_{ k } \varphi_{ k }$ jest zbieżna do~$\varphi$, wynika,
   że~ciąg
-  $\norm{ \sum_{ k < K } c_{ k } \varphi_{ k } }_{ X_{ 1 } } \to \norm{
-    \varphi }_{ X_{ 1 } }$, jest więc również ograniczony. Dobierzmy
+  $\Vert \sum_{ k < K } c_{ k } \varphi_{ k } \Vert_{ X_{ 1 } } \to \Vert \varphi \Vert_{ X_{ 1 } }$, jest więc
+  również ograniczony. Dobierzmy
   $M \geq 0$ tak~by było wspólnym ograniczeniem\footnote{To
     ograniczenie to~wszystko czego potrzebujemy w~dowodzie, a~aby je
     otrzymać wystarczy warunkowa zbieżność omawianych szeregów.}
-  ciągów $\norm{ \sum_{ k < K } c_{ k } \varphi_{ k } }_{ X_{ 1 } }$
-  i~$\norm{ \sum_{ l < L } d_{ l } \psi_{ l } }_{ X_{ 2 } }$, niech
+  ciągów $\Vert \sum_{ k < K } c_{ k } \varphi_{ k } \Vert_{ X_{ 1 } }$
+  i~$\Vert \sum_{ l < L } d_{ l } \psi_{ l } \Vert_{ X_{ 2 } }$, niech
   teraz $N = \max( L, K )$. Rozpatrzmy wyrażenie
   \begin{equation}
     \begin{split}
@@ -635,7 +636,7 @@ pojęciami możemy sformułować potrzebne nam twierdzenie\footnote{Pewne
         \Vert B( \sum_{ l < N } \varphi_{ l }, \psi_{ R } ) \Vert_{ Y }
         + \Vert B( \varphi_{ R }, \sum_{ k < N } \psi_{ k } ) \Vert_{ Y } + \\
       &+ \Vert B( \varphi_{ R }, \psi_{ R } ) \Vert_{ Y }
-        \leq 2 \norm{ B } M \varepsilon + \norm{ B } \varepsilon^{ 2 }.
+        \leq 2 \Vert B \Vert M \varepsilon + \Vert B \Vert \varepsilon^{ 2 }.
     \end{split}
   \end{equation}
   Dobierając odpowiednio duże $N$ możemy uczynić tą różnicę dowolnie
@@ -708,7 +709,7 @@ metrycznej jest zupełny, należy wprowadzić topologię indukowaną.
 powszechnie wiadomo z~pracy dotyczących analizy funkcjonalnej:
 \begin{equation}
   \label{eq:RS-Vol-I-s01-12}
-  \norm{ T } =
+  \Vert T \Vert =
   \sup_{ \norm{ x }_{ 1 } \leq 1 } \frac{ \norm{ T x }_{ 2 } }{ \norm{ x }_{ 1 } }
   =
   \sup_{ \norm{ x }_{ 1 } = 1 }

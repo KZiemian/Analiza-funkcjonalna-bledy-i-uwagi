@@ -1,6 +1,6 @@
-% ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------------------------------------------
 % Basic configuration and packages
-% ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------------------------------------------
 % Package for discovering wrong and outdated usage of LaTeX.
 % More information to be found in l2tabu English version.
 \RequirePackage[l2tabu, orthodox]{nag}
@@ -9,9 +9,9 @@
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Packages not tied to particular normal language
-% ---------------------------------------
+% ------------------------------------------------------
 % This package should improved spaces in the text.
 \usepackage{microtype}
 % Add few important symbols, like text Celcius degree
@@ -19,9 +19,9 @@
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Polonization of LaTeX document
-% ---------------------------------------
+% ------------------------------------------------------
 % Basic polonization of the text
 \usepackage[MeX]{polski}
 % Switching on UTF-8 encoding
@@ -33,26 +33,16 @@
 
 
 
-% ---------------------------------------
-% Setting margines
-% ---------------------------------------
-% Package for easy settings of margins. Unit of measurement is inch.
-\usepackage{vmargin}
-\setmarginsrb
-{ 0.7in}  % left margin
-{ 0.6in}  % top margin
-{ 0.7in}  % right margin
-{ 0.8in}  % bottom margin
-{  20pt}  % head height
-{0.25in}  % head sep
-{   9pt}  % foot height
-{ 0.3in}  % foot sep
+% ------------------------------------------------------
+% Setting margins
+% ------------------------------------------------------
+\usepackage[a4paper, total={14cm, 25cm}]{geometry}
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Setting vertical spaces in the text
-% ---------------------------------------
+% ------------------------------------------------------
 % Setting space between lines
 \renewcommand{\baselinestretch}{1.1}
 
@@ -61,20 +51,27 @@
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Packages for scientific papers
-% ---------------------------------------
+% ------------------------------------------------------
 % Switching off \lll symbol, that I guess is representing letter ``Ł''.
 % It collide with `amsmath' package's command with the same name
 \let\lll\undefined
 % Basic package from American Mathematical Society (AMS)
 \usepackage[intlimits]{amsmath}
+% Equations are numbered separately in every section.
+\numberwithin{equation}{section}
+
 % Other very useful packages from AMS
-\usepackage{amsfonts, amssymb, amscd, amsthm}
-% Better looking calligraphy fonts
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+
+% Package with better looking calligraphy fonts
 \usepackage{calrsfs}
 
-% Better looking greek letters
+% Package with better looking greek letters
 % Example of use: pi -> \uppi
 \usepackage{upgreek}
 % Improving look of lambda letter
@@ -84,10 +81,28 @@
 
 
 
+% ------------------------------------------------------
+% BibLaTeX
+% ------------------------------------------------------
+% Package biblatex, with biber as its backend, allow us to handle
+% bibliography entries that use Unicode symbols outside ASCII.
+\usepackage[
+language=polish,
+backend=biber,
+style=alphabetic,
+url=false,
+eprint=true,
+]{biblatex}
 
-% ---------------------------------------
+\addbibresource{Reed-Simon-Methods-of-modern-ETC-Vol-I-Bibliography.bib}
+
+
+
+
+
+% ------------------------------------------------------
 % Defining new environments (?)
-% ---------------------------------------
+% ------------------------------------------------------
 % Defining enviroment ``Wniosek''
 \newtheorem{corollary}{Wniosek}
 \newtheorem{definition}{Definicja}
@@ -97,26 +112,24 @@
 
 
 
-% ------------------------------
+% ------------------------------------------------------
 % Private packages
 % You need to put them in the same directory as .tex file
-% ------------------------------
-% Contains various command useful for working with a text
-\usepackage{latexgeneralcommands}
-% Contains definitions useful for working with mathematical text
-\usepackage{mathcommands}
-
-% Package for use in text about functional analysis
-\usepackage{functionalanalysiscommands}
+% ------------------------------------------------------
+% Package containing various command useful for working with a text
+\usepackage{general-commands}
+% Package containing commands and other code useful for working with
+% mathematical text
+\usepackage{math-commands}
 
 
 
 
 
-% ------------------------------
-% Package ``hyperref''
+% ------------------------------------------------------
+% Package "hyperref"
 % They advised to put it on the end of preambule
-% ------------------------------
+% ------------------------------------------------------
 % It allows you to use hyperlinks in the text
 \usepackage{hyperref}
 
@@ -129,8 +142,8 @@
 
 
 
-% ---------------------------------------------------------------------
-% Defining title and author of the text
+% ------------------------------------------------------------------------------------------------------------------
+% Title and author of the text
 \title{Teoria dystrybucji \\
   {\Large Błędy i~uwagi}}
 
@@ -138,7 +151,7 @@
 
 
 % \date{}
-% ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -170,7 +183,7 @@
 \section{P.~Antosik, J.~Mikusiński, R.~Sikorski \\
   \textit{Theory~of distributions. The~sequential
     approach},
-  \cite{AntosikMikusinskiSikorskiTheoryOfDistributionsETC1973}}
+  \parencite{AntosikMikusinskiSikorskiTheoryOfDistributionsETC1973}}
 % ######################################
 
 
@@ -194,83 +207,50 @@
 
 
 % ##################
-\CenterBoldFont{Błędy}
+% \CenterBoldFont{Błędy}
 
 
-\begin{center}
+% \begin{center}
 
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-                              & Powinno być \\ \cline{2-3}
-    & Od góry & Od dołu & & \\
-    \hline
-    & & & & \\
-    & & & & \\
-    & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    % & & & & \\
-    \hline
-  \end{tabular}
+%   \begin{tabular}{|c|c|c|c|c|}
+%     \hline
+%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
+%                               & Powinno być \\ \cline{2-3}
+%     & Od góry & Od dołu & & \\
+%     \hline
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     % & & & & \\
+%     \hline
+%   \end{tabular}
 
-\end{center}
-
-\VerSpaceSix
-
-
-
-% ############################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% ######################################
-\section{I.M. Gelfand, G.E. Shilov \\
-  \textit{Generalized Functions: Volume~I, Properties
-    and~Operations},
-  \cite{GelfandShilovGeneralizedFunctionsVolI1964}}
-% ######################################
-
-
-% ##################
-\CenterBoldFont{Błędy}
-
-
-\begin{center}
-
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    & \multicolumn{2}{c|}{} & & \\
-    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-                              & Powinno być \\ \cline{2-3}
-    & Od góry & Od dołu & & \\
-    \hline
-    12  &  4 & & $f_{ 0 } = 0$ & $x_{ 0 } = 0$ \\
-    28  & 16 & & $r \leq a$ & $r \geq a$ \\
-    % & & & & \\
-    \hline
-  \end{tabular}
-
-\end{center}
+% \end{center}
 
 \VerSpaceSix
 
 
 
 % ############################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -400,307 +380,6 @@
 \end{center}
 
 \VerSpaceSix
-
-
-
-% ############################
-
-
-
-
-
-
-
-
-
-
-% % ######################################
-% \section{Walter Rudin \textit{Analiza funkcjonalna},
-%   \cite{RudinAnalizaFunkcjonalna2012}}
-% % ######################################
-
-
-
-% % ##################
-% \CenterBoldFont{Uwagi}
-
-
-% \noindent
-% W~tych notatkach, tak jak i~w~samej książce, będziemy domyślnie
-% zakładać, że~wszystkie przestrzenie wektorowe są albo nad ciałem liczb
-% rzeczywistych~$\Rbb$ albo liczby zespolonych $\Cbb$. Zagadnienie które
-% wyniki można uogólnić na ciała takie jak $\Zbb_{ p }$, gdzie $p$~jest liczbą
-% pierwszą, jest bardzo ciekawe, lecz w~tym momencie nie jest na tyle ważny
-% byśmy mogli się nim zajmować.
-
-% \VerSpaceFour
-
-
-
-
-
-% % ##################
-% \CenterBoldFont{Uwagi do konkretnych stron}
-
-
-% \noindent
-% \Str{17}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{18}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{20}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{22}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{}
-
-% \VerSpaceFour
-
-
-
-
-
-% \noindent
-% \Str{}
-
-% \VerSpaceFour
-
-
-
-
-
-% \start \Str{}
-
-% \vspace{\spaceFour}
-
-
-
-
-
-% \start \Str{}
-
-% \vspace{\spaceFour}
-
-
-
-
-
-% \start \Str{}
-
-% \vspace{\spaceFour}
-
-
-
-% \start \Str{}
-
-% \vspace{\spaceFour}
-
-
-
-
-
-% \start \Str{}
-
-% \vspace{\spaceFour}
-
-
-
-
-
-% \start \Str{}
-
-% \vspace{\spaceFour}
-
-
-
-
-
-% \start \Str{}
-
-% \vspace{\spaceFour}
-
-
-
-
-
-% \start \Str{}
-
-
-
-
-
-% % ##################
-% \newpage
-
-% \CenterBoldFont{Błędy}
-
-
-% \begin{center}
-
-%   \begin{tabular}{|c|c|c|c|c|}
-%     \hline
-%     Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-%                               & Powinno być \\ \cline{2-3}
-%     & Od góry & Od dołu & & \\
-%     \hline
-%     % & &   &  &  \\
-%     % &   & &  &  \\
-%     % & &   &  &  \\
-%     % & &   &  &  \\
-%     % & &   &  &  \\
-%     % & &   &  &  \\
-%     % &   & & &  \\
-%     % & &  &  &  \\
-%     % &   & &  &  \\
-%     % & &   &  &  \\
-%     % &   & &  &  \\
-%     % &   & &  &  \\
-%     % & &   &  &  \\
-%     % & &   & &  \\
-%     % & &  &  &  \\
-%     % & &   &  &  \\
-%     % & &   &  &  \\
-%     % &   & &  &  \\
-%     % &   & & &  \\
-%     % & &  &  &  \\
-%     % & &   &  &  \\
-%     % &  & &  &  \\
-%     % & &  & &  \\
-%     % & &  & &  \\
-%     % & &  &  &  \\
-%     % &   & &  &  \\
-%     % & &   &  &  \\
-%     % & &  &  &  \\
-%     % &  & &  &  \\
-%     %  &  & &  &  \\
-%     %  & &   &  &  \\
-%     %  &   & &  &  \\
-%     %  &   & &  &  \\
-%     %  &   & &  &  \\
-%     % & &  &  &  \\
-%     % & &  &  &  \\
-%     % & &  &  &  \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     % & & & & \\
-%     \hline
-%   \end{tabular}
-
-% \end{center}
-
-% \VerSpaceSix
-
-
-% \noindent
-% \StrWd{}{} \\
-% \Jest   \\
-% \Powin  \\
-% \StrWg{}{} \\
-% \Jest   \\
-% \Powin  \\
-% \StrWd{}{} \\
-% \Jest   \\
-% \Powin  \\
-% \StrWd{}{} \\
-% \Jest   \\
-% \Powin  \\
-% \StrWg{}{} \\
-% \Jest   \\
-% \Powin  \\
-% \StrWd{}{} \\
-% \Jest   \\
-% \Powin  \\
-% \StrWd{}{} \\
-% \Jest   \\
-% \Powin  \\
 
 
 
