@@ -94,7 +94,7 @@ url=false,
 eprint=true,
 ]{biblatex}
 
-\addbibresource{Logika-i-teoria-mnogości-Bibliography.bib}
+\addbibresource{Bratteli-Robinson-Operator-algebras-ETC-Bibliography.bib}
 
 
 
@@ -116,10 +116,15 @@ eprint=true,
 % Private packages
 % You need to put them in the same directory as .tex file
 % ------------------------------------------------------
-% Contains various command useful for working with a text
-\usepackage{latexgeneralcommands}
-% Contains definitions useful for working with mathematical text
-\usepackage{mathcommands}
+% Package containing various command useful for working with a text
+\usepackage{general-commands}
+% Package containing commands and other code useful for working with
+% mathematical text
+\usepackage{math-commands}
+
+% Package containing commands created for writing about Bratteli, Robinson
+% book "Operator algebras and quantum statistical mechanics"
+\usepackage{bratteli-robinson-operator-algebras-ETC}
 
 
 
@@ -957,22 +962,22 @@ podczas gdy Bratteli i~Robinson oznaczają tym symbolem zbiór
 Str. 31. \ldots the resolvent $R( \lambda ) = ( A - \lambda I )$\ldots
 
 \noindent
-\StrWierszG{480}{13} \\
-\Jest  Henrichs, R. W. Decomposition \\
-\Powin Henrichs, R. W. \\
+\StrWierszGora{480}{13} \\
+\Jest Henrichs, R.W. Decomposition \\
+\PowinnoByc Henrichs, R.W. \\
 Decomposition \\
-\StrWierszG{486}{20} \\
-\Jest  Schflitzel, R. Maximal \\
-\Powin Schflitzel, R. \\
-Maximal \\
-\StrWierszD{487}{11} \\
-\Jest  Taylor, J. L. The Tomita \\
-\Powin Taylor, J. L. \\
-The Tomita \\
-\StrWierszG{488}{16} \\
-\Jest  Wils, W. Direct \\
-\Powin Wils, W. \\
-Direct \\
+% \StrWierszG{486}{20} \\
+% \Jest  Schflitzel, R. Maximal \\
+% \Powin Schflitzel, R. \\
+% Maximal \\
+% \StrWierszD{487}{11} \\
+% \Jest  Taylor, J. L. The Tomita \\
+% \Powin Taylor, J. L. \\
+% The Tomita \\
+% \StrWierszG{488}{16} \\
+% \Jest  Wils, W. Direct \\
+% \Powin Wils, W. \\
+% Direct \\
 
 
 
@@ -990,19 +995,17 @@ Direct \\
 
 
 
-% #####################################################################
-% #####################################################################
+% ####################################################################
+% ####################################################################
 % Bibliography
 
-\bibliographystyle{plalpha}
-
-\bibliography{MathematicsBooks}{}
+\printbibliography
 
 
 
 
 
 % ############################
-
 % End of the document
+
 \end{document}
