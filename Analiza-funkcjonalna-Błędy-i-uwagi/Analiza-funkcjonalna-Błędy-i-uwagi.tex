@@ -1,6 +1,6 @@
-% ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------------------------------------------
 % Basic configuration and packages
-% ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------------------------------------------
 % Package for discovering wrong and outdated usage of LaTeX.
 % More information to be found in l2tabu English version.
 \RequirePackage[l2tabu, orthodox]{nag}
@@ -9,19 +9,19 @@
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Packages not tied to particular normal language
-% ---------------------------------------
-% This package should improved spaces in the text.
+% ------------------------------------------------------
+% This package should improved spaces in the text
 \usepackage{microtype}
 % Add few important symbols, like text Celcius degree
 \usepackage{textcomp}
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Polonization of LaTeX document
-% ---------------------------------------
+% ------------------------------------------------------
 % Basic polonization of the text
 \usepackage[MeX]{polski}
 % Switching on UTF-8 encoding
@@ -33,26 +33,16 @@
 
 
 
-% ---------------------------------------
-% Setting margines
-% ---------------------------------------
-% Package for easy settings of margins. Unit of measurement is inch.
-\usepackage{vmargin}
-\setmarginsrb
-{ 0.7in}  % left margin
-{ 0.6in}  % top margin
-{ 0.7in}  % right margin
-{ 0.8in}  % bottom margin
-{  20pt}  % head height
-{0.25in}  % head sep
-{   9pt}  % foot height
-{ 0.3in}  % foot sep
+% ------------------------------------------------------
+% Setting margins
+% ------------------------------------------------------
+\usepackage[a4paper, total={14cm, 25cm}]{geometry}
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Setting vertical spaces in the text
-% ---------------------------------------
+% ------------------------------------------------------
 % Setting space between lines
 \renewcommand{\baselinestretch}{1.1}
 
@@ -61,20 +51,27 @@
 
 
 
-% ---------------------------------------
+% ------------------------------------------------------
 % Packages for scientific papers
-% ---------------------------------------
-% Switching off \lll symbol, that I guess is representing letter ``Ł''.
+% ------------------------------------------------------
+% Switching off \lll symbol, that I guess is representing letter "Ł"
 % It collide with `amsmath' package's command with the same name
 \let\lll\undefined
 % Basic package from American Mathematical Society (AMS)
 \usepackage[intlimits]{amsmath}
+% Equations are numbered separately in every section
+\numberwithin{equation}{section}
+
 % Other very useful packages from AMS
-\usepackage{amsfonts, amssymb, amscd, amsthm}
-% Better looking calligraphy fonts
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+
+% Package with better looking calligraphy fonts
 \usepackage{calrsfs}
 
-% Better looking greek letters
+% Package with better looking greek letters
 % Example of use: pi -> \uppi
 \usepackage{upgreek}
 % Improving look of lambda letter
@@ -84,11 +81,29 @@
 
 
 
+% ------------------------------------------------------
+% BibLaTeX
+% ------------------------------------------------------
+% Package biblatex, with biber as its backend, allow us to handle
+% bibliography entries that use Unicode symbols outside ASCII
+\usepackage[
+language=polish,
+backend=biber,
+style=alphabetic,
+url=false,
+eprint=true,
+]{biblatex}
 
-% ---------------------------------------
+\addbibresource{Analiza-funkcjonalna-Bibliography.bib}
+
+
+
+
+
+% ------------------------------------------------------
 % Defining new environments (?)
-% ---------------------------------------
-% Defining enviroment ``Wniosek''
+% ------------------------------------------------------
+% Defining enviroment "Wniosek"
 \newtheorem{corollary}{Wniosek}
 \newtheorem{definition}{Definicja}
 \newtheorem{theorem}{Twierdzenie}
@@ -97,26 +112,23 @@
 
 
 
-% ------------------------------
+% ------------------------------------------------------
 % Private packages
 % You need to put them in the same directory as .tex file
-% ------------------------------
+% ------------------------------------------------------
 % Contains various command useful for working with a text
 \usepackage{latexgeneralcommands}
 % Contains definitions useful for working with mathematical text
 \usepackage{mathcommands}
 
-% Package for use in text about functional analysis
-\usepackage{functionalanalysiscommands}
 
 
 
 
-
-% ------------------------------
-% Package ``hyperref''
+% ------------------------------------------------------
+% Package "hyperref"
 % They advised to put it on the end of preambule
-% ------------------------------
+% ------------------------------------------------------
 % It allows you to use hyperlinks in the text
 \usepackage{hyperref}
 
@@ -129,8 +141,8 @@
 
 
 
-% ---------------------------------------------------------------------
-% Defining title and author of the text
+% ------------------------------------------------------------------------------------------------------------------
+% Title and author of the text
 \title{Analiza funkcjonalna \\
   {\Large Błędy i~uwagi}}
 
@@ -138,7 +150,7 @@
 
 
 % \date{}
-% ---------------------------------------------------------------------
+% ------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -150,6 +162,7 @@
 
 
 % ####################################################################
+% Beginning of the document
 \begin{document}
 % ####################################################################
 
@@ -169,7 +182,7 @@
 % ######################################
 \section{A. V. Balakrishnan
   \textit{Analiza funkcjonalna stosowana},
-  \cite{BalakrishnanAnalizaFunkcjonalnaStosowana1992}}
+  \parencite{Balakrishnan-Analiza-funkcjonalna-stosowana-Pub-1992}}
 % ######################################
 
 
@@ -215,7 +228,7 @@
 % ######################################
 \section{Anton Deitmar, Siegrfied Echterhoff
   \textit{Principles~of Harmonic Analysis},
-  \cite{DeitmarEcherhoffPrinciplesOfHarmonicAnalysis2009}}
+  \parencite{Deitmar-Echterhoff-Principles-of-harmonic-analysis-Pub-2009}}
 % ######################################
 
 
@@ -246,10 +259,10 @@ od~razu poszukiwana własność.
 \noindent
 \textbf{Str. 46. Lemat 2.4.2.} W~dowodzie tego twierdzenie trzeba
 chyba rozumować następująco. Chcemy pokazać,
-że~$m( a ) \leq \norm{ a }$ dla każdego $a \in \Acal$.
+że~$m( a ) \leq \Vert a \Vert$ dla każdego $a \in \Acal$.
 
 Rozpatrujemy dwa przypadki. 1) Gdy $m( a ) = 0$, wtedy oczywiście
-$m( a ) = 0 \leq \norm{ a }$. 2). Gdy $m( a ) \neq 0$. Wówczas
+$m( a ) = 0 \leq \Vert a \Vert$. 2). Gdy $m( a ) \neq 0$. Wówczas
 $m( a - m( a ) 1 ) = 0$. Gdyby istniał element $b$~odwrotny
 do~$a - m( a ) 1$, to~zachodziłoby
 \begin{equation}
@@ -301,52 +314,8 @@ dowodzie.
 
 
 % ######################################
-\section{I.M. Gelfand, G.E. Shilov \\
-  \textit{Generalized Functions: Volume~I, Properties
-    and~Operations},
-  \cite{GelfandShilovGeneralizedFunctionsVolI1964}}
-% ######################################
-
-
-% ##################
-\CenterBoldFont{Błędy}
-
-
-\begin{center}
-
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    & \multicolumn{2}{c|}{} & & \\
-    Strona & \multicolumn{2}{c|}{Wiersz} & Jest
-                              & Powinno być \\ \cline{2-3}
-    & Od góry & Od dołu & & \\
-    \hline
-    12  &  4 & & $f_{ 0 } = 0$ & $x_{ 0 } = 0$ \\
-    28  & 16 & & $r \leq a$ & $r \geq a$ \\
-    % & & & & \\
-    \hline
-  \end{tabular}
-
-\end{center}
-
-\VerSpaceSix
-
-
-
-% ############################
-
-
-
-
-
-
-
-
-
-
-% ######################################
 \section{Walter Rudin \textit{Analiza funkcjonalna},
-  \cite{RudinAnalizaFunkcjonalna2012}}
+  \parencite{Rudin-Analiza-funkcjonalna-Pub-2012}}
 % ######################################
 
 
@@ -645,100 +614,17 @@ byśmy mogli się nim zajmować.
 
 
 
-
-
-
-
-
-
-
-
-
-
-% ######################################
-\section{Algebry operatorów i~algebry topologiczne}
-% ######################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-% ############################
-\newpage
-
-{ % Autor i tytuł dzieła
-  Masamichi Takesaki \\
-  \textit{Theory of Operator Algebras. Volume I}, cite\{MTTOAI\}}
-
-
-
-% ##################
-\CenterBoldFont{Błędy}
-
-
-\begin{center}
-
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    & \multicolumn{2}{c|}{} & & \\
-    Strona & \multicolumn{2}{c|}{Wiersz}& Jest
-                              & Powinno być \\ \cline{2-3}
-    & Od góry & Od dołu & & \\
-    \hline
-    5 & & 6 & $x_{ 0 }^{ -1 } + \sum\limits_{ n = 0 }^{ \infty }
-              [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n } x_{ 0 }^{ -1 }$
-           & $\sum\limits_{ n = 0 }^{ \infty } [ x_{ 0 }^{ -1 } ( x_{ 0 } - x ) ]^{ n }
-             x_{ 0 }^{ -1 }$ \\
-    7 & & 9 & $[ ( 1 / \lambda ) x - 1 ]^{ -1 }$
-           & $[ 1 - ( 1 / \lambda ) x ]^{ -1 }$ \\
-    7 & & 8 & $\frac{ 1 }{ \lambda } \big( \frac{ 1 }{ \lambda } - x \big)^{ -1 }$
-           & $-\frac{ 1 }{ \lambda } \big( 1 - \frac{ 1 }{ \lambda } x \big)^{ -1 }$ \\
-    7 & & 3 & $\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$
-           & $-\sum\limits_{ n = 0 }^{ \infty } ( 1 / \lambda^{ n + 1 } ) x^{ n }$ \\
-    8 & 3 & & $( \lambda - \lambda_{ 0 } )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$
-           & $-( \lambda_{ 0 } - \lambda )^{ n } f( \lambda_{ 0 } )^{ n + 1 }$ \\
-    & & & & \\
-    \hline
-  \end{tabular}
-
-\end{center}
-
-\VerSpaceSix
-
-
-
-% ############################
-
-
-
-
-
-
-
-
-
-
-% #####################################################################
-% #####################################################################
+% ####################################################################
+% ####################################################################
 % Bibliography
 
-\bibliographystyle{plalpha}
-
-\bibliography{MathematicsBooks}{}
+\printbibliography
 
 
 
 
 
 % ############################
-
 % End of the document
+
 \end{document}
