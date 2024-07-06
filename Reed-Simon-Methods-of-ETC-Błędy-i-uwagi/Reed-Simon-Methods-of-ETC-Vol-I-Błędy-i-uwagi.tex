@@ -122,6 +122,10 @@ eprint=true,
 % mathematical text
 \usepackage{math-commands}
 
+% Package containing commands created for writing about M. Reed, B. Simon
+% series of books "Methods of modern mathematical physics"
+\usepackage{reed-simon-methods-of-modern-ETC}
+
 
 
 
@@ -710,11 +714,10 @@ powszechnie wiadomo z~pracy dotyczących analizy funkcjonalnej:
 \begin{equation}
   \label{eq:RS-Vol-I-s01-12}
   \Vert T \Vert =
-  \sup_{ \norm{ x }_{ 1 } \leq 1 } \frac{ \norm{ T x }_{ 2 } }{ \norm{ x }_{ 1 } }
-  =
-  \sup_{ \norm{ x }_{ 1 } = 1 }
-  \frac{ \norm{ T x }_{ 2 } }{ \norm{ x }_{ 1 } }
-  = \inf \{ \, C \, | \, \forall x, \norm{ T x }_{ 2 } \leq C \norm{ x }_{ 1 } \}.
+  \sup_{ \Vert x \Vert_{ 1 } \leq 1 } \frac{ \Vert T x \Vert_{ 2 } }{ \Vert x \Vert_{ 1 } } =
+  \sup_{ \Vert x \Vert_{ 1 } = 1 }
+  \frac{ \Vert T x \Vert_{ 2 } }{ \Vert x \Vert_{ 1 } }
+  = \inf \{ \, C \, | \, \forall x, \Vert T x \Vert_{ 2 } \leq C \Vert x \Vert_{ 1 } \}.
 \end{equation}
 Elegancki dowód tego faktu, można znaleźć np.
 w~\parencite{Chmielinski-Analiza-funkcjonalna-Pub-2004},
@@ -729,22 +732,22 @@ str.~115--116. % Sprawdzone.
 \noindent
 \Str{10} W~dowodzie twierdzenia B.L.T. skorzystanie z~$\limsup$
 jest zupełnie niepotrzebne, poza tym utrudnia dowód,
-że~$\Vert \widetilde{ T } \Vert = \norm{ T }$. Wystarczy bowiem skorzystać
+że~$\Vert \widetilde{ T } \Vert = \Vert T \Vert$. Wystarczy bowiem skorzystać
 z~twierdzenia o~zachowaniu nierówności przy~przechodzeniu do~granicy,
 by otrzymać pożądaną nierówność
 \begin{equation}
   \label{eq:RS-Vol-I-s01-13}
-  \lim\limits_{ n \to \infty } \norm{ T x_{ n } }_{ 2 }
-  \leq \lim\limits_{ n \to \infty } \norm{ T } \, \norm{ x_{ n } }_{ 1 }
-  = \norm{ T } \, \norm{ x }_{ 1 },
+  \lim\limits_{ n \to \infty } \Vert T x_{ n } \Vert_{ 2 } \leq
+  \lim\limits_{ n \to \infty } \Vert T \Vert \, \Vert x_{ n } \Vert_{ 1 } =
+  \Vert T \Vert \, \Vert x \Vert_{ 1 },
 \end{equation}
-Wynika stąd od razu że~$\Vert \widetilde{ T } \Vert \leq \norm{ T }$. Ponieważ
+Wynika stąd od razu że~$\Vert \widetilde{ T } \Vert \leq \Vert T \Vert$. Ponieważ
 zaś~na~zbiorze $V_{ 1 }$, zachodzi
-$\Vert \widetilde{ T } x \Vert_{ 2 } = \norm{ T x }_{ 2 } \leq \norm{ T } \norm{ x
-}_{ 1 }$, przy czym $\norm{ T }$ jest minimalną stałą dla~której jest
+$\Vert \widetilde{ T } x \Vert_{ 2 } = \Vert T x \Vert_{ 2 } \leq \Vert T \Vert \, \Vert x \Vert_{ 1 }$, przy czym
+$\Vert T \Vert$ jest minimalną stałą dla~której jest
 to~prawdą, więc ze~względu na~to, iż~$V_{ 1 } \subset \widetilde{ V }_{ 1 }$,
-mamy nierówność $\norm{ T } \leq \Vert \widetilde{ T } \Vert$, tym samym
-$\Vert \widetilde{ T } \Vert = \norm{ T }$. % Sprawdzone.
+mamy nierówność $\Vert T \Vert \leq \Vert \widetilde{ T } \Vert$, tym samym
+$\Vert \widetilde{ T } \Vert = \Vert T \Vert$. % Sprawdzone.
 
 \VerSpaceFour
 
@@ -826,7 +829,7 @@ z~funkcji niedodatniej ma sens. Idąc dalej~tą drogą można sformułować
 całkiem satysfakcjonującą teorię całki.
 
 Podążając ścieżką wskazaną przez Schwartza, zobacz rozdział o~teorii
-całki w~\cite{Schwartz-Kurs-analizy-matematycznej-Vol-I-Pub-1979}, będę
+całki w~\parencite{Schwartz-Kurs-analizy-matematycznej-Vol-I-Pub-1979}, będę
 zawsze
 przyjmował, że~mierzalna funkcja dodatnia jest zawsze całkowalna, choć
 jej całka możne wynosić $+\infty$. Jego podejście wskazuje, że~dla
@@ -838,7 +841,7 @@ W~tym kontekście warto mieć w~pamięci rozróżnienie jakie podał
 Schwartz między całką górną, która jest zdefiniowana dla wszystkich
 funkcji nieujemnych i~zawsze ma sens, a~całką w~sensie właściwym
 która wymaga by~$\int | f( x ) | \, d\mu( x )$??? była skończona
-\cite{Schwartz-Kurs-analizy-matematycznej-Vol-I-Pub-1979}\footnote{Schwartz
+\parencite{Schwartz-Kurs-analizy-matematycznej-Vol-I-Pub-1979}\footnote{Schwartz
   rozwijał teorię całki w~innym
 kontekście niż~rozważany tutaj np. całkował od razu funkcji
 o~wartościach w~przestrzeni Banacha. To co tu zostało napisane, jest
@@ -865,7 +868,7 @@ $f( p ) - f_{ n }( p ) \geq 0$ więc zachodzi ciąg równoważności
 Dowód, że~przy podanych w~tym twierdzeniu założeniach zachodzi
 $f \in \Lcal^{ 1 }( \Rbb )$??? i~$\int f_{ n } \, dp \to \int f \, dp$ można
 znaleźć w~każdej książce do~teorii całki, np.~str.~29--30,
-\cite{Rudin-Analiza-rzeczywista-i-zespolona-Pub-1986}. % Sprawdzone.
+\parencite{Rudin-Analiza-rzeczywista-i-zespolona-Pub-1986}. % Sprawdzone.
 
 \VerSpaceFour
 
@@ -921,7 +924,7 @@ ze~strony~24.
 Istotą samego pojęcia wzajemnej osobliwości miar jest fakt, że~miara
 $\nu$ jest niezerowana\footnote{Przyjęło~się mówić, że~miara jest
   \textbf{skupiona}, ale na razie nie widziałem, by~Reed i~Simon tego
-  pojęcia używali. Zob.~str.~133, \cite{Rudin-Analiza-rzeczywista-i-zespolona-Pub-1986}} tylko na~zbiorze
+  pojęcia używali. Zob.~str.~133, \parencite{Rudin-Analiza-rzeczywista-i-zespolona-Pub-1986}} tylko na~zbiorze
 o~$\mu$-mierze~0. Ujmując to ściśle, istnieje taki zbiór~$A$,
 że~$\mu( A ) = 0$ i~jednocześnie $\nu( M \setminus A ) = 0$ ($M$~oznacza
 tu przestrzeń mierzalną). Oznacza to, że~$\nu$ może być różna od~zera
@@ -946,7 +949,7 @@ z~twierdzenia Radona-Nikodyma
   \label{eq:RS-Vol-I-s01-15}
   \nu( A ) = \int_{ A } f( x ) d\mu( x ).
 \end{equation}
-Dowód tego twierdzenie podał Rudin w~\cite{Rudin-Analiza-rzeczywista-i-zespolona-Pub-1986}, str.~134--136,
+Dowód tego twierdzenie podał Rudin w~\parencite{Rudin-Analiza-rzeczywista-i-zespolona-Pub-1986}, str.~134--136,
 jednie nie zamieścił w~treści twierdzenia stwierdzenia, że~$f \geq 0$,
 pomimo, że~udowodnił ten fakt. Tym samym, całka ta zawsze ma sens
 i~jak zauważył Rudin, dzięki $\sigma$-skończoności można
@@ -1004,7 +1007,7 @@ które w~pewnych sytuacjach jest bardziej naturalne. Jeśli $x_{ i }$,
 $i = 1, \ldots, N$ tworzą układ ortogonalny i~$x = \sum x_{ i }$, to
 \begin{equation}
   \label{eq:RS-Vol-I-s01-16}
-  \norm{ x }^{ 2 } = \sum_{ i = 1 }^{ N } \norm{ x_{ i } }^{ 2 }.
+  \Vert x \Vert^{ 2 } = \sum_{ i = 1 }^{ N } \Vert x_{ i } \Vert^{ 2 }.
 \end{equation}
 % Sprawdzone.
 
@@ -1024,8 +1027,8 @@ iniektywne wtedy i~tylko wtedy, gdy~jego jądro jest trywialne. Jeżeli więc
 $U x = 0$, wtedy:
 \begin{equation*}
   \label{eq:RS-Vol-I-s01-17}
-  0 = ( U x, \, U x )_{ \Hcal_{ 2 } } = ( x, \, x )_{ \Hcal_{ 1 } }
-  \iff x = 0.
+  0 = ( U x, \, U x )_{ \Hcal_{ 2 } } =
+  ( x, \, x )_{ \Hcal_{ 1 } } \iff x = 0.
 \end{equation*}
 % Sprawdzone.
 
@@ -1142,8 +1145,8 @@ na~stronie~47. % Sprawdzone.
 
 \noindent
 \Str{45} Nie rozumiem dlaczego z~nierówności
-$\sum_{ i = 1 }^{ N } \absOne{ ( x_{ \alpha_{ i } }, \,  y ) } \leq \norm{
-  y }^{ 2 }$ wynika, że~tylko dla przeliczalnej ilości indeksów $\alpha$
+$\sum_{ i = 1 }^{ N } \absOne{ ( x_{ \alpha_{ i } }, \,  y ) } \leq
+\Vert y \Vert^{ 2 }$ wynika, że~tylko dla przeliczalnej ilości indeksów $\alpha$
 zachodzi $( x_{ \alpha }, \, y ) \neq 0$. ????
 
 \VerSpaceFour
@@ -1174,9 +1177,9 @@ element przestrzeni $\lcal^{ 2 }$
 \begin{equation}
   \label{eq:RS-Vol-I-s01-20}
   y = \left( 1, \tfrac{ 1 }{ 2 }, \tfrac{ 1 }{ 3 }, \ldots \right), \quad
-  \norm{ y }^{ 2 }
-  = \sum_{ i = 1 }^{ \infty } \frac{ 1 }{ n^{ 2 } }
-  = \frac{ \pi^{ 2 } }{ 6 } < +\infty.
+  \Vert y \Vert^{ 2 } =
+  \sum_{ i = 1 }^{ \infty } \frac{ 1 }{ n^{ 2 } } =
+  \frac{ \pi^{ 2 } }{ 6 } < +\infty.
 \end{equation}
 Jeśli~bazę ortonormalną przyjmiemy:
 \begin{equation}
@@ -1188,13 +1191,13 @@ to samym od~razu otrzymujemy
   \label{eq:RS-Vol-I-s01-22}
   y =
   \sum_{ k = 1 }^{ \infty } \tfrac{ 1 }{ k } e^{ k }, \quad
-  \sum_{ k = 1 }^{ \infty } \norm{ \tfrac{ 1 }{ k } e^{ k } }
-  = \sum_{ k = 1 }^{ \infty } \tfrac{ 1 }{ k } = +\infty.
+  \sum_{ k = 1 }^{ \infty } \Vert \tfrac{ 1 }{ k } e^{ k } \Vert =
+  \sum_{ k = 1 }^{ \infty } \tfrac{ 1 }{ k } = +\infty.
 \end{equation}
 
 Paweł Duch znalazł dobre wyjaśnienie dlaczego suma tego konkretnego
 typu szeregów nie zależy od~kolejności. Szereg zbieżny warunkowo jest
-zbieżny bowiem jego wyrazy ,,odpowiednio~się kompensują'', wyrazy
+zbieżny bowiem jego wyrazy „odpowiednio~się kompensują”, wyrazy
 ujemne kasują poprzedzające jej wyrazy dodatnie w~taki sposób,
 że~granica istnieje. Dlatego też jeśli zmienimy ich kolejność to~mogą
 one~się nie skompensowań tak jak poprzednio i~otrzymamy inną sumę.
@@ -1207,7 +1210,8 @@ na sumę.
 Schwartz bada w~swoje książce szeregi w~przestrzeniach Banacha, które
 nie~są absolutnie zbieżne, ale~ich suma nie zależy od~kolejności
 sumowania (str.~110 i~dalsze
-\cite{SchwartzKursAnalizyMatematycznejVolI1979}). Trajdos przetłumaczył ich
+\parencite{Schwartz-Kurs-Analizy-Matematycznej-Vol-I-Pub-1979}). Trajdos
+przetłumaczył ich
 nazwę jako szeregi \textit{zbieżne przestawialnie}. % Sprawdzone.
 
 \VerSpaceFour
@@ -1216,7 +1220,7 @@ nazwę jako szeregi \textit{zbieżne przestawialnie}. % Sprawdzone.
 
 \noindent
 \Str{45} Wzorując~się na Grabowskim i~Ingardenie
-\cite{GrabowskiIngardenMechanikaKwantowa1987}, warto w~kontekście
+\parencite{Grabowski-Ingarden-Mechanika-Kwantowa-Pub-1987}, warto w~kontekście
 twierdzenia II.6 udowodnić jeszcze jedną piękną równość:
 \begin{equation}
   \label{eq:RS-Vol-I-s01-23}
@@ -1264,9 +1268,9 @@ zrobili to Reed i~Simon, równanie (II.2), mianowicie podstawiając
 $y' = y$, mamy
 \begin{equation}
   \label{eq:RS-Vol-I-s01-25}
-  \norm{ y }^{ 2 } = ( y, \, y ) =
-  \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y )
-  = \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \,  y ) }^{ 2 }.
+  \Vert y \Vert^{ 2 } = ( y, \, y ) =
+  \sum_{ \alpha \in A } ( y, \, x_{ \alpha } ) ( x_{ \alpha }, \, y ) =
+  \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \,  y ) }^{ 2 }.
 \end{equation}
 % Sprawdzone.
 
@@ -1288,7 +1292,7 @@ postać nierówności Bessela.
   ortonormalny i~niech $B \subset A$. Wówczas:
   \begin{equation}
     \label{eq:RS-Vol-I-s01-26}
-    \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 } \leq \norm{ x }^{ 2 }.
+    \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 } \leq \Vert x \Vert^{ 2 }.
   \end{equation}
 
 \end{theorem}
@@ -1300,8 +1304,9 @@ postać nierówności Bessela.
   Prawie nie ma czego dowodzić, bowiem
   \begin{equation*}
     \label{eq:RS-Vol-I-s01-27}
-    \norm{ x }^{ 2 } = \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \, x ) }^{ 2 }
-    \geq \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 }.
+    \Vert x \Vert^{ 2 } =
+    \sum_{ \alpha \in A } \absOne{ ( x_{ \alpha }, \, x ) }^{ 2 } \geq
+    \sum_{ \beta \in B } \absOne{ ( x_{ \beta }, \, x ) }^{ 2 }.
   \end{equation*}
 
 \end{proof}
@@ -1492,13 +1497,15 @@ przestrzeni Hilberta warto podać następującą piękną równość, która
 wynika wprost z~wprowadzonych definicji.
 \begin{equation}
   \label{eq:RS-Vol-I-s01-41}
-  \norm{ \varphi \otimes \psi }_{ \Hcal_{ 1 } \otimes \Hcal_{ 2 } }
-  = \norm{ \varphi }_{ \Hcal_{ 1 } } \norm{ \psi }_{ \Hcal_{ 2 } }.
+  \Vert \varphi \otimes \psi \Vert_{ \Hcal_{ 1 } \otimes \Hcal_{ 2 } } =
+  \Vert \varphi \Vert_{ \Hcal_{ 1 } } \Vert \psi \Vert_{ \Hcal_{ 2 } }.
 \end{equation}
 Za jej pomocą można łatwo pokazać, że~iloczyn tensorowy jest ciągły,
 dowód jest taki sam jak w~przypadku iloczynu skalarnego. % Sprawdzone.
 
 \VerSpaceFour
+
+
 
 
 
@@ -1688,8 +1695,8 @@ zwarte~są domknięte i~tym samym borelowskie.
     % Sprawdź czy dobrze.
     73  & & 2 & $\sum_{ k = 1 }^{ \infty } \absOne{ \lambda_{ k } } < \infty$
            & $\sum_{ k = 1 }^{ \infty } \absOne{ \lambda_{ k } } \leq
-             \norm{ \lambda_{ 0 } }_{ c_{ 0 }^{ * } } < \infty$ \\
-    79  & 6 & & $\norm{ [x] }$ & $\norm{ [x] }_{ 1 }$ \\
+             \Vert \lambda_{ 0 } \Vert_{ c_{ 0 }^{ * } } < \infty$ \\
+    79  & 6 & & $\Vert [x] \Vert$ & $\Vert [x] \Vert_{ 1 }$ \\
     82  & & 15 & since$T[ B_{ r }^{ X } ]$ & since $T[ B_{ r }^{ X } ]$ \\
     104 &  5 & & $[ 0, 1 ]$ & $[ -1, 1 ]$ \\
     104 &  6 & & $\Vert P_{ n }( f )$ & $\Vert \, P_{ n }( f )$ \\
@@ -1700,7 +1707,7 @@ zwarte~są domknięte i~tym samym borelowskie.
     107 &  4 & & $\Real( e^{ -i \varphi } f )$ & $e^{ -i \varphi } f$ \\
     107 & 10 & & $\int\! fd\mu$ & $\int f \, d\mu$ \\
     107 & & 10 & functions & functionals \\
-    109 & 4 & & $\norm{ l }\!\sup$ & $\norm{ l } \sup$ \\
+    109 & 4 & & $\Vert l \Vert \! \sup$ & $\Vert l \Vert \sup$ \\
     112 & & 8 & $X$ & $F$ \\
     128 & 2 & & $| \rho_{ \alpha_{ 1 } }( x ) |$ & $\rho_{ \alpha_{ 1 } }( x )$ \\
     128 & 2 & & $| \rho_{ \alpha_{ n } }( x ) |$ & $\rho_{ \alpha_{ n } }( x )$ \\
@@ -1717,24 +1724,24 @@ zwarte~są domknięte i~tym samym borelowskie.
 
 \noindent
 \textbf{Grzbiet} \\
-\Jest  REVSED \\
-\Powin REVISED \\
-\StrWg{43}{3} \\
+\Jest REVSED \\
+\PowinnoByc REVISED \\
+\StrWierszGora{43}{3} \\
 \Jest
-$\displaystyle \sup_{ \substack{ \norm{ x }_{ \Hcal } = 1 } } \;\;\;
-\norm{ T x }_{ \Hcal' }$ \\[0.4em]
-\Powin
-$\displaystyle \sup_{ \substack{ \norm{ x }_{ \Hcal } = 1 } }
-\norm{ T x }_{ \Hcal' }$ \\[0.4em]
-\StrWd{50}{17} \\
-\Jest  is~positive defined \\
-\Powin is positive defined and well defined \\
-\StrWd{51}{13} \\
+$\displaystyle \sup_{ \substack{ \Vert x \Vert_{ \Hcal } = 1 } } \;\;\;
+\Vert T x \Vert_{ \Hcal' }$ \\[0.4em]
+\PowinnoByc
+$\displaystyle \sup_{ \substack{ \Vert x \Vert_{ \Hcal } = 1 } }
+\Vert T x \Vert_{ \Hcal' }$ \\[0.4em]
+\StrWierszDol{50}{17} \\
+\Jest is~positive defined \\
+\PowinnoByc is positive defined and well defined \\
+\StrWierszDol{51}{13} \\
 \Jest
 $\displaystyle \int_{ M_{ 2 } } \bigg( \int_{ M_{ 1 } }
 \overline{ f( x, y ) } \varphi_{ k }( x ) \,
 d\mu_{ 1 }( x ) \bigg) \quad \psi_{ l }( y ) \, d\mu_{ 2 }( y )$ \\
-\Powin
+\PowinnoByc
 $\displaystyle \int_{ M_{ 2 } } \bigg( \, \int_{ M_{ 1 } }
 \overline{ f( x, y ) } \varphi_{ k }( x ) \, d\mu_{ 1 }( x ) \bigg)
 \psi_{ l }( y ) \, d\mu_{ 2 }( y )$
